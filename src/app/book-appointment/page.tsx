@@ -1,7 +1,6 @@
 'use client'
 
-import { useState } from 'react'
-import { Metadata } from 'next'
+import { useState } from 'react';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, MapPin } from 'lucide-react'
 
 const timeSlots = [

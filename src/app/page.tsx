@@ -447,7 +447,7 @@ export default function Home() {
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic">
-                  "{testimonial.text}"
+                  {testimonial.text}
                 </p>
                 <div className="font-semibold text-gray-900">
                   {testimonial.name}
@@ -475,7 +475,7 @@ export default function Home() {
             Ready to Start Your Recovery?
           </h2>
           <p className="text-xl mb-8 max-w-3xl mx-auto">
-            Don't let pain limit your life. Schedule a consultation with Dr. Gaurav Saini today and take the first step towards a pain-free future.
+           {" Don't let pain limit your life. Schedule a consultation with Dr. Gaurav Saini today and take the first step towards a pain-free future."}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

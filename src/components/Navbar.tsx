@@ -137,7 +137,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center">
             <div className="flex items-center space-x-6 overflow-x-auto scrollbar-hide max-w-2xl">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <motion.div
                   key={link.href}
                   className="relative"

@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Stethoscope, Heart, Activity, Shield, Settings, Zap } from 'lucide-react'
+import {  Heart, Activity, Shield, Settings, Zap } from 'lucide-react'
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 
 export const metadata: Metadata = {
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                 Advanced robotic-assisted surgery for unparalleled precision
               </p>
               <p className="text-blue-50 mb-6 leading-relaxed">
-                Whether it's knee resurfacing, arthroplasty, or complex joint restoration, your care is fully customized and cutting-edge with our CORI robotic system that provides real-time feedback and precise surgical guidance.
+               {" Whether it's knee resurfacing, arthroplasty, or complex joint restoration, your care is fully customized and cutting-edge with our CORI robotic system that provides real-time feedback and precise surgical guidance."}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">

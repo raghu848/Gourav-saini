@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { Metadata } from 'next'
 import { useForm } from 'react-hook-form'
 import { 
   MapPin, 
@@ -11,7 +10,7 @@ import {
   MessageCircle,
   Send,
   CheckCircle
-} from 'lucide-react'
+} from 'lucide-react';
 
 interface ContactFormData {
   name: string
@@ -22,9 +21,9 @@ interface ContactFormData {
 }
 
 export default function ContactPage() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -36,13 +35,12 @@ export default function ContactPage() {
     setIsSubmitting(true)
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 2000));
     
     console.log('Form data:', data)
     setIsSubmitted(true)
     setIsSubmitting(false)
-    reset()
-    
+    reset();
     // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000)
   }
@@ -100,7 +98,7 @@ export default function ContactPage() {
               <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
                 <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
                 <span className="text-green-800">
-                  Thank you for your message! We'll get back to you soon.
+                 {" Thank you for your message! We'll get back to you soon."}
                 </span>
               </div>
             )}

@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Calendar, User, ArrowRight, Clock } from 'lucide-react'
+import { Calendar, ArrowRight, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Health Blog - Dr. Gaurav Saini | Orthopedic Tips & Information',
