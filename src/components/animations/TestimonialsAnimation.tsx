@@ -4,6 +4,22 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const TestimonialsAnimation = () => {
+  // Predefined positions to avoid random values that cause hydration issues
+  const starPositions = [
+    { left: 5, top: 10, duration: 4, delay: 0 },
+    { left: 15, top: 85, duration: 5.5, delay: 0.3 },
+    { left: 25, top: 30, duration: 4.2, delay: 0.6 },
+    { left: 35, top: 70, duration: 4.8, delay: 0.2 },
+    { left: 45, top: 15, duration: 5.2, delay: 0.8 },
+    { left: 55, top: 60, duration: 4.5, delay: 0.4 },
+    { left: 65, top: 25, duration: 4.9, delay: 0.7 },
+    { left: 75, top: 80, duration: 5.1, delay: 0.1 },
+    { left: 85, top: 40, duration: 4.3, delay: 0.9 },
+    { left: 95, top: 20, duration: 4.7, delay: 0.5 },
+    { left: 10, top: 50, duration: 5.3, delay: 1.0 },
+    { left: 20, top: 90, duration: 4.6, delay: 0.2 }
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Happy Patient Pattern */}
@@ -29,13 +45,13 @@ const TestimonialsAnimation = () => {
       </div>
 
       {/* Success Stars */}
-      {[...Array(12)].map((_, i) => (
+      {starPositions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${pos.left}%`,
+            top: `${pos.top}%`,
           }}
           animate={{
             scale: [0.5, 1.5, 0.5],
@@ -43,9 +59,9 @@ const TestimonialsAnimation = () => {
             opacity: [0.2, 0.8, 0.2]
           }}
           transition={{
-            duration: 4 + Math.random() * 3,
+            duration: pos.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: pos.delay,
             ease: 'easeInOut'
           }}
         >

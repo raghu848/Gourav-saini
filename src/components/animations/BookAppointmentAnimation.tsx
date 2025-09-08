@@ -4,6 +4,16 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const BookAppointmentAnimation = () => {
+  // Predefined positions to avoid random values that cause hydration issues
+  const calendarPositions = [
+    { left: 15, top: 20 },
+    { left: 27, top: 35 },
+    { left: 39, top: 25 },
+    { left: 51, top: 40 },
+    { left: 63, top: 30 },
+    { left: 75, top: 35 }
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Calendar Grid */}
@@ -29,13 +39,13 @@ const BookAppointmentAnimation = () => {
       </div>
 
       {/* Calendar Icons */}
-      {[...Array(6)].map((_, i) => (
+      {calendarPositions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute"
           style={{
-            left: `${15 + (i * 12)}%`,
-            top: `${20 + Math.sin(i) * 20}%`,
+            left: `${pos.left}%`,
+            top: `${pos.top}%`,
           }}
           animate={{
             rotate: [0, 360],

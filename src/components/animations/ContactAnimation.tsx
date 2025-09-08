@@ -4,6 +4,16 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const ContactAnimation = () => {
+  // Predefined positions to avoid random values that cause hydration issues
+  const messagePositions = [
+    { right: 10, top: 20, duration: 3, delay: 0 },
+    { right: 22, top: 35, duration: 4, delay: 0.5 },
+    { right: 34, top: 20, duration: 3.5, delay: 1 },
+    { right: 46, top: 45, duration: 4.5, delay: 0.2 },
+    { right: 58, top: 30, duration: 3.8, delay: 0.8 },
+    { right: 70, top: 40, duration: 4.2, delay: 0.3 }
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Communication Grid */}
@@ -29,13 +39,13 @@ const ContactAnimation = () => {
       </div>
 
       {/* Messaging Icons */}
-      {[...Array(6)].map((_, i) => (
+      {messagePositions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute"
           style={{
-            right: `${10 + (i * 12)}%`,
-            top: `${20 + Math.cos(i) * 25}%`,
+            right: `${pos.right}%`,
+            top: `${pos.top}%`,
           }}
           animate={{
             x: [-15, 15, -15],
@@ -43,9 +53,9 @@ const ContactAnimation = () => {
             scale: [0.8, 1.2, 0.8]
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: pos.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: pos.delay,
             ease: 'easeInOut'
           }}
         >

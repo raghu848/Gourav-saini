@@ -4,11 +4,53 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const AnimatedMedicalBackground = () => {
+  // Predefined positions and sizes to avoid random values that cause hydration issues
+  const particlePositions = [
+    { left: 5, top: 10, size: 4 },
+    { left: 15, top: 85, size: 6 },
+    { left: 25, top: 30, size: 5 },
+    { left: 35, top: 70, size: 4 },
+    { left: 45, top: 15, size: 7 },
+    { left: 55, top: 60, size: 5 },
+    { left: 65, top: 25, size: 6 },
+    { left: 75, top: 80, size: 4 },
+    { left: 85, top: 40, size: 5 },
+    { left: 95, top: 20, size: 6 },
+    { left: 10, top: 50, size: 4 },
+    { left: 20, top: 90, size: 5 },
+    { left: 30, top: 35, size: 6 },
+    { left: 40, top: 75, size: 4 },
+    { left: 50, top: 5, size: 7 },
+    { left: 60, top: 65, size: 5 },
+    { left: 70, top: 30, size: 4 },
+    { left: 80, top: 85, size: 6 },
+    { left: 90, top: 45, size: 5 },
+    { left: 5, top: 95, size: 4 },
+    { left: 15, top: 55, size: 6 },
+    { left: 25, top: 15, size: 5 },
+    { left: 35, top: 75, size: 4 },
+    { left: 45, top: 35, size: 7 },
+    { left: 55, top: 90, size: 5 }
+  ];
+
+  const orbPositions = [
+    { left: 10, top: 20, size: 15 },
+    { left: 22, top: 54, size: 18 },
+    { left: 34, top: 56, size: 16 },
+    { left: 46, top: 26, size: 20 },
+    { left: 58, top: -10, size: 17 },
+    { left: 70, top: -18, size: 22 },
+    { left: 82, top: 9, size: 22 },
+    { left: 94, top: 46, size: 24 }
+  ];
+
+  // Add keys to all motion components to ensure consistent rendering
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Enhanced Animated Grid Background */}
       <div className="absolute inset-0 opacity-20">
         <motion.div
+          key="grid-background"
           className="w-full h-full"
           style={{
             backgroundImage: `
@@ -29,15 +71,15 @@ const AnimatedMedicalBackground = () => {
       </div>
 
       {/* Enhanced Floating Medical Particles */}
-      {[...Array(25)].map((_, i) => (
+      {particlePositions.map((pos, i) => (
         <motion.div
-          key={i}
+          key={`particle-${i}`}
           className="absolute rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${4 + Math.random() * 6}px`,
-            height: `${4 + Math.random() * 6}px`,
+            left: `${pos.left}%`,
+            top: `${pos.top}%`,
+            width: `${pos.size}px`,
+            height: `${pos.size}px`,
             background: i % 3 === 0 
               ? 'radial-gradient(circle, rgba(59, 130, 246, 0.8) 0%, rgba(59, 130, 246, 0.2) 100%)'
               : i % 3 === 1
@@ -54,9 +96,9 @@ const AnimatedMedicalBackground = () => {
             scale: [0.5, 1.5, 0.5]
           }}
           transition={{
-            duration: 4 + Math.random() * 3,
+            duration: 4 + (i % 3),
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: i % 3,
             ease: 'easeInOut'
           }}
         />
@@ -64,6 +106,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Enhanced Animated DNA Helix */}
       <motion.div
+        key="dna-helix"
         className="absolute right-10 top-20 opacity-40"
         animate={{
           rotate: 360,
@@ -90,8 +133,9 @@ const AnimatedMedicalBackground = () => {
             </filter>
           </defs>
           {[...Array(10)].map((_, i) => (
-            <g key={i}>
+            <g key={`dna-group-${i}`}>
               <motion.path
+                key={`dna-path-1-${i}`}
                 d={`M 25 ${i * 32 + 25} Q 75 ${i * 32 + 15} 125 ${i * 32 + 25}`}
                 stroke="url(#dnaGradient)"
                 strokeWidth="4"
@@ -108,6 +152,7 @@ const AnimatedMedicalBackground = () => {
                 }}
               />
               <motion.path
+                key={`dna-path-2-${i}`}
                 d={`M 125 ${i * 32 + 45} Q 75 ${i * 32 + 55} 25 ${i * 32 + 45}`}
                 stroke="url(#dnaGradient)"
                 strokeWidth="4"
@@ -125,6 +170,7 @@ const AnimatedMedicalBackground = () => {
               />
               {/* DNA base pairs */}
               <motion.line
+                key={`dna-line-${i}`}
                 x1="25"
                 y1={i * 32 + 25}
                 x2="125"
@@ -149,6 +195,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Enhanced Animated Spine */}
       <motion.div
+        key="spine"
         className="absolute left-10 top-1/4 opacity-30"
         animate={{
           y: [-8, 8, -8],
@@ -177,8 +224,9 @@ const AnimatedMedicalBackground = () => {
           </defs>
           {/* Enhanced Vertebrae */}
           {[...Array(15)].map((_, i) => (
-            <motion.g key={i}>
+            <motion.g key={`spine-group-${i}`}>
               <motion.ellipse
+                key={`spine-ellipse-${i}`}
                 cx="50"
                 cy={25 + i * 28}
                 rx="18"
@@ -197,6 +245,7 @@ const AnimatedMedicalBackground = () => {
                 }}
               />
               <motion.line
+                key={`spine-line-1-${i}`}
                 x1="50"
                 y1={25 + i * 28}
                 x2="50"
@@ -216,6 +265,7 @@ const AnimatedMedicalBackground = () => {
               />
               {/* Spine processes */}
               <motion.line
+                key={`spine-line-2-${i}`}
                 x1="32"
                 y1={25 + i * 28}
                 x2="68"
@@ -240,6 +290,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Floating Joint Icons */}
       <motion.div
+        key="joint-icons"
         className="absolute right-1/4 top-1/3 opacity-20"
         animate={{
           rotate: [0, 360],
@@ -259,6 +310,7 @@ const AnimatedMedicalBackground = () => {
           </defs>
           {/* Knee joint representation */}
           <motion.circle
+            key="joint-circle-1"
             cx="30"
             cy="30"
             r="12"
@@ -274,6 +326,7 @@ const AnimatedMedicalBackground = () => {
             }}
           />
           <motion.circle
+            key="joint-circle-2"
             cx="70"
             cy="70"
             r="12"
@@ -290,6 +343,7 @@ const AnimatedMedicalBackground = () => {
             }}
           />
           <motion.line
+            key="joint-line"
             x1="30"
             y1="30"
             x2="70"
@@ -310,6 +364,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Holographic Scanning Lines */}
       <motion.div
+        key="scanning-lines"
         className="absolute inset-0 pointer-events-none"
         animate={{
           backgroundImage: [
@@ -331,6 +386,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Robotic Surgery Icons */}
       <motion.div
+        key="robotic-icons"
         className="absolute left-1/4 bottom-1/4 opacity-15"
         animate={{
           y: [-10, 10, -10],
@@ -351,6 +407,7 @@ const AnimatedMedicalBackground = () => {
           </defs>
           {/* Robotic arm representation */}
           <motion.rect
+            key="robot-rect"
             x="20"
             y="30"
             width="40"
@@ -368,6 +425,7 @@ const AnimatedMedicalBackground = () => {
             }}
           />
           <motion.circle
+            key="robot-circle"
             cx="60"
             cy="34"
             r="6"
@@ -383,6 +441,7 @@ const AnimatedMedicalBackground = () => {
             }}
           />
           <motion.rect
+            key="robot-rect-2"
             x="30"
             y="45"
             width="20"
@@ -403,15 +462,15 @@ const AnimatedMedicalBackground = () => {
       </motion.div>
 
       {/* Glowing Orbs */}
-      {[...Array(8)].map((_, i) => (
+      {orbPositions.map((pos, i) => (
         <motion.div
           key={`orb-${i}`}
           className="absolute rounded-full"
           style={{
-            left: `${10 + (i * 12)}%`,
-            top: `${20 + Math.sin(i) * 40}%`,
-            width: `${15 + Math.random() * 10}px`,
-            height: `${15 + Math.random() * 10}px`,
+            left: `${pos.left}%`,
+            top: `${pos.top}%`,
+            width: `${pos.size}px`,
+            height: `${pos.size}px`,
             background: `radial-gradient(circle, ${
               i % 2 === 0 ? 'rgba(59, 130, 246, 0.3)' : 'rgba(16, 185, 129, 0.3)'
             } 0%, transparent 70%)`,
@@ -423,9 +482,9 @@ const AnimatedMedicalBackground = () => {
             y: [-10, 10, -10]
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: 3 + (i % 2),
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: i % 2,
             ease: 'easeInOut'
           }}
         />
@@ -433,6 +492,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Medical Cross Pattern */}
       <motion.div
+        key="cross-pattern"
         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5"
         animate={{
           rotate: [0, 360],
@@ -457,6 +517,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Large Floating Pulse Rings */}
       <motion.div
+        key="pulse-rings"
         className="absolute top-1/3 left-1/3 w-96 h-96 opacity-15"
         animate={{
           scale: [1, 1.5, 1],
@@ -470,6 +531,7 @@ const AnimatedMedicalBackground = () => {
       >
         <div className="w-full h-full rounded-full border-2 border-blue-400/30 relative">
           <motion.div
+            key="pulse-ring-1"
             className="absolute inset-4 rounded-full border border-green-400/30"
             animate={{
               scale: [1, 1.2, 1],
@@ -482,6 +544,7 @@ const AnimatedMedicalBackground = () => {
             }}
           />
           <motion.div
+            key="pulse-ring-2"
             className="absolute inset-8 rounded-full border border-blue-300/30"
             animate={{
               scale: [1.2, 1, 1.2],
@@ -499,6 +562,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Scanning Beam Effect */}
       <motion.div
+        key="scanning-beam"
         className="absolute inset-0 pointer-events-none"
         style={{
           background: 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.2) 1%, rgba(16, 185, 129, 0.2) 2%, transparent 3%)'
@@ -516,6 +580,7 @@ const AnimatedMedicalBackground = () => {
 
       {/* Heartbeat Monitor Line */}
       <motion.div
+        key="heartbeat-line"
         className="absolute bottom-20 left-10 right-10 h-1 opacity-20"
         style={{
           background: 'linear-gradient(90deg, transparent 0%, #10B981 50%, transparent 100%)'

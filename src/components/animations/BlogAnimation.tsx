@@ -4,6 +4,18 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const BlogAnimation = () => {
+  // Predefined positions to avoid random values that cause hydration issues
+  const articlePositions = [
+    { left: 10, top: 15, duration: 4, delay: 0 },
+    { left: 22, top: 35, duration: 5, delay: 0.5 },
+    { left: 34, top: 20, duration: 4.5, delay: 1 },
+    { left: 46, top: 40, duration: 5.5, delay: 0.2 },
+    { left: 58, top: 25, duration: 4.2, delay: 0.8 },
+    { left: 70, top: 30, duration: 4.8, delay: 0.3 },
+    { left: 82, top: 15, duration: 5.2, delay: 0.6 },
+    { left: 94, top: 35, duration: 4.6, delay: 0.9 }
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Knowledge Grid */}
@@ -29,13 +41,13 @@ const BlogAnimation = () => {
       </div>
 
       {/* Article Icons */}
-      {[...Array(8)].map((_, i) => (
+      {articlePositions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute"
           style={{
-            left: `${10 + (i * 12)}%`,
-            top: `${15 + Math.sin(i) * 25}%`,
+            left: `${pos.left}%`,
+            top: `${pos.top}%`,
           }}
           animate={{
             y: [-10, 10, -10],
@@ -43,9 +55,9 @@ const BlogAnimation = () => {
             opacity: [0.2, 0.7, 0.2]
           }}
           transition={{
-            duration: 4 + Math.random() * 2,
+            duration: pos.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: pos.delay,
             ease: 'easeInOut'
           }}
         >

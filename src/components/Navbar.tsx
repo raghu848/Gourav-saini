@@ -21,77 +21,6 @@ const Navbar = () => {
     { href: '/book-appointment', label: 'Book Appointment' },
   ]
 
-  // Animation variants for each nav item
-  const getAnimationVariants = (index: number) => {
-    const animations = [
-      // Home - Heart beat
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          y: [0, -5, 0],
-          transition: { duration: 2, repeat: Infinity }
-        }
-      },
-      // About - Certificate flip
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          rotateY: [0, 360],
-          transition: { duration: 4, repeat: Infinity }
-        }
-      },
-      // Services - Gear rotation
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          rotate: [0, 360],
-          transition: { duration: 5, repeat: Infinity, ease: "linear" as const }
-        }
-      },
-      // Testimonials - Star twinkle
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          scale: [1, 1.2, 1],
-          opacity: [0.7, 1, 0.7],
-          transition: { duration: 1.5, repeat: Infinity }
-        }
-      },
-      // Blog - Book flip
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          rotateX: [0, 20, 0],
-          transition: { duration: 3, repeat: Infinity }
-        }
-      },
-      // Contact - Message pulse
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          scale: [1, 1.1, 1],
-          transition: { duration: 2, repeat: Infinity }
-        }
-      },
-      // Book Appointment - Calendar wave
-      {
-        whileHover: { scale: 1.1 },
-        whileTap: { scale: 0.95 },
-        animate: { 
-          y: [0, -3, 0],
-          transition: { duration: 1.5, repeat: Infinity }
-        }
-      }
-    ]
-    return animations[index] || {}
-  }
-
   const toggleMenu = () => setIsOpen(!isOpen)
 
   return (
@@ -213,10 +142,9 @@ const Navbar = () => {
             className="lg:hidden bg-white border-t border-gray-200 shadow-md"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <motion.div
                   key={link.href}
-                  {...getAnimationVariants(index)}
                 >
                   <Link
                     href={link.href}

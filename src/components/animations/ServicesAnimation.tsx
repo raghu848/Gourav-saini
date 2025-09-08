@@ -4,6 +4,15 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const ServicesAnimation = () => {
+  // Predefined positions to avoid random values that cause hydration issues
+  const iconPositions = [
+    { left: 15, bottom: 10 },
+    { left: 30, bottom: 25 },
+    { left: 45, bottom: 15 },
+    { left: 60, bottom: 30 },
+    { left: 75, bottom: 20 }
+  ];
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Medical Tools Grid */}
@@ -103,13 +112,13 @@ const ServicesAnimation = () => {
       </motion.div>
 
       {/* Medical Procedure Icons */}
-      {[...Array(5)].map((_, i) => (
+      {iconPositions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute"
           style={{
-            left: `${15 + (i * 15)}%`,
-            bottom: `${10 + Math.sin(i) * 20}%`,
+            left: `${pos.left}%`,
+            bottom: `${pos.bottom}%`,
           }}
           animate={{
             y: [-15, 15, -15],
