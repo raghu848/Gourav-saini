@@ -3,7 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Clock, User, ArrowLeft, Share2, Bookmark } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
-
+interface PageProps {
+  params: {
+    id: string;
+  };
+}
 // This would typically come from a CMS or database
 const getBlogPost = (id: string) => {
   const blogPosts = [
@@ -364,8 +368,13 @@ const getBlogPost = (id: string) => {
   return blogPosts.find(post => post.id === id) || null
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const post = getBlogPost(params.id)
+
+
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
+    const { id } = params;
+  const post = getBlogPost(id);
   
   if (!post) {
     return {
