@@ -4,103 +4,110 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 const ServicesAnimation = () => {
-  // Predefined positions to avoid random values that cause hydration issues
-  const iconPositions = [
-    { left: 15, bottom: 10 },
-    { left: 30, bottom: 25 },
-    { left: 45, bottom: 15 },
-    { left: 60, bottom: 30 },
-    { left: 75, bottom: 20 }
-  ];
-
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Medical Tools Grid */}
-      <div className="absolute inset-0 opacity-15">
-        <motion.div
+      {/* Subtle Medical Grid Background */}
+      <div className="absolute inset-0 opacity-5">
+        <div 
           className="w-full h-full"
           style={{
             backgroundImage: `
-              linear-gradient(45deg, rgba(59, 130, 246, 0.2) 1px, transparent 1px),
-              linear-gradient(-45deg, rgba(16, 185, 129, 0.2) 1px, transparent 1px)
+              linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(16, 185, 129, 0.3) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px'
-          }}
-          animate={{
-            backgroundPosition: ['0px 0px', '50px 50px']
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'linear'
+            backgroundSize: '40px 40px'
           }}
         />
       </div>
 
-      {/* Robotic Surgery Arms */}
+      {/* Floating Medical Icons in Boxes */}
       <motion.div
-        className="absolute right-10 top-1/3 opacity-25"
+        className="absolute top-1/4 left-1/4 w-16 h-16 rounded-lg border border-blue-200 bg-white bg-opacity-10 backdrop-blur-sm flex items-center justify-center"
         animate={{
-          rotate: [0, 15, -15, 0],
-          scale: [1, 1.1, 1]
+          y: [0, -10, 0],
+          rotate: [0, 5, 0]
         }}
         transition={{
-          duration: 6,
+          duration: 4,
           repeat: Infinity,
           ease: 'easeInOut'
         }}
       >
-        <svg width="150" height="200" viewBox="0 0 150 200" className="text-blue-400">
-          <defs>
-            <linearGradient id="robotArm">
-              <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.8" />
-              <stop offset="50%" stopColor="#10B981" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.8" />
-            </linearGradient>
-          </defs>
-          {/* Robot arm segments */}
-          <motion.rect
-            x="20"
-            y="40"
-            width="60"
-            height="8"
-            rx="4"
-            fill="url(#robotArm)"
-            animate={{
-              scaleX: [1, 1.2, 1],
-              opacity: [0.6, 1, 0.6]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'easeInOut'
-            }}
+        <svg width="32" height="32" viewBox="0 0 24 24" className="text-blue-400">
+          <path
+            fill="currentColor"
+            d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 8h2V6H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-2h-2v2H4V8z"
           />
-          <motion.rect
-            x="40"
-            y="60"
-            width="8"
-            height="40"
-            rx="4"
-            fill="url(#robotArm)"
-            animate={{
-              scaleY: [1, 1.1, 1],
-              opacity: [0.8, 0.6, 0.8]
-            }}
-            transition={{
-              duration: 2.5,
-              repeat: Infinity,
-              ease: 'easeInOut'
-            }}
+        </svg>
+      </motion.div>
+
+      <motion.div
+        className="absolute top-1/3 right-1/4 w-16 h-16 rounded-lg border border-green-200 bg-white bg-opacity-10 backdrop-blur-sm flex items-center justify-center"
+        animate={{
+          y: [0, 10, 0],
+          rotate: [0, -5, 0]
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 1
+        }}
+      >
+        <svg width="32" height="32" viewBox="0 0 24 24" className="text-green-400">
+          <path
+            fill="currentColor"
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
           />
-          <motion.circle
-            cx="44"
-            cy="100"
-            r="8"
-            fill="url(#robotArm)"
+        </svg>
+      </motion.div>
+
+      <motion.div
+        className="absolute bottom-1/3 left-1/3 w-16 h-16 rounded-lg border border-blue-200 bg-white bg-opacity-10 backdrop-blur-sm flex items-center justify-center"
+        animate={{
+          y: [0, -15, 0],
+          rotate: [0, 3, 0]
+        }}
+        transition={{
+          duration: 6,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 2
+        }}
+      >
+        <svg width="32" height="32" viewBox="0 0 24 24" className="text-blue-300">
+          <path
+            fill="currentColor"
+            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+          />
+        </svg>
+      </motion.div>
+
+      {/* Central Robotic Surgery Element in Box */}
+      <motion.div
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-xl border border-blue-300 bg-gradient-to-br from-blue-500 to-green-500 bg-opacity-20 backdrop-blur-sm flex items-center justify-center"
+        animate={{
+          scale: [1, 1.05, 1],
+          rotate: [0, 5, 0]
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut'
+        }}
+      >
+        <div className="relative">
+          <svg width="48" height="48" viewBox="0 0 24 24" className="text-white">
+            <path
+              fill="currentColor"
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-6h2v6zm3 0h-2v-6h2v6zm3 0h-2v-6h2v6z"
+            />
+          </svg>
+          <motion.div 
+            className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-green-400"
             animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.6, 1, 0.6]
+              scale: [1, 1.5, 1],
+              opacity: [0.7, 1, 0.7]
             }}
             transition={{
               duration: 2,
@@ -108,91 +115,59 @@ const ServicesAnimation = () => {
               ease: 'easeInOut'
             }}
           />
-        </svg>
+        </div>
       </motion.div>
 
-      {/* Medical Procedure Icons */}
-      {iconPositions.map((pos, i) => (
-        <motion.div
-          key={i}
-          className="absolute"
-          style={{
-            left: `${pos.left}%`,
-            bottom: `${pos.bottom}%`,
-          }}
-          animate={{
-            y: [-15, 15, -15],
-            rotate: [0, 180, 360],
-            opacity: [0.3, 0.8, 0.3]
-          }}
-          transition={{
-            duration: 5 + i,
-            repeat: Infinity,
-            delay: i * 0.5,
-            ease: 'easeInOut'
-          }}
-        >
-          <svg width="30" height="30" viewBox="0 0 24 24" className="text-green-400">
-            <path
-              fill="currentColor"
-              d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3V8zM4 8h2V6H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-2h-2v2H4V8z"
-            />
-          </svg>
-        </motion.div>
-      ))}
-
-      {/* Joint Replacement Animation */}
+      {/* Corner Decorative Elements */}
       <motion.div
-        className="absolute left-1/4 top-1/4 opacity-20"
+        className="absolute top-4 left-4 w-8 h-8 rounded-md border border-blue-100 bg-white bg-opacity-5"
         animate={{
-          rotate: [0, 360],
-          scale: [0.8, 1.2, 0.8]
+          rotate: [0, 90, 180, 270, 360]
         }}
         transition={{
-          rotate: { duration: 12, repeat: Infinity, ease: 'linear' },
-          scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
+          duration: 20,
+          repeat: Infinity,
+          ease: 'linear'
         }}
-      >
-        <svg width="100" height="100" viewBox="0 0 100 100" className="text-blue-300">
-          <defs>
-            <radialGradient id="jointGrad">
-              <stop offset="0%" stopColor="#10B981" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.4" />
-            </radialGradient>
-          </defs>
-          <motion.circle
-            cx="30"
-            cy="30"
-            r="15"
-            fill="url(#jointGrad)"
-            animate={{
-              r: [15, 18, 15],
-              opacity: [0.6, 1, 0.6]
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'easeInOut'
-            }}
-          />
-          <motion.circle
-            cx="70"
-            cy="70"
-            r="15"
-            fill="url(#jointGrad)"
-            animate={{
-              r: [15, 18, 15],
-              opacity: [1, 0.6, 1]
-            }}
-            transition={{
-              duration: 3,
-              delay: 1.5,
-              repeat: Infinity,
-              ease: 'easeInOut'
-            }}
-          />
-        </svg>
-      </motion.div>
+      />
+
+      <motion.div
+        className="absolute top-4 right-4 w-8 h-8 rounded-md border border-green-100 bg-white bg-opacity-5"
+        animate={{
+          rotate: [0, -90, -180, -270, -360]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: 'linear'
+        }}
+      />
+
+      <motion.div
+        className="absolute bottom-4 left-4 w-8 h-8 rounded-md border border-green-100 bg-white bg-opacity-5"
+        animate={{
+          rotate: [0, 90, 180, 270, 360]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: 'linear',
+          delay: 5
+        }}
+      />
+
+      <motion.div
+        className="absolute bottom-4 right-4 w-8 h-8 rounded-md border border-blue-100 bg-white bg-opacity-5"
+        animate={{
+          rotate: [0, -90, -180, -270, -360]
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: 'linear',
+          delay: 5
+        }}
+      />
     </div>
   )
 }

@@ -186,7 +186,7 @@ const Navbar = () => {
                               <div className="bg-blue-50 rounded-lg p-3">
                                 <h3 className="text-sm font-bold text-blue-900 mb-3 text-center">Service Distribution</h3>
                                 <div className="flex flex-col space-y-2">
-                                  {serviceData.map((service, index) => (
+                                  {serviceData.map((service) => (
                                     <div key={service.name} className="flex items-center space-x-2">
                                       <div 
                                         className="h-3 rounded-full transition-all duration-300 hover:scale-105"
@@ -208,7 +208,7 @@ const Navbar = () => {
                               <div className="bg-blue-50 rounded-lg p-3">
                                 <h3 className="text-sm font-bold text-blue-900 mb-3 text-center">Avg. Recovery Progress</h3>
                                 <div className="h-32 flex items-end justify-between space-x-1">
-                                  {recoveryData.map((data, index) => (
+                                  {recoveryData.map((data) => (
                                     <div key={data.name} className="flex flex-col items-center flex-1">
                                       <div className="w-full bg-blue-200 rounded-t relative group/bar">
                                         <div 

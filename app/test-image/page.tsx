@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function TestImagePage() {
   const [imageStatus, setImageStatus] = useState<'loading' | 'loaded' | 'error'>('loading');
@@ -41,11 +42,13 @@ export default function TestImagePage() {
           </div>
           
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 mb-4">
-            <img
+            <Image
               src={imagePath}
               alt="Test Image"
+              width={400}
+              height={300}
               className="object-contain w-full h-64"
-              onLoad={handleImageLoad}
+              onLoadingComplete={handleImageLoad}
               onError={handleImageError}
             />
           </div>
@@ -67,18 +70,20 @@ export default function TestImagePage() {
           <h2 className="text-xl font-semibold mb-4">Testing Control Image</h2>
           
           <div className="border-2 border-dashed border-gray-300 rounded-lg p-4 mb-4">
-            <img
+            <Image
               src="/images/test-image.png"
               alt="Control Test Image"
+              width={400}
+              height={300}
               className="object-contain w-full h-64"
-              onLoad={() => console.log('Control image loaded successfully')}
+              onLoadingComplete={() => console.log('Control image loaded successfully')}
               onError={() => console.log('Control image failed to load')}
             />
           </div>
           
           <p className="text-gray-700">
             If you can see the blue square above, then image loading is working correctly in general.
-            If you can't see the Fracture & Trauma Care image but can see this test image, 
+            If you can&apos;t see the Fracture & Trauma Care image but can see this test image, 
             then there may be an issue with the specific image file.
           </p>
         </div>

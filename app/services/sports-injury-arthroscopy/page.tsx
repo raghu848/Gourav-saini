@@ -66,7 +66,7 @@ export default function SportsInjuryArthroscopyPage() {
                 Our sports injury treatment program combines cutting-edge arthroscopic techniques with personalized rehabilitation to ensure optimal recovery and return to sport.
               </p>
               <p className="text-gray-700 mb-6">
-                Whether you're a professional athlete or weekend warrior, our specialized approach addresses the unique demands of your sport and activity level.
+                Whether you&apos;re a professional athlete or weekend warrior, our specialized approach addresses the unique demands of your sport and activity level.
               </p>
               
               <div className="bg-blue-50 p-6 rounded-lg mb-6">
@@ -177,7 +177,7 @@ export default function SportsInjuryArthroscopyPage() {
                     <span className="font-bold">98%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Re-injury Rate</span>
+                    <span>Re&#45;injury Rate</span>
                     <span className="font-bold">&lt;5%</span>
                   </div>
                 </div>

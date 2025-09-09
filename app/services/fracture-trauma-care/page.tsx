@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Calendar, ArrowRight, CheckCircle, Users, Shield, Heart } from 'lucide-react'
+import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
 export const metadata: Metadata = {

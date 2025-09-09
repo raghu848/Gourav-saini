@@ -1,15 +1,9 @@
 'use client'
 
-import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import {  Heart, Activity, Shield, Settings, Zap, ArrowRight, Play } from 'lucide-react'
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
-
-export const metadata: Metadata = {
-  title: 'Orthopedic Services - Dr. Gaurav Saini | Robotic Surgery & CORI Technology',
-  description: 'Advanced orthopedic services including robotic joint replacement with CORI technology, sports injury treatment, trauma care, and arthroscopic surgery by Dr. Gaurav Saini.',
-}
 
 export default function ServicesPage() {
   const services = [
@@ -75,31 +69,16 @@ export default function ServicesPage() {
                 {/* Service Image */}
                 {service.image && (
                   <div className="mb-6 rounded-lg overflow-hidden">
-                    {/* Display image path for debugging */}
-                    <div className="text-xs text-gray-500 mb-2">Image path: {service.image}</div>
-                    {/* Using regular img tag for better compatibility */}
-                    <img
+                    <Image
                       src={service.image}
                       alt={service.title}
+                      width={400}
+                      height={300}
                       className="object-contain w-full h-48 border border-gray-200"
                       onError={(e) => {
                         console.error(`Error loading image: ${service.image}`, e);
-                        // Try fallback to jpg if webp fails
-                        const imgElement = e.target as HTMLImageElement;
-                        if (service.image?.endsWith('.webp')) {
-                          const jpgPath = service.image.replace('.webp', '.jpg');
-                          console.log(`Trying fallback to: ${jpgPath}`);
-                          imgElement.src = jpgPath;
-                        }
-                      }}
-                      onLoad={() => {
-                        console.log(`Successfully loaded image: ${service.image}`);
                       }}
                     />
-                    {/* Fallback message if image fails to load */}
-                    <div className="text-xs text-red-500 mt-1 hidden" id={`image-error-${service.id}`}>
-                      Image failed to load. Check console for details.
-                    </div>
                   </div>
                 )}
                 

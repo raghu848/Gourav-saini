@@ -1,8 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import { 
-  Award, 
-  Users, 
+  Award,
   Heart, 
   Activity, 
   Shield, 
@@ -10,7 +9,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Globe,
   Star,
   ChevronRight,
   CheckCircle,
@@ -349,8 +347,8 @@ export default function AboutPage() {
           <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-lg p-8 text-white mb-8">
             <h2 className="text-2xl font-bold mb-4 font-serif">My Mission</h2>
             <p className="text-lg mb-4">
-              "To provide the highest quality orthopedic care with compassion, precision, and innovation, 
-              helping every patient regain their mobility and quality of life."
+              &quot;To provide the highest quality orthopedic care with compassion, precision, and innovation, 
+              helping every patient regain their mobility and quality of life.&quot;
             </p>
             <p className="opacity-90">
               - Dr. Gaurav Saini

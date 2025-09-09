@@ -1,11 +1,13 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
-  // Remove the explicit appDir and dir configuration as they might be causing issues
-  // The app directory is automatically recognized in Next.js 13+
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
 };
 
 export default nextConfig;
