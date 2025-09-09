@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       {
         id: 1,
         image: '/images/testimonials/IMG-20250908-WA0010.jpg',
-        patientName: 'Hardeep Singh',
+        patientName: 'Simran Kaur',
         age: 52,
         procedure: 'Total Knee Replacement (CORI Robotic)',
         recoveryTime: '3 months post-op',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
       {
         id: 3,
         image: '/images/testimonials/IMG-20250908-WA0025.jpg',
-        patientName: 'Gurpreet Singh', 
+        patientName: 'Nimrat kaur', 
         age: 45,
         procedure: 'ACL Reconstruction',
         recoveryTime: '6 months post-op',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       {
         id: 4,
         image: '/images/testimonials/IMG-20250908-WA0028.jpg',
-        patientName: 'Simran Kaur',
+        patientName: 'Surjeet singh',
         age: 38,
         procedure: 'Shoulder Arthroscopy',
         recoveryTime: '2 months post-op', 

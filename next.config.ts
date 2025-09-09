@@ -4,11 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  experimental: {
-    turbo: {
-      root: __dirname
-    }
-  }
+  // Remove the explicit appDir and dir configuration as they might be causing issues
+  // The app directory is automatically recognized in Next.js 13+
 };
 
 export default nextConfig;

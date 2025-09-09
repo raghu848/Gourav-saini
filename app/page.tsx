@@ -19,6 +19,7 @@ import {
 import { motion } from 'framer-motion'
 import AnimatedMedicalBackground from '../components/AnimatedMedicalBackground'
 import PageAnimationWrapper from '../components/PageAnimationWrapper'
+import ImageSlideshow from '../components/ImageSlideshow'
 
 export default function Home() {
   const specialties = [
@@ -342,6 +343,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Image Slideshow Section */}
+      <ImageSlideshow />
+
       {/* Why Choose Us Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -378,7 +382,7 @@ export default function Home() {
       </section>
 
       {/* About Doctor Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -391,13 +395,22 @@ export default function Home() {
               <p className="text-gray-600 mb-8">
                 Award-winning orthopedic surgeon trained at prestigious centers worldwide, committed to providing cutting-edge orthopedic care with compassion and precision.
               </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-              >
-                Learn More About Dr. Saini
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md transform hover:scale-105"
+                >
+                  Learn More About Dr. Saini
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                >
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Book Appointment
+                </Link>
+              </div>
             </div>
             <div className="order-1 lg:order-2 text-center">
               <div className="relative w-72 h-72 mx-auto">
@@ -417,7 +430,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <div className="inline-block bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium">
+                <div className="inline-block bg-gradient-to-r from-blue-600 to-green-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-md">
                   ORTHOPAEDICS & JOINT REPLACEMENT, ROBOTIC SURGERY
                 </div>
               </div>
@@ -459,7 +472,7 @@ export default function Home() {
           <div className="text-center mt-12">
             <Link
               href="/testimonials"
-              className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-blue-600 to-green-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-green-700 transition-all duration-300 shadow-lg transform hover:scale-105"
             >
               Read More Reviews
               <ArrowRight className="w-4 h-4 ml-2" />

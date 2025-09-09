@@ -152,3 +152,26 @@ html {
   animation: holographic-shift 4s ease-in-out infinite;
   filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
 }
+
+/* Image Slideshow Styles */
+.slideshow-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.slideshow-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+}
+
+.slideshow-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slideshow-indicator {
+  transition: all 0.3s ease-in-out;
+}
+
+.slideshow-container {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
