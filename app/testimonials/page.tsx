@@ -59,6 +59,46 @@ export const metadata: Metadata = {
         recoveryTime: '5 months post-op',
         testimonial: 'Perfect bone healing after a complex fracture! Dr. Saini\'s trauma expertise saved my leg. The care and follow-up were exceptional throughout.',
         rating: 5
+      },
+      {
+        id: 6,
+        image: '/images/testimonials/patient-1 (3).jpg',
+        patientName: 'Rahul Verma',
+        age: 42,
+        procedure: 'Robotic Hip Replacement',
+        recoveryTime: '4 months post-op',
+        testimonial: 'The robotic precision made all the difference in my hip replacement. Minimal pain and quick recovery allowed me to return to my daily activities.',
+        rating: 5
+      },
+      {
+        id: 7,
+        image: '/images/testimonials/patient-1 (13).jpg',
+        patientName: 'Priya Sharma',
+        age: 35,
+        procedure: 'Knee Arthroscopy',
+        recoveryTime: '2 months post-op',
+        testimonial: 'Dr. Saini\'s expertise in arthroscopic procedures helped me recover from my sports injury quickly. I\'m back to running marathons!',
+        rating: 5
+      },
+      {
+        id: 8,
+        image: '/images/testimonials/patient-1 (17).jpg',
+        patientName: 'Amit Patel',
+        age: 58,
+        procedure: 'Shoulder Replacement',
+        recoveryTime: '5 months post-op',
+        testimonial: 'After years of shoulder pain, the replacement surgery has given me a new lease on life. Dr. Saini\'s care was exceptional throughout.',
+        rating: 5
+      },
+      {
+        id: 9,
+        image: '/images/testimonials/patient-1 (26).jpg',
+        patientName: 'Kavita Singh',
+        age: 47,
+        procedure: 'Spinal Fusion Surgery',
+        recoveryTime: '6 months post-op',
+        testimonial: 'The spinal fusion surgery was complex, but Dr. Saini\'s skill and compassionate care made my recovery journey smooth and successful.',
+        rating: 5
       }
     ]
     const testimonials = [
@@ -166,15 +206,18 @@ export const metadata: Metadata = {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {recoveryPhotos.map((patient) => (
                 <div key={patient.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="relative h-56 border-4 border-blue-200 hover:border-blue-400 transition-colors duration-300 rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-green-50">
-                    <Image
-                      src={patient.image}
-                      alt={`${patient.patientName} - ${patient.procedure} Recovery`}
-                      fill
-                      className="object-contain hover:scale-105 transition-transform duration-300"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      priority={patient.id <= 3}
-                    />
+                  <div className="relative h-56 border-4 border-blue-200 hover:border-blue-400 transition-colors duration-300 rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-2">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <Image
+                        src={patient.image}
+                        alt={`${patient.patientName} - ${patient.procedure} Recovery`}
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        className="rounded-lg transition-transform duration-300"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        priority={patient.id <= 3}
+                      />
+                    </div>
                   </div>
                   <div className="p-6 hover:bg-blue-50 transition-colors duration-300">
                     <div className="flex items-center mb-2">
@@ -301,16 +344,22 @@ export const metadata: Metadata = {
               </button>
             </form>
 
-            {/* Sample Comments */}
+            {/* Sample Comments with Images */}
             <div className="space-y-6">
               <div className="border-b pb-6">
                 <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">R</span>
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
+                    <Image
+                      src="/images/testimonials/patient-1 (3).jpg"
+                      alt="Patient Review"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className="rounded-full"
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
-                      <h4 className="font-medium text-gray-900">Rahul Verma</h4>
+                      <h4 className="font-medium text-gray-900">Patient Review</h4>
                       <span className="text-sm text-gray-500">2 days ago</span>
                     </div>
                     <p className="text-gray-700">{"Amazing results! Dr. Saini is truly gifted. My knee surgery was a complete success and I'm back to my normal activities."}</p>
@@ -326,12 +375,18 @@ export const metadata: Metadata = {
               
               <div className="border-b pb-6">
                 <div className="flex items-start space-x-3">
-                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600 font-bold">M</span>
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
+                    <Image
+                      src="/images/testimonials/patient-1 (13).jpg"
+                      alt="Recovery Story"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className="rounded-full"
+                    />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
-                      <h4 className="font-medium text-gray-900">Meera Shah</h4>
+                      <h4 className="font-medium text-gray-900">Recovery Story</h4>
                       <span className="text-sm text-gray-500">1 week ago</span>
                     </div>
                     <p className="text-gray-700">Thank you Dr. Saini for giving me my life back! The robotic surgery was incredible and recovery was much faster than expected.</p>
@@ -339,6 +394,60 @@ export const metadata: Metadata = {
                       <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
                         <ThumbsUp className="w-4 h-4" />
                         <span className="text-sm">8</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-b pb-6">
+                <div className="flex items-start space-x-3">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
+                    <Image
+                      src="/images/testimonials/patient-1 (17).jpg"
+                      alt="Successful Treatment"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className="rounded-full"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <h4 className="font-medium text-gray-900">Successful Treatment</h4>
+                      <span className="text-sm text-gray-500">3 days ago</span>
+                    </div>
+                    <p className="text-gray-700">The hip replacement surgery was life-changing. Dr. Saini's expertise and care made all the difference in my recovery journey.</p>
+                    <div className="flex items-center mt-3 space-x-4">
+                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
+                        <ThumbsUp className="w-4 h-4" />
+                        <span className="text-sm">15</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-b pb-6">
+                <div className="flex items-start space-x-3">
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
+                    <Image
+                      src="/images/testimonials/patient-1 (26).jpg"
+                      alt="Patient Experience"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      className="rounded-full"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <h4 className="font-medium text-gray-900">Patient Experience</h4>
+                      <span className="text-sm text-gray-500">5 days ago</span>
+                    </div>
+                    <p className="text-gray-700">After my shoulder surgery, I was able to return to playing tennis. The precision and care Dr. Saini provided were exceptional.</p>
+                    <div className="flex items-center mt-3 space-x-4">
+                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
+                        <ThumbsUp className="w-4 h-4" />
+                        <span className="text-sm">9</span>
                       </button>
                     </div>
                   </div>

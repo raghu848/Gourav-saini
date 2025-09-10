@@ -2,14 +2,14 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Facebook, 
-  Instagram, 
-  Linkedin, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Facebook,
+  Instagram,
+  Linkedin,
   Youtube,
   MessageCircle,
   ArrowRight,
@@ -51,25 +51,25 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 text-gray-300 text-sm font-sans">
       {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
-          {/* About Section */}
+          {/* About Section with Larger Logo on Left */}
           <div>
             <div className="flex items-center mb-6">
-              <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-400 bg-white shadow-lg mr-4">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-blue-400 bg-white shadow-lg mr-4">
                 <Image
                   src="/images/dr-saini-logo.jpg"
                   alt="Dr. Gaurav Saini"
                   fill
                   className="object-contain"
-                  sizes="64px"
+                  sizes="80px"
                 />
               </div>
               <div>
-                <h3 className="text-2xl font-bold mb-1 font-serif text-blue-400">
+                <h3 className="text-3xl font-extrabold mb-1 font-serif text-blue-400">
                   Dr. Gaurav Saini
                 </h3>
                 <p className="text-sm text-gray-300">
@@ -158,19 +158,6 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
-
-              {/* WhatsApp */}
-              <div className="pt-2">
-                <a
-                  href="https://wa.me/919878777393"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-110"
-                >
-                  <MessageCircle size={16} />
-                  <span className="text-sm font-medium">Chat on WhatsApp</span>
-                </a>
-              </div>
             </div>
           </div>
 
@@ -194,10 +181,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Services and Map */}
           <div className="flex flex-col">
             <h4 className="text-lg font-semibold mb-6 text-blue-400 text-left border-b border-blue-400 pb-2">Our Services</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-6">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
@@ -212,46 +199,59 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+            
+            {/* Map Section */}
+            <div className="mt-auto">
+              <h4 className="text-lg font-semibold mb-4 text-blue-400 text-left border-b border-blue-400 pb-2">Find Us</h4>
+              <div className="relative w-full h-48 rounded-lg overflow-hidden border-2 border-blue-400">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.878985413344!2d76.6789063151447!3d30.72445198164194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef111d418825%3A0x4a2a3e0a0d0d0d0d!2sMax%20Super%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Hospital Location Map"
+                ></iframe>
+              </div>
+              
+              {/* WhatsApp Link moved to right side */}
+              <div className="mt-4">
+                <a
+                  href="https://wa.me/919878777393"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-110 w-full justify-center"
+                >
+                  <MessageCircle size={16} />
+                  <span className="text-sm font-medium">Chat on WhatsApp</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800 bg-gray-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm text-center md:text-left">
-              © {currentYear} Dr. Gaurav Saini. All rights reserved.
-            </div>
-            <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
-              {legalLinks.map((link) => (
-                <Link 
-                  key={link.href}
-                  href={link.href} 
-                  className="text-gray-400 hover:text-white transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </div>
+      <div className="border-t border-gray-700 bg-gray-800 py-4 px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 space-y-2 md:space-y-0">
+          <p>© {currentYear} Dr. Gaurav Saini. All rights reserved.</p>
+          <div className="flex space-x-4">
+            {legalLinks.map(({ href, label }) => (
+              <Link key={href} href={href} className="hover:text-white transition">
+                {label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* Emergency Contact Strip */}
-      <div className="bg-red-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left">
-            <span className="text-sm font-medium">
-              Emergency? Call us: 
-            </span>
-            <a
-              href="tel:+919878777393"
-              className="text-sm font-bold ml-0 sm:ml-2 hover:underline transition-all duration-200"
-            >
-              +91 98787 77393
-            </a>
-          </div>
+      {/* Emergency Bar */}
+      <div className="bg-red-600 text-white text-sm text-center py-2 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-1 sm:space-y-0 sm:space-x-2">
+          <span>Emergency? Call us:</span>
+          <a href="tel:+919878777393" className="font-semibold hover:underline">+91 98787 77393</a>
         </div>
       </div>
     </footer>

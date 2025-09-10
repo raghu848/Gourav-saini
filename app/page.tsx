@@ -19,7 +19,7 @@ import {
 import { motion } from 'framer-motion'
 import AnimatedMedicalBackground from '../components/AnimatedMedicalBackground'
 import PageAnimationWrapper from '../components/PageAnimationWrapper'
-import ImageSlideshow from '../components/ImageSlideshow'
+import DoctorImagesSection from '../components/DoctorImagesSection'
 
 export default function Home() {
   const specialties = [
@@ -204,7 +204,7 @@ export default function Home() {
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               >
-                <div className="relative w-72 h-72 lg:w-80 lg:h-80 mx-auto">
+                <div className="relative w-80 h-80 lg:w-96 lg:h-96 mx-auto">
                   {/* Glowing ring animation */}
                   <motion.div 
                     className="absolute inset-0 rounded-full"
@@ -215,17 +215,22 @@ export default function Home() {
                     transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
                   />
                   
-                  {/* Inner glowing effect */}
-                  <div className="absolute inset-2 bg-gradient-to-r from-blue-400/20 to-green-400/20 rounded-full blur-xl medical-heartbeat"></div>
-                  
-                  <Image
-                    src="/images/dr-saini-logo.jpg"
-                    alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
-                    fill
-                    className="object-contain rounded-full border-4 border-white shadow-2xl relative z-10 medical-float"
-                    priority={true}
-                    sizes="(max-width: 768px) 288px, 320px"
-                  />
+                <div className="relative w-[450px] h-[550px] sm:w-[550px] sm:h-[650px] lg:w-[700px] lg:h-[800px] -mt-16 lg:-mt-20">
+
+  {/* Inner glowing effect */}
+  <div className="absolute inset-2 bg-gradient-to-r from-blue-400/20 to-green-400/20 rounded-2xl blur-xl medical-heartbeat z-0  " />
+  
+
+  <Image
+    src="/images/opretion.jpg"
+    alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
+    fill
+    className="object-contain rounded-3xl shadow-2xl relative z-10 medical-float transform -translate-x-23"
+    priority={true}
+    sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 600px"
+  />
+</div>
+
                   
                   {/* Floating medical icons */}
                   <motion.div
@@ -259,7 +264,7 @@ export default function Home() {
               </motion.div>
               
               <motion.div 
-                className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md medical-gradient border border-white/20"
+                className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md medical-gradient border border-white/20 mt-45"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -320,11 +325,8 @@ export default function Home() {
             {specialties.map((specialty, index) => {
               const IconComponent = specialty.icon
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow duration-300"
                 >
                   <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -336,15 +338,15 @@ export default function Home() {
                   <p className="text-gray-600">
                     {specialty.description}
                   </p>
-                </motion.div>
+                </div>
               )
             })}
           </div>
         </div>
       </section>
 
-      {/* Image Slideshow Section */}
-      <ImageSlideshow />
+      {/* Doctor Images Section */}
+      <DoctorImagesSection />
 
       {/* Why Choose Us Section */}
       <section className="py-20 bg-white">

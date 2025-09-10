@@ -173,33 +173,33 @@ export default function AboutPage() {
             </div>
             
             <div className="flex-1">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
-                Professional Excellence in Orthopedic Care
+              <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
+                Orthopedic Excellence with Compassionate Care
               </h2>
-              <p className="text-gray-700 mb-4">
-                Dr. Gaurav Saini is an accomplished Orthopaedic Surgeon with experience of nearly 18 years, completely dedicated to Robotic Hip and knee Surgeries. He has been an award-winning orthopedic surgeon for his exceptional work in the field of hip and knee surgery.
+              <p className="text-xl text-gray-700 mb-4">
+                Dr. Gaurav Saini is an award-winning Orthopaedic Surgeon with 18 years of experience, specializing in Robotic Hip and Knee Surgeries.
               </p>
-              <p className="text-gray-700 mb-4">
-                Dr. Saini is an expert in Sports Injuries, Knee Shoulder Arthroscopy, Complex Trauma, Revision Surgeries, Polytrauma, and Deformity Correction. His patient-centric approach combines advanced surgical techniques with compassionate care, ensuring optimal outcomes for each individual.
+              <p className="text-xl text-gray-700 mb-4">
+                Expert in Sports Injuries, Knee Shoulder Arthroscopy, Complex Trauma, and Joint Replacement. Combines advanced techniques with compassionate care.
               </p>
-              <p className="text-gray-700 mb-6">
-                Besides his memberships, he is also trained at many well-respected high volume centres across the world in Hip arthroscopy, Knee arthroscopy, and knee surgeries for sports injuries. Dr. Saini stays at the forefront of orthopedic innovations, regularly attending international conferences and training programs.
+              <p className="text-xl text-gray-700 mb-6">
+                Trained at high-volume centers worldwide. Stays current with orthopedic innovations through international conferences and training programs.
               </p>
               
               {/* Stats Section */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="bg-gradient-to-br from-blue-50 to-green-50 p-4 rounded-lg text-center border border-blue-100">
-                    <div className="text-2xl font-bold text-blue-600">{achievement.number}</div>
-                    <div className="text-sm text-gray-600">{achievement.label}</div>
+                    <div className="text-3xl font-bold text-blue-600">{achievement.number}</div>
+                    <div className="text-lg text-gray-600">{achievement.label}</div>
                   </div>
                 ))}
               </div>
               
               {/* Specialties Section */}
               <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                  <Target className="w-5 h-5 mr-2 text-blue-600" />
+                <h3 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
+                  <Target className="w-6 h-6 mr-2 text-blue-600" />
                   Expert Medical Services
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -207,10 +207,10 @@ export default function AboutPage() {
                     const IconComponent = specialty.icon
                     return (
                       <div key={index} className="flex items-start">
-                        <IconComponent className="w-5 h-5 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
+                        <IconComponent className="w-6 h-6 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
                         <div>
-                          <div className="font-medium text-gray-900">{specialty.title}</div>
-                          <div className="text-sm text-gray-600">{specialty.description}</div>
+                          <div className="text-lg font-medium text-gray-900">{specialty.title}</div>
+                          <div className="text-base text-gray-600">{specialty.description}</div>
                         </div>
                       </div>
                     )

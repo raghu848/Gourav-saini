@@ -87,7 +87,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg shadow-lg border-b border-blue-100">
       <div className="max-w-8xl mx-auto px-0 sm:px-2 lg:px-4">
-        <div className="flex justify-between items-center h-20 overflow-hidden">
+        <div className="flex justify-between items-center h-24 overflow-hidden">
           {/* Logo + Branding */}
           <Link href="/" className="flex items-center space-x-3">
             <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-200 bg-white shadow-md flex items-center justify-center p-1 ml-[40px]">
@@ -116,10 +116,10 @@ const Navbar = () => {
               />
             </div>
             <div className="flex flex-col leading-tight">
-              <span className="text-lg sm:text-xl font-bold text-blue-900 font-serif">
+              <span className="text-xl sm:text-2xl font-extrabold text-blue-900 font-serif">
                 Dr. Gaurav Saini
               </span>
-              <span className="text-[11px] sm:text-xs text-gray-600">
+              <span className="text-xs sm:text-sm text-gray-600 font-medium">
                 Orthopaedics & Robotic Surgery Specialist
               </span>
             </div>
@@ -277,25 +277,25 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-3 ml-4">
             <Link
               href="/book-appointment"
-              className="flex items-center space-x-2 bg-blue-900 text-white px-5 py-2.5 rounded-lg hover:bg-blue-800 transition-colors duration-200 shadow-md font-bold text-sm whitespace-nowrap"
+              className="flex items-center space-x-2 bg-blue-900 text-white px-6 py-3.5 rounded-lg hover:bg-blue-800 transition-colors duration-200 shadow-md font-bold text-base whitespace-nowrap"
             >
-              <Calendar size={16} />
+              <Calendar size={18} />
               <span>Book Now</span>
             </Link>
             <a
               href="tel:+919878777393"
-              className="flex items-center space-x-2 bg-gray-700 text-white px-4 py-2.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-md font-bold text-sm whitespace-nowrap"
+              className="flex items-center space-x-2 bg-gray-700 text-white px-5 py-3.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-md font-bold text-base whitespace-nowrap"
             >
-              <Phone size={16} />
+              <Phone size={18} />
               <span>Call</span>
             </a>
             <a
               href="https://wa.me/919878777393"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2.5 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md font-bold text-sm whitespace-nowrap"
+              className="flex items-center space-x-2 bg-green-600 text-white px-5 py-3.5 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md font-bold text-base whitespace-nowrap"
             >
-              <MessageCircle size={16} />
+              <MessageCircle size={18} />
               <span>WhatsApp</span>
             </a>
           </div>
@@ -344,28 +344,28 @@ const Navbar = () => {
               <div className="pt-4 space-y-3">
                 <Link
                   href="/book-appointment"
-                  className="flex items-center justify-center space-x-2 bg-blue-900 text-white px-4 py-3 rounded-lg hover:bg-blue-800 transition-colors duration-200 shadow-md font-bold"
+                  className="flex items-center justify-center space-x-2 bg-blue-900 text-white px-5 py-4 rounded-lg hover:bg-blue-800 transition-colors duration-200 shadow-md font-bold text-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Calendar size={18} />
+                  <Calendar size={20} />
                   <span>Book Appointment</span>
                 </Link>
                 <a
                   href="tel:+919878777393"
-                  className="flex items-center justify-center space-x-2 bg-gray-700 text-white px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-md font-bold"
+                  className="flex items-center justify-center space-x-2 bg-gray-700 text-white px-5 py-4 rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-md font-bold text-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Phone size={18} />
+                  <Phone size={20} />
                   <span>Call Now</span>
                 </a>
                 <a
                   href="https://wa.me/919878777393"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center space-x-2 bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md font-bold"
+                  className="flex items-center justify-center space-x-2 bg-green-600 text-white px-5 py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md font-bold text-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  <MessageCircle size={18} />
+                  <MessageCircle size={20} />
                   <span>WhatsApp</span>
                 </a>
               </div>

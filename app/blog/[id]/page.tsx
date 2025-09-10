@@ -164,8 +164,9 @@ function getBlogPost(id: string): BlogPost | undefined {
 }
 
 // Generate metadata for the blog post
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const post = getBlogPost(params.id)
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params
+  const post = getBlogPost(id)
   
   if (!post) {
     return {
@@ -192,8 +193,9 @@ export async function generateStaticParams() {
 }
 
 // Main component for the blog post page
-export default function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = getBlogPost(params.id)
+export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
+  const post = getBlogPost(id)
 
   if (!post) {
     return (
