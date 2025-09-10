@@ -421,7 +421,7 @@ export default function Home() {
                   fill
                   className="object-contain rounded-2xl shadow-2xl"
                 />
-                <div className="hidden absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl flex items-center justify-center shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl hidden items-center justify-center shadow-2xl">
                   <div className="text-center text-white">
                     <div className="text-8xl font-bold mb-4">DS</div>
                     <div className="text-xl font-semibold">Dr. Gaurav Saini</div>
