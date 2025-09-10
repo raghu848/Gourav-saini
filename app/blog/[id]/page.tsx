@@ -3,7 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, Clock, User, ArrowLeft, Share2, Bookmark } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
-interface PageProps {
+
+interface BlogPageProps {
   params: {
     id: string;
   };
@@ -371,7 +372,7 @@ const getBlogPost = (id: string) => {
 
 
 export async function generateMetadata(
-  { params }: PageProps
+  { params }: BlogPageProps
 ): Promise<Metadata> {
     const { id } = params;
   const post = getBlogPost(id);
