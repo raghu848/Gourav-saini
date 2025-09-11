@@ -143,7 +143,7 @@ export default function RoboticJointReplacementPage() {
               <div>
                 <h2 className="text-3xl font-bold font-serif mb-4">Why Choose Our Robotic Joint Replacement?</h2>
                 <p className="text-blue-100 mb-6">
-                  With nearly 18 years of experience and over 5000 successful surgeries, Dr. Saini is at the forefront of robotic joint replacement technology.
+                  With nearly 20 years of experience and over 5000 successful surgeries, Dr. Saini is at the forefront of robotic joint replacement technology.
                 </p>
                 <ul className="space-y-3">
                   <li className="flex items-center">

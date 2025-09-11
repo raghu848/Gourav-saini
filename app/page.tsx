@@ -64,7 +64,7 @@ export default function Home() {
     {
       icon: CheckCircle,
       title: 'Award-Winning Expertise',
-      description: 'Nearly 18 years of experience with specialized training at high-volume centers worldwide. Member of NAMS, IOA, NZOA, ISKSAA, and AO Trauma for cutting-edge orthopedic care.'
+      description: 'Nearly 20 years of experience with specialized training at high-volume centers worldwide. Member of NAMS, IOA, NZOA, ISKSAA, and AO Trauma for cutting-edge orthopedic care.'
     }
   ]
 
@@ -151,7 +151,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Dr. Gaurav Saini is an Orthopaedic Surgeon with experience of nearly 18 years & he is completely dedicated to Robotic Hip and knee Surgeries.
+                Dr. Gaurav Saini is an Orthopaedic Surgeon with experience of nearly 20 years & he is completely dedicated to Robotic Hip and knee Surgeries.
               </motion.p>
               
               <motion.div 
@@ -392,7 +392,7 @@ export default function Home() {
                 Meet Dr. Gaurav Saini
               </h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                MBBS, MS, DNB, MNAMS - Senior Consultant Orthopaedics specializing in Robotic Hip and Knee Surgeries with nearly 18 years of dedicated experience.
+                MBBS, MS, DNB, MNAMS - Senior Consultant Orthopaedics specializing in Robotic Hip and Knee Surgeries with nearly 20 years of dedicated experience.
               </p>
               <p className="text-gray-600 mb-8">
                 Award-winning orthopedic surgeon trained at prestigious centers worldwide, committed to providing cutting-edge orthopedic care with compassion and precision.

@@ -21,7 +21,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About Dr. Gaurav Saini - MBBS, MS, DNB, MNAMS Orthopedic Surgeon',
-  description: 'Meet Dr. Gaurav Saini, an award-winning orthopedic surgeon with 18 years of experience specializing in robotic joint replacement, sports injuries, and trauma care in Mohali.',
+  description: 'Meet Dr. Gaurav Saini, an award-winning orthopedic surgeon with 20 years of experience specializing in robotic joint replacement, sports injuries, and trauma care in Mohali.',
 }
 
 export default function AboutPage() {
@@ -101,7 +101,7 @@ export default function AboutPage() {
             MBBS, MS, DNB, MNAMS - ORTHOPAEDIC SURGEON IN MOHALI
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Award-winning orthopedic surgeon with nearly 18 years of experience, completely dedicated to Robotic Hip and Knee Surgeries
+            Award-winning orthopedic surgeon with nearly 20 years of experience, completely dedicated to Robotic Hip and Knee Surgeries
           </p>
         </div>
         
@@ -148,7 +148,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center justify-center text-gray-600">
                     <Mail className="w-4 h-4 mr-2" />
-                    <span>drsaini@example.com</span>
+                    <span>drgauravsaini92@gmail.com</span>
                   </div>
                 </div>
                 
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 Orthopedic Excellence with Compassionate Care
               </h2>
               <p className="text-xl text-gray-700 mb-4">
-                Dr. Gaurav Saini is an award-winning Orthopaedic Surgeon with 18 years of experience, specializing in Robotic Hip and Knee Surgeries.
+                Dr. Gaurav Saini is an award-winning Orthopaedic Surgeon with 20 years of experience, specializing in Robotic Hip and Knee Surgeries.
               </p>
               <p className="text-xl text-gray-700 mb-4">
                 Expert in Sports Injuries, Knee Shoulder Arthroscopy, Complex Trauma, and Joint Replacement. Combines advanced techniques with compassionate care.
@@ -294,7 +294,7 @@ export default function AboutPage() {
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>18 years</strong> of clinical experience</span>
+                  <span><strong>20 years</strong> of clinical experience</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
