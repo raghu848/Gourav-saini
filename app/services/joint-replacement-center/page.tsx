@@ -167,7 +167,7 @@ export default function JointReplacementCenterPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>98% patient satisfaction rate</span>
+                    <span>99% patient satisfaction rate</span>
                   </li>
                 </ul>
               </div>
@@ -184,7 +184,7 @@ export default function JointReplacementCenterPage() {
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-white/20">
                     <span>Patient Satisfaction</span>
-                    <span className="font-bold">98%</span>
+                    <span className="font-bold">99%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Implant Longevity</span>

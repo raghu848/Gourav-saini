@@ -160,7 +160,7 @@ export default function RoboticJointReplacementPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>98% patient satisfaction rate</span>
+                    <span>99% patient satisfaction rate</span>
                   </li>
                 </ul>
               </div>
@@ -168,7 +168,7 @@ export default function RoboticJointReplacementPage() {
                 <h3 className="text-xl font-semibold mb-4">Patient Outcomes</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">98%</div>
+                    <div className="text-3xl font-bold mb-1">99%</div>
                     <div className="text-sm text-blue-200">Satisfaction Rate</div>
                   </div>
                   <div className="text-center">

@@ -160,9 +160,9 @@ export const metadata: Metadata = {
 
     const stats = [
       { number: '5000+', label: 'Successful Surgeries' },
-      { number: '98%', label: 'Patient Satisfaction' },
-      { number: '18+', label: 'Years Experience' },
-      { number: '4.9/5', label: 'Average Rating' }
+      { number: '99%', label: 'Patient Satisfaction' },
+      { number: '20+', label: 'Years Experience' },
+      { number: '5/5', label: 'Average Rating' }
     ]
 
     return (

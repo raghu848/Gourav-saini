@@ -174,7 +174,7 @@ export default function SportsInjuryArthroscopyPage() {
                   </div>
                   <div className="flex justify-between items-center pb-2 border-b border-white/20">
                     <span>Patient Satisfaction</span>
-                    <span className="font-bold">98%</span>
+                    <span className="font-bold">99%</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span>Re&#45;injury Rate</span>

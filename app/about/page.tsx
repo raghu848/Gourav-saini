@@ -50,8 +50,8 @@ export default function AboutPage() {
 
   const achievements = [
     { number: '5000+', label: 'Successful Surgeries' },
-    { number: '18+', label: 'Years Experience' },
-    { number: '98%', label: 'Patient Satisfaction' },
+    { number: '20+', label: 'Years Experience' },
+    { number: '99%', label: 'Patient Satisfaction' },
     { number: '15+', label: 'Awards Received' }
   ]
 
