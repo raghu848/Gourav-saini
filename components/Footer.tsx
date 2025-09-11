@@ -37,7 +37,7 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { href: 'https://facebook.com/profile.php?id=61558645251113', icon: Facebook, label: 'Facebook' },
+    { href: 'https://www.facebook.com/profile.php?id=61576684413754', icon: Facebook, label: 'Facebook' },
     { href: 'https://instagram.com/drgauravsainichd', icon: Instagram, label: 'Instagram' },
     { href: 'https://x.com/DrGauravSaini15', icon: Twitter, label: 'Twitter' },
     { href: 'https://linkedin.com/in/drgauravsaini', icon: Linkedin, label: 'LinkedIn' },
@@ -125,10 +125,10 @@ const Footer = () => {
                 <div>
                   <h5 className="text-gray-300 font-medium text-sm mb-1">Phone</h5>
                   <a
-                    href="tel:+919878777393"
+                    href="tel:+919876777393"
                     className="text-gray-300 hover:text-white transition-colors duration-200"
                   >
-                    +91 98787 77393
+                    +91 98767 77393
                   </a>
                 </div>
               </div>
@@ -219,7 +219,7 @@ const Footer = () => {
               {/* WhatsApp Link moved to right side */}
               <div className="mt-4">
                 <a
-                  href="https://wa.me/919878777393"
+                  href="https://wa.me/919876777393"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-110 w-full justify-center"
@@ -251,7 +251,7 @@ const Footer = () => {
       <div className="bg-red-600 text-white text-sm text-center py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-1 sm:space-y-0 sm:space-x-2">
           <span>Emergency? Call us:</span>
-          <a href="tel:+919878777393" className="font-semibold hover:underline">+91 98787 77393</a>
+          <a href="tel:+919876777393" className="font-semibold hover:underline">+91 98767 77393</a>
         </div>
       </div>
     </footer>

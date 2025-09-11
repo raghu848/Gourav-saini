@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AnimatedMedicalBackground from "@/components/AnimatedMedicalBackground";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -34,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased relative overflow-x-hidden`}
       >
+        <AnimatedMedicalBackground />
         <Navbar />
         <main className="min-h-screen relative z-10">
           {children}

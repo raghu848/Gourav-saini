@@ -455,14 +455,14 @@ const Navbar = () => {
               <span>Book Now</span>
             </Link>
             <a
-              href="tel:+919878777393"
+              href="tel:+919876777393"
               className="flex items-center space-x-2 bg-gray-700 text-white px-5 py-3.5 rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-md font-bold text-base whitespace-nowrap"
             >
               <Phone size={18} />
               <span>Call</span>
             </a>
             <a
-              href="https://wa.me/919878777393"
+              href="https://wa.me/919876777393"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-green-600 text-white px-5 py-3.5 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md font-bold text-base whitespace-nowrap"
@@ -523,7 +523,7 @@ const Navbar = () => {
                   <span>Book Appointment</span>
                 </Link>
                 <a
-                  href="tel:+919878777393"
+                  href="tel:+919876777393"
                   className="flex items-center justify-center space-x-2 bg-gray-700 text-white px-5 py-4 rounded-lg hover:bg-gray-800 transition-colors duration-200 shadow-md font-bold text-lg"
                   onClick={() => setIsOpen(false)}
                 >
@@ -531,7 +531,7 @@ const Navbar = () => {
                   <span>Call Now</span>
                 </a>
                 <a
-                  href="https://wa.me/919878777393"
+                  href="https://wa.me/919876777393"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center space-x-2 bg-green-600 text-white px-5 py-4 rounded-lg hover:bg-green-700 transition-colors duration-200 shadow-md font-bold text-lg"

@@ -216,7 +216,7 @@ export default function FractureTraumaCarePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+919878777393"
+                href="tel:+919876777393"
                 className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-lg hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg"
               >
                 <Heart className="w-5 h-5 mr-2" />

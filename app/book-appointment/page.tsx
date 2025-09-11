@@ -68,7 +68,7 @@ export default function BookAppointmentPage() {
 📧 Email: ${formData.email}
 💬 Message: ${formData.message}`
 
-    const whatsappUrl = `https://wa.me/919878777393?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/919876777393?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
   }
 
@@ -263,7 +263,7 @@ export default function BookAppointmentPage() {
                   <li>Appointments are available Monday to Saturday, 9:00 AM - 4:00 PM</li>
                   <li>Please arrive 15 minutes early for your appointment</li>
                   <li>Bring your medical reports and previous prescriptions</li>
-                  <li>For emergency cases, please call directly: +91 98787 77393</li>
+                  <li>For emergency cases, please call directly: +91 98767 77393</li>
                 </ul>
               </div>
             </div>

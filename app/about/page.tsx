@@ -144,7 +144,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center justify-center text-gray-600">
                     <Phone className="w-4 h-4 mr-2" />
-                    <span>+91 98787 77393</span>
+                    <span>+91 98767 77393</span>
                   </div>
                   <div className="flex items-center justify-center text-gray-600">
                     <Mail className="w-4 h-4 mr-2" />

@@ -183,7 +183,7 @@ export default function Home() {
                   Book Consultation
                 </Link>
                 <a
-                  href="tel:+919878777393"
+                  href="tel:+919876777393"
                   className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-all duration-300 transform hover:scale-105"
                 >
                   <Phone className="w-5 h-5 mr-2" />
@@ -502,7 +502,7 @@ export default function Home() {
               Book Consultation
             </Link>
             <a
-              href="https://wa.me/919878777393"
+              href="https://wa.me/919876777393"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200"

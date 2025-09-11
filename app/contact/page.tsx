@@ -55,8 +55,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 98787 77393'],
-      action: 'tel:+919878777393'
+      details: ['+91 98767 77393'],
+      action: 'tel:+919876777393'
     },
     {
       icon: Mail,
@@ -270,7 +270,7 @@ export default function ContactPage() {
               
               <div className="space-y-4">
                 <a
-                  href="tel:+919878777393"
+                  href="tel:+919876777393"
                   className="flex items-center justify-center w-full px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
                 >
                   <Phone className="w-4 h-4 mr-2" />
@@ -278,7 +278,7 @@ export default function ContactPage() {
                 </a>
                 
                 <a
-                  href="https://wa.me/919878777393"
+                  href="https://wa.me/919876777393"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-full px-6 py-3 bg-green-600 text-white font-medium rounded-lg hover:bg-green-700 transition-colors duration-200"
@@ -306,11 +306,11 @@ export default function ContactPage() {
                 For urgent medical situations, please call our emergency line or visit the nearest hospital.
               </p>
               <a
-                href="tel:+919878777393"
+                href="tel:+919876777393"
                 className="inline-flex items-center px-4 py-2 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-colors duration-200"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Emergency: +91 98787 77393
+                Emergency: +91 98767 77393
               </a>
             </div>
           </div>

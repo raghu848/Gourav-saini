@@ -303,7 +303,7 @@ export const metadata: Metadata = {
                 Schedule Consultation
               </a>
               <a
-                href="tel:+919878777393"
+                href="tel:+919876777393"
                 className="inline-flex items-center justify-center px-8 py-3 border-2 border-white text-white font-medium rounded-lg hover:bg-white hover:text-blue-900 transition-colors duration-200"
               >
                 Call Now
