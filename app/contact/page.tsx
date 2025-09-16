@@ -103,7 +103,7 @@ export default function ContactPage() {
               </div>
             )}
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" autoComplete="off">
               
               {/* Name */}
               <div>
@@ -111,11 +111,13 @@ export default function ContactPage() {
                   Full Name *
                 </label>
                 <input
+                  key="contact-name"
                   type="text"
                   id="name"
                   {...register('name', { required: 'Name is required' })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your full name"
+                  autoComplete="off"
                 />
                 {errors.name && (
                   <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -128,6 +130,7 @@ export default function ContactPage() {
                   Email Address *
                 </label>
                 <input
+                  key="contact-email"
                   type="email"
                   id="email"
                   {...register('email', { 
@@ -139,6 +142,7 @@ export default function ContactPage() {
                   })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your email address"
+                  autoComplete="off"
                 />
                 {errors.email && (
                   <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -151,11 +155,13 @@ export default function ContactPage() {
                   Phone Number *
                 </label>
                 <input
+                  key="contact-phone"
                   type="tel"
                   id="phone"
                   {...register('phone', { required: 'Phone number is required' })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your phone number"
+                  autoComplete="off"
                 />
                 {errors.phone && (
                   <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
@@ -168,9 +174,11 @@ export default function ContactPage() {
                   Subject *
                 </label>
                 <select
+                  key="contact-subject"
                   id="subject"
                   {...register('subject', { required: 'Please select a subject' })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  autoComplete="off"
                 >
                   <option value="">Select a subject</option>
                   <option value="consultation">Book Consultation</option>
@@ -191,11 +199,13 @@ export default function ContactPage() {
                   Message *
                 </label>
                 <textarea
+                  key="contact-message"
                   id="message"
                   rows={4}
                   {...register('message', { required: 'Message is required' })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Tell us about your condition or questions..."
+                  autoComplete="off"
                 />
                 {errors.message && (
                   <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
@@ -204,6 +214,7 @@ export default function ContactPage() {
 
               {/* Submit Button */}
               <button
+                key="contact-submit"
                 type="submit"
                 disabled={isSubmitting}
                 className="w-full flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"

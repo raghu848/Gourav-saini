@@ -228,11 +228,16 @@ export default function BlogPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
             <input
+              key="newsletter-email"
               type="email"
               placeholder="Enter your email"
               className="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              autoComplete="off"
             />
-            <button className="px-8 py-3 bg-white text-blue-900 font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-md">
+            <button 
+              key="newsletter-subscribe"
+              className="px-8 py-3 bg-white text-blue-900 font-medium rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-md"
+            >
               Subscribe
             </button>
           </div>

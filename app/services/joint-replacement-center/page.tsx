@@ -2,11 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, ArrowRight, CheckCircle, Users, Heart, Settings } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = {
-  title: 'Joint Replacement & Surgery Center - Dr. Gaurav Saini',
-  description: 'Advanced orthopaedic surgery center specializing in robotic Total Knee Replacement and Total Hip Replacement procedures using the latest technology.',
-}
+export const metadata: Metadata = generateServiceMetadata('knee-replacement')
 
 export default function JointReplacementCenterPage() {
   const procedures = [

@@ -99,7 +99,7 @@ export default function BookAppointmentPage() {
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-8">
-          <form onSubmit={handleSubmit} className="space-y-8">
+          <form onSubmit={handleSubmit} className="space-y-8" autoComplete="off">
             
             {/* Service Selection */}
             <div>
@@ -110,7 +110,7 @@ export default function BookAppointmentPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {services.map((service) => (
                   <button
-                    key={service}
+                    key={`service-${service}`}
                     type="button"
                     onClick={() => setSelectedService(service)}
                     className={`p-3 text-left rounded-lg border-2 transition-colors duration-200 ${
@@ -134,7 +134,7 @@ export default function BookAppointmentPage() {
               <div className="grid grid-cols-3 md:grid-cols-6 gap-3 max-h-40 overflow-y-auto">
                 {generateDates().map((dateObj) => (
                   <button
-                    key={dateObj.date}
+                    key={`date-${dateObj.date}`}
                     type="button"
                     onClick={() => setSelectedDate(dateObj.date)}
                     className={`p-3 text-sm rounded-lg border-2 transition-colors duration-200 ${
@@ -158,7 +158,7 @@ export default function BookAppointmentPage() {
               <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
                 {timeSlots.map((time) => (
                   <button
-                    key={time}
+                    key={`time-${time}`}
                     type="button"
                     onClick={() => setSelectedTime(time)}
                     className={`p-3 text-sm rounded-lg border-2 transition-colors duration-200 ${
@@ -181,12 +181,14 @@ export default function BookAppointmentPage() {
                   Full Name *
                 </label>
                 <input
+                  key="appointment-name"
                   type="text"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your full name"
+                  autoComplete="off"
                 />
               </div>
               
@@ -196,12 +198,14 @@ export default function BookAppointmentPage() {
                   Phone Number *
                 </label>
                 <input
+                  key="appointment-phone"
                   type="tel"
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   placeholder="Enter your phone number"
+                  autoComplete="off"
                 />
               </div>
             </div>
@@ -212,11 +216,13 @@ export default function BookAppointmentPage() {
                 Email Address
               </label>
               <input
+                key="appointment-email"
                 type="email"
                 value={formData.email}
                 onChange={(e) => setFormData({...formData, email: e.target.value})}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="Enter your email address"
+                autoComplete="off"
               />
             </div>
 
@@ -225,17 +231,20 @@ export default function BookAppointmentPage() {
                 Additional Message
               </label>
               <textarea
+                key="appointment-message"
                 value={formData.message}
                 onChange={(e) => setFormData({...formData, message: e.target.value})}
                 rows={4}
                 className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                 placeholder="Any specific concerns or additional information..."
+                autoComplete="off"
               />
             </div>
 
             {/* Submit Button */}
             <div className="text-center">
               <button
+                key="appointment-submit"
                 type="submit"
                 disabled={!selectedDate || !selectedTime || !selectedService || !formData.name || !formData.phone}
                 className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200"

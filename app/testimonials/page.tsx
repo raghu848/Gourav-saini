@@ -83,7 +83,7 @@ export const metadata: Metadata = {
       {
         id: 8,
         image: '/images/testimonials/patient-1 (17).jpg',
-        patientName: 'Amit Patel',
+        patientName: 'Kiran devi',
         age: 58,
         procedure: 'Shoulder Replacement',
         recoveryTime: '5 months post-op',
@@ -318,25 +318,32 @@ export const metadata: Metadata = {
               Leave Your Comments
             </h2>
             
-            <form className="mb-8">
+            <form className="mb-8" autoComplete="off">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <input
+                  key="name-input"
                   type="text"
                   placeholder="Your Name"
                   className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  autoComplete="off"
                 />
                 <input
+                  key="email-input"
                   type="email"
                   placeholder="Your Email"
                   className="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  autoComplete="off"
                 />
               </div>
               <textarea
+                key="comment-textarea"
                 placeholder="Share your experience with Dr. Saini or ask any questions..."
                 className="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                 rows={5}
+                autoComplete="off"
               />
               <button
+                key="submit-button"
                 type="submit"
                 className="mt-4 bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
               >
@@ -364,7 +371,7 @@ export const metadata: Metadata = {
                     </div>
                     <p className="text-gray-700">Amazing results! Dr. Saini is truly gifted. My knee surgery was a complete success and I&apos;m back to my normal activities.</p>
                     <div className="flex items-center mt-3 space-x-4">
-                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
+                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors" key="like-button-1">
                         <ThumbsUp className="w-4 h-4" />
                         <span className="text-sm">12</span>
                       </button>
@@ -372,7 +379,7 @@ export const metadata: Metadata = {
                   </div>
                 </div>
               </div>
-              
+                
               <div className="border-b pb-6">
                 <div className="flex items-start space-x-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
@@ -391,7 +398,7 @@ export const metadata: Metadata = {
                     </div>
                     <p className="text-gray-700">Thank you Dr. Saini for giving me my life back! The robotic surgery was incredible and recovery was much faster than expected.</p>
                     <div className="flex items-center mt-3 space-x-4">
-                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
+                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors" key="like-button-2">
                         <ThumbsUp className="w-4 h-4" />
                         <span className="text-sm">8</span>
                       </button>
@@ -418,7 +425,7 @@ export const metadata: Metadata = {
                     </div>
                     <p className="text-gray-700">The hip replacement surgery was life-changing. Dr. Saini&apos;s expertise and care made all the difference in my recovery journey.</p>
                     <div className="flex items-center mt-3 space-x-4">
-                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
+                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors" key="like-button-3">
                         <ThumbsUp className="w-4 h-4" />
                         <span className="text-sm">15</span>
                       </button>
@@ -445,7 +452,7 @@ export const metadata: Metadata = {
                     </div>
                     <p className="text-gray-700">After my shoulder surgery, I was able to return to playing tennis. The precision and care Dr. Saini provided were exceptional.</p>
                     <div className="flex items-center mt-3 space-x-4">
-                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">
+                      <button className="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors" key="like-button-4">
                         <ThumbsUp className="w-4 h-4" />
                         <span className="text-sm">9</span>
                       </button>

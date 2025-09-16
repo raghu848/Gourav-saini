@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AnimatedMedicalBackground from "@/components/AnimatedMedicalBackground";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import AnimatedMedicalBackground from "../components/AnimatedMedicalBackground";
+import { defaultMetadata } from "./metadata";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -17,13 +18,7 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Dr. Gaurav Saini - Expert Orthopedician & Knee Replacement Specialist",
-  description: "Leading orthopedic surgeon specializing in knee replacement, arthroscopic surgery, and joint care. Book your consultation with Dr. Gaurav Saini today.",
-  keywords: "knee replacement surgeon delhi, orthopedic doctor, knee pain treatment, arthroscopy surgery, Dr Gaurav Saini",
-  authors: [{ name: "Dr. Gaurav Saini" }],
-  viewport: "width=device-width, initial-scale=1",
-};
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,

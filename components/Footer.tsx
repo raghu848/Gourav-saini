@@ -51,38 +51,38 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 text-gray-300 text-sm font-sans">
+    <footer className="bg-gray-900 text-gray-300 text-sm">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* About Section with Larger Logo on Left */}
+          {/* About Section with Simplified Logo */}
           <div>
-            <div className="flex items-center mb-6">
-              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-blue-400 bg-white shadow-lg mr-4">
+            <div className="flex items-center mb-4">
+              <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gray-700 mr-3">
                 <Image
                   src="/images/dr-saini-logo.jpg"
                   alt="Dr. Gaurav Saini"
                   fill
                   className="object-contain"
-                  sizes="80px"
+                  sizes="64px"
                 />
               </div>
               <div>
-                <h3 className="text-3xl font-extrabold mb-1 font-serif text-blue-400">
+                <h3 className="text-xl font-bold text-white">
                   Dr. Gaurav Saini
                 </h3>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-gray-400">
                   Senior Consultant Orthopaedics
                 </p>
               </div>
             </div>
-            <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-              Expert Orthopedician & Knee Replacement Specialist dedicated to restoring mobility and relieving pain with precision and compassion.
+            <p className="text-gray-400 text-sm mb-4">
+              Expert Orthopedician & Knee Replacement Specialist dedicated to restoring mobility and relieving pain.
             </p>
             
-            {/* Social Links */}
-            <div className="flex space-x-4">
+            {/* Social Links - Simplified */}
+            <div className="flex gap-3">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon
                 return (
@@ -91,141 +91,124 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110"
+                    className="text-gray-400 hover:text-white"
                     aria-label={social.label}
                   >
-                    <IconComponent size={18} />
+                    <IconComponent size={16} />
                   </a>
                 )
               })}
             </div>
           </div>
 
-          {/* Contact Info */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-semibold mb-6 text-blue-400 text-left border-b border-blue-400 pb-2">Contact Info</h4>
-            <div className="space-y-5">
+          {/* Contact Info - Simplified */}
+          <div>
+            <h4 className="text-lg font-medium text-white mb-4">Contact Info</h4>
+            <div className="space-y-4">
               
               {/* Address */}
-              <div className="flex items-start space-x-3">
-                <MapPin size={18} className="text-blue-400 mt-1 flex-shrink-0" />
+              <div className="flex gap-2">
+                <MapPin size={16} className="text-gray-400 mt-1 flex-shrink-0" />
                 <div>
-                  <h5 className="text-gray-300 font-medium text-sm mb-1">Address</h5>
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    Cabin No 9B Ground floor, Max Hospital<br />
-                    Near Civil Hospital, 56A, Phase 6, Sector 56<br />
+                  <p className="text-gray-400 text-sm">
+                    Cabin No 9B Ground floor, Max Hospital
+                    Near Civil Hospital, 56A, Phase 6, Sector 56
                     Sahibzada Ajit Singh Nagar, Punjab 160055
                   </p>
                 </div>
               </div>
 
               {/* Phone */}
-              <div className="flex items-center space-x-3">
-                <Phone size={18} className="text-blue-400 flex-shrink-0" />
-                <div>
-                  <h5 className="text-gray-300 font-medium text-sm mb-1">Phone</h5>
-                  <a
-                    href="tel:+919876777393"
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    +91 98767 77393
-                  </a>
-                </div>
+              <div className="flex gap-2">
+                <Phone size={16} className="text-gray-400 flex-shrink-0" />
+                <a
+                  href="tel:+919876777393"
+                  className="text-gray-400 hover:text-white"
+                >
+                  +91 98767 77393
+                </a>
               </div>
 
               {/* Email */}
-              <div className="flex items-center space-x-3">
-                <Mail size={18} className="text-blue-400 flex-shrink-0" />
-                <div>
-                  <h5 className="text-gray-300 font-medium text-sm mb-1">Email</h5>
-                  <a
-                    href="mailto:info@drgauravsaini.com"
-                    className="text-gray-300 hover:text-white transition-colors duration-200"
-                  >
-                    info@drgauravsaini.com
-                  </a>
-                </div>
+              <div className="flex gap-2">
+                <Mail size={16} className="text-gray-400 flex-shrink-0" />
+                <a
+                  href="mailto:info@drgauravsaini.com"
+                  className="text-gray-400 hover:text-white"
+                >
+                  info@drgauravsaini.com
+                </a>
               </div>
 
               {/* Hours */}
-              <div className="flex items-start space-x-3">
-                <Clock size={18} className="text-blue-400 mt-1 flex-shrink-0" />
-                <div>
-                  <h5 className="text-gray-300 font-medium text-sm mb-1">Working Hours</h5>
-                  <p className="text-gray-300 text-sm">
-                    Monday to Saturday: 9:00 AM - 4:00 PM<br />
-                    Sunday: Closed
-                  </p>
+              <div className="flex gap-2">
+                <Clock size={16} className="text-gray-400 mt-1 flex-shrink-0" />
+                <div className="text-gray-400 text-sm">
+                  Monday to Saturday: 9:00 AM - 4:00 PM
+                  Sunday: Closed
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-semibold mb-6 text-blue-400 text-left border-b border-blue-400 pb-2">Quick Links</h4>
-            <ul className="space-y-3">
+          {/* Quick Links - Simplified */}
+          <div>
+            <h4 className="text-lg font-medium text-white mb-4">Quick Links</h4>
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-white flex items-center group transition-colors duration-200"
+                    className="text-gray-400 hover:text-white text-sm"
                   >
-                    <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-blue-400" />
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">
-                      {link.label}
-                    </span>
+                    {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services and Map */}
-          <div className="flex flex-col">
-            <h4 className="text-lg font-semibold mb-6 text-blue-400 text-left border-b border-blue-400 pb-2">Our Services</h4>
-            <ul className="space-y-3 mb-6">
+          {/* Services - Simplified */}
+          <div>
+            <h4 className="text-lg font-medium text-white mb-4">Our Services</h4>
+            <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link
                     href={service.href}
-                    className="text-gray-300 hover:text-white flex items-center group transition-colors duration-200"
+                    className="text-gray-400 hover:text-white text-sm"
                   >
-                    <ArrowRight size={14} className="mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-blue-400" />
-                    <span className="group-hover:translate-x-1 transition-transform duration-200">
-                      {service.label}
-                    </span>
+                    {service.label}
                   </Link>
                 </li>
               ))}
             </ul>
             
-            {/* Map Section */}
-            <div className="mt-auto">
-              <h4 className="text-lg font-semibold mb-4 text-blue-400 text-left border-b border-blue-400 pb-2">Find Us</h4>
-              <div className="relative w-full h-48 rounded-lg overflow-hidden border-2 border-blue-400">
+            {/* Map Section - Simplified */}
+            <div className="mt-4">
+              <h4 className="text-lg font-medium text-white mb-3">Find Us</h4>
+              <div className="relative w-full h-40 rounded overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.878985413344!2d76.6789063151447!3d30.72445198164194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef111d418825%3A0x4a2a3e0a0d0d0d0d!2sMax%20Super%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Hospital Location Map"
+                  title="Hospital Location"
                 ></iframe>
               </div>
               
-              {/* WhatsApp Link moved to right side */}
-              <div className="mt-4">
+              {/* WhatsApp Link - Simplified */}
+              <div className="mt-3">
                 <a
                   href="https://wa.me/919876777393"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-110 w-full justify-center"
+                  className="inline-flex items-center gap-2 bg-green-600 text-white px-3 py-2 rounded w-full justify-center text-sm"
                 >
-                  <MessageCircle size={16} />
-                  <span className="text-sm font-medium">Chat on WhatsApp</span>
+                  <MessageCircle size={14} />
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -233,13 +216,13 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 bg-gray-800 py-4 px-4 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 space-y-2 md:space-y-0">
-          <p>© {currentYear} Dr. Gaurav Saini. All rights reserved.</p>
-          <div className="flex space-x-4">
+      {/* Bottom Bar - Simplified */}
+      <div className="border-t border-gray-800 bg-gray-900 py-3 px-4">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+          <p className="text-gray-500 text-xs">© {currentYear} Dr. Gaurav Saini. All rights reserved.</p>
+          <div className="flex gap-4">
             {legalLinks.map(({ href, label }) => (
-              <Link key={href} href={href} className="hover:text-white transition">
+              <Link key={href} href={href} className="text-gray-500 hover:text-white text-xs">
                 {label}
               </Link>
             ))}
@@ -247,11 +230,11 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Emergency Bar */}
-      <div className="bg-red-600 text-white text-sm text-center py-2 px-4">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center sm:justify-start space-y-1 sm:space-y-0 sm:space-x-2">
+      {/* Emergency Bar - Simplified */}
+      <div className="bg-red-700 text-white py-2 px-4 text-sm text-center">
+        <div className="max-w-7xl mx-auto flex justify-center items-center gap-2">
           <span>Emergency? Call us:</span>
-          <a href="tel:+919876777393" className="font-semibold hover:underline">+91 98767 77393</a>
+          <a href="tel:+919876777393" className="font-medium">+91 98767 77393</a>
         </div>
       </div>
     </footer>

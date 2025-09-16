@@ -2,11 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, ArrowRight, CheckCircle, Users, Activity, Shield } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = {
-  title: 'Sports Injury & Arthroscopy Treatment - Dr. Gaurav Saini',
-  description: 'Advanced treatment for sports injuries and arthroscopic surgery for ACL injuries, meniscus tears, and shoulder injuries.',
-}
+export const metadata: Metadata = generateServiceMetadata('sports-injury')
 
 export default function SportsInjuryArthroscopyPage() {
   const conditions = [
