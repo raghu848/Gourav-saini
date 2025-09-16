@@ -23,7 +23,7 @@ const DoctorImagesSection = () => {
       id: 3,
       url: '/images/dr images/IMG-20250908-WA0025.jpg',
       alt: 'Medical Procedure 3',
-      title: 'Robotic Joint Replacement'
+      title: 'Robotic Knee Replacement'
     },
     {
       id: 4,

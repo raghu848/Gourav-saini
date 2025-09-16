@@ -127,7 +127,7 @@ const AnimatedMedicalBackground = () => {
             <filter id="glow">
               <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
               <feMerge> 
-                <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="coloredBlur"/>
                 <feMergeNode in="SourceGraphic"/>
               </feMerge>
             </filter>

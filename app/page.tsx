@@ -23,7 +23,7 @@ export default function Home() {
   const specialties = [
     {
       icon: Heart,
-      title: 'Robotic Joint Replacement',
+      title: 'Robotic Knee Replacement',
       description: 'CORI robotic technology for precise Total Knee and Hip Replacement with real-time 3D mapping'
     },
     {
@@ -126,9 +126,14 @@ export default function Home() {
                     <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
                     <span>Nearly 20 years of specialized experience</span>
                   </div>
+                  <div className="flex items-center text-blue-200 mb-2">
+                    <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
+                    <span>Expert in Robotic Total Knee Replacement</span>
+                  </div>
+
                   <div className="flex items-center text-blue-200">
                     <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
-                    <span>Expert in Robotic Hip & Knee Surgeries</span>
+                    <span>Expert for Sports Injury & Hip surgeries</span>
                   </div>
                 </div>
                 

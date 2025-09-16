@@ -193,7 +193,7 @@ export default function RoboticJointReplacementPage() {
               Ready to Experience Advanced Joint Care?
             </h2>
             <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Schedule a consultation with Dr. Saini to discuss how robotic joint replacement can restore your mobility and improve your quality of life.
+              Schedule a consultation with Dr. Saini to discuss how robotic knee replacement can restore your mobility and improve your quality of life.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
