@@ -91,10 +91,10 @@ const Footer = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                     aria-label={social.label}
                   >
-                    <IconComponent size={16} />
+                    <IconComponent size={24} className="transition-transform duration-200 hover:scale-110" />
                   </a>
                 )
               })}

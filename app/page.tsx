@@ -349,7 +349,7 @@ export default function Home() {
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-white border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-all duration-300"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-red-600 border border-red-700 text-white font-medium rounded-lg hover:bg-red-700 hover:border-red-800 transition-all duration-300 shadow-md hover:shadow-lg"
                   >
                     <Calendar className="w-4 h-4 mr-2" />
                     Book Appointment

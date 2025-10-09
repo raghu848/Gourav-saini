@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -58,6 +58,7 @@ const DoctorImagesSection = () => {
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const carouselRef = useRef<HTMLDivElement>(null)
 
   // Auto-rotate images every 4 seconds
   useEffect(() => {
@@ -80,48 +81,85 @@ const DoctorImagesSection = () => {
           </p>
         </div>
 
-        {/* Main featured image without animation */}
-        <div className="relative mb-12 rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-blue-50 to-green-50 p-6">
-          <div className="relative h-96 md:h-[500px] rounded-xl overflow-hidden border-4 border-blue-200 shadow-lg">
-            <div className="absolute inset-0">
-              <div className="relative w-full h-full bg-white rounded-lg flex items-center justify-center p-4">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <Image
-                    src={images[currentIndex].url}
-                    alt={images[currentIndex].alt}
-                    fill
-                    style={{ objectFit: 'contain' }}
-                    className="rounded-lg"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                </div>
-              </div>
+        {/* 3D Round Scroller */}
+        <div className="relative h-[550px] md:h-[500px] flex items-center justify-center my-2">
+          <div 
+            ref={carouselRef}
+            className="relative w-full max-w-4xl h-full"
+            style={{
+              perspective: '1500px',
+              transformStyle: 'preserve-3d'
+            }}
+          >
+            {images.map((image, index) => {
+              // Calculate position in 3D space
+              const angle = (index / images.length) * 2 * Math.PI
+              const radius = 220 // Distance from center
+              const x = Math.sin(angle) * radius
+              const z = Math.cos(angle) * radius
               
-              {/* Gradient overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-lg"></div>
+              // Calculate rotation based on current index
+              const rotation = (index - currentIndex) * (360 / images.length)
               
-              {/* Image title */}
-              <div className="absolute bottom-8 left-8 right-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-white font-serif">
-                  {images[currentIndex].title}
-                </h3>
-              </div>
-            </div>
+              return (
+                <motion.div
+                  key={image.id}
+                  className="absolute top-1/2 left-1/2 w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl cursor-pointer"
+                  style={{
+                    x: '-50%',
+                    y: '-50%',
+                    transform: `translate3d(${x}px, 0px, ${z}px) rotateY(${rotation}deg)`,
+                    zIndex: index === currentIndex ? 10 : Math.abs(index - currentIndex) < 3 ? 5 : 1
+                  }}
+                  animate={{
+                    opacity: index === currentIndex ? 1 : 0.7,
+                    scale: index === currentIndex ? 1 : 0.8
+                  }}
+                  transition={{ duration: 0.8 }}
+                  onClick={() => setCurrentIndex(index)}
+                >
+                  <div className="relative w-full h-full bg-gradient-to-br from-white to-blue-50 border-4 border-white rounded-3xl shadow-inner flex items-center justify-center p-6">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      <Image
+                        src={image.url}
+                        alt={image.alt}
+                        fill
+                        style={{ objectFit: 'contain' }}
+                        className="rounded-2xl"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                  </div>
+                  {index === currentIndex && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl flex items-end">
+                      <div className="p-6">
+                        <h3 className="text-white text-xl font-bold font-serif drop-shadow-md">{image.title}</h3>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              )
+            })}
           </div>
           
-          {/* Navigation dots */}
-          <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {images.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-blue-600 w-8' : 'bg-blue-300'
-                }`}
-                aria-label={`Go to image ${index + 1}`}
-              />
-            ))}
-          </div>
+          {/* Navigation controls */}
+          <button 
+            className="absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg hover:bg-white transition-all duration-300 z-20"
+            onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          
+          <button 
+            className="absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg hover:bg-white transition-all duration-300 z-20"
+            onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
         </div>
 
         {/* Thumbnail grid with animation */}
@@ -132,26 +170,26 @@ const DoctorImagesSection = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative rounded-xl overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 ${
-                index === currentIndex ? 'ring-4 ring-blue-600' : 'hover:shadow-xl'
+              className={`relative rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105 ${
+                index === currentIndex ? 'ring-4 ring-blue-600 shadow-2xl' : 'hover:shadow-xl'
               }`}
               onClick={() => setCurrentIndex(index)}
             >
-              <div className="relative w-full h-48 bg-white border-2 border-blue-200 rounded-lg flex items-center justify-center p-2">
+              <div className="relative w-full h-48 bg-gradient-to-br from-white to-blue-50 border-2 border-white rounded-xl flex items-center justify-center p-3 shadow-inner">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <Image
                     src={image.url}
                     alt={image.alt}
                     fill
                     style={{ objectFit: 'contain' }}
-                    className="rounded"
+                    className="rounded-lg"
                     sizes="(max-width: 768px) 50vw, 25vw"
                   />
                 </div>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-lg"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
               <div className="absolute bottom-3 left-3 right-3">
-                <p className="text-white text-sm font-medium truncate">{image.title}</p>
+                <p className="text-white text-sm font-medium truncate drop-shadow-md">{image.title}</p>
               </div>
             </motion.div>
           ))}

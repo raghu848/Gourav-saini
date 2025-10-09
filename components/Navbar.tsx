@@ -83,7 +83,7 @@ useEffect(() => {
       }`}>
         
         {/* Top Info Bar - Hidden on mobile and small screens */}
-        <div className="hidden xl:block bg-gradient-to-r from-blue-900 via-blue-800 to-teal-700 text-white py-3">
+        <div className="hidden md:block bg-gradient-to-r from-blue-900 via-blue-800 to-teal-700 text-white py-3">
           <div className="max-w-screen-2xl mx-auto px-4">
             <div className="flex justify-between items-center text-sm">
               <div className="flex items-center space-x-6">
@@ -91,10 +91,10 @@ useEffect(() => {
                   <MapPin size={16} />
                   <span className="text-sm">Chandigarh, India</span>
                 </div>
-                <div className="flex items-center space-x-2">
+                <a href="tel:+919876777393" className="flex items-center space-x-2 hover:text-blue-200 transition-colors">
                   <Phone size={16} />
                   <span className="text-sm">+91 98767 77393</span>
-                </div>
+                </a>
               </div>
               <div className="text-sm font-semibold">
                 Available 24/7 for Emergency Cases
@@ -133,14 +133,14 @@ useEffect(() => {
                   <h1 className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight truncate">
                     Dr. Gaurav Saini
                   </h1>
-                  <p className="text-xs sm:text-sm lg:text-base text-blue-600 font-semibold truncate">
-                    Orthopaedics & Robotic Surgery
+                  <p className="text-xs text-blue-600 font-medium truncate">
+                  Orthopaedic & Robotic Surgeon
                   </p>
                 </div>
               </Link>
 
               {/* Desktop Navigation Links - Hidden on smaller screens */}
-              <div className="hidden xl:flex items-center space-x-2 2xl:space-x-4 flex-shrink-0">
+              <div className="hidden lg:flex items-center space-x-2 xl:space-x-4 flex-shrink-0">
                 {navLinks.map((link) => (
                   <div 
                     key={link.href}
@@ -151,10 +151,10 @@ useEffect(() => {
                   >
                     <Link
                       href={link.href}
-                      className={`flex items-center space-x-1 px-3 lg:px-4 py-2.5 rounded-xl text-sm lg:text-base font-semibold transition-all duration-300 whitespace-nowrap ${
+                      className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-base font-bold transition-all duration-300 whitespace-nowrap ${
                         pathname === link.href
                           ? 'text-blue-600 bg-blue-50 shadow-sm'
-                          : 'text-gray-700 hover:text-blue-600 hover:bg-blue-50'
+                          : 'text-gray-800 hover:text-blue-600 hover:bg-blue-50'
                       }`}
                     >
                       <span>{link.label}</span>
@@ -163,7 +163,7 @@ useEffect(() => {
 
                     {/* Services Dropdown */}
                     {link.hasDropdown && isServicesDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                      <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
                         <div className="bg-gradient-to-r from-blue-600 to-teal-600 px-6 py-4">
                           <h3 className="text-white font-bold text-lg">Our Services</h3>
                           <p className="text-blue-100 text-sm">Comprehensive orthopaedic care</p>
@@ -194,62 +194,62 @@ useEffect(() => {
               </div>
 
               {/* Desktop CTA Buttons */}
-              <div className="hidden lg:flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
+              <div className="hidden lg:flex items-center space-x-2 flex-shrink-0">
                 <a
                   href="tel:+919876777393"
-                  className="flex items-center space-x-2 px-4 py-2.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-all duration-300 font-semibold text-sm shadow-sm hover:shadow-md"
+                  className="flex items-center space-x-2 px-3 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all duration-300 font-semibold text-sm shadow-sm hover:shadow-md"
                 >
-                  <Phone size={18} />
+                  <Phone size={16} />
                   <span className="hidden xl:inline">Call</span>
                 </a>
                 <a
                   href="https://wa.me/919876777393"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl transition-all duration-300 font-semibold shadow-lg hover:shadow-xl text-sm"
+                  className="flex items-center space-x-2 px-3 py-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg transition-all duration-300 font-semibold shadow-lg hover:shadow-xl text-sm"
                 >
-                  <MessageCircle size={18} />
+                  <MessageCircle size={16} />
                   <span className="hidden xl:inline">WhatsApp</span>
                 </a>
                 <Link
                   href="/book-appointment"
-                  className="flex items-center space-x-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white rounded-xl transition-all duration-300 font-bold shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
+                  className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white rounded-lg transition-all duration-300 font-bold shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
                 >
-                  <Calendar size={18} />
-                  <span>Book Now</span>
+                  <Calendar size={16} />
+                  <span className="hidden xl:inline">Book Now</span>
                 </Link>
               </div>
 
-              {/* Tablet Menu (md to xl) */}
+              {/* Tablet Menu (md to lg) */}
               <div className="hidden md:flex lg:hidden items-center space-x-2">
                 <a
                   href="tel:+919876777393"
-                  className="p-4 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl transition-all duration-300 shadow-sm active:scale-95"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition-all duration-300 shadow-sm active:scale-95"
                   title="Call"
                 >
-                  <Phone size={22} />
+                  <Phone size={20} />
                 </a>
                 <a
                   href="https://wa.me/919876777393"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl transition-all duration-300 shadow-lg active:scale-95"
+                  className="p-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-lg transition-all duration-300 shadow-lg active:scale-95"
                   title="WhatsApp"
                 >
-                  <MessageCircle size={22} />
+                  <MessageCircle size={20} />
                 </a>
                 <Link
                   href="/book-appointment"
-                  className="px-6 py-4 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white rounded-xl font-bold transition-all duration-300 shadow-lg active:scale-95"
+                  className="px-4 py-3 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white rounded-lg font-bold transition-all duration-300 shadow-lg active:scale-95 text-sm"
                 >
                   Book
                 </Link>
                 <button
                   onClick={toggleMenu}
-                  className="p-4 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors duration-300 shadow-sm active:scale-95"
+                  className="p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-300 shadow-sm active:scale-95"
                   aria-label="Toggle menu"
                 >
-                  {isOpen ? <X size={24} /> : <Menu size={24} />}
+                  {isOpen ? <X size={20} /> : <Menu size={20} />}
                 </button>
               </div>
 

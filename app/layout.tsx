@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AnimatedMedicalBackground from "../components/AnimatedMedicalBackground";
+import EmergencyContactButton from "../components/EmergencyContactButton";
 import { defaultMetadata } from "./metadata";
 
 const playfair = Playfair_Display({
@@ -36,6 +37,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <EmergencyContactButton />
       </body>
     </html>
   );
