@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
@@ -157,14 +158,14 @@ export default function FractureTraumaCarePage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-900 to-green-900 text-white rounded-2xl p-8 lg:p-12 mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="bg-gradient-to-r from-blue-900 to-green-900 text-white rounded-2xl p-4 lg:p-6 mb-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
               <div>
                 <h2 className="text-3xl font-bold font-serif mb-4">Why Choose Our Trauma Care?</h2>
-                <p className="text-blue-100 mb-6">
+                <p className="text-blue-100 mb-4">
                   Our comprehensive trauma program combines emergency expertise with specialized surgical skills for optimal patient outcomes.
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2">
                   <li className="flex items-center">
                     <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
                     <span>24/7 emergency availability</span>
@@ -183,24 +184,37 @@ export default function FractureTraumaCarePage() {
                   </li>
                 </ul>
               </div>
-              <div className="bg-white bg-opacity-10 rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-4">Trauma Care Statistics</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center pb-2 border-b border-white/20">
-                    <span>Emergency Response Time</span>
-                    <span className="font-bold">&lt;15 min</span>
+              <div className="bg-white bg-opacity-10 rounded-xl p-2">
+                {/* Added image container */}
+                <div className="rounded-lg overflow-hidden border border-blue-200">
+                  <Image 
+                    src="/images/dr images/TRAUMA.jpg" 
+                    alt="Dr. Gaurav Saini providing trauma care" 
+                    width={500}
+                    height={300}
+                    className="w-full h-auto object-contain"
+                  />
+                </div>
+                <p className="text-black text-center font-bold text-lg mt-1">
+                  Focused on your recovery, powered by expertise and 24/7 dedication.
+                </p>
+                <h3 className="text-xl font-semibold mb-2">Trauma Care Statistics</h3>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
+                    <span className="text-sm">Emergency Response Time</span>
+                    <span className="font-bold text-sm">&lt;15 min</span>
                   </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/20">
-                    <span>Surgical Success Rate</span>
-                    <span className="font-bold">99%</span>
+                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
+                    <span className="text-sm">Surgical Success Rate</span>
+                    <span className="font-bold text-sm">99%</span>
                   </div>
-                  <div className="flex justify-between items-center pb-2 border-b border-white/20">
-                    <span>Patient Satisfaction</span>
-                    <span className="font-bold">97%</span>
+                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
+                    <span className="text-sm">Patient Satisfaction</span>
+                    <span className="font-bold text-sm">97%</span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span>Recovery Time</span>
-                    <span className="font-bold">Reduced by 30%</span>
+                    <span className="text-sm">Recovery Time</span>
+                    <span className="font-bold text-sm">Reduced by 30%</span>
                   </div>
                 </div>
               </div>
