@@ -95,10 +95,10 @@ export default function AboutPage() {
         {/* Hero Section */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-4">
-            Meet the Doctor - Dr. Gaurav Saini
+            Meet the Doctor -  Dr. Gaurav Saini
           </h1>
           <p className="text-xl text-blue-600 font-semibold mb-2">
-            MBBS, MS, DNB, MNAMS - ORTHOPAEDIC SURGEON IN MOHALI
+            MBBS  , MS, DNB, MNAMS - ORTHOPAEDIC SURGEON IN MOHALI
           </p>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Award-winning orthopedic surgeon with nearly 20 years of experience, completely dedicated to Robotic Hip and Knee Surgeries
@@ -118,16 +118,10 @@ export default function AboutPage() {
                   className="object-contain rounded-full border-4 border-blue-200 shadow-xl"
                   priority
                 />
-                <div className="hidden absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center border-4 border-blue-200 shadow-xl">
-                  <div className="text-center text-white">
-                    <div className="text-6xl font-bold mb-2">DS</div>
-                    <div className="text-sm">Dr. Saini</div>
-                  </div>
-                </div>
               </div>
               <div className="text-center mt-6">
                 <h2 className="text-2xl font-bold text-gray-900 font-serif mb-2">
-                  Dr. Gaurav Saini
+                Dr. Gaurav Saini
                 </h2>
                 <p className="text-blue-600 font-semibold">
                   Senior Consultant Orthopaedics

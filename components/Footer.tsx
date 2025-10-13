@@ -41,7 +41,7 @@ const Footer = () => {
     { href: 'https://instagram.com/drgauravsainichd', icon: Instagram, label: 'Instagram' },
     { href: 'https://x.com/DrGauravSaini15', icon: Twitter, label: 'Twitter' },
     { href: 'https://linkedin.com/in/drgauravsaini', icon: Linkedin, label: 'LinkedIn' },
-    { href: 'https://youtube.com/@drgauravsaini', icon: Youtube, label: 'YouTube' },
+    { href: 'https://www.youtube.com/@drgauravsaini_official', icon: Youtube, label: 'YouTube' },
   ]
 
   const legalLinks = [

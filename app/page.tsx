@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* Specialties Section */}
-      <section className="py-16 bg-white">
+      <section className="py-4 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2 
@@ -265,7 +265,7 @@ export default function Home() {
       <DoctorImagesSection />
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-6 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.h2 
@@ -320,7 +320,7 @@ export default function Home() {
       </section>
 
       {/* About Doctor Section */}
-      <section className="py-20 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
@@ -331,7 +331,7 @@ export default function Home() {
                 transition={{ duration: 0.6 }}
               >
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                  Meet Dr. Gaurav Saini
+                 Consult with Dr. Gaurav Saini
                 </h2>
                 <p className="text-lg text-gray-700 mb-6">
                   MBBS, MS, DNB, MNAMS - Senior Consultant Orthopaedics specializing in Robotic Hip and Knee Surgeries with nearly 20 years of dedicated experience.
@@ -377,9 +377,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      
       {/* Testimonials Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-4 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2 
@@ -447,7 +447,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-800 to-teal-700 text-white">
+      <section className="py-6 bg-gradient-to-r from-blue-800 to-teal-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -198,8 +198,8 @@ export default function FractureTraumaCarePage() {
                 <p className="text-black text-center font-bold text-lg mt-1">
                   Focused on your recovery, powered by expertise and 24/7 dedication.
                 </p>
-                <h3 className="text-xl font-semibold mb-2">Trauma Care Statistics</h3>
-                <div className="space-y-2">
+                <h3 className="text-xl font-semibold mb-1">Trauma Care Statistics</h3>
+                <div className="space-y-1">
                   <div className="flex justify-between items-center pb-1 border-b border-white/20">
                     <span className="text-sm">Emergency Response Time</span>
                     <span className="font-bold text-sm">&lt;15 min</span>

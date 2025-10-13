@@ -20,7 +20,18 @@ const defaultKeywords = [
   'CORI robotic surgery specialist',
   'Knee pain treatment in Mohali',
   'Joint pain specialist near me',
-  'Best orthopedic doctor Max Hospital'
+  'Best orthopedic doctor Max Hospital',
+  // New keywords
+  'Orthopaedic Surgeon Mohali',
+  'Best Orthopedic Doctor Chandigarh',
+  'Joint Replacement Specialist Mohali',
+  'Robotic Knee Replacement Mohali',
+  'Trauma Care Hospital Chandigarh',
+  'Sports Injury Clinic Mohali',
+  'Orthopedic Doctor Near Max Hospital Mohali',
+  'Best Knee Surgeon in Chandigarh',
+  'Dr. Saini Robotic Surgery Mohali',
+  'Affordable Joint Replacement Surgery Chandigarh'
 ]
 
 export const defaultMetadata: Metadata = {
@@ -38,6 +49,11 @@ export const defaultMetadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
@@ -46,7 +62,7 @@ export const defaultMetadata: Metadata = {
     description: 'Best orthopaedic surgeon in Mohali & tricity area. Expert in robotic knee replacement, sports injuries, and joint surgery with 20+ years experience. Book appointment now.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
     images: [{
-      url: '/images/dr-saini-professional.jpg',
+      url: '/images/dr-saini-logo.jpg',
       width: 1200,
       height: 630,
       alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali'
@@ -74,7 +90,10 @@ export const servicesMetadata = {
       'robotic knee surgery',
       'total knee replacement cost',
       'CORI robotic knee surgery',
-      'partial knee replacement'
+      'partial knee replacement',
+      'Robotic Knee Replacement Mohali',
+      'Best Knee Surgeon in Chandigarh',
+      'Dr. Saini Robotic Surgery Mohali'
     ].join(', ')
   },
   'sports-injury': {
@@ -86,7 +105,9 @@ export const servicesMetadata = {
       'arthroscopy surgeon',
       'sports medicine doctor',
       'knee arthroscopy',
-      'ligament repair'
+      'ligament repair',
+      'Sports Injury Clinic Mohali',
+      'Sports injury specialist Chandigarh'
     ].join(', ')
   },
   'hip-replacement': {
@@ -98,7 +119,45 @@ export const servicesMetadata = {
       'total hip replacement',
       'minimally invasive hip surgery',
       'hip pain treatment',
-      'hip arthritis specialist'
+      'hip arthritis specialist',
+      'Joint Replacement Specialist Mohali',
+      'Affordable Joint Replacement Surgery Chandigarh'
+    ].join(', ')
+  },
+  'fracture-trauma': {
+    title: 'Best Trauma Care Hospital in Chandigarh | Dr. Gaurav Saini',
+    description: 'Emergency trauma care and fracture treatment by Dr. Gaurav Saini. Leading trauma care hospital in Chandigarh offering 24/7 emergency orthopedic services.',
+    keywords: [
+      'trauma care hospital chandigarh',
+      'fracture treatment specialist',
+      'emergency orthopedic care',
+      'polytrauma treatment',
+      'Trauma Care Hospital Chandigarh',
+      'Orthopaedic Surgeon Mohali'
+    ].join(', ')
+  },
+  'robotic-surgery': {
+    title: 'Best Robotic Surgery in Mohali | Dr. Gaurav Saini',
+    description: 'Advanced robotic surgery using CORI technology by Dr. Gaurav Saini. Leading robotic surgery specialist in Mohali for joint replacement procedures.',
+    keywords: [
+      'robotic surgery mohali',
+      'CORI robotic surgery',
+      'robotic joint replacement',
+      'advanced orthopedic surgery',
+      'Dr. Saini Robotic Surgery Mohali',
+      'Robotic Knee Replacement Mohali'
+    ].join(', ')
+  },
+  'spine-surgery': {
+    title: 'Best Spine Surgery in Mohali | Dr. Gaurav Saini',
+    description: 'Advanced spine surgery treatment by Dr. Gaurav Saini. Leading spine surgeon in Mohali offering minimally invasive techniques for back pain and spinal conditions.',
+    keywords: [
+      'spine surgery mohali',
+      'back pain specialist',
+      'spinal surgery',
+      'herniated disc treatment',
+      'spine surgeon near me',
+      'Orthopaedic Surgeon Mohali'
     ].join(', ')
   }
 }
