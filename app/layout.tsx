@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import AnimatedMedicalBackground from "../components/AnimatedMedicalBackground";
 import EmergencyContactButton from "../components/EmergencyContactButton";
 import StickySocialButtons from "../components/StickySocialButtons";
+import GoogleAnalytics from "../components/GoogleAnalytics";
 import { defaultMetadata } from "./metadata";
 
 const playfair = Playfair_Display({
@@ -27,11 +28,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || '';
+  
   return (
     <html lang="en">
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased relative overflow-x-hidden`}
       >
+        {GA_MEASUREMENT_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
         <AnimatedMedicalBackground />
         <Navbar />
         <main className="min-h-screen relative z-10">

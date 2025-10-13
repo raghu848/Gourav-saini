@@ -99,6 +99,19 @@ const Footer = () => {
                 )
               })}
             </div>
+            
+            {/* WhatsApp Link - Moved below social media icons on the left side */}
+            <div className="mt-4">
+              <a
+                href="https://wa.me/919876777393"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-600 text-white px-3 py-2 rounded w-full justify-center text-sm hover:bg-green-700 transition-colors duration-200"
+              >
+                <MessageCircle size={14} />
+                <span>Chat on WhatsApp</span>
+              </a>
+            </div>
           </div>
 
           {/* Contact Info - Simplified */}
@@ -187,6 +200,7 @@ const Footer = () => {
             {/* Map Section - Simplified */}
             <div className="mt-4">
               <h4 className="text-lg font-medium text-white mb-3">Find Us</h4>
+              
               <div className="relative w-full h-40 rounded overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.878985413344!2d76.6789063151447!3d30.72445198164194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef111d418825%3A0x4a2a3e0a0d0d0d0d!2sMax%20Super%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
@@ -199,18 +213,16 @@ const Footer = () => {
                 ></iframe>
               </div>
               
-              {/* WhatsApp Link - Simplified */}
-              <div className="mt-3">
-                <a
-                  href="https://wa.me/919876777393"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-600 text-white px-3 py-2 rounded w-full justify-center text-sm"
-                >
-                  <MessageCircle size={14} />
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
+              {/* Directions Link */}
+              <a 
+                href="https://www.google.com/maps/dir//Cabin+No+9B+Ground+floor,+Max+Hospital,+near+Civil+Hospital,+56A,+Phase+6,+Sector+56,+Sahibzada+Ajit+Singh+Nagar,+Punjab+160055/@30.740054,76.6318948,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390fef3afc0a4d67:0xa2a365fdad38645f!2m2!1d76.7142961!2d30.74008?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm"
+              >
+                <MapPin size={16} className="mr-2" />
+                Get Directions
+              </a>
             </div>
           </div>
         </div>

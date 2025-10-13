@@ -118,7 +118,7 @@ useEffect(() => {
                       width={64}
                       height={64}
                       className="w-full h-full rounded-xl object-contain object-top"
-                      style={{ objectPosition: '50% 20%' }}
+                      style={{ objectPosition: '50% 50%' }}
                       priority
                       unoptimized
                       onError={() => setImageError(true)}
