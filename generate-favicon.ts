@@ -1,12 +1,12 @@
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
 
 async function generateFavicon() {
   try {
     const inputPath = path.join(__dirname, 'public', 'images', 'dr-saini-logo.jpg');
     const outputPngPath = path.join(__dirname, 'public', 'favicon.png');
-    const outputIcoPath = path.join(__dirname, 'public', 'favicon.ico');
+    // const outputIcoPath = path.join(__dirname, 'public', 'favicon.ico');
     
     // Check if input file exists
     if (!fs.existsSync(inputPath)) {

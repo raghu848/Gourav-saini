@@ -70,7 +70,7 @@ const DoctorImagesSection = () => {
   }, [images.length])
 
   return (
-    <section className="py-4 bg-gradient-to-br from-blue-50 to-green-50">
+    <section className="py-6 bg-gradient-to-br from-blue-50 to-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-serif">
@@ -82,7 +82,7 @@ const DoctorImagesSection = () => {
         </div>
 
         {/* 3D Round Scroller */}
-        <div className="relative h-[550px] md:h-[500px] flex items-center justify-center my-2">
+        <div className="relative h-[550px] md:h-[420px] flex items-center justify-center my-2">
           <div 
             ref={carouselRef}
             className="relative w-full max-w-4xl h-full"

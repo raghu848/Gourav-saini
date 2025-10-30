@@ -1,5 +1,5 @@
 Options -MultiViews
-RewriteEngine On
+  RewriteEngine On
 
 # Serve files and folders directly if they exist
 RewriteCond %{REQUEST_FILENAME} -f [OR]

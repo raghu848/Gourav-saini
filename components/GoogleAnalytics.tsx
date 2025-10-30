@@ -4,6 +4,10 @@ import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
 import { useEffect } from 'react'
 
+type Gtag = (...args: unknown[]) => void
+
+
+
 export default function GoogleAnalytics({
   GA_MEASUREMENT_ID,
 }: {
@@ -16,8 +20,8 @@ export default function GoogleAnalytics({
     const url = pathname + searchParams.toString()
     
     // Send pageview to Google Analytics
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('config', GA_MEASUREMENT_ID, {
+    if (typeof window !== 'undefined' && (window as unknown as { gtag: Gtag }).gtag) {
+      (window as unknown as { gtag: Gtag }).gtag('config', GA_MEASUREMENT_ID, {
         page_path: url,
       })
     }

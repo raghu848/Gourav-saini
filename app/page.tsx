@@ -209,7 +209,7 @@ export default function Home() {
       </section>
 
       {/* Specialties Section */}
-      <section className="py-4 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <motion.h2 
