@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
     root: path.resolve(__dirname),
   },
   output: 'export',
+  trailingSlash: true,
 };
 
 export default nextConfig;

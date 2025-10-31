@@ -1,11 +1,9 @@
-Options -MultiViews
+<IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
 
-# Serve files and folders directly if they exist
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
-
-# If request without .html exists, rewrite to .html
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+?)/?$ $1.html [L,QSA]
+  # Redirect all requests to index.html except for real files/folders
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
+</IfModule>
