@@ -92,7 +92,7 @@ export default function BookAppointmentPage() {
               <span className="text-gray-800 font-medium">Max Hospital, Mohali</span>
             </div>
             <p className="text-sm text-gray-600">
-              Cabin No 9B Ground floor, Near Civil Hospital, Phase 6, Sector 56<br />
+              Cabin No 26 Ground floor, near Civil Hospital, Phase 6, Sector 56<br />
               Sahibzada Ajit Singh Nagar, Punjab 160055
             </p>
           </div>

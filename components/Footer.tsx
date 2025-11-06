@@ -115,9 +115,7 @@ const Footer = () => {
                 <MapPin size={16} className="text-gray-400 mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-gray-400 text-sm font-bold">
-                    Cabin No 9B Ground floor, Max Hospital
-                    Near Civil Hospital, 56A, Phase 6, Sector 56
-                    Sahibzada Ajit Singh Nagar, Punjab 160055
+                    Cabin No 26 Ground floor, MAX SUPER SPECIALTY HOSPITAL, 56A, near Civil Hospital, Phase 6, Sector 56, Sahibzada Ajit Singh Nagar, Punjab 160055
                   </p>
                 </div>
               </div>
@@ -190,7 +188,7 @@ const Footer = () => {
             
             {/* Directions Link */}
             <a 
-              href="https://www.google.com/maps/dir//Cabin+No+9B+Ground+floor,+Max+Hospital,+near+Civil+Hospital,+56A,+Phase+6,+Sector+56,+Sahibzada+Ajit+Singh+Nagar,+Punjab+160055/@30.740054,76.6318948,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390fef3afc0a4d67:0xa2a365fdad38645f!2m2!1d76.7142961!2d30.74008?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+              href="https://www.google.com/maps/dir//Cabin+No+26+Ground+floor,+MAX+SUPER+SPECIALTY+HOSPITAL,+56A,+near+Civil+Hospital,+Phase+6,+Sector+56,+Sahibzada+Ajit+Singh+Nagar,+Punjab+160055/@30.740054,76.6318948,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390fef3afc0a4d67:0xa2a365fdad38645f!2m2!1d76.7142961!2d30.74008?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center mt-3 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-base font-bold"
