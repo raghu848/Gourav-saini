@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react'
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
-import { useState, useEffect } from 'react'
 
 export const metadata: Metadata = {
   title: 'Health Blog - Dr. Gaurav Saini',
