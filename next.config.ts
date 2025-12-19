@@ -27,9 +27,6 @@ const nextConfig: NextConfig = {
   
   // Optimize react production build
   reactStrictMode: true,
-  
-  // Explicitly enable Turbopack to avoid conflicts with webpack config
-  turbopack: {},
 };
 
 export default nextConfig;
