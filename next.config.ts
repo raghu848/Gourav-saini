@@ -14,38 +14,22 @@ const nextConfig: NextConfig = {
   // Enable gzip compression
   compress: true,
   
-  // Optimize webpack config for performance
-  webpack: (config, { dev, isServer }) => {
-    // Reduce bundle size by excluding unused modules
-    if (!dev) {
-      config.optimization.minimize = true;
-      
-      // Split chunks for better caching
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-        },
-      };
-    }
-    
-    return config;
-  },
-  
-  // Optimize react production build
-  reactStrictMode: true,
-  
-  // Enable experimental features for better performance
+  // Enable Turbopack optimizations
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
       'lucide-react'
     ],
   },
+  
+  // Explicitly enable Turbopack
+  turbopack: {},
+  
+  // Optimize react production build
+  reactStrictMode: true,
+  
+  // Explicitly enable Turbopack to avoid conflicts with webpack config
+  turbopack: {},
 };
 
 export default nextConfig;
