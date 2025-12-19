@@ -3,8 +3,11 @@ import Image from 'next/image'
 import { Star, Quote, MessageCircle, ThumbsUp } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Patient Testimonials - Dr. Gaurav Saini | Real Patient Stories',
-  description: 'Read genuine testimonials from patients who have experienced successful treatment with Dr. Gaurav Saini. Real stories of recovery and restored mobility.',
+  title: 'Patient Testimonials - Dr. Gaurav Saini',
+  description: 'Read genuine testimonials from patients treated by expert orthopedic surgeon Dr. Gaurav Saini in Mohali & Chandigarh. See real stories of recovery.',
+  alternates: {
+    canonical: 'https://drgauravsaini.com/testimonials/'
+  }
 }
 
   export default function TestimonialsPage() {
@@ -18,7 +21,9 @@ export const metadata: Metadata = {
         procedure: 'Total Knee Replacement (CORI Robotic)',
         recoveryTime: '3 months post-op',
         testimonial: 'I can walk without pain for the first time in 5 years! Dr. Saini&apos;s robotic surgery was a miracle. The precision was incredible and recovery was much faster than expected.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 2,
@@ -28,7 +33,9 @@ export const metadata: Metadata = {
         procedure: 'Hip Replacement Surgery',
         recoveryTime: '4 months post-op',
         testimonial: 'Back to my daily activities with zero pain! Dr. Saini explained everything clearly and the surgery was performed with utmost care. Highly recommend!',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 3,
@@ -38,7 +45,9 @@ export const metadata: Metadata = {
         procedure: 'ACL Reconstruction',
         recoveryTime: '6 months post-op',
         testimonial: 'From sports injury to full recovery! Dr. Saini&apos;s expertise in sports medicine is outstanding. I&apos;m back to playing cricket with full confidence.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 4,
@@ -48,7 +57,9 @@ export const metadata: Metadata = {
         procedure: 'Shoulder Arthroscopy',
         recoveryTime: '2 months post-op', 
         testimonial: 'Minimal scarring and quick recovery! The arthroscopic procedure was so advanced. Dr. Saini&apos;s skill and the modern techniques used were impressive.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 5,
@@ -58,7 +69,9 @@ export const metadata: Metadata = {
         procedure: 'Complex Fracture Treatment',
         recoveryTime: '5 months post-op',
         testimonial: 'Perfect bone healing after a complex fracture! Dr. Saini&apos;s trauma expertise saved my leg. The care and follow-up were exceptional throughout.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 6,
@@ -68,7 +81,9 @@ export const metadata: Metadata = {
         procedure: 'Robotic Hip Replacement',
         recoveryTime: '4 months post-op',
         testimonial: 'The robotic precision made all the difference in my hip replacement. Minimal pain and quick recovery allowed me to return to my daily activities.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 7,
@@ -78,7 +93,9 @@ export const metadata: Metadata = {
         procedure: 'Knee Arthroscopy',
         recoveryTime: '2 months post-op',
         testimonial: 'Dr. Saini&apos;s expertise in arthroscopic procedures helped me recover from my sports injury quickly. I&apos;m back to running marathons!',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 8,
@@ -88,7 +105,9 @@ export const metadata: Metadata = {
         procedure: 'Shoulder Replacement',
         recoveryTime: '5 months post-op',
         testimonial: 'After years of shoulder pain, the replacement surgery has given me a new lease on life. Dr. Saini&apos;s care was exceptional throughout.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       },
       {
         id: 9,
@@ -98,7 +117,9 @@ export const metadata: Metadata = {
         procedure: 'Spinal Fusion Surgery',
         recoveryTime: '6 months post-op',
         testimonial: 'The spinal fusion surgery was complex, but Dr. Saini&apos;s skill and compassionate care made my recovery journey smooth and successful.',
-        rating: 5
+        rating: 5,
+        imageWidth: 1200,
+        imageHeight: 800
       }
     ]
     const testimonials = [
@@ -166,14 +187,14 @@ export const metadata: Metadata = {
     ]
 
     return (
-      <div className="min-h-screen bg-gray-50 py-12">
+      <div className="min-h-screen bg-gray-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 font-serif mb-4">
+          <div className="text-center mb-16 mt-8">
+            <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
               Patient Testimonials
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
               Real stories from real patients who have experienced life-changing results with Dr. Gaurav Saini
             </p>
           </div>
@@ -206,14 +227,15 @@ export const metadata: Metadata = {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {recoveryPhotos.map((patient) => (
                 <div key={patient.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                  <div className="relative h-56 border-4 border-blue-200 hover:border-blue-400 transition-colors duration-300 rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-2">
+                  <div className="relative h-64 border-4 border-blue-200 hover:border-blue-400 transition-colors duration-300 rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
                     <div className="relative w-full h-full flex items-center justify-center">
                       <Image
                         src={patient.image}
                         alt={`${patient.patientName} - ${patient.procedure} Recovery`}
-                        fill
+                        width={patient.imageWidth}
+                        height={patient.imageHeight}
                         style={{ objectFit: 'contain' }}
-                        className="rounded-lg transition-transform duration-300"
+                        className="rounded-lg transition-transform duration-300 w-full h-full"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority={patient.id <= 3}
                       />
@@ -359,9 +381,10 @@ export const metadata: Metadata = {
                     <Image
                       src="/images/testimonials/patient-1 (3).jpg"
                       alt="Patient Review"
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className="rounded-full"
+                      width={1200}
+                      height={800}
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-full w-full h-full"
                     />
                   </div>
                   <div className="flex-1">
@@ -386,9 +409,10 @@ export const metadata: Metadata = {
                     <Image
                       src="/images/testimonials/patient-1 (13).jpg"
                       alt="Recovery Story"
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className="rounded-full"
+                      width={1200}
+                      height={800}
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-full w-full h-full"
                     />
                   </div>
                   <div className="flex-1">
@@ -413,9 +437,10 @@ export const metadata: Metadata = {
                     <Image
                       src="/images/testimonials/patient-1 (17).jpg"
                       alt="Successful Treatment"
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className="rounded-full"
+                      width={1200}
+                      height={800}
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-full w-full h-full"
                     />
                   </div>
                   <div className="flex-1">
@@ -440,9 +465,10 @@ export const metadata: Metadata = {
                     <Image
                       src="/images/testimonials/patient-1 (26).jpg"
                       alt="Patient Experience"
-                      fill
-                      style={{ objectFit: 'contain' }}
-                      className="rounded-full"
+                      width={1200}
+                       height={800}
+                      style={{ objectFit: 'cover' }}
+                      className="rounded-full w-full h-full"
                     />
                   </div>
                   <div className="flex-1">

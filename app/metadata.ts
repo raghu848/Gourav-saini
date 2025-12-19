@@ -46,8 +46,11 @@ const defaultKeywords = [
 ]
 
 export const defaultMetadata: Metadata = {
-  title: 'Dr. Gaurav Saini - Best Orthopaedic & Joint Replacement Surgeon in Mohali, Chandigarh',
-  description: 'Dr. Gaurav Saini is the best orthopaedic surgeon in Mohali & Chandigarh, specializing in robotic knee replacement, sports injuries, and joint replacement surgery. Top-rated orthopedic surgeon in tricity with 20+ years experience. Book appointment today.',
+  title: {
+    default: 'Dr. Gaurav Saini - Orthopedic Surgeon Mohali & Chandigarh',
+    template: '%s | Dr. Gaurav Saini'
+  },
+  description: 'Expert orthopaedic surgeon in Mohali. Specializing in robotic knee replacement and joint surgery.',
   keywords: defaultKeywords.join(', '),
   robots: {
     index: true,
@@ -61,17 +64,17 @@ export const defaultMetadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/favicon.png',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/icons/favicon-192.png',
   },
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: 'https://drgauravsaini.com',
-    title: 'Dr. Gaurav Saini - Leading Orthopaedic Surgeon in Mohali & Chandigarh | Joint Replacement Specialist',
-    description: 'Best orthopaedic surgeon in Mohali & tricity area. Expert in robotic knee replacement, sports injuries, and joint surgery with 20+ years experience. Book appointment now.',
-    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    title: 'Dr. Gaurav Saini - Orthopedic Surgeon Mohali & Chandigarh',
+    description: 'Expert orthopaedic surgeon in Mohali. Specializing in robotic knee replacement and joint surgery.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon Mohali',
     images: [{
       url: '/images/dr-saini-logo.jpg',
       width: 1200,
@@ -81,9 +84,10 @@ export const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali',
-    description: 'Expert in robotic knee replacement, sports injuries, and joint surgery with 20+ years experience.',
+    title: 'Dr. Gaurav Saini - Orthopedic Surgeon Mohali',
+    description: 'Expert in robotic knee replacement and joint surgery.',
     images: ['/images/dr-saini-logo.jpg'],
+    creator: '@DrGauravSaini'
   },
   authors: [{
     name: 'Dr. Gaurav Saini',
@@ -97,13 +101,16 @@ export const defaultMetadata: Metadata = {
   metadataBase: new URL('https://drgauravsaini.com'),
   alternates: {
     canonical: 'https://drgauravsaini.com'
+  },
+  verification: {
+    google: 'googlef908ecc32b2da324.html',
   }
 }
 
 export const servicesMetadata = {
   'knee-replacement': {
-    title: 'Best Knee Replacement Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
-    description: 'Advanced robotic knee replacement surgery by Dr. Gaurav Saini, the best orthopedic surgeon in Mohali & Chandigarh. Expert in total & partial knee replacement using CORI technology. Book appointment today.',
+    title: 'Knee Replacement Surgery | Dr. Gaurav Saini',
+    description: 'Advanced robotic knee replacement surgery. Expert in total & partial knee replacement using CORI technology.',
     keywords: [
       'knee replacement surgery in mohali',
       'best knee replacement surgeon',
@@ -120,8 +127,8 @@ export const servicesMetadata = {
     ].join(', ')
   },
   'sports-injury': {
-    title: 'Best Sports Injury Treatment in Mohali & Chandigarh | Dr. Gaurav Saini',
-    description: 'Expert sports injury treatment and arthroscopy by Dr. Gaurav Saini. Leading sports medicine specialist in Mohali & Chandigarh offering ACL reconstruction and advanced arthroscopic surgery. Book consultation today.',
+    title: 'Sports Injury Treatment | Dr. Gaurav Saini',
+    description: 'Expert sports injury treatment and arthroscopy. Offering ACL reconstruction and advanced arthroscopic surgery.',
     keywords: [
       'sports injury treatment mohali',
       'ACL surgery specialist',
@@ -137,8 +144,8 @@ export const servicesMetadata = {
     ].join(', ')
   },
   'hip-replacement': {
-    title: 'Best Hip Replacement Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
-    description: 'Advanced hip replacement surgery by Dr. Gaurav Saini, the leading orthopedic surgeon in Mohali & Chandigarh. Expert in total hip replacement and minimally invasive techniques. Schedule consultation today.',
+    title: 'Hip Replacement Surgery | Dr. Gaurav Saini',
+    description: 'Advanced hip replacement surgery. Expert in total hip replacement and minimally invasive techniques.',
     keywords: [
       'hip replacement surgery mohali',
       'best hip replacement surgeon',
@@ -154,8 +161,8 @@ export const servicesMetadata = {
     ].join(', ')
   },
   'fracture-trauma': {
-    title: 'Best Trauma Care Hospital in Chandigarh & Mohali | Dr. Gaurav Saini',
-    description: 'Emergency trauma care and fracture treatment by Dr. Gaurav Saini. Leading trauma care hospital in Chandigarh & Mohali offering 24/7 emergency orthopedic services. Emergency care available.',
+    title: 'Trauma Care | Dr. Gaurav Saini',
+    description: 'Emergency trauma care and fracture treatment. Offering 24/7 emergency orthopedic services.',
     keywords: [
       'trauma care hospital chandigarh',
       'fracture treatment specialist',
@@ -170,8 +177,8 @@ export const servicesMetadata = {
     ].join(', ')
   },
   'robotic-surgery': {
-    title: 'Best Robotic Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
-    description: 'Advanced robotic surgery using CORI technology by Dr. Gaurav Saini. Leading robotic surgery specialist in Mohali & Chandigarh for joint replacement procedures. Experience precision surgery.',
+    title: 'Robotic Surgery | Dr. Gaurav Saini',
+    description: 'Advanced robotic surgery using CORI technology. Specialist in joint replacement procedures.',
     keywords: [
       'robotic surgery mohali',
       'CORI robotic surgery',
@@ -185,9 +192,105 @@ export const servicesMetadata = {
       'precision joint surgery'
     ].join(', ')
   },
+  'joint-replacement-center': {
+    title: 'Joint Replacement Center | Dr. Gaurav Saini',
+    description: 'Advanced joint replacement center with robotic surgery using CORI technology for knee and hip replacements.',
+    keywords: [
+      'joint replacement center mohali',
+      'robotic joint replacement',
+      'CORI technology',
+      'knee hip replacement',
+      'Joint Replacement Specialist Mohali',
+      'joint replacement center chandigarh',
+      'robotic knee replacement mohali',
+      'hip replacement surgery chandigarh'
+    ].join(', ')
+  },
+  'sports-injury-arthroscopy': {
+    title: 'Sports Injury & Arthroscopy | Dr. Gaurav Saini',
+    description: 'Advanced sports injury treatment and arthroscopy. Expert in ACL reconstruction and minimally invasive techniques.',
+    keywords: [
+      'sports injury treatment mohali',
+      'ACL surgery specialist',
+      'arthroscopy surgeon',
+      'sports medicine doctor',
+      'knee arthroscopy',
+      'ligament repair',
+      'Sports Injury Clinic Mohali',
+      'Sports injury specialist Chandigarh',
+      'sports injury treatment chandigarh',
+      'ACL reconstruction mohali',
+      'sports medicine specialist tricity'
+    ].join(', ')
+  },
+  'arthroscopic-surgery': {
+    title: 'Arthroscopic Surgery | Dr. Gaurav Saini',
+    description: 'Minimally invasive arthroscopic surgery for joint problems with faster recovery and less scarring.',
+    keywords: [
+      'arthroscopic surgery mohali',
+      'knee arthroscopy',
+      'shoulder arthroscopy',
+      'hip arthroscopy',
+      'minimally invasive joint surgery',
+      'arthroscopy surgeon',
+      'joint surgery mohali',
+      'arthroscopic surgery chandigarh',
+      'knee surgery mohali',
+      'shoulder surgery chandigarh'
+    ].join(', ')
+  },
+  'fracture-trauma-care': {
+    title: 'Fracture & Trauma Care | Dr. Gaurav Saini',
+    description: 'Emergency orthopedic surgeon in Mohali & Tricity providing trauma care with precision diagnostics for fractures and complex injuries.',
+    keywords: [
+      'fracture care mohali',
+      'trauma care chandigarh',
+      'emergency orthopedic care',
+      'complex fracture treatment',
+      'polytrauma care',
+      'Trauma Care Hospital Chandigarh',
+      'Orthopaedic Surgeon Mohali',
+      'emergency fracture care mohali',
+      '24 hour orthopedic hospital',
+      'trauma care mohali'
+    ].join(', ')
+  },
+  'robotic-joint-replacement': {
+    title: 'Robotic Joint Replacement | Dr. Gaurav Saini',
+    description: 'Advanced robotic joint replacement with CORI technology for precise knee and hip surgery with faster recovery.',
+    keywords: [
+      'robotic joint replacement mohali',
+      'CORI robotic surgery',
+      'robotic knee replacement',
+      'robotic hip replacement',
+      'joint replacement surgery',
+      'Dr. Saini Robotic Surgery Mohali',
+      'Robotic Knee Replacement Mohali',
+      'robotic surgery chandigarh',
+      'CORI technology mohali',
+      'precision joint surgery'
+    ].join(', ')
+  },
+  'sports-injury-treatment': {
+    title: 'Sports Injury Treatment | Dr. Gaurav Saini',
+    description: 'Top orthopedic surgeon in Tricity & Mohali specializing in sports injury treatment including ACL tears and meniscus injuries.',
+    keywords: [
+      'sports injury treatment mohali',
+      'ACL surgery specialist',
+      'arthroscopy surgeon',
+      'sports medicine doctor',
+      'knee arthroscopy',
+      'ligament repair',
+      'Sports Injury Clinic Mohali',
+      'Sports injury specialist Chandigarh',
+      'sports injury treatment chandigarh',
+      'ACL reconstruction mohali',
+      'sports medicine specialist tricity'
+    ].join(', ')
+  },
   'spine-surgery': {
-    title: 'Best Spine Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
-    description: 'Advanced spine surgery treatment by Dr. Gaurav Saini. Leading spine surgeon in Mohali & Chandigarh offering minimally invasive techniques for back pain and spinal conditions. Get relief today.',
+    title: 'Spine Surgery | Dr. Gaurav Saini',
+    description: 'Advanced spine surgery treatment. Offering minimally invasive techniques for back pain and spinal conditions.',
     keywords: [
       'spine surgery mohali',
       'back pain specialist',
@@ -214,7 +317,7 @@ export const generateServiceMetadata = (service: string): Metadata => {
       description: serviceData.description
     },
     alternates: {
-      canonical: `https://drgauravsaini.com/services/${service}`
+      canonical: `https://drgauravsaini.com/services/${service}/`
     }
   }
 }

@@ -3,11 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = {
-  title: 'Spine Surgery - Dr. Gaurav Saini',
-  description: 'Advanced spine surgery solutions for back pain, disc problems, and spinal conditions with minimally invasive techniques.',
-}
+export const metadata: Metadata = generateServiceMetadata('spine-surgery')
 
 export default function SpineSurgeryPage() {
   const spineConditions = [

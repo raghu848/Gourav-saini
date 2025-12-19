@@ -12,31 +12,41 @@ const ImageSlideshow = () => {
       id: 1,
       url: '/images/Minimally-invasive-knee-replacement.webp',
       alt: 'Minimally invasive knee replacement surgery',
-      overlayText: 'Minimally Invasive Knee Replacement'
+      overlayText: 'Minimally Invasive Knee Replacement',
+      width: 1200,
+      height: 800
     },
     {
       id: 2,
       url: '/images/Total-hip-replacement.webp',
       alt: 'Total hip replacement procedure',
-      overlayText: 'Advanced Total Hip Replacement'
+      overlayText: 'Advanced Total Hip Replacement',
+      width: 1200,
+      height: 800
     },
     {
       id: 3,
       url: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
       alt: 'Knee arthroscopy keyhole surgery',
-      overlayText: 'Precision Knee Arthroscopy'
+      overlayText: 'Precision Knee Arthroscopy',
+      width: 1200,
+      height: 800
     },
     {
       id: 4,
       url: '/images/Partial-Knee-Replacement.webp',
       alt: 'Partial knee replacement surgery',
-      overlayText: 'Partial Knee Replacement Solutions'
+      overlayText: 'Partial Knee Replacement Solutions',
+      width: 1200,
+      height: 800
     },
     {
       id: 5,
       url: '/images/Knee-presentation-surgeries-HTODFO.webp',
       alt: 'Knee presentation surgeries',
-      overlayText: 'Advanced Surgical Techniques'
+      overlayText: 'Advanced Surgical Techniques',
+      width: 1200,
+      height: 800
     }
   ]
 
@@ -61,7 +71,8 @@ const ImageSlideshow = () => {
               <Image
                 src={slides[currentIndex].url}
                 alt={slides[currentIndex].alt}
-                fill
+                width={slides[currentIndex].width}
+                height={slides[currentIndex].height}
                 style={{ objectFit: 'contain' }}
                 className="p-4"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

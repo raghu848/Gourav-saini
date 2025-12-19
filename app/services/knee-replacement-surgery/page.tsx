@@ -6,7 +6,10 @@ import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
 export const metadata: Metadata = {
   title: 'Knee Replacement Surgery - Dr. Gaurav Saini',
-  description: 'Advanced knee replacement surgery with robotic assistance for pain relief and improved mobility.',
+  description: 'Expert orthopedic surgeon in Mohali & Chandigarh offering advanced robotic knee replacement surgery for pain relief.',
+  alternates: {
+    canonical: 'https://drgauravsaini.com/services/knee-replacement-surgery/'
+  }
 }
 
 export default function KneeReplacementSurgeryPage() {

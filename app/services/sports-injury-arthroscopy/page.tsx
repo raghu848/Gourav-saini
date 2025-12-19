@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, CheckCircle, Users, Activity, Shield } from 'luci
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = generateServiceMetadata('sports-injury')
+export const metadata: Metadata = generateServiceMetadata('sports-injury-arthroscopy')
 
 export default function SportsInjuryArthroscopyPage() {
   const conditions = [

@@ -14,17 +14,25 @@ import {
   MessageCircle,
   Twitter
 } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear()) // Initialize with client date
+  const [isClient, setIsClient] = useState(false) // Track if we're on client
+
+  // Set isClient to true on mount (client-side only)
+  useEffect(() => {
+    setIsClient(true)
+    // Update year to ensure it's current
+    setCurrentYear(new Date().getFullYear())
+  }, [])
 
   const quickLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Dr. Saini' },
+    { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Services' },
-    { href: '/testimonials', label: 'Patient Reviews' },
-    { href: '/blog', label: 'Health Blog' },
-    { href: '/contact', label: 'Contact Us' },
+    { href: '/blog', label: 'Blogs' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   const socialLinks = [

@@ -11,9 +11,15 @@ const Navbar = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [imageError, setImageError] = useState(false)
+  const [isClient, setIsClient] = useState(false) // Track if we're on client
   const servicesRef = useRef<HTMLDivElement>(null)
   const mobileMenuRef = useRef<HTMLDivElement>(null)
   const pathname = usePathname()
+
+  // Set isClient to true on mount (client-side only)
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   // Handle scroll effect
   useEffect(() => {
@@ -25,42 +31,42 @@ const Navbar = () => {
   }, [])
 
   // Close dropdown when clicking outside
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent) => {
-    const target = event.target as Node;
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
 
-    // ✅ Desktop: close services dropdown if clicked outside
-    if (window.innerWidth >= 1280) { // xl breakpoint
-      if (servicesRef.current && !servicesRef.current.contains(target)) {
+      // ✅ Desktop: close services dropdown if clicked outside
+      // Only run this logic on client-side
+      if (isClient && window.innerWidth >= 1280) { // xl breakpoint
+        if (servicesRef.current && !servicesRef.current.contains(target)) {
+          setIsServicesDropdownOpen(false);
+        }
+      }
+
+      // ✅ Mobile/Tablet: close menu when clicking outside container
+      if (isOpen && !(target as Element).closest(".mobile-menu-container")) {
+        setIsOpen(false);
         setIsServicesDropdownOpen(false);
       }
+    };
+
+    if (isServicesDropdownOpen || isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
-    // ✅ Mobile/Tablet: close menu when clicking outside container
-    if (isOpen && !(target as Element).closest(".mobile-menu-container")) {
-      setIsOpen(false);
-      setIsServicesDropdownOpen(false);
-    }
-  };
-
-  if (isServicesDropdownOpen || isOpen) {
-    document.addEventListener("mousedown", handleClickOutside);
-  }
-
-  return () => {
-    document.removeEventListener("mousedown", handleClickOutside);
-  };
-}, [isServicesDropdownOpen, isOpen]);
-
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isServicesDropdownOpen, isOpen, isClient]);
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
+    { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Services', hasDropdown: true },
     { href: '/testimonials', label: 'Testimonials' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contact' },
-  ]
+    { href: '/blog', label: 'Blogs' },
+    { href: '/contact', label: 'Contact' }
+  ];
 
   const servicesItems = [
     { name: 'Knee Replacement Surgery', link: '/services/knee-replacement-surgery' },
@@ -142,54 +148,69 @@ useEffect(() => {
               {/* Desktop Navigation Links - Hidden on smaller screens */}
               <div className="hidden lg:flex items-center space-x-2 xl:space-x-4 flex-shrink-0">
                 {navLinks.map((link) => (
-                  <div 
-                    key={link.href}
-                    className="relative group"
-                    ref={link.hasDropdown ? servicesRef : null}
-                    onMouseEnter={link.hasDropdown ? () => setIsServicesDropdownOpen(true) : undefined}
-                    onMouseLeave={link.hasDropdown ? () => setIsServicesDropdownOpen(false) : undefined}
-                  >
-                    <Link
-                      href={link.href}
-                      className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-base font-bold transition-all duration-300 whitespace-nowrap ${
-                        pathname === link.href
-                          ? 'text-blue-800 bg-blue-50 shadow-sm'
-                          : 'text-gray-800 hover:text-blue-800 hover:bg-blue-50'
-                      }`}
+                  link.hasDropdown ? (
+                    <div 
+                      key={link.href} 
+                      className="relative group"
+                      ref={servicesRef}
+                      onMouseEnter={() => setIsServicesDropdownOpen(true)}
+                      onMouseLeave={() => setIsServicesDropdownOpen(false)}
                     >
-                      <span>{link.label}</span>
-                      {link.hasDropdown && <ChevronDown size={16} className={`transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />}
-                    </Link>
-
-                    {/* Services Dropdown */}
-                    {link.hasDropdown && isServicesDropdownOpen && (
-                      <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
-                        <div className="bg-gradient-to-r from-blue-700 to-teal-600 px-6 py-4">
-                          <h3 className="text-white font-bold text-lg">Our Services</h3>
-                          <p className="text-blue-100 text-sm">Comprehensive orthopaedic care</p>
-                        </div>
-                        <div className="p-3">
-                          {servicesItems.map((service, index) => (
-                            <Link
-                              key={index}
-                              href={service.link}
-                              className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium"
+                      <Link
+                        href={link.href}
+                        className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-base font-bold transition-all duration-300 whitespace-nowrap ${
+                          pathname === link.href
+                            ? 'text-blue-800 bg-blue-50 shadow-sm'
+                            : 'text-gray-800 hover:text-blue-800 hover:bg-blue-50'
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                        <ChevronDown size={16} className={`transition-transform duration-300 ${isServicesDropdownOpen ? 'rotate-180' : ''}`} />
+                      </Link>
+                      
+                      {/* Services Dropdown */}
+                      {isServicesDropdownOpen && (
+                        <div className="absolute top-full left-0 mt-2 w-72 bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden z-50">
+                          <div className="bg-gradient-to-r from-blue-700 to-teal-600 px-6 py-4">
+                            <h3 className="text-white font-bold text-lg">Our Services</h3>
+                            <p className="text-blue-100 text-sm">Comprehensive orthopaedic care</p>
+                          </div>
+                          <div className="p-3">
+                            {servicesItems.map((service, index) => (
+                              <Link
+                                key={index}
+                                href={service.link}
+                                className="block px-4 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg transition-all duration-200 text-sm font-medium"
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                          <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
+                            <Link 
+                              href="/services"
+                              className="text-blue-700 font-semibold text-sm hover:text-blue-800 transition-colors"
                             >
-                              {service.name}
+                              View All Services →
                             </Link>
-                          ))}
+                          </div>
                         </div>
-                        <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
-                          <Link 
-                            href="/services"
-                            className="text-blue-700 font-semibold text-sm hover:text-blue-800 transition-colors"
-                          >
-                            View All Services →
-                          </Link>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+                      )}
+                    </div>
+                  ) : (
+                    <div key={link.href} className="relative group">
+                      <Link
+                        href={link.href}
+                        className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-base font-bold transition-all duration-300 whitespace-nowrap ${
+                          pathname === link.href
+                            ? 'text-blue-800 bg-blue-50 shadow-sm'
+                            : 'text-gray-800 hover:text-blue-800 hover:bg-blue-50'
+                        }`}
+                      >
+                        <span>{link.label}</span>
+                      </Link>
+                    </div>
+                  )
                 ))}
               </div>
 
@@ -319,7 +340,7 @@ useEffect(() => {
                               <Link
                                 key={index}
                                 href={service.link}
-                                className="block px-4 py-4 text-base text-gray-700 bg-white hover:bg-blue-100 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium shadow-sm border border-gray-200 active:bg-blue-100 active:scale-95"
+                                className="block px-4 py-4 text-base text-gray-700 bg-white hover:bg-blue-100 hover:text-blue-600 rounded-lg transition-all duration-200 font-medium shadow-sm border border-gray-200"
                                 onClick={(e) => {
                                 
                                   e.stopPropagation();
@@ -397,8 +418,7 @@ useEffect(() => {
         </div>
       </nav>
 
-      {/* Spacer to prevent content from hiding under fixed navbar */}
-      <div className="h-12 lg:h-16 xl:h-20"></div>
+
     </>
   )
 }

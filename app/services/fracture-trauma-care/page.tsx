@@ -3,11 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = {
-  title: 'Fracture & Trauma Care - Dr. Gaurav Saini',
-  description: 'Emergency trauma care with precision diagnostics for quick and compassionate treatment of fractures and complex injuries.',
-}
+export const metadata: Metadata = generateServiceMetadata('fracture-trauma-care')
 
 export default function FractureTraumaCarePage() {
   const traumaTypes = [

@@ -11,63 +11,133 @@ const DoctorImagesSection = () => {
       id: 1,
       url: '/images/dr images/IMG-20250908-WA0010.jpg',
       alt: 'Medical Procedure 1',
-      title: 'Advanced Surgical Technique'
+      title: 'Advanced Joint Replacement',
+      width: 1200,
+      height: 800
     },
     {
       id: 2,
       url: '/images/dr images/IMG-20250908-WA0022.jpg',
       alt: 'Medical Procedure 2',
-      title: 'Precision Orthopedic Care'
+      title: 'Precision Orthopedic Care',
+      width: 1200,
+      height: 800
     },
     {
       id: 3,
       url: '/images/dr images/IMG-20250908-WA0025.jpg',
       alt: 'Medical Procedure 3',
-      title: 'Robotic Knee Replacement'
+      title: 'Robotic Knee Replacement',
+      width: 1200,
+      height: 800
     },
     {
       id: 4,
       url: '/images/dr images/IMG-20250908-WA0028.jpg',
       alt: 'Medical Procedure 4',
-      title: 'Minimally Invasive Surgery'
+      title: 'Minimally Invasive Surgery',
+      width: 1200,
+      height: 800
     },
     {
       id: 5,
       url: '/images/dr images/IMG-20250908-WA0029.jpg',
       alt: 'Medical Procedure 5',
-      title: 'Orthopedic Excellence'
+      title: 'Orthopedic Excellence',
+      width: 1200,
+      height: 800
     },
     {
       id: 6,
       url: '/images/dr images/patient-1 (3).jpg',
       alt: 'Medical Procedure 6',
-      title: 'Patient Recovery'
+      title: 'Patient Recovery',
+      width: 1200,
+      height: 800
     },
     {
       id: 7,
       url: '/images/dr images/patient-1 (13).jpg',
       alt: 'Medical Procedure 7',
-      title: 'Advanced Treatment'
+      title: 'Advanced Treatment',
+      width: 1200,
+      height: 800
     },
     {
       id: 8,
       url: '/images/dr images/patient-1 (17).jpg',
       alt: 'Medical Procedure 8',
-      title: 'Surgical Precision'
+      title: 'Surgical Precision',
+      width: 1200,
+      height: 800
     }
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
+  const [isClient, setIsClient] = useState(false) // Track if we're on client
 
-  // Auto-rotate images every 4 seconds
+  // Set isClient to true on mount (client-side only)
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Auto-rotate images every 4 seconds (client-side only)
+  useEffect(() => {
+    if (!isClient) return; // Don't run on server
+    
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
     }, 4000)
 
     return () => clearInterval(interval)
-  }, [images.length])
+  }, [images.length, isClient])
+
+  // Don't render animations on server to prevent hydration mismatch
+  if (!isClient) {
+    return (
+      <section className="py-6 bg-gradient-to-br from-blue-50 to-green-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-serif">
+              Our Medical Excellence
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Advanced orthopedic procedures with cutting-edge technology and compassionate care
+            </p>
+          </div>
+          
+          {/* Static grid of images for server-side */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="relative rounded-2xl overflow-hidden shadow-lg cursor-pointer transform transition-all duration-300 hover:scale-105"
+              >
+                <div className="relative w-full h-48 bg-gradient-to-br from-white to-blue-50 border-2 border-white rounded-xl flex items-center justify-center p-3 shadow-inner">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <Image
+                      src={image.url}
+                      alt={image.alt}
+                      width={image.width}
+                      height={image.height}
+                      style={{ objectFit: 'contain' }}
+                      className="rounded-lg"
+                      sizes="(max-width: 768px) 50vw, 25vw"
+                    />
+                  </div>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-xl"></div>
+                <div className="absolute bottom-3 left-3 right-3">
+                  <p className="text-white text-sm font-medium truncate drop-shadow-md">{image.title}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   return (
     <section className="py-6 bg-gradient-to-br from-blue-50 to-green-50">
@@ -123,7 +193,8 @@ const DoctorImagesSection = () => {
                       <Image
                         src={image.url}
                         alt={image.alt}
-                        fill
+                        width={image.width}
+                        height={image.height}
                         style={{ objectFit: 'contain' }}
                         className="rounded-2xl"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -180,7 +251,8 @@ const DoctorImagesSection = () => {
                   <Image
                     src={image.url}
                     alt={image.alt}
-                    fill
+                    width={image.width}
+                    height={image.height}
                     style={{ objectFit: 'contain' }}
                     className="rounded-lg"
                     sizes="(max-width: 768px) 50vw, 25vw"

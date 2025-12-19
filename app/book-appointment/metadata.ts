@@ -1,0 +1,6 @@
+import type { Metadata } from 'next'
+
+export const bookAppointmentMetadata: Metadata = {
+  title: 'Book Appointment with Dr. Gaurav Saini - Orthopedic Surgeon in Mohali & Chandigarh | Online Booking',
+  description: 'Schedule your consultation with Dr. Gaurav Saini, a senior consultant orthopedic surgeon specializing in robotic knee replacement, hip replacement, sports injury treatment, and trauma care in Mohali & Chandigarh. Book your appointment online for personalized orthopedic care with over 20 years of specialized experience. Our convenient booking system allows you to select your preferred service, date, and time slot directly. Dr. Saini offers expert consultations for joint replacement surgery, sports injury rehabilitation, ACL reconstruction, arthroscopic procedures, and emergency trauma care. Simply choose from available time slots, provide your contact information, and our team will confirm your appointment within 24 hours. For immediate assistance, you can also reach us via phone at +91 98767 77393.',
+}

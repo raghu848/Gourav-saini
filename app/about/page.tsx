@@ -20,12 +20,22 @@ import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'About Dr. Gaurav Saini - MBBS, MS, DNB, MNAMS Orthopedic Surgeon',
-  description: 'Meet Dr. Gaurav Saini, an award-winning orthopedic surgeon with 20 years of experience specializing in robotic joint replacement, sports injuries, and trauma care in Mohali.',
+  title: 'About Dr. Gaurav Saini - Orthopedic Surgeon',
+  description: 'Award-winning orthopedic surgeon in Mohali & Chandigarh. 20+ years experience in robotic joint replacement and sports injuries. ',
+  alternates: {
+    canonical: 'https://drgauravsaini.com/about/'
+  }
 }
 
 export default function AboutPage() {
-  const specialties = [
+  const achievements: { number: string; label: string }[] = [
+    { number: '5000+', label: 'Successful Surgeries' },
+    { number: '20+', label: 'Years Experience' },
+    { number: '99%', label: 'Patient Satisfaction' },
+    { number: '15+', label: 'Awards Received' }
+  ]
+
+  const specialties: { icon: React.ComponentType<{ className?: string }>; title: string; description: string }[] = [
     {
       icon: Heart,
       title: 'Robotic Joint Replacement',
@@ -48,14 +58,7 @@ export default function AboutPage() {
     }
   ]
 
-  const achievements = [
-    { number: '5000+', label: 'Successful Surgeries' },
-    { number: '20+', label: 'Years Experience' },
-    { number: '99%', label: 'Patient Satisfaction' },
-    { number: '15+', label: 'Awards Received' }
-  ]
-
-  const timeline = [
+  const timeline: { year: string; title: string; description: string }[] = [
     {
       year: '2007',
       title: 'MBBS Degree',
@@ -89,18 +92,18 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
+    <div className="min-h-screen bg-gray-50 relative">
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-4">
+        <div className="text-center mb-16 mt-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
             Meet the Doctor -  Dr. Gaurav Saini
           </h1>
-          <p className="text-xl text-blue-600 font-semibold mb-2">
+          <p className="text-2xl text-blue-600 font-semibold mb-4">
             MBBS  , MS, DNB, MNAMS - ORTHOPAEDIC SURGEON IN MOHALI
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Award-winning orthopedic surgeon with nearly 20 years of experience, completely dedicated to Robotic Hip and Knee Surgeries
           </p>
         </div>

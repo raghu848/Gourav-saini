@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
@@ -14,6 +15,8 @@ interface BlogPost {
   publishDate: string
   image: string
   author: string
+  imageWidth: number
+  imageHeight: number
   content: string
 }
 
@@ -29,12 +32,14 @@ function getBlogPost(id: string): BlogPost | undefined {
       publishDate: '2024-01-15',
       image: '/images/Partial-Knee-Replacement.webp',
       author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
       content: `
         <div class="prose max-w-none">
           <p>Knee replacement surgery is a significant decision that shouldn't be taken lightly. However, for many patients suffering from severe knee pain and limited mobility, it can be a life-changing procedure that restores their quality of life.</p>
           
           <h2>Key Indicators for Knee Replacement</h2>
-          <p>Here are the primary signs that may indicate you&apos;re a candidate for knee replacement surgery:</p>
+          <p>Here are the primary signs that may indicate you're a candidate for knee replacement surgery:</p>
           
           <ul>
             <li><strong>Severe Pain:</strong> Persistent knee pain that interferes with daily activities, even while resting</li>
@@ -57,7 +62,7 @@ function getBlogPost(id: string): BlogPost | undefined {
           <h2>What to Expect</h2>
           <p>Modern knee replacement surgery has a high success rate, with most patients experiencing significant pain relief and improved function. Recovery typically takes several weeks to months, with physical therapy playing a crucial role in the process.</p>
           
-          <p>If you&apos;re experiencing these symptoms, don&apos;t hesitate to consult with an orthopedic specialist who can evaluate your specific situation and recommend the best treatment options for you.</p>
+          <p>If you're experiencing these symptoms, don't hesitate to consult with an orthopedic specialist who can evaluate your specific situation and recommend the best treatment options for you.</p>
         </div>
       `
     },
@@ -70,6 +75,8 @@ function getBlogPost(id: string): BlogPost | undefined {
       publishDate: '2024-01-10',
       image: '/images/Knee-presentation-surgeries-HTODFO.webp',
       author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
       content: `
         <div class="prose max-w-none">
           <p>Knee pain can significantly impact your daily life, but the right exercises can help reduce pain and improve mobility. These exercises are gentle on the joints while strengthening the muscles that support your knees.</p>
@@ -110,6 +117,8 @@ function getBlogPost(id: string): BlogPost | undefined {
       publishDate: '2024-01-05',
       image: '/images/Total-hip-replacement.webp',
       author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
       content: `
         <div class="prose max-w-none">
           <p>Preparing for orthopedic surgery involves both physical and mental preparation. The better prepared you are, the smoother your recovery will be.</p>
@@ -154,7 +163,7 @@ function getBlogPost(id: string): BlogPost | undefined {
             <li>Leave jewelry and valuables at home</li>
           </ul>
           
-          <p>Proper preparation can significantly impact your surgical outcome and recovery time. Don&apos;t hesitate to ask your surgical team any questions you may have.</p>
+          <p>Proper preparation can significantly impact your surgical outcome and recovery time. Don't hesitate to ask your surgical team any questions you may have.</p>
         </div>
       `
     }
@@ -178,6 +187,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: `${post.title} | Dr. Gaurav Saini`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://drgauravsaini.com/blog/${id}/`
+    }
   }
 }
 
@@ -204,7 +216,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg p-8 text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-            <p className="text-gray-600 mb-6">The blog post you&apos;re looking for doesn&apos;t exist or has been removed.</p>
+            <p className="text-gray-600 mb-6">The blog post you&#39;re looking for doesn&#39;t exist or has been removed.</p>
             <Link 
               href="/blog" 
               className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
@@ -220,6 +232,40 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 relative">
+      <Head>
+        {/* BlogPosting Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://drgauravsaini.com/blog/${post.id}`
+              },
+              "headline": post.title,
+              "description": post.excerpt,
+              "image": `https://drgauravsaini.com${post.image}`,
+              "author": {
+                "@type": "Person",
+                "name": post.author,
+                "url": "https://drgauravsaini.com"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Dr. Gaurav Saini - Orthopaedic Practice",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://drgauravsaini.com/images/dr-saini-logo.jpg"
+                }
+              },
+              "datePublished": post.publishDate,
+              "dateModified": post.publishDate
+            })
+          }}
+        />
+      </Head>
       <PageAnimationWrapper />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Blog Link */}
@@ -240,7 +286,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             <Image
               src={post.image}
               alt={post.title}
-              fill
+              width={post.imageWidth}
+              height={post.imageHeight}
               className="object-contain"
               sizes="100vw"
             />

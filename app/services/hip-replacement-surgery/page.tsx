@@ -6,7 +6,10 @@ import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
 export const metadata: Metadata = {
   title: 'Hip Replacement Surgery - Dr. Gaurav Saini',
-  description: 'Advanced hip replacement surgery with robotic assistance for pain relief and improved mobility.',
+  description: 'Leading orthopedic surgeon in Mohali & Tricity offering advanced robotic hip replacement surgery for mobility restoration.',
+  alternates: {
+    canonical: 'https://drgauravsaini.com/services/hip-replacement-surgery/'
+  }
 }
 
 export default function HipReplacementSurgeryPage() {

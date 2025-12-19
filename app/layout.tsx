@@ -8,17 +8,23 @@ import EmergencyContactButton from "../components/EmergencyContactButton";
 import StickySocialButtons from "../components/StickySocialButtons";
 import GoogleTagManager from "../components/GoogleAnalytics";
 import { defaultMetadata } from "./metadata";
+import { Suspense } from 'react';
 
+// Preload fonts for better performance
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ['serif'],
 });
 
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
+  fallback: ['sans-serif'],
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -41,19 +47,91 @@ export default function RootLayout({
             content={GOOGLE_SEARCH_CONSOLE_VERIFICATION} 
           />
         )}
+        
+        {/* Preconnect to external domains for better performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Favicon configuration */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+        <link rel="apple-touch-icon" sizes="192x192" href="/icons/favicon-192.png" />
+        
+        {/* Canonical URL will be handled by Next.js metadata */}
+        
+        {/* MedicalOrganization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalOrganization",
+              "name": "Dr. Gaurav Saini",
+              "url": "https://drgauravsaini.com",
+              "logo": "https://drgauravsaini.com/images/dr-saini-logo.jpg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Max Super Specialty Hospital, Cabin No 26 Ground floor, 56A, near Civil Hospital, Phase 6, Sector 56",
+                "addressLocality": "Sahibzada Ajit Singh Nagar",
+                "addressRegion": "Punjab",
+                "postalCode": "160055",
+                "addressCountry": "IN"
+              },
+              "telephone": "+91-9876777393",
+              "medicalSpecialty": [
+                {
+                  "@type": "MedicalSpecialty",
+                  "name": "Orthopaedic Surgery"
+                },
+                {
+                  "@type": "MedicalSpecialty",
+                  "name": "Knee Replacement"
+                },
+                {
+                  "@type": "MedicalSpecialty",
+                  "name": "Hip Replacement"
+                },
+                {
+                  "@type": "MedicalSpecialty",
+                  "name": "Sports Injury Treatment"
+                }
+              ]
+            })
+          }}
+        />
+        
+        {/* WebSite Schema with SearchAction */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Dr. Gaurav Saini",
+              "url": "https://drgauravsaini.com",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://drgauravsaini.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            })
+          }}
+        />
       </head>
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased relative overflow-x-hidden`}
       >
         {(GA_MEASUREMENT_ID || GTM_ID) && (
-          <GoogleTagManager 
-            GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} 
-            GTM_ID={GTM_ID} 
-          />
+          <Suspense>
+            <GoogleTagManager 
+              GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} 
+              GTM_ID={GTM_ID} 
+            />
+          </Suspense>
         )}
-        <AnimatedMedicalBackground />
         <Navbar />
-        <main className="min-h-screen relative z-10">
+        <main className="min-h-screen relative z-10 pt-24 lg:pt-32">
           {children}
         </main>
         <Footer />

@@ -3,11 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Heart, Eye } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = {
-  title: 'Arthroscopic Surgery - Dr. Gaurav Saini',
-  description: 'Minimally invasive arthroscopic surgery for joint problems with faster recovery and less pain.',
-}
+export const metadata: Metadata = generateServiceMetadata('arthroscopic-surgery')
 
 export default function ArthroscopicSurgeryPage() {
   const arthroscopicProcedures = [

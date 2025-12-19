@@ -4,10 +4,18 @@ import { Phone } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 const EmergencyContactButton = () => {
-  const [isVisible, setIsVisible] = useState(true)
+  const [isVisible, setIsVisible] = useState(false) // Start with false to avoid hydration mismatch
+  const [isClient, setIsClient] = useState(false) // Track if we're on client
 
-  // Handle scroll visibility
+  // Set isClient to true on mount (client-side only)
   useEffect(() => {
+    setIsClient(true)
+  }, [])
+
+  // Handle scroll visibility (client-side only)
+  useEffect(() => {
+    if (!isClient) return; // Don't run on server
+    
     const toggleVisibility = () => {
       if (window.pageYOffset > 300) {
         setIsVisible(true)
@@ -17,8 +25,15 @@ const EmergencyContactButton = () => {
     }
 
     window.addEventListener('scroll', toggleVisibility)
+    // Set initial state
+    toggleVisibility()
     return () => window.removeEventListener('scroll', toggleVisibility)
-  }, [])
+  }, [isClient])
+
+  // Don't render on server to prevent hydration mismatch
+  if (!isClient) {
+    return null
+  }
 
   return (
     <>

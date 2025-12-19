@@ -4,7 +4,7 @@ import { Calendar, ArrowRight, CheckCircle, Users, Heart, Settings } from 'lucid
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = generateServiceMetadata('knee-replacement')
+export const metadata: Metadata = generateServiceMetadata('joint-replacement-center')
 
 export default function JointReplacementCenterPage() {
   const procedures = [

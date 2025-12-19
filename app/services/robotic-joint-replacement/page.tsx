@@ -2,11 +2,9 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, ArrowRight, CheckCircle, Users, Award, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../../app/metadata'
 
-export const metadata: Metadata = {
-  title: 'Robotic Joint Replacement with CORI Technology - Dr. Gaurav Saini',
-  description: 'Advanced robotic joint replacement surgery using CORI technology for precise Total Knee and Hip Replacement with real-time 3D mapping.',
-}
+export const metadata: Metadata = generateServiceMetadata('robotic-joint-replacement')
 
 export default function RoboticJointReplacementPage() {
   const benefits = [

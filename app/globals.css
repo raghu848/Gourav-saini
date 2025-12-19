@@ -29,9 +29,9 @@ body {
   font-family: var(--font-playfair), serif;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - simplified for performance */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -40,120 +40,45 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #c1c1c1;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
-/* Smooth scroll behavior */
+/* Smooth scroll behavior - only for anchor links */
 html {
   scroll-behavior: smooth;
 }
 
 /* Hide scrollbar for navbar navigation */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;  /* Safari and Chrome */
+  display: none;
 }
 
-/* Medical Animation Styles */
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(16, 185, 129, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 80px rgba(16, 185, 129, 0.4);
-  }
+/* Essential animations only */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
 }
 
-@keyframes scan-line {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
+/* Simple hover effect */
+.hover-effect {
+  transition: all 0.2s ease-in-out;
 }
 
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.08);
-  }
+.hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes medical-pulse {
-  0%, 100% {
-    opacity: 0.3;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.1);
-  }
-}
-
-@keyframes holographic-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.medical-glow {
-  animation: pulse-glow 3s ease-in-out infinite;
-}
-
-.medical-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.medical-heartbeat {
-  animation: heartbeat 2s ease-in-out infinite;
-}
-
-.medical-pulse {
-  animation: medical-pulse 4s ease-in-out infinite;
-}
-
-/* Futuristic gradient backgrounds */
-.medical-gradient {
-  background: linear-gradient(135deg, 
-    rgba(59, 130, 246, 0.15) 0%, 
-    rgba(16, 185, 129, 0.15) 50%, 
-    rgba(59, 130, 246, 0.15) 100%);
-}
-
-.holographic-text {
-  background: linear-gradient(45deg, #3B82F6, #10B981, #60A5FA, #34D399, #3B82F6);
-  background-size: 300% 300%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: holographic-shift 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.3));
-}
-
-/* Image Slideshow Styles */
+/* Image Slideshow Styles - optimized */
 .slideshow-image {
   object-fit: cover;
   width: 100%;
@@ -161,17 +86,17 @@ html {
 }
 
 .slideshow-overlay {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3), transparent);
 }
 
 .slideshow-text {
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .slideshow-indicator {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .slideshow-container {
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
 }
