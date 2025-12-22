@@ -379,12 +379,14 @@ export const metadata: Metadata = {
                 <div className="flex items-start space-x-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                     <Image
-                      src="/images/testimonials/patient-1 (3).jpg"
+                      src="/images/testimonials/patient-1 (3).webp"
                       alt="Patient Review"
                       width={1200}
                       height={800}
                       style={{ objectFit: 'cover' }}
                       className="rounded-full w-full h-full"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="flex-1">
@@ -407,12 +409,14 @@ export const metadata: Metadata = {
                 <div className="flex items-start space-x-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                     <Image
-                      src="/images/testimonials/patient-1 (13).jpg"
+                      src="/images/testimonials/patient-1 (13).webp"
                       alt="Recovery Story"
                       width={1200}
                       height={800}
                       style={{ objectFit: 'cover' }}
                       className="rounded-full w-full h-full"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="flex-1">
@@ -435,12 +439,14 @@ export const metadata: Metadata = {
                 <div className="flex items-start space-x-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                     <Image
-                      src="/images/testimonials/patient-1 (17).jpg"
+                      src="/images/testimonials/patient-1 (17).webp"
                       alt="Successful Treatment"
                       width={1200}
                       height={800}
                       style={{ objectFit: 'cover' }}
                       className="rounded-full w-full h-full"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="flex-1">
@@ -463,12 +469,14 @@ export const metadata: Metadata = {
                 <div className="flex items-start space-x-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                     <Image
-                      src="/images/testimonials/patient-1 (26).jpg"
+                      src="/images/testimonials/patient-1 (26).webp"
                       alt="Patient Experience"
                       width={1200}
                        height={800}
                       style={{ objectFit: 'cover' }}
                       className="rounded-full w-full h-full"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <div className="flex-1">

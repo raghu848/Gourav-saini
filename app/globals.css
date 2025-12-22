@@ -58,26 +58,6 @@ html {
   display: none;
 }
 
-/* Essential animations only */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.fade-in {
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Simple hover effect */
-.hover-effect {
-  transition: all 0.2s ease-in-out;
-}
-
-.hover-effect:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Image Slideshow Styles - optimized */
 .slideshow-image {
   object-fit: cover;

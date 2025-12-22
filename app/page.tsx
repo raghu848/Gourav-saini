@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Dr. Gaurav Saini - best Orthopedic Surgeon',
+  title: 'Best Orthopedic Surgeon Dr. Gaurav Saini',
   description: 'Expert orthopedic surgeon in Mohali & Chandigarh. Specializing in robotic knee replacement and joint surgery. Book an appointment today.',
   alternates: {
     canonical: 'https://drgauravsaini.com/'
@@ -75,8 +75,52 @@ export default function Home() {
     { number: 'CORI', label: 'Robotic Technology' }
   ]
 
+  // FAQ data for structured data
+  const faqs = [
+    {
+      question: "What is robotic knee replacement surgery?",
+      answer: "Robotic knee replacement uses advanced CORI technology for precise implant placement. This minimally invasive procedure offers better alignment, less tissue damage, and faster recovery compared to traditional methods."
+    },
+    {
+      question: "How long does it take to recover from knee replacement surgery?",
+      answer: "Most patients can walk with assistance within 24 hours after surgery. Full recovery typically takes 3-6 months, with many patients returning to normal activities within 6-12 weeks."
+    },
+    {
+      question: "What are the signs that I need a hip replacement?",
+      answer: "Common signs include persistent hip pain that interferes with daily activities, stiffness that limits movement, and pain that continues while resting. A consultation with our orthopedic surgeon can determine if hip replacement is right for you."
+    },
+    {
+      question: "How effective is ACL reconstruction surgery?",
+      answer: "ACL reconstruction has a high success rate, with 90-95% of patients returning to their previous activity level. Our advanced arthroscopic techniques ensure minimal scarring and faster healing."
+    },
+    {
+      question: "What should I expect during my first orthopedic consultation?",
+      answer: "During your first visit, we'll review your medical history, perform a physical examination, and may order diagnostic tests like X-rays or MRIs. We'll discuss treatment options and develop a personalized care plan."
+    }
+  ];
+
+  // FAQ structured data
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData)
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         {/* Subtle blurred circle decoration */}
@@ -140,13 +184,15 @@ export default function Home() {
               <div className="relative w-full max-w-lg mx-auto fade-in">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                   <Image
-                    src="/images/opretion.jpg"
+                    src="/images/opretion.webp"
                     alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
                     width={600}
                     height={400}
                     className="w-full h-auto object-cover"
                     priority={true}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                    loading="eager"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>

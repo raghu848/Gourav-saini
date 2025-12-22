@@ -27,6 +27,42 @@ const inter = Inter({
   fallback: ['sans-serif'],
 });
 
+// Critical CSS for above-the-fold content
+const criticalCSS = `
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hover-effect {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.font-serif {
+  font-family: var(--font-playfair), serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+`;
+
 export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
@@ -41,6 +77,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Inline critical CSS */}
+        <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+        
         {GOOGLE_SEARCH_CONSOLE_VERIFICATION && (
           <meta 
             name="google-site-verification" 

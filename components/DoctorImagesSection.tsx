@@ -9,7 +9,7 @@ const DoctorImagesSection = () => {
   const images = [
     {
       id: 1,
-      url: '/images/dr images/IMG-20250908-WA0010.jpg',
+      url: '/images/dr images/IMG-20250908-WA0010.webp',
       alt: 'Medical Procedure 1',
       title: 'Advanced Joint Replacement',
       width: 1200,
@@ -17,7 +17,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 2,
-      url: '/images/dr images/IMG-20250908-WA0022.jpg',
+      url: '/images/dr images/IMG-20250908-WA0022.webp',
       alt: 'Medical Procedure 2',
       title: 'Precision Orthopedic Care',
       width: 1200,
@@ -25,7 +25,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 3,
-      url: '/images/dr images/IMG-20250908-WA0025.jpg',
+      url: '/images/dr images/IMG-20250908-WA0025.webp',
       alt: 'Medical Procedure 3',
       title: 'Robotic Knee Replacement',
       width: 1200,
@@ -33,7 +33,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 4,
-      url: '/images/dr images/IMG-20250908-WA0028.jpg',
+      url: '/images/dr images/IMG-20250908-WA0028.webp',
       alt: 'Medical Procedure 4',
       title: 'Minimally Invasive Surgery',
       width: 1200,
@@ -41,7 +41,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 5,
-      url: '/images/dr images/IMG-20250908-WA0029.jpg',
+      url: '/images/dr images/IMG-20250908-WA0029.webp',
       alt: 'Medical Procedure 5',
       title: 'Orthopedic Excellence',
       width: 1200,
@@ -49,7 +49,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 6,
-      url: '/images/dr images/patient-1 (3).jpg',
+      url: '/images/dr images/patient-1 (3).webp',
       alt: 'Medical Procedure 6',
       title: 'Patient Recovery',
       width: 1200,
@@ -57,7 +57,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 7,
-      url: '/images/dr images/patient-1 (13).jpg',
+      url: '/images/dr images/patient-1 (13).webp',
       alt: 'Medical Procedure 7',
       title: 'Advanced Treatment',
       width: 1200,
@@ -65,7 +65,7 @@ const DoctorImagesSection = () => {
     },
     {
       id: 8,
-      url: '/images/dr images/patient-1 (17).jpg',
+      url: '/images/dr images/patient-1 (17).webp',
       alt: 'Medical Procedure 8',
       title: 'Surgical Precision',
       width: 1200,
@@ -124,6 +124,8 @@ const DoctorImagesSection = () => {
                       style={{ objectFit: 'contain' }}
                       className="rounded-lg"
                       sizes="(max-width: 768px) 50vw, 25vw"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                 </div>
@@ -198,6 +200,8 @@ const DoctorImagesSection = () => {
                         style={{ objectFit: 'contain' }}
                         className="rounded-2xl"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </div>
                   </div>
@@ -256,6 +260,8 @@ const DoctorImagesSection = () => {
                     style={{ objectFit: 'contain' }}
                     className="rounded-lg"
                     sizes="(max-width: 768px) 50vw, 25vw"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>
