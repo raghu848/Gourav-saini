@@ -7,7 +7,7 @@ import AnimatedMedicalBackground from "../components/AnimatedMedicalBackground";
 import EmergencyContactButton from "../components/EmergencyContactButton";
 import StickySocialButtons from "../components/StickySocialButtons";
 import GoogleTagManager from "../components/GoogleAnalytics";
-import { defaultMetadata } from "./metadata";
+import { homepageMetadata } from "./seo-metadata";
 import { Suspense } from 'react';
 
 // Preload fonts for better performance
@@ -63,7 +63,7 @@ body {
 }
 `;
 
-export const metadata: Metadata = defaultMetadata;
+export const metadata: Metadata = homepageMetadata;
 
 export default function RootLayout({
   children,

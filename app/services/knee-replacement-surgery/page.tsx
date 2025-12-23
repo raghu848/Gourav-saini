@@ -4,13 +4,9 @@ import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
-export const metadata: Metadata = {
-  title: 'Knee Replacement Surgery - Dr. Gaurav Saini',
-  description: 'Expert orthopedic surgeon in Mohali & Chandigarh offering advanced robotic knee replacement surgery for pain relief.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/services/knee-replacement-surgery/'
-  }
-}
+import { generateServiceMetadata } from '../../seo-metadata'
+
+export const metadata: Metadata = generateServiceMetadata('knee-replacement-surgery')
 
 export default function KneeReplacementSurgeryPage() {
   const kneeConditions = [

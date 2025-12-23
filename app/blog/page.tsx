@@ -4,13 +4,9 @@ import Image from 'next/image'
 import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react'
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 
-export const metadata: Metadata = {
-  title: 'Health Blog - Dr. Gaurav Saini',
-  description: 'Expert orthopedic advice and knee care tips from top orthopedic surgeon Dr. Gaurav Saini in Mohali & Chandigarh. Improve your joint health.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/blog/'
-  }
-}
+import { blogMetadata } from '../seo-metadata'
+
+export const metadata: Metadata = blogMetadata
 
 export default function BlogPage() {
   const blogPosts = [

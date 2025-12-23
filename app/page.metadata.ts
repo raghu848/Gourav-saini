@@ -1,6 +1,4 @@
 import type { Metadata } from 'next'
+import { homepageMetadata } from './seo-metadata'
 
-export const metadata: Metadata = {
-  title: 'Dr. Gaurav Saini | Orthopedic Surgeon',
-  description: 'Expert orthopedic surgeon in Mohali & Chandigarh. Specializing in robotic knee replacement and joint surgery.'
-}
+export const metadata: Metadata = homepageMetadata

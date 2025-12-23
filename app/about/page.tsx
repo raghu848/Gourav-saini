@@ -19,13 +19,9 @@ import {
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'About Dr. Gaurav Saini - Orthopedic Surgeon',
-  description: 'Award-winning orthopedic surgeon in Mohali & Chandigarh. 20+ years experience in robotic joint replacement and sports injuries. ',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/about/'
-  }
-}
+import { aboutMetadata } from '../seo-metadata'
+
+export const metadata: Metadata = aboutMetadata
 
 export default function AboutPage() {
   const achievements: { number: string; label: string }[] = [

@@ -1,14 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Metadata } from 'next'
+import { homepageMetadata } from './seo-metadata'
 
-export const metadata: Metadata = {
-  title: 'Best Orthopedic Surgeon Dr. Gaurav Saini',
-  description: 'Expert orthopedic surgeon in Mohali & Chandigarh. Specializing in robotic knee replacement and joint surgery. Book an appointment today.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/'
-  }
-}
+export const metadata: Metadata = homepageMetadata
 
 import { 
   Stethoscope, 

@@ -1,12 +1,7 @@
 import { Metadata } from 'next'
+import { servicesMetadata } from '../seo-metadata'
 
-export const metadata: Metadata = {
-  title: 'Orthopedic Services - Dr. Gaurav Saini',
-  description: 'Comprehensive orthopedic services in Mohali & Chandigarh. Including robotic joint replacement, sports injury treatment, and trauma care. Book consultation.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/services/'
-  }
-}
+export const metadata: Metadata = servicesMetadata
 
 import ServicesContent from './ServicesContent'
 

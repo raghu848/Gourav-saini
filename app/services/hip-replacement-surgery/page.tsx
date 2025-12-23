@@ -4,13 +4,9 @@ import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
-export const metadata: Metadata = {
-  title: 'Hip Replacement Surgery - Dr. Gaurav Saini',
-  description: 'Leading orthopedic surgeon in Mohali & Tricity offering advanced robotic hip replacement surgery for mobility restoration.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/services/hip-replacement-surgery/'
-  }
-}
+import { generateServiceMetadata } from '../../seo-metadata'
+
+export const metadata: Metadata = generateServiceMetadata('hip-replacement-surgery')
 
 export default function HipReplacementSurgeryPage() {
   const hipConditions = [

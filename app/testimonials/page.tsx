@@ -2,13 +2,9 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import { Star, Quote, MessageCircle, ThumbsUp } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'Patient Testimonials - Dr. Gaurav Saini',
-  description: 'Read genuine testimonials from patients treated by expert orthopedic surgeon Dr. Gaurav Saini in Mohali & Chandigarh. See real stories of recovery.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/testimonials/'
-  }
-}
+import { testimonialsMetadata } from '../seo-metadata'
+
+export const metadata: Metadata = testimonialsMetadata
 
   export default function TestimonialsPage() {
 

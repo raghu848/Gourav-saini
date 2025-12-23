@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Heart, Activity } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
-import { generateServiceMetadata } from '../../../app/metadata'
+import { generateServiceMetadata } from '../../seo-metadata'
 
 export const metadata: Metadata = generateServiceMetadata('sports-injury-treatment')
 

@@ -4,13 +4,9 @@ import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Heart, Zap } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
-export const metadata: Metadata = {
-  title: 'Robotic Surgery | Dr. Gaurav Saini',
-  description: 'Advanced robotic surgery with CORI technology for precise, minimally invasive procedures.',
-  alternates: {
-    canonical: 'https://drgauravsaini.com/services/robotic-surgery/'
-  }
-}
+import { generateServiceMetadata } from '../../seo-metadata'
+
+export const metadata: Metadata = generateServiceMetadata('robotic-surgery')
 
 export default function RoboticSurgeryPage() {
   const roboticProcedures = [
