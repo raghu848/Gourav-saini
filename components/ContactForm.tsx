@@ -61,8 +61,8 @@ export default function ContactForm() {
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@drgauravsaini.com'],
-      action: 'mailto:info@drgauravsaini.com'
+      details: ['info@drgauravsainiortho.com'],
+      action: 'mailto:info@drgauravsainiortho.com'
     },
     {
       icon: Clock,
@@ -286,7 +286,7 @@ export default function ContactForm() {
             </a>
             
             <a
-              href="mailto:info@drgauravsaini.com"
+              href="mailto:info@drgauravsainiortho.com"
               className="flex items-center justify-center w-full px-6 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors duration-200"
             >
               <Mail className="w-4 h-4 mr-2" />

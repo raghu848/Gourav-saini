@@ -47,7 +47,7 @@ The metadata has been updated with additional location-based keywords:
 
 ### Google Search Console
 1. Sign up at [Google Search Console](https://search.google.com/search-console)
-2. Add your property (https://drgauravsaini.com)
+2. Add your property (https://drgauravsainiortho.com)
 3. Choose "HTML file" verification method
 4. Download the verification file
 5. Replace the content of `/public/google1234567890.html` with the downloaded file content
@@ -72,12 +72,12 @@ The metadata has been updated with additional location-based keywords:
 ### Google Search Console
 1. Go to your property in Google Search Console
 2. Navigate to "Sitemaps" in the left menu
-3. Add your sitemap: `https://drgauravsaini.com/sitemap.xml`
+3. Add your sitemap: `https://drgauravsainiortho.com/sitemap.xml`
 
 ### Bing Webmaster Tools
 1. Go to your site in Bing Webmaster Tools
 2. Navigate to "Sitemaps" 
-3. Add your sitemap: `https://drgauravsaini.com/sitemap.xml`
+3. Add your sitemap: `https://drgauravsainiortho.com/sitemap.xml`
 
 ## 6. Monitor and Improve
 

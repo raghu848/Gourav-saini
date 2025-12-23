@@ -188,7 +188,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title: `${post.title} | Dr. Gaurav Saini`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://drgauravsaini.com/blog/${id}/`
+      canonical: `https://drgauravsainiortho.com/blog/${id}/`
     }
   }
 }
@@ -242,22 +242,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               "@type": "BlogPosting",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": `https://drgauravsaini.com/blog/${post.id}`
+                "@id": `https://drgauravsainiortho.com/blog/${post.id}`
               },
               "headline": post.title,
               "description": post.excerpt,
-              "image": `https://drgauravsaini.com${post.image}`,
+              "image": `https://drgauravsainiortho.com${post.image}`,
               "author": {
                 "@type": "Person",
                 "name": post.author,
-                "url": "https://drgauravsaini.com"
+                "url": "https://drgauravsainiortho.com"
               },
               "publisher": {
                 "@type": "Organization",
                 "name": "Dr. Gaurav Saini - Orthopaedic Practice",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://drgauravsaini.com/images/dr-saini-logo.jpg"
+                  "url": "https://drgauravsainiortho.com/images/dr-saini-logo.jpg"
                 }
               },
               "datePublished": post.publishDate,

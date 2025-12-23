@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://drgauravsaini.com',
+  siteUrl: process.env.SITE_URL || 'https://drgauravsainiortho.com',
   generateRobotsTxt: true,
   // Add trailing slashes to all URLs
   trailingSlash: true,
@@ -47,7 +47,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      `${process.env.SITE_URL || 'https://drgauravsaini.com'}/sitemap.xml`,
+      `${process.env.SITE_URL || 'https://drgauravsainiortho.com'}/sitemap.xml`,
     ],
   },
 }

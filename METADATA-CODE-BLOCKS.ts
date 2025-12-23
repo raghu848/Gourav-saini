@@ -68,7 +68,7 @@ export const defaultMetadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://drgauravsaini.com',
+    url: 'https://drgauravsainiortho.com',
     title: 'Dr. Gaurav Saini - Leading Orthopaedic Surgeon in Mohali & Chandigarh | Joint Replacement Specialist',
     description: 'Best orthopaedic surgeon in Mohali & tricity area. Expert in robotic knee replacement, sports injuries, and joint surgery with 20+ years experience. Book appointment now.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
@@ -87,16 +87,16 @@ export const defaultMetadata: Metadata = {
   },
   authors: [{
     name: 'Dr. Gaurav Saini',
-    url: 'https://drgauravsaini.com'
+    url: 'https://drgauravsainiortho.com'
   }],
   formatDetection: {
     telephone: true,
     email: true,
     address: true
   },
-  metadataBase: new URL('https://drgauravsaini.com'),
+  metadataBase: new URL('https://drgauravsainiortho.com'),
   alternates: {
-    canonical: 'https://drgauravsaini.com'
+    canonical: 'https://drgauravsainiortho.com'
   }
 };
 
@@ -122,7 +122,7 @@ export const aboutMetadata: Metadata = {
     description: 'Learn about Dr. Gaurav Saini\'s qualifications, experience, and expertise in robotic joint replacement and sports injury treatment in Mohali & Chandigarh.'
   },
   alternates: {
-    canonical: 'https://drgauravsaini.com/about'
+    canonical: 'https://drgauravsainiortho.com/about'
   }
 };
 
@@ -143,16 +143,15 @@ export const blogMetadata: Metadata = {
     'Orthopaedic care tips',
     'Mohali orthopedic blog',
     'Chandigarh health articles'
-  ].join(', '),
+  ].join(','),
   openGraph: {
     title: 'Orthopaedic Health Blog - Dr. Gaurav Saini Mohali & Chandigarh',
     description: 'Stay updated with expert orthopaedic health information and treatment insights from Dr. Gaurav Saini in Mohali & Chandigarh.'
   },
   alternates: {
-    canonical: 'https://drgauravsaini.com/blog'
+    canonical: 'https://drgauravsainiortho.com/blog'
   }
 };
-
 
 
 // ====================
@@ -171,13 +170,13 @@ export const contactMetadata: Metadata = {
     'Sports injury treatment booking',
     'Dr Gaurav Saini contact',
     'Tricity orthopedic appointment'
-  ].join(', '),
+  ].join(','),
   openGraph: {
     title: 'Contact Dr. Gaurav Saini - Book Appointment for Orthopaedic Care',
     description: 'Schedule your consultation with Dr. Gaurav Saini for expert orthopaedic care in Mohali & Chandigarh.'
   },
   alternates: {
-    canonical: 'https://drgauravsaini.com/contact'
+    canonical: 'https://drgauravsainiortho.com/contact'
   }
 };
 
@@ -299,7 +298,7 @@ export const generateServiceMetadata = (service: string): Metadata => {
       description: serviceData.description
     },
     alternates: {
-      canonical: `https://drgauravsaini.com/services/${service}`
+      canonical: `https://drgauravsainiortho.com/services/${service}`
     }
   }
 };

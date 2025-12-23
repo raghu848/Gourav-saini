@@ -26,7 +26,7 @@ const pages = [
 
 // Generate sitemap XML
 function generateSitemap() {
-  const baseUrl = 'https://drgauravsaini.com';
+  const baseUrl = 'https://drgauravsainiortho.com';
   const lastMod = new Date().toISOString().split('T')[0];
   
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';

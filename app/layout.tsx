@@ -107,8 +107,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MedicalOrganization",
               "name": "Dr. Gaurav Saini",
-              "url": "https://drgauravsaini.com",
-              "logo": "https://drgauravsaini.com/images/dr-saini-logo.jpg",
+              "url": "https://drgauravsainiortho.com",
+              "logo": "https://drgauravsainiortho.com/images/dr-saini-logo.jpg",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Max Super Specialty Hospital, Cabin No 26 Ground floor, 56A, near Civil Hospital, Phase 6, Sector 56",
@@ -148,10 +148,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Dr. Gaurav Saini",
-              "url": "https://drgauravsaini.com",
+              "url": "https://drgauravsainiortho.com",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://drgauravsaini.com/search?q={search_term_string}",
+                "target": "https://drgauravsainiortho.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               }
             })

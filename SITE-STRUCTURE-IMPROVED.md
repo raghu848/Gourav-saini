@@ -154,12 +154,12 @@ Implement breadcrumbs for all pages:
 
 ## Canonical URL Structure
 All pages should have proper canonical URLs pointing to the live versions:
-- Home: https://drgauravsaini.com/
-- About: https://drgauravsaini.com/about
-- Services: https://drgauravsaini.com/services
-- Individual Services: https://drgauravsaini.com/services/service-name
-- Blog: https://drgauravsaini.com/blog
+- Home: https://drgauravsainiortho.com/
+- About: https://drgauravsainiortho.com/about
+- Services: https://drgauravsainiortho.com/services
+- Individual Services: https://drgauravsainiortho.com/services/service-name
+- Blog: https://drgauravsainiortho.com/blog
 
-- Contact: https://drgauravsaini.com/contact
+- Contact: https://drgauravsainiortho.com/contact
 
 This improved site structure focuses on clear navigation, SEO-optimized metadata, and proper schema markup to enhance search engine visibility and user experience.

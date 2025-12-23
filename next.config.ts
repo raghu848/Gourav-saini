@@ -27,6 +27,21 @@ const nextConfig: NextConfig = {
   
   // Optimize react production build
   reactStrictMode: true,
+  
+  // Add headers for X-Robots-Tag
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Robots-Tag',
+            value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+          },
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;

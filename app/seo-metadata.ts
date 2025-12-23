@@ -5,6 +5,17 @@ export const homepageMetadata: Metadata = {
   title: 'Best Orthopedic Surgeon in Mohali & Tricity - Dr. Gaurav Saini',
   description: 'Dr. Gaurav Saini is the best orthopedic doctor in Mohali & Tricity, specializing in knee replacement, joint pain, sports injuries and advanced care.',
   keywords: 'orthopaedic surgeon, best orthopedic doctor in mohali, orthopedic clinic in mohali, orthopedic doctor in chandigarh, orthopaedic surgeon near me, hip and knee clinic, Dr Gaurav Saini orthopaedic surgeon',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/'
   }
@@ -15,6 +26,17 @@ export const aboutMetadata: Metadata = {
   title: 'Best Orthopaedic Doctor in Mohali & Tricity- Dr. Gaurav Saini',
   description: 'Award-winning orthopaedic surgeon in Mohali with 20+ years\' experience in robotic hip & knee surgery, sports injuries, arthroscopy and trauma care.',
   keywords: 'orthopaedic surgeon, orthopedic surgeon knee specialist, hip orthopedic surgeon, best orthopedic doctor in mohali, best orthopedic doctor in chandigarh, Dr Gaurav Saini orthopaedic doctor in Mohali',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/about/'
   }
@@ -25,6 +47,17 @@ export const contactMetadata: Metadata = {
   title: 'Contact Dr Gaurav Saini | Orthopedic Clinic in Mohali & Chandigarh',
   description: 'Book an appointment with Dr Gaurav Saini, trusted orthopaedic surgeon in Mohali and Chandigarh for advanced orthopaedic care.',
   keywords: 'orthopedic clinic in mohali, orthopedic clinic near me',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/contact/'
   }
@@ -35,6 +68,17 @@ export const servicesMetadata: Metadata = {
   title: 'Services - Best Knee, Hip & Joint Replacement Services in Tricity',
   description: 'Dr. Gaurav Saini offers hip & knee care, robotic knee replacement, back pain & osteoarthritis treatment at a top orthopedic clinic near me.',
   keywords: 'hip and knee clinic, orthopedic surgeon knee specialist, orthopedic for back pain, robotic knee replacement, osteoarthritis doctor, orthopedic doctor in chandigarh, orthopedic clinic near me, orthopedic services in mohali',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/services/'
   }
@@ -45,6 +89,17 @@ export const testimonialsMetadata: Metadata = {
   title: 'Trusted Orthopaedic Care | Patient Stories of Dr. Gaurav Saini',
   description: 'Read orthopaedic surgeon patient reviews for Dr. Gaurav Saini in Mohali & Chandigarh. Discover why patients trust his expert hip, knee & spine care.',
   keywords: 'Dr Gaurav Saini orthopaedic reviews, orthopedic doctor testimonials, best orthopedic doctor in mohali reviews, orthopaedic surgeon patient reviews',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/testimonials/'
   }
@@ -55,6 +110,17 @@ export const blogMetadata: Metadata = {
   title: 'Orthopedic Health Blog | Knee & Joint Pain Treatment Tips',
   description: 'Explore Dr. Gaurav Saini\'s orthopedic treatment blog for expert tips on knee, hip & joint pain, exercises, and post-surgery care.',
   keywords: 'orthopedic health blog, orthopedic treatment blog, joint pain treatment blog, knee pain treatment blog, orthopedic care information, joint pain awareness, knee replacement information, hip and knee treatment guide, orthopedic surgery information, osteoarthritis treatment information',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/blog/'
   }
@@ -65,6 +131,17 @@ export const bookAppointmentMetadata: Metadata = {
   title: 'Book Appointment | Dr. Gaurav Saini – Hip & Knee Surgery',
   description: 'Book an appointment with Dr. Gaurav Saini for advanced orthopedic care, including robotic joint replacement, hip & knee surgery, and joint pain treatment.',
   keywords: 'best doctor for knee pain near me, book orthopedic appointment, dr gaurav saini appointment',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/book-appointment/'
   }
@@ -159,6 +236,17 @@ export const generateServiceMetadata = (service: string): Metadata => {
     return {
       title: 'Dr. Gaurav Saini - Orthopedic Surgeon',
       description: 'Expert orthopaedic surgeon in Mohali. Specializing in robotic knee replacement and joint surgery.',
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
       alternates: {
         canonical: `https://drgauravsainiortho.com/services/${service}/`
       }
@@ -169,6 +257,17 @@ export const generateServiceMetadata = (service: string): Metadata => {
     title: serviceData.title,
     description: serviceData.description,
     keywords: serviceData.keywords,
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     alternates: {
       canonical: serviceData.canonical
     }

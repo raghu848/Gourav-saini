@@ -52,8 +52,8 @@ This comprehensive technical SEO audit identifies key issues and opportunities f
 **Issue**: Sitemap URLs don't match Next.js URL structure.
 
 **Evidence**:
-- Sitemap contains URLs like `https://drgauravsaini.com/services/knee-replacement-surgery`
-- Next.js with trailingSlash:true should generate `https://drgauravsaini.com/services/knee-replacement-surgery/`
+- Sitemap contains URLs like `https://drgauravsainiortho.com/services/knee-replacement-surgery`
+- Next.js with trailingSlash:true should generate `https://drgauravsainiortho.com/services/knee-replacement-surgery/`
 - Missing some service pages from sitemap
 
 **Impact**: Search engines may not discover all pages or may index incorrect URLs.

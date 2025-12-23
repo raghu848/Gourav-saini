@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://drgauravsaini.com
+Host: https://drgauravsainiortho.com
 
 # Sitemaps
-Sitemap: https://drgauravsaini.com/sitemap.xml
+Sitemap: https://drgauravsainiortho.com/sitemap.xml

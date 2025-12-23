@@ -141,7 +141,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center justify-center text-gray-600">
                     <Mail className="w-4 h-4 mr-2" />
-                    <span>drgauravsaini92@gmail.com</span>
+                    <a href="mailto:drgauravsaini92@gmail.com" className="hover:underline">drgauravsaini92@gmail.com</a>
                   </div>
                 </div>
                 

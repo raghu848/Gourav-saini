@@ -71,7 +71,7 @@ export const defaultMetadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://drgauravsaini.com',
+    url: 'https://drgauravsainiortho.com',
     title: 'Dr. Gaurav Saini - Orthopedic Surgeon Mohali & Chandigarh',
     description: 'Expert orthopaedic surgeon in Mohali. Specializing in robotic knee replacement and joint surgery.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon Mohali',
@@ -91,16 +91,16 @@ export const defaultMetadata: Metadata = {
   },
   authors: [{
     name: 'Dr. Gaurav Saini',
-    url: 'https://drgauravsaini.com'
+    url: 'https://drgauravsainiortho.com'
   }],
   formatDetection: {
     telephone: true,
     email: true,
     address: true
   },
-  metadataBase: new URL('https://drgauravsaini.com'),
+  metadataBase: new URL('https://drgauravsainiortho.com'),
   alternates: {
-    canonical: 'https://drgauravsaini.com'
+    canonical: 'https://drgauravsainiortho.com'
   },
   verification: {
     google: 'googlef908ecc32b2da324.html',
@@ -317,7 +317,7 @@ export const generateServiceMetadata = (service: string): Metadata => {
       description: serviceData.description
     },
     alternates: {
-      canonical: `https://drgauravsaini.com/services/${service}/`
+      canonical: `https://drgauravsainiortho.com/services/${service}/`
     }
   }
 }
