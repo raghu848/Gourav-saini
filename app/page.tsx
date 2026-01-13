@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Metadata } from 'next'
-import { homepageMetadata } from './seo-metadata'
+import { defaultMetadata } from './metadata-improved'
 
-export const metadata: Metadata = homepageMetadata
+export const metadata: Metadata = defaultMetadata
 
 import { 
   Stethoscope, 
@@ -364,6 +364,7 @@ export default function Home() {
                   width={1200}
                   height={800}
                   className="object-contain p-8"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
                 />
               </div>
             </div>

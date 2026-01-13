@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import { Star, Quote, MessageCircle, ThumbsUp } from 'lucide-react';
 
-import { testimonialsMetadata } from '../seo-metadata'
+import { testimonialsMetadata } from '../metadata-improved'
 
 export const metadata: Metadata = testimonialsMetadata
 

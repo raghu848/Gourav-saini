@@ -44,26 +44,26 @@ export default function ServicesContent() {
   return (
     <>
       <PageAnimationWrapper />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 mt-8">
-          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" itemScope itemType="https://schema.org/ItemList">
+        <header className="text-center mb-16 mt-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6" itemProp="name">
             Our Orthopedic Services
           </h1>
-          <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto" itemProp="description">
             Comprehensive orthopedic care tailored to restore your mobility and improve your quality of life
           </p>
-        </div>
+        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service) => {
             const IconComponent = service.icon
             return (
-              <div key={service.id} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300">
+              <div key={service.id} className="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow duration-300" itemScope itemType="https://schema.org/ProfessionalService">
                 <div className="flex items-center mb-6">
                   <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
                     <IconComponent className="w-6 h-6 text-blue-600" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 font-serif">{service.title}</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 font-serif" itemProp="name">{service.title}</h2>
                 </div>
                 
                 {/* Service Image */}
@@ -75,6 +75,9 @@ export default function ServicesContent() {
                       width={400}
                       height={300}
                       className="object-contain w-full h-48 border border-gray-200"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         console.error(`Error loading image: ${service.image}`, e);
                       }}
@@ -82,15 +85,15 @@ export default function ServicesContent() {
                   </div>
                 )}
                 
-                <p className="text-gray-700 mb-6">{service.description}</p>
+                <p className="text-gray-700 mb-6" itemProp="description">{service.description}</p>
                 
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-900 mb-3">Key Features:</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2" itemProp="offers" itemScope itemType="https://schema.org/OfferCatalog">
                     {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-gray-700">
+                      <li key={index} className="flex items-center text-gray-700" itemProp="itemListElement" itemScope itemType="https://schema.org/Offer">
                         <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                        {feature}
+                        <span itemProp="name">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -109,10 +112,10 @@ export default function ServicesContent() {
         </div>
 
         {/* YouTube Shorts Section */}
-        <div className="my-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 border border-blue-100">
+        <section className="my-16 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-8 border border-blue-100" itemScope itemType="https://schema.org/VideoGallery">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif">Watch Our Latest Medical Insights</h2>
-            <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 font-serif" itemProp="name">Watch Our Latest Medical Insights</h2>
+            <p className="text-gray-700 mb-8 max-w-2xl mx-auto" itemProp="description">
               Discover expert orthopedic care and patient success stories through our informative videos
             </p>
             
@@ -195,23 +198,23 @@ export default function ServicesContent() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* CORI Technology Highlight */}
-        <div className="mb-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-8 lg:p-12">
+        <section className="mb-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-8 lg:p-12" itemScope itemType="https://schema.org/ProfessionalService">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className="flex items-center mb-6">
                 <div className="w-16 h-16 bg-white bg-opacity-20 rounded-xl flex items-center justify-center mr-4">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h2 className="text-3xl font-bold font-serif">CORI Robotic Technology</h2>
+                <h2 className="text-3xl font-bold font-serif" itemProp="name">CORI Robotic Technology</h2>
               </div>
               <p className="text-xl mb-6 text-blue-100">
                 Advanced robotic-assisted surgery for unparalleled precision
               </p>
-              <p className="text-blue-50 mb-6 leading-relaxed">
-               {" Whether it's knee resurfacing, arthroplasty, or complex joint restoration, your care is fully customized and cutting-edge with our CORI robotic system that provides real-time feedback and precise surgical guidance."}
+              <p className="text-blue-50 mb-6 leading-relaxed" itemProp="description">
+                Whether it's knee resurfacing, arthroplasty, or complex joint restoration, your care is fully customized and cutting-edge with our CORI robotic system that provides real-time feedback and precise surgical guidance.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="text-center">
@@ -227,11 +230,15 @@ export default function ServicesContent() {
             <div className="bg-white bg-opacity-10 rounded-xl p-6">
               <div className="rounded-lg overflow-hidden border border-blue-200">
                 <Image 
-                  src="/images/CORI-Robotics.webp" 
+                  src="/images/Total-hip-replacement.webp" 
                   alt="CORI Robotic Technology" 
                   width={500}
                   height={300}
                   className="w-full h-auto object-contain"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                  loading="lazy"
+                  decoding="async"
+                  itemProp="image"
                 />
               </div>
               <p className="text-black text-center font-bold text-lg mt-2">
@@ -239,8 +246,8 @@ export default function ServicesContent() {
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
     </>
   )
 }

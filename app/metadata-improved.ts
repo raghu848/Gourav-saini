@@ -75,7 +75,7 @@ export const defaultMetadata: Metadata = {
     description: 'Best orthopaedic surgeon in Mohali & tricity area. Expert in robotic knee replacement, sports injuries, and joint surgery with 20+ years experience. Book appointment now.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
     images: [{
-      url: '/images/dr-saini-logo.jpg',
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
       width: 1200,
       height: 630,
       alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
@@ -85,7 +85,8 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dr. Gaurav Saini - Best Orthopedic Surgeon in Mohali',
     description: 'Expert in robotic knee replacement, sports injuries, and joint surgery with 20+ years experience.',
-    images: ['/images/dr-saini-logo.jpg'],
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
   },
   authors: [{
     name: 'Dr. Gaurav Saini',
@@ -99,6 +100,12 @@ export const defaultMetadata: Metadata = {
   metadataBase: new URL('https://drgauravsainiortho.com'),
   alternates: {
     canonical: 'https://drgauravsainiortho.com'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com',
+    'twitter:card': 'summary_large_image',
   }
 }
 
@@ -117,11 +124,34 @@ export const aboutMetadata: Metadata = {
     'Tricity orthopedic specialist'
   ].join(', '),
   openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://drgauravsainiortho.com/about/',
     title: 'About Dr. Gaurav Saini - Senior Orthopaedic Surgeon in Mohali & Chandigarh',
-    description: 'Learn about Dr. Gaurav Saini\'s qualifications, experience, and expertise in robotic joint replacement and sports injury treatment in Mohali & Chandigarh.'
+    description: 'Learn about Dr. Gaurav Saini\'s qualifications, experience, and expertise in robotic joint replacement and sports injury treatment in Mohali & Chandigarh.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    images: [{
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Dr. Gaurav Saini - Senior Orthopaedic Surgeon in Mohali & Chandigarh',
+    description: 'Learn about Dr. Gaurav Saini\'s qualifications, experience, and expertise in robotic joint replacement and sports injury treatment in Mohali & Chandigarh.',
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
   },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/about/'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com/about/',
+    'twitter:card': 'summary_large_image',
   }
 }
 
@@ -141,11 +171,34 @@ export const blogMetadata: Metadata = {
     'Chandigarh health articles'
   ].join(', '),
   openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://drgauravsainiortho.com/blog/',
     title: 'Orthopaedic Health Blog - Dr. Gaurav Saini Mohali & Chandigarh',
-    description: 'Stay updated with expert orthopaedic health information and treatment insights from Dr. Gaurav Saini in Mohali & Chandigarh.'
+    description: 'Stay updated with expert orthopaedic health information and treatment insights from Dr. Gaurav Saini in Mohali & Chandigarh.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    images: [{
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Orthopaedic Health Blog - Dr. Gaurav Saini Mohali & Chandigarh',
+    description: 'Stay updated with expert orthopaedic health information and treatment insights from Dr. Gaurav Saini in Mohali & Chandigarh.',
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
   },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/blog/'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com/blog/',
+    'twitter:card': 'summary_large_image',
   }
 }
 
@@ -166,11 +219,34 @@ export const contactMetadata: Metadata = {
     'Tricity orthopedic appointment'
   ].join(', '),
   openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://drgauravsainiortho.com/contact',
     title: 'Contact Dr. Gaurav Saini - Book Appointment for Orthopaedic Care',
-    description: 'Schedule your consultation with Dr. Gaurav Saini for expert orthopaedic care in Mohali & Chandigarh.'
+    description: 'Schedule your consultation with Dr. Gaurav Saini for expert orthopaedic care in Mohali & Chandigarh.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    images: [{
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Dr. Gaurav Saini - Book Appointment for Orthopaedic Care',
+    description: 'Schedule your consultation with Dr. Gaurav Saini for expert orthopaedic care in Mohali & Chandigarh.',
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
   },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/contact'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com/contact',
+    'twitter:card': 'summary_large_image',
   }
 }
 
@@ -275,6 +351,129 @@ export const servicesMetadata = {
       'robotic hip replacement',
       'precision joint surgery'
     ].join(', ')
+  },
+  'arthroscopic-surgery': {
+    title: 'Arthroscopic Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Minimally invasive arthroscopic surgery for joint problems with faster recovery and less scarring.',
+    keywords: [
+      'arthroscopic surgery mohali',
+      'knee arthroscopy',
+      'shoulder arthroscopy',
+      'hip arthroscopy',
+      'minimally invasive joint surgery',
+      'arthroscopy surgeon',
+      'joint surgery mohali',
+      'arthroscopic surgery chandigarh',
+      'knee surgery mohali',
+      'shoulder surgery chandigarh'
+    ].join(', ')
+  },
+  'fracture-trauma-care': {
+    title: 'Fracture & Trauma Care in Chandigarh & Mohali | Dr. Gaurav Saini',
+    description: 'Emergency orthopedic surgeon in Mohali & Tricity providing trauma care with precision diagnostics for fractures and complex injuries.',
+    keywords: [
+      'fracture care mohali',
+      'trauma care chandigarh',
+      'emergency orthopedic care',
+      'complex fracture treatment',
+      'polytrauma care',
+      'Trauma Care Hospital Chandigarh',
+      'Orthopaedic Surgeon Mohali',
+      'emergency fracture care mohali',
+      '24 hour orthopedic hospital',
+      'trauma care mohali'
+    ].join(', ')
+  },
+  'robotic-joint-replacement': {
+    title: 'Robotic Joint Replacement in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Advanced robotic joint replacement with CORI technology for precise knee and hip surgery with faster recovery.',
+    keywords: [
+      'robotic joint replacement mohali',
+      'CORI robotic surgery',
+      'robotic knee replacement',
+      'robotic hip replacement',
+      'joint replacement surgery',
+      'Dr. Saini Robotic Surgery Mohali',
+      'Robotic Knee Replacement Mohali',
+      'robotic surgery chandigarh',
+      'CORI technology mohali',
+      'precision joint surgery'
+    ].join(', ')
+  },
+  'sports-injury-treatment': {
+    title: 'Sports Injury Treatment in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Top orthopedic surgeon in Tricity & Mohali specializing in sports injury treatment including ACL tears and meniscus injuries.',
+    keywords: [
+      'sports injury treatment mohali',
+      'ACL surgery specialist',
+      'arthroscopy surgeon',
+      'sports medicine doctor',
+      'knee arthroscopy',
+      'ligament repair',
+      'Sports Injury Clinic Mohali',
+      'Sports injury specialist Chandigarh',
+      'sports injury treatment chandigarh',
+      'ACL reconstruction mohali',
+      'sports medicine specialist tricity'
+    ].join(', ')
+  },
+  'sports-injury-arthroscopy': {
+    title: 'Sports Injury & Arthroscopy in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Trusted sports injury doctor near me for advanced arthroscopic knee surgery and expert orthopedic care in Mohali & Chandigarh.',
+    keywords: [
+      'sports injury doctor near me',
+      'sports injury clinic near me',
+      'arthroscopy surgeon near me',
+      'knee arthroscopy surgeon',
+      'arthroscopic knee surgery'
+    ].join(', ')
+  },
+  'joint-replacement-center': {
+    title: 'Joint Replacement Center in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Advanced joint replacement center with robotic surgery using CORI technology for knee and hip replacements.',
+    keywords: [
+      'joint replacement center mohali',
+      'robotic joint replacement',
+      'CORI technology',
+      'knee hip replacement',
+      'joint replacement center chandigarh',
+      'robotic knee replacement mohali',
+      'hip replacement surgery chandigarh'
+    ].join(', ')
+  },
+  'knee-replacement-surgery': {
+    title: 'Knee Replacement Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Experience world-class robotic knee replacement in Mohali with Dr. Gaurav Saini. Advanced, precise orthopaedic care for superior knee, hip, and joint health.',
+    keywords: [
+      'robotic knee replacement',
+      'robotic knee replacement in chandigarh',
+      'robotic knee surgery',
+      'robotic knee replacement near me',
+      'knee replacement surgery in mohali',
+      'best knee replacement surgeon',
+      'total knee replacement',
+      'CORI robotic knee surgery',
+      'partial knee replacement',
+      'Robotic Knee Replacement Mohali',
+      'Best Knee Surgeon in Chandigarh',
+      'Dr. Saini Robotic Surgery Mohali'
+    ].join(', ')
+  },
+  'hip-replacement-surgery': {
+    title: 'Hip Replacement Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
+    description: 'Get trusted care with Dr. Gaurav Saini, the best knee replacement surgeon in Chandigarh. Advanced joint replacement & orthopedic care. Book today.',
+    keywords: [
+      'best knee replacement surgeon in chandigarh',
+      'joint replacement hospital near me',
+      'hip replacement surgery mohali',
+      'best hip replacement surgeon',
+      'total hip replacement',
+      'minimally invasive hip surgery',
+      'hip pain treatment',
+      'hip arthritis specialist',
+      'Joint Replacement Specialist Mohali',
+      'Affordable Joint Replacement Surgery Chandigarh'
+    ].join(', ')
   }
 }
 
@@ -285,11 +484,108 @@ export const generateServiceMetadata = (service: string): Metadata => {
     description: serviceData.description,
     keywords: serviceData.keywords,
     openGraph: {
+      type: 'website',
+      locale: 'en_IN',
+      url: `https://drgauravsainiortho.com/services/${service}`,
       title: serviceData.title,
-      description: serviceData.description
+      description: serviceData.description,
+      siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+      images: [{
+        url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+      }]
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: serviceData.title,
+      description: serviceData.description,
+      images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+      site: '@DrGauravSaini'
     },
     alternates: {
       canonical: `https://drgauravsainiortho.com/services/${service}`
+    },
+    other: {
+      'twitter:site': '@DrGauravSaini',
+      'twitter:creator': '@DrGauravSaini',
+      'twitter:url': `https://drgauravsainiortho.com/services/${service}`,
+      'twitter:card': 'summary_large_image',
     }
+  }
+}
+
+// Metadata for the Book Appointment page
+export const bookAppointmentMetadata: Metadata = {
+  title: 'Book Appointment | Dr. Gaurav Saini – Hip & Knee Surgery',
+  description: 'Book an appointment with Dr. Gaurav Saini for advanced orthopedic care, including robotic joint replacement, hip & knee surgery, and joint pain treatment.',
+  keywords: 'best doctor for knee pain near me, book orthopedic appointment, dr gaurav saini appointment',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://drgauravsainiortho.com/book-appointment/',
+    title: 'Book Appointment | Dr. Gaurav Saini – Hip & Knee Surgery',
+    description: 'Book an appointment with Dr. Gaurav Saini for advanced orthopedic care, including robotic joint replacement, hip & knee surgery, and joint pain treatment.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    images: [{
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book Appointment | Dr. Gaurav Saini – Hip & Knee Surgery',
+    description: 'Book an appointment with Dr. Gaurav Saini for advanced orthopedic care, including robotic joint replacement, hip & knee surgery, and joint pain treatment.',
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
+  },
+  alternates: {
+    canonical: 'https://drgauravsainiortho.com/book-appointment/'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com/book-appointment/',
+    'twitter:card': 'summary_large_image',
+  }
+}
+
+// Metadata for the Testimonials page
+export const testimonialsMetadata: Metadata = {
+  title: 'Trusted Orthopaedic Care | Patient Stories of Dr. Gaurav Saini',
+  description: 'Read orthopaedic surgeon patient reviews for Dr. Gaurav Saini in Mohali & Chandigarh. Discover why patients trust his expert hip, knee & spine care.',
+  keywords: 'Dr Gaurav Saini orthopaedic reviews, orthopedic doctor testimonials, best orthopedic doctor in mohali reviews, orthopaedic surgeon patient reviews',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://drgauravsainiortho.com/testimonials/',
+    title: 'Trusted Orthopaedic Care | Patient Stories of Dr. Gaurav Saini',
+    description: 'Read orthopaedic surgeon patient reviews for Dr. Gaurav Saini in Mohali & Chandigarh. Discover why patients trust his expert hip, knee & spine care.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    images: [{
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Trusted Orthopaedic Care | Patient Stories of Dr. Gaurav Saini',
+    description: 'Read orthopaedic surgeon patient reviews for Dr. Gaurav Saini in Mohali & Chandigarh. Discover why patients trust his expert hip, knee & spine care.',
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
+  },
+  alternates: {
+    canonical: 'https://drgauravsainiortho.com/testimonials/'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com/testimonials/',
+    'twitter:card': 'summary_large_image',
   }
 }

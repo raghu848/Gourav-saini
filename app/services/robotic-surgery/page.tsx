@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Heart, Zap } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
-import { generateServiceMetadata } from '../../seo-metadata'
+import { generateServiceMetadata } from '../../metadata-improved'
 
 export const metadata: Metadata = generateServiceMetadata('robotic-surgery')
 
@@ -192,6 +192,9 @@ export default function RoboticSurgeryPage() {
                     width={500}
                     height={300}
                     className="w-full h-auto object-contain"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p className="text-black text-center font-bold text-lg mt-1">

@@ -65,6 +65,8 @@ const Footer = () => {
                   fill
                   className="object-contain"
                   sizes="64px"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div>
@@ -143,10 +145,17 @@ const Footer = () => {
               <div className="flex gap-2">
                 <Mail size={16} className="text-gray-400 flex-shrink-0" />
                 <a
-                  href="mailto:info@drgauravsainiortho.com"
+                  id="footer-email-link"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const email = 'info';
+                    const domain = 'drgauravsainiortho.com';
+                    window.location.href = `mailto:${email}@${domain}`;
+                  }}
                   className="text-gray-400 hover:text-white font-bold"
                 >
-                  info@drgauravsainiortho.com
+                  info [at] drgauravsainiortho [dot] com
                 </a>
               </div>
 

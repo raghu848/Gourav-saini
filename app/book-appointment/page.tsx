@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import BookAppointmentForm from './BookAppointmentForm'
 
-import { bookAppointmentMetadata } from '../seo-metadata'
+import { bookAppointmentMetadata } from '../metadata-improved'
 
 export const metadata: Metadata = bookAppointmentMetadata
 

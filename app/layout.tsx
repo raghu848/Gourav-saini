@@ -7,7 +7,7 @@ import AnimatedMedicalBackground from "../components/AnimatedMedicalBackground";
 import EmergencyContactButton from "../components/EmergencyContactButton";
 import StickySocialButtons from "../components/StickySocialButtons";
 import GoogleTagManager from "../components/GoogleAnalytics";
-import { homepageMetadata } from "./seo-metadata";
+import { defaultMetadata } from "./metadata-improved";
 import { Suspense } from 'react';
 
 // Preload fonts for better performance
@@ -27,43 +27,9 @@ const inter = Inter({
   fallback: ['sans-serif'],
 });
 
-// Critical CSS for above-the-fold content
-const criticalCSS = `
-.fade-in {
-  animation: fadeIn 0.3s ease-in-out;
-}
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
-.hover-effect {
-  transition: all 0.2s ease-in-out;
-}
-
-.hover-effect:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.font-serif {
-  font-family: var(--font-playfair), serif;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-}
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-`;
-
-export const metadata: Metadata = homepageMetadata;
+export const metadata: Metadata = defaultMetadata;
 
 export default function RootLayout({
   children,
@@ -77,8 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Inline critical CSS */}
-        <style dangerouslySetInnerHTML={{ __html: criticalCSS }} />
+
         
         {GOOGLE_SEARCH_CONSOLE_VERIFICATION && (
           <meta 
@@ -90,6 +55,26 @@ export default function RootLayout({
         {/* Preconnect to external domains for better performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Preconnect to analytics domains */}
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" as="image" href="/images/dr-saini-logo.jpg" />
+        <link rel="preload" as="image" href="/images/dr-saini-logo.jpg" />
+        
+        {/* Resource hints for better performance */}
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" as="style" />
+        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+
         
         {/* Favicon configuration */}
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />

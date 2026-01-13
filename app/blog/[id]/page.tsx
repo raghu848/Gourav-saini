@@ -2,8 +2,10 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
+import React from 'react'
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { notFound } from 'next/navigation'
 
 // Define the blog post type
 interface BlogPost {
@@ -166,16 +168,83 @@ function getBlogPost(id: string): BlogPost | undefined {
           <p>Proper preparation can significantly impact your surgical outcome and recovery time. Don't hesitate to ask your surgical team any questions you may have.</p>
         </div>
       `
+    },
+    {
+      id: 'sports-injury-prevention',
+      title: 'Sports Injury Prevention: Essential Tips for Athletes',
+      excerpt: 'Learn effective strategies to prevent sports injuries and maintain peak performance as an athlete.',
+      category: 'Sports Medicine',
+      readTime: '6 min read',
+      publishDate: '2024-02-10',
+      image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
+      content: `
+        <div class="prose max-w-none">
+          <p>Sports injuries can be devastating for athletes at any level. Prevention is always better than treatment, and implementing proper injury prevention strategies can keep you active and performing at your best.</p>
+          
+          <h2>Common Sports Injuries</h2>
+          <p>Understanding the most common sports injuries is the first step in prevention:</p>
+          
+          <ul>
+            <li><strong>ACL injuries:</strong> Often occur during sudden stops or changes in direction</li>
+            <li><strong>Meniscus tears:</strong> Typically happen during twisting movements</li>
+            <li><strong>Rotator cuff injuries:</strong> Common in sports involving repetitive overhead motions</li>
+            <li><strong>Concussions:</strong> Head injuries that require immediate attention</li>
+          </ul>
+          
+          <h2>Prevention Strategies</h2>
+          <p>Implement these evidence-based strategies to reduce your risk of sports injuries:</p>
+          
+          <h3>1. Proper Warm-Up</h3>
+          <p>Never skip your warm-up routine. A proper warm-up increases blood flow to muscles and prepares your body for intense activity. Include dynamic stretches and sport-specific movements.</p>
+          
+          <h3>2. Strength Training</h3>
+          <p>Focus on strengthening the muscles that support your joints. A balanced strength program should include exercises for all major muscle groups with special attention to injury-prone areas.</p>
+          
+          <h3>3. Flexibility and Mobility</h3>
+          <p>Maintain good flexibility through regular stretching. Include both dynamic stretching before activity and static stretching after activity.</p>
+          
+          <h3>4. Proper Equipment</h3>
+          <p>Use appropriate, well-fitted protective equipment for your sport. Replace worn equipment promptly and ensure it meets safety standards.</p>
+          
+          <h3>5. Technique and Form</h3>
+          <p>Work with qualified coaches to develop proper technique. Good form reduces stress on joints and muscles, decreasing injury risk.</p>
+          
+          <h2>Recovery and Rest</h2>
+          <p>Adequate recovery is as important as training itself:</p>
+          
+          <ul>
+            <li>Allow sufficient sleep (7-9 hours for adults, more for athletes)</li>
+            <li>Include rest days in your training schedule</li>
+            <li>Listen to your body and don't ignore pain signals</li>
+            <li>Use recovery techniques like ice baths, massage, or compression</li>
+          </ul>
+          
+          <p>By implementing these prevention strategies, you can significantly reduce your risk of sports injuries while maintaining or improving your performance. Remember that injury prevention is an ongoing process that requires consistent attention to detail.</p>
+        </div>
+      `
     }
   ]
 
   return blogPosts.find(post => post.id === id)
 }
 
+async function getPostData(paramsPromise: Promise<{ id: string }>) {
+  const resolvedParams = await paramsPromise;
+  return getBlogPost(resolvedParams.id);
+}
+
+async function getPostAndId(paramsPromise: Promise<{ id: string }>) {
+  const resolvedParams = await paramsPromise;
+  const post = getBlogPost(resolvedParams.id);
+  return { post, id: resolvedParams.id };
+}
+
 // Generate metadata for the blog post
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params
-  const post = getBlogPost(id)
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { post, id } = await getPostAndId(Promise.resolve(params));
   
   if (!post) {
     return {
@@ -198,36 +267,24 @@ export async function generateStaticParams() {
   const blogPosts = [
     { id: 'knee-replacement-signs' },
     { id: 'knee-exercises' },
-    { id: 'surgery-preparation' }
+    { id: 'surgery-preparation' },
+    { id: 'sports-injury-prevention' }
   ]
   
   return blogPosts
 }
 
+async function getBlogPostAsync(paramsPromise: Promise<{ id: string }>) {
+  const resolvedParams = await paramsPromise;
+  return getBlogPost(resolvedParams.id);
+}
+
 // Main component for the blog post page
-export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
-  const post = getBlogPost(id)
+export default async function BlogPostPage({ params }: { params: { id: string } }) {
+  const post = await getBlogPostAsync(Promise.resolve(params));
 
   if (!post) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12 relative">
-        <PageAnimationWrapper />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-            <p className="text-gray-600 mb-6">The blog post you&#39;re looking for doesn&#39;t exist or has been removed.</p>
-            <Link 
-              href="/blog" 
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Blog
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
+    notFound();
   }
 
   return (
@@ -289,7 +346,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               width={post.imageWidth}
               height={post.imageHeight}
               className="object-contain"
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+              loading="eager"
+              decoding="async"
             />
           </div>
 

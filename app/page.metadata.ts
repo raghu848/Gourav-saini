@@ -1,4 +1,4 @@
 import type { Metadata } from 'next'
-import { homepageMetadata } from './seo-metadata'
+import { defaultMetadata } from './metadata-improved'
 
-export const metadata: Metadata = homepageMetadata
+export const metadata: Metadata = defaultMetadata;

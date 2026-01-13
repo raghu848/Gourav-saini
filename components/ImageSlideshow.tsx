@@ -76,6 +76,8 @@ const ImageSlideshow = () => {
                 style={{ objectFit: 'contain' }}
                 className="p-4"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                loading="lazy"
+                decoding="async"
               />
             </div>
             

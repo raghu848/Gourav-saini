@@ -61,8 +61,9 @@ export default function ContactForm() {
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@drgauravsainiortho.com'],
-      action: 'mailto:info@drgauravsainiortho.com'
+      details: [], // Email will be rendered via JavaScript to avoid email spiders
+      action: '#', // Will be handled by JavaScript
+      id: 'contact-email'
     },
     {
       icon: Clock,
@@ -240,19 +241,35 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">{info.title}</h3>
-                    {info.details.map((detail, i) => (
-                      info.action ? (
-                        <a
-                          key={i}
-                          href={info.action}
-                          className="block text-gray-700 hover:text-blue-600 transition-colors duration-200"
-                        >
-                          {detail}
-                        </a>
-                      ) : (
-                        <p key={i} className="text-gray-700">{detail}</p>
-                      )
-                    ))}
+                    {info.id === 'contact-email' ? (
+                      <a
+                        id="contact-email-link"
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const email = 'info';
+                          const domain = 'drgauravsainiortho.com';
+                          window.location.href = `mailto:${email}@${domain}`;
+                        }}
+                        className="block text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                      >
+                        info [at] drgauravsainiortho [dot] com
+                      </a>
+                    ) : (
+                      info.details.map((detail, i) => (
+                        info.action ? (
+                          <a
+                            key={i}
+                            href={info.action}
+                            className="block text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                          >
+                            {detail}
+                          </a>
+                        ) : (
+                          <p key={i} className="text-gray-700">{detail}</p>
+                        )
+                      ))
+                    )}
                   </div>
                 </div>
               )
@@ -286,7 +303,13 @@ export default function ContactForm() {
             </a>
             
             <a
-              href="mailto:info@drgauravsainiortho.com"
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                const email = 'info';
+                const domain = 'drgauravsainiortho.com';
+                window.location.href = `mailto:${email}@${domain}`;
+              }}
               className="flex items-center justify-center w-full px-6 py-3 border-2 border-gray-300 text-gray-700 font-medium rounded-lg hover:border-blue-600 hover:text-blue-600 transition-colors duration-200"
             >
               <Mail className="w-4 h-4 mr-2" />

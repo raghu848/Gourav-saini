@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react'
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 
-import { blogMetadata } from '../seo-metadata'
+import { blogMetadata } from '../metadata-improved'
 
 export const metadata: Metadata = blogMetadata
 
@@ -184,10 +184,10 @@ export default function BlogPage() {
                 </div>
                 <Link
                   href={`/blog/${blogPosts[0].id}`}
-                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                  className="inline-flex items-center px-4 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base min-w-[100px] justify-center"
                 >
                   Read More
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4 ml-2 flex-shrink-0" />
                 </Link>
               </div>
             </div>
@@ -239,10 +239,10 @@ export default function BlogPage() {
                   </div>
                   <Link
                     href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base min-w-[100px] justify-center py-1.5"
                   >
                     Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
+                    <ArrowRight className="w-4 h-4 ml-1 flex-shrink-0" />
                   </Link>
                 </div>
               </div>

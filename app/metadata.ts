@@ -76,7 +76,7 @@ export const defaultMetadata: Metadata = {
     description: 'Expert orthopaedic surgeon in Mohali. Specializing in robotic knee replacement and joint surgery.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon Mohali',
     images: [{
-      url: '/images/dr-saini-logo.jpg',
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
       width: 1200,
       height: 630,
       alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
@@ -86,8 +86,8 @@ export const defaultMetadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dr. Gaurav Saini - Orthopedic Surgeon Mohali',
     description: 'Expert in robotic knee replacement and joint surgery.',
-    images: ['/images/dr-saini-logo.jpg'],
-    creator: '@DrGauravSaini'
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
   },
   authors: [{
     name: 'Dr. Gaurav Saini',
@@ -104,6 +104,12 @@ export const defaultMetadata: Metadata = {
   },
   verification: {
     google: 'googlef908ecc32b2da324.html',
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com',
+    'twitter:card': 'summary_large_image',
   }
 }
 

@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, ArrowRight, CheckCircle, Users, Heart, Settings } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
-import { generateServiceMetadata } from '../../seo-metadata'
+import { generateServiceMetadata } from '../../metadata-improved'
 
 export const metadata: Metadata = generateServiceMetadata('joint-replacement-center')
 

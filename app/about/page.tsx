@@ -19,7 +19,7 @@ import {
 import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 import Link from 'next/link'
 
-import { aboutMetadata } from '../seo-metadata'
+import { aboutMetadata } from '../metadata-improved'
 
 export const metadata: Metadata = aboutMetadata
 

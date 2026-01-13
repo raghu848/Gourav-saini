@@ -16,8 +16,35 @@ export const homepageMetadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://drgauravsainiortho.com',
+    title: 'Best Orthopedic Surgeon in Mohali & Tricity - Dr. Gaurav Saini',
+    description: 'Dr. Gaurav Saini is the best orthopedic doctor in Mohali & Tricity, specializing in knee replacement, joint pain, sports injuries and advanced care.',
+    siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
+    images: [{
+      url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+    }]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Orthopedic Surgeon in Mohali & Tricity - Dr. Gaurav Saini',
+    description: 'Dr. Gaurav Saini is the best orthopedic doctor in Mohali & Tricity, specializing in knee replacement, joint pain, sports injuries and advanced care.',
+    images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
+    site: '@DrGauravSaini'
+  },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/'
+  },
+  other: {
+    'twitter:site': '@DrGauravSaini',
+    'twitter:creator': '@DrGauravSaini',
+    'twitter:url': 'https://drgauravsainiortho.com',
+    'twitter:card': 'summary_large_image',
   }
 }
 

@@ -39,3 +39,25 @@ export const gtmEvent = (eventName: string, eventData: Record<string, any> = {})
     });
   }
 };
+
+// Helper function to generate responsive image sources
+export const generateImageSrcSet = (baseSrc: string, width: number, height: number) => {
+  // Extract file extension and name
+  const lastDotIndex = baseSrc.lastIndexOf('.');
+  if (lastDotIndex === -1) return '';
+  
+  const extension = baseSrc.substring(lastDotIndex);
+  const baseName = baseSrc.substring(0, lastDotIndex);
+  
+  // Generate different sizes for responsive loading
+  const sizes = [320, 480, 640, 768, 1024, 1200, 1536, 2048];
+  
+  return sizes
+    .filter(size => size <= width) // Only include sizes up to the original width
+    .map(size => {
+      const ratio = size / width;
+      const newHeight = Math.round(height * ratio);
+      return `${baseName}-${size}w${extension} ${size}w`;
+    })
+    .join(', ');
+};

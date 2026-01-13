@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, ArrowRight, CheckCircle, Users, Activity, Shield } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
-import { generateServiceMetadata } from '../../seo-metadata'
+import { generateServiceMetadata } from '../../metadata-improved'
 
 export const metadata: Metadata = generateServiceMetadata('sports-injury-arthroscopy')
 

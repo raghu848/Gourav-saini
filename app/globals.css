@@ -29,6 +29,25 @@ body {
   font-family: var(--font-playfair), serif;
 }
 
+/* Critical CSS for faster FCP */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hover-effect {
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* Custom scrollbar - simplified for performance */
 ::-webkit-scrollbar {
   width: 6px;
