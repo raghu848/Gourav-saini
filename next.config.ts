@@ -7,9 +7,9 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   
-  // Static export configuration
-  output: 'export',
-  trailingSlash: true,
+  // Only use static export for production builds
+  output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
+  trailingSlash: process.env.NODE_ENV === 'production',
   
   // Enable gzip compression
   compress: true,

@@ -225,6 +225,117 @@ function getBlogPost(id: string): BlogPost | undefined {
           <p>By implementing these prevention strategies, you can significantly reduce your risk of sports injuries while maintaining or improving your performance. Remember that injury prevention is an ongoing process that requires consistent attention to detail.</p>
         </div>
       `
+    },
+    {
+      id: 'arthroscopy-vs-open',
+      title: 'Arthroscopy vs. Open Surgery: What\'s the Difference?',
+      excerpt: 'Understanding the differences between arthroscopic and open surgery procedures, including benefits, risks and recovery times.',
+      category: 'Education',
+      readTime: '6 min read',
+      publishDate: '2023-12-28',
+      image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
+      content: `
+        <div class="prose max-w-none">
+          <p>When it comes to orthopedic procedures, surgeons have different approaches available. Two of the most common are arthroscopic surgery and open surgery. Both have their advantages and disadvantages, and the choice depends on the specific condition, patient factors, and surgeon expertise.</p>
+          
+          <h2>What is Arthroscopic Surgery?</h2>
+          <p>Arthroscopic surgery, also known as keyhole surgery, involves making small incisions (typically 5-10mm) through which a tiny camera (arthroscope) and specialized instruments are inserted. The camera transmits images to a monitor, allowing the surgeon to visualize and operate inside the joint without making large incisions.</p>
+          
+          <h2>What is Open Surgery?</h2>
+          <p>Open surgery involves making a larger incision to directly access the affected area. This provides the surgeon with direct visualization and access to the joint or tissue, allowing for more complex procedures.</p>
+          
+          <h2>Key Differences</h2>
+          <ul>
+            <li><strong>Incision Size:</strong> Arthroscopic uses small incisions; open surgery requires larger ones</li>
+            <li><strong>Recovery Time:</strong> Arthroscopic typically has shorter recovery; open surgery may require longer healing</li>
+            <li><strong>Pain Level:</strong> Arthroscopic generally causes less postoperative pain</li>
+            <li><strong>Risks:</strong> Arthroscopic has lower infection risk; open surgery may offer better access for complex repairs</li>
+            <li><strong>Procedure Complexity:</strong> Some complex procedures still require open techniques</li>
+          </ul>
+          
+          <h2>Benefits of Arthroscopic Surgery</h2>
+          <p>Arthroscopic procedures offer several advantages:</p>
+          <ul>
+            <li>Less scarring and tissue damage</li>
+            <li>Reduced postoperative pain</li>
+            <li>Faster recovery and return to activities</li>
+            <li>Lower risk of complications</li>
+            <li>Often performed as outpatient procedures</li>
+          </ul>
+          
+          <h2>When Open Surgery is Necessary</h2>
+          <p>Despite advances in arthroscopic techniques, some procedures still require open surgery:</p>
+          <ul>
+            <li>Complex reconstructions</li>
+            <li>Revision surgeries</li>
+            <li>Certain fracture repairs</li>
+            <li>Implant placement in complex cases</li>
+          </ul>
+          
+          <p>Your surgeon will evaluate your specific condition and recommend the most appropriate approach based on your individual needs, anatomy, and the nature of the required procedure.</p>
+        </div>
+      `
+    },
+    {
+      id: 'arthritis-guide',
+      title: 'Understanding Arthritis: Types, Symptoms and Treatment Options',
+      excerpt: 'A comprehensive guide to different types of arthritis, their symptoms, and the various treatment approaches available.',
+      category: 'Arthritis',
+      readTime: '12 min read',
+      publishDate: '2023-12-15',
+      image: '/images/patient-1 (25).jpg',
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
+      content: `
+        <div class="prose max-w-none">
+          <p>Arthritis is one of the most common chronic conditions affecting millions of people worldwide. It encompasses over 100 different conditions that affect joints, surrounding tissues, and other connective tissues. Understanding the different types, recognizing symptoms early, and exploring treatment options can significantly improve quality of life.</p>
+          
+          <h2>Types of Arthritis</h2>
+          <p>The most common forms include:</p>
+          
+          <h3>Osteoarthritis (OA)</h3>
+          <p>The most prevalent type, often called "wear and tear" arthritis. It occurs when cartilage that cushions the ends of bones deteriorates over time.</p>
+          
+          <h3>Rheumatoid Arthritis (RA)</h3>
+          <p>An autoimmune disorder that causes the immune system to attack the synovium, the lining of the membranes that surround joints.</p>
+          
+          <h3>Psoriatic Arthritis</h3>
+          <p>Affects some people who have psoriasis, an autoimmune skin condition.</p>
+          
+          <h2>Symptoms to Watch For</h2>
+          <p>Common signs of arthritis include:</p>
+          <ul>
+            <li>Joint pain and tenderness</li>
+            <li>Joint stiffness, especially in the morning</li>
+            <li>Swelling around joints</li>
+            <li>Reduced range of motion</li>
+            <li>Warmth and redness around joints</li>
+          </ul>
+          
+          <h2>Treatment Approaches</h2>
+          <p>Management strategies vary depending on the type and severity of arthritis:</p>
+          
+          <h3>Non-Pharmacological Treatments</h3>
+          <ul>
+            <li>Physical therapy and exercise</li>
+            <li>Weight management</li>
+            <li>Heat and cold therapy</li>
+            <li>Assistive devices</li>
+          </ul>
+          
+          <h3>Medications</h3>
+          <p>Depending on the type of arthritis, medications may include NSAIDs, corticosteroids, DMARDs, or biologics.</p>
+          
+          <h3>Surgical Options</h3>
+          <p>In advanced cases, joint replacement or other surgical procedures may be recommended.</p>
+          
+          <p>Early diagnosis and treatment are crucial for managing arthritis effectively. If you experience persistent joint symptoms, consult with a healthcare professional for proper evaluation and management.</p>
+        </div>
+      `
     }
   ]
 
@@ -236,15 +347,10 @@ async function getPostData(paramsPromise: Promise<{ id: string }>) {
   return getBlogPost(resolvedParams.id);
 }
 
-async function getPostAndId(paramsPromise: Promise<{ id: string }>) {
-  const resolvedParams = await paramsPromise;
-  const post = getBlogPost(resolvedParams.id);
-  return { post, id: resolvedParams.id };
-}
-
 // Generate metadata for the blog post
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const { post, id } = await getPostAndId(Promise.resolve(params));
+  const { id } = params;
+  const post = getBlogPost(id);
   
   if (!post) {
     return {
@@ -268,20 +374,18 @@ export async function generateStaticParams() {
     { id: 'knee-replacement-signs' },
     { id: 'knee-exercises' },
     { id: 'surgery-preparation' },
-    { id: 'sports-injury-prevention' }
+    { id: 'arthroscopy-vs-open' },
+    { id: 'sports-injury-prevention' },
+    { id: 'arthritis-guide' }
   ]
   
   return blogPosts
 }
 
-async function getBlogPostAsync(paramsPromise: Promise<{ id: string }>) {
-  const resolvedParams = await paramsPromise;
-  return getBlogPost(resolvedParams.id);
-}
-
 // Main component for the blog post page
 export default async function BlogPostPage({ params }: { params: { id: string } }) {
-  const post = await getBlogPostAsync(Promise.resolve(params));
+  const { id } = params;
+  const post = getBlogPost(id);
 
   if (!post) {
     notFound();
