@@ -1,7 +1,11 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
+import React from 'react'
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react'
+import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import { notFound } from 'next/navigation'
 
 // Define the blog post type
 interface BlogPost {
@@ -13,6 +17,8 @@ interface BlogPost {
   publishDate: string
   image: string
   author: string
+  imageWidth: number
+  imageHeight: number
   content: string
 }
 
@@ -28,12 +34,14 @@ function getBlogPost(id: string): BlogPost | undefined {
       publishDate: '2024-01-15',
       image: '/images/Partial-Knee-Replacement.webp',
       author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
       content: `
         <div class="prose max-w-none">
           <p>Knee replacement surgery is a significant decision that shouldn't be taken lightly. However, for many patients suffering from severe knee pain and limited mobility, it can be a life-changing procedure that restores their quality of life.</p>
           
           <h2>Key Indicators for Knee Replacement</h2>
-          <p>Here are the primary signs that may indicate you&apos;re a candidate for knee replacement surgery:</p>
+          <p>Here are the primary signs that may indicate you're a candidate for knee replacement surgery:</p>
           
           <ul>
             <li><strong>Severe Pain:</strong> Persistent knee pain that interferes with daily activities, even while resting</li>
@@ -56,7 +64,7 @@ function getBlogPost(id: string): BlogPost | undefined {
           <h2>What to Expect</h2>
           <p>Modern knee replacement surgery has a high success rate, with most patients experiencing significant pain relief and improved function. Recovery typically takes several weeks to months, with physical therapy playing a crucial role in the process.</p>
           
-          <p>If you&apos;re experiencing these symptoms, don&apos;t hesitate to consult with an orthopedic specialist who can evaluate your specific situation and recommend the best treatment options for you.</p>
+          <p>If you're experiencing these symptoms, don't hesitate to consult with an orthopedic specialist who can evaluate your specific situation and recommend the best treatment options for you.</p>
         </div>
       `
     },
@@ -69,6 +77,8 @@ function getBlogPost(id: string): BlogPost | undefined {
       publishDate: '2024-01-10',
       image: '/images/Knee-presentation-surgeries-HTODFO.webp',
       author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
       content: `
         <div class="prose max-w-none">
           <p>Knee pain can significantly impact your daily life, but the right exercises can help reduce pain and improve mobility. These exercises are gentle on the joints while strengthening the muscles that support your knees.</p>
@@ -109,6 +119,8 @@ function getBlogPost(id: string): BlogPost | undefined {
       publishDate: '2024-01-05',
       image: '/images/Total-hip-replacement.webp',
       author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
       content: `
         <div class="prose max-w-none">
           <p>Preparing for orthopedic surgery involves both physical and mental preparation. The better prepared you are, the smoother your recovery will be.</p>
@@ -153,7 +165,175 @@ function getBlogPost(id: string): BlogPost | undefined {
             <li>Leave jewelry and valuables at home</li>
           </ul>
           
-          <p>Proper preparation can significantly impact your surgical outcome and recovery time. Don&apos;t hesitate to ask your surgical team any questions you may have.</p>
+          <p>Proper preparation can significantly impact your surgical outcome and recovery time. Don't hesitate to ask your surgical team any questions you may have.</p>
+        </div>
+      `
+    },
+    {
+      id: 'sports-injury-prevention',
+      title: 'Sports Injury Prevention: Essential Tips for Athletes',
+      excerpt: 'Learn effective strategies to prevent sports injuries and maintain peak performance as an athlete.',
+      category: 'Sports Medicine',
+      readTime: '6 min read',
+      publishDate: '2024-02-10',
+      image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
+      content: `
+        <div class="prose max-w-none">
+          <p>Sports injuries can be devastating for athletes at any level. Prevention is always better than treatment, and implementing proper injury prevention strategies can keep you active and performing at your best.</p>
+          
+          <h2>Common Sports Injuries</h2>
+          <p>Understanding the most common sports injuries is the first step in prevention:</p>
+          
+          <ul>
+            <li><strong>ACL injuries:</strong> Often occur during sudden stops or changes in direction</li>
+            <li><strong>Meniscus tears:</strong> Typically happen during twisting movements</li>
+            <li><strong>Rotator cuff injuries:</strong> Common in sports involving repetitive overhead motions</li>
+            <li><strong>Concussions:</strong> Head injuries that require immediate attention</li>
+          </ul>
+          
+          <h2>Prevention Strategies</h2>
+          <p>Implement these evidence-based strategies to reduce your risk of sports injuries:</p>
+          
+          <h3>1. Proper Warm-Up</h3>
+          <p>Never skip your warm-up routine. A proper warm-up increases blood flow to muscles and prepares your body for intense activity. Include dynamic stretches and sport-specific movements.</p>
+          
+          <h3>2. Strength Training</h3>
+          <p>Focus on strengthening the muscles that support your joints. A balanced strength program should include exercises for all major muscle groups with special attention to injury-prone areas.</p>
+          
+          <h3>3. Flexibility and Mobility</h3>
+          <p>Maintain good flexibility through regular stretching. Include both dynamic stretching before activity and static stretching after activity.</p>
+          
+          <h3>4. Proper Equipment</h3>
+          <p>Use appropriate, well-fitted protective equipment for your sport. Replace worn equipment promptly and ensure it meets safety standards.</p>
+          
+          <h3>5. Technique and Form</h3>
+          <p>Work with qualified coaches to develop proper technique. Good form reduces stress on joints and muscles, decreasing injury risk.</p>
+          
+          <h2>Recovery and Rest</h2>
+          <p>Adequate recovery is as important as training itself:</p>
+          
+          <ul>
+            <li>Allow sufficient sleep (7-9 hours for adults, more for athletes)</li>
+            <li>Include rest days in your training schedule</li>
+            <li>Listen to your body and don't ignore pain signals</li>
+            <li>Use recovery techniques like ice baths, massage, or compression</li>
+          </ul>
+          
+          <p>By implementing these prevention strategies, you can significantly reduce your risk of sports injuries while maintaining or improving your performance. Remember that injury prevention is an ongoing process that requires consistent attention to detail.</p>
+        </div>
+      `
+    },
+    {
+      id: 'arthroscopy-vs-open',
+      title: 'Arthroscopy vs. Open Surgery: What\'s the Difference?',
+      excerpt: 'Understanding the differences between arthroscopic and open surgery procedures, including benefits, risks and recovery times.',
+      category: 'Education',
+      readTime: '6 min read',
+      publishDate: '2023-12-28',
+      image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
+      content: `
+        <div class="prose max-w-none">
+          <p>When it comes to orthopedic procedures, surgeons have different approaches available. Two of the most common are arthroscopic surgery and open surgery. Both have their advantages and disadvantages, and the choice depends on the specific condition, patient factors, and surgeon expertise.</p>
+          
+          <h2>What is Arthroscopic Surgery?</h2>
+          <p>Arthroscopic surgery, also known as keyhole surgery, involves making small incisions (typically 5-10mm) through which a tiny camera (arthroscope) and specialized instruments are inserted. The camera transmits images to a monitor, allowing the surgeon to visualize and operate inside the joint without making large incisions.</p>
+          
+          <h2>What is Open Surgery?</h2>
+          <p>Open surgery involves making a larger incision to directly access the affected area. This provides the surgeon with direct visualization and access to the joint or tissue, allowing for more complex procedures.</p>
+          
+          <h2>Key Differences</h2>
+          <ul>
+            <li><strong>Incision Size:</strong> Arthroscopic uses small incisions; open surgery requires larger ones</li>
+            <li><strong>Recovery Time:</strong> Arthroscopic typically has shorter recovery; open surgery may require longer healing</li>
+            <li><strong>Pain Level:</strong> Arthroscopic generally causes less postoperative pain</li>
+            <li><strong>Risks:</strong> Arthroscopic has lower infection risk; open surgery may offer better access for complex repairs</li>
+            <li><strong>Procedure Complexity:</strong> Some complex procedures still require open techniques</li>
+          </ul>
+          
+          <h2>Benefits of Arthroscopic Surgery</h2>
+          <p>Arthroscopic procedures offer several advantages:</p>
+          <ul>
+            <li>Less scarring and tissue damage</li>
+            <li>Reduced postoperative pain</li>
+            <li>Faster recovery and return to activities</li>
+            <li>Lower risk of complications</li>
+            <li>Often performed as outpatient procedures</li>
+          </ul>
+          
+          <h2>When Open Surgery is Necessary</h2>
+          <p>Despite advances in arthroscopic techniques, some procedures still require open surgery:</p>
+          <ul>
+            <li>Complex reconstructions</li>
+            <li>Revision surgeries</li>
+            <li>Certain fracture repairs</li>
+            <li>Implant placement in complex cases</li>
+          </ul>
+          
+          <p>Your surgeon will evaluate your specific condition and recommend the most appropriate approach based on your individual needs, anatomy, and the nature of the required procedure.</p>
+        </div>
+      `
+    },
+    {
+      id: 'arthritis-guide',
+      title: 'Understanding Arthritis: Types, Symptoms and Treatment Options',
+      excerpt: 'A comprehensive guide to different types of arthritis, their symptoms, and the various treatment approaches available.',
+      category: 'Arthritis',
+      readTime: '12 min read',
+      publishDate: '2023-12-15',
+      image: '/images/patient-1 (25).jpg',
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800,
+      content: `
+        <div class="prose max-w-none">
+          <p>Arthritis is one of the most common chronic conditions affecting millions of people worldwide. It encompasses over 100 different conditions that affect joints, surrounding tissues, and other connective tissues. Understanding the different types, recognizing symptoms early, and exploring treatment options can significantly improve quality of life.</p>
+          
+          <h2>Types of Arthritis</h2>
+          <p>The most common forms include:</p>
+          
+          <h3>Osteoarthritis (OA)</h3>
+          <p>The most prevalent type, often called "wear and tear" arthritis. It occurs when cartilage that cushions the ends of bones deteriorates over time.</p>
+          
+          <h3>Rheumatoid Arthritis (RA)</h3>
+          <p>An autoimmune disorder that causes the immune system to attack the synovium, the lining of the membranes that surround joints.</p>
+          
+          <h3>Psoriatic Arthritis</h3>
+          <p>Affects some people who have psoriasis, an autoimmune skin condition.</p>
+          
+          <h2>Symptoms to Watch For</h2>
+          <p>Common signs of arthritis include:</p>
+          <ul>
+            <li>Joint pain and tenderness</li>
+            <li>Joint stiffness, especially in the morning</li>
+            <li>Swelling around joints</li>
+            <li>Reduced range of motion</li>
+            <li>Warmth and redness around joints</li>
+          </ul>
+          
+          <h2>Treatment Approaches</h2>
+          <p>Management strategies vary depending on the type and severity of arthritis:</p>
+          
+          <h3>Non-Pharmacological Treatments</h3>
+          <ul>
+            <li>Physical therapy and exercise</li>
+            <li>Weight management</li>
+            <li>Heat and cold therapy</li>
+            <li>Assistive devices</li>
+          </ul>
+          
+          <h3>Medications</h3>
+          <p>Depending on the type of arthritis, medications may include NSAIDs, corticosteroids, DMARDs, or biologics.</p>
+          
+          <h3>Surgical Options</h3>
+          <p>In advanced cases, joint replacement or other surgical procedures may be recommended.</p>
+          
+          <p>Early diagnosis and treatment are crucial for managing arthritis effectively. If you experience persistent joint symptoms, consult with a healthcare professional for proper evaluation and management.</p>
         </div>
       `
     }
@@ -162,10 +342,15 @@ function getBlogPost(id: string): BlogPost | undefined {
   return blogPosts.find(post => post.id === id)
 }
 
+async function getPostData(paramsPromise: Promise<{ id: string }>) {
+  const resolvedParams = await paramsPromise;
+  return getBlogPost(resolvedParams.id);
+}
+
 // Generate metadata for the blog post
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
-  const { id } = await params
-  const post = getBlogPost(id)
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const { id } = params;
+  const post = getBlogPost(id);
   
   if (!post) {
     return {
@@ -177,6 +362,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return {
     title: `${post.title} | Dr. Gaurav Saini`,
     description: post.excerpt,
+    alternates: {
+      canonical: `https://drgauravsainiortho.com/blog/${id}/`
+    }
   }
 }
 
@@ -185,39 +373,61 @@ export async function generateStaticParams() {
   const blogPosts = [
     { id: 'knee-replacement-signs' },
     { id: 'knee-exercises' },
-    { id: 'surgery-preparation' }
+    { id: 'surgery-preparation' },
+    { id: 'arthroscopy-vs-open' },
+    { id: 'sports-injury-prevention' },
+    { id: 'arthritis-guide' }
   ]
   
   return blogPosts
 }
 
 // Main component for the blog post page
-export default async function BlogPostPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params
-  const post = getBlogPost(id)
+export default async function BlogPostPage({ params }: { params: { id: string } }) {
+  const { id } = params;
+  const post = getBlogPost(id);
 
   if (!post) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
-            <p className="text-gray-600 mb-6">The blog post you&apos;re looking for doesn&apos;t exist or has been removed.</p>
-            <Link 
-              href="/blog" 
-              className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Blog
-            </Link>
-          </div>
-        </div>
-      </div>
-    )
+    notFound();
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      <Head>
+        {/* BlogPosting Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://drgauravsainiortho.com/blog/${post.id}`
+              },
+              "headline": post.title,
+              "description": post.excerpt,
+              "image": `https://drgauravsainiortho.com${post.image}`,
+              "author": {
+                "@type": "Person",
+                "name": post.author,
+                "url": "https://drgauravsainiortho.com"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Dr. Gaurav Saini - Orthopaedic Practice",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://drgauravsainiortho.com/images/dr-saini-logo.jpg"
+                }
+              },
+              "datePublished": post.publishDate,
+              "dateModified": post.publishDate
+            })
+          }}
+        />
+      </Head>
+      <PageAnimationWrapper />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Blog Link */}
         <div className="mb-6">
@@ -237,10 +447,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
             <Image
               src={post.image}
               alt={post.title}
-              fill
+              width={post.imageWidth}
+              height={post.imageHeight}
               className="object-contain"
-              sizes="100vw"
-              unoptimized
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+              loading="eager"
+              decoding="async"
             />
           </div>
 

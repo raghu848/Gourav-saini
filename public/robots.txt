@@ -1,19 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://drgauravsaini.com/sitemap.xml
+# Host
+Host: https://drgauravsainiortho.com
 
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: Yandex
-Allow: /
+# Sitemaps
+Sitemap: https://drgauravsainiortho.com/sitemap.xml

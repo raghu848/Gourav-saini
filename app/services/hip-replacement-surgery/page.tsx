@@ -2,12 +2,11 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
-import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
+import PageAnimationWrapper from '@/components/PageAnimationWrapper'
 
-export const metadata: Metadata = {
-  title: 'Hip Replacement Surgery - Dr. Gaurav Saini',
-  description: 'Advanced hip replacement surgery with robotic assistance for pain relief and improved mobility.',
-}
+import { generateServiceMetadata } from '../../metadata-improved'
+
+export const metadata: Metadata = generateServiceMetadata('hip-replacement-surgery')
 
 export default function HipReplacementSurgeryPage() {
   const hipConditions = [
@@ -39,9 +38,9 @@ export default function HipReplacementSurgeryPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
+    <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
       <PageAnimationWrapper />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <nav className="mb-8 text-sm">
           <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
           <Link href="/services" className="text-blue-600 hover:underline ml-2">Services</Link> &gt; 
@@ -193,6 +192,9 @@ export default function HipReplacementSurgeryPage() {
                     width={500}
                     height={300}
                     className="w-full h-auto object-contain"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p className="text-black text-center font-bold text-lg mt-1">

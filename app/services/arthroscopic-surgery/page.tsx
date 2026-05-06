@@ -1,12 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, CheckCircle, Users, Shield, Heart, Eye } from 'lucide-react'
+import { Calendar, CheckCircle, Users, Heart, Eye } from 'lucide-react'
+import PageAnimationWrapper from '@/components/PageAnimationWrapper'
+import { generateServiceMetadata } from '../../metadata-improved'
 
-export const metadata: Metadata = {
-  title: 'Arthroscopic Surgery - Dr. Gaurav Saini',
-  description: 'Minimally invasive arthroscopic surgery for joint problems with faster recovery and less pain.',
-}
+export const metadata: Metadata = generateServiceMetadata('arthroscopic-surgery')
 
 export default function ArthroscopicSurgeryPage() {
   const arthroscopicProcedures = [
@@ -38,7 +37,8 @@ export default function ArthroscopicSurgeryPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
+      <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">
           <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
@@ -191,7 +191,9 @@ export default function ArthroscopicSurgeryPage() {
                     width={500}
                     height={300}
                     className="w-full h-auto object-contain"
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <p className="text-black text-center font-bold text-lg mt-1">

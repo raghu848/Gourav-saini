@@ -12,28 +12,27 @@ import {
   Linkedin,
   Youtube,
   MessageCircle,
-  ArrowRight,
   Twitter
 } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear()) // Initialize with client date
+  const [isClient, setIsClient] = useState(false) // Track if we're on client
+
+  // Set isClient to true on mount (client-side only)
+  useEffect(() => {
+    setIsClient(true)
+    // Update year to ensure it's current
+    setCurrentYear(new Date().getFullYear())
+  }, [])
 
   const quickLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Dr. Saini' },
+    { href: '/about', label: 'About Us' },
     { href: '/services', label: 'Services' },
-    { href: '/testimonials', label: 'Patient Reviews' },
-    { href: '/blog', label: 'Health Blog' },
-    { href: '/contact', label: 'Contact Us' },
-  ]
-
-  const services = [
-    { href: '/services/robotic-joint-replacement', label: 'Robotic Joint Replacement' },
-    { href: '/services/sports-injury-arthroscopy', label: 'Sports Injury Treatment' },
-    { href: '/services/fracture-trauma-care', label: 'Fracture & Trauma Care' },
-    { href: '/services/joint-replacement-center', label: 'Joint Pain Management' },
-    { href: '/services/sports-injury-arthroscopy#treatment', label: 'Arthroscopic Surgery' },
+    { href: '/blog', label: 'Blogs' },
+    { href: '/contact', label: 'Contact' },
   ]
 
   const socialLinks = [
@@ -66,18 +65,20 @@ const Footer = () => {
                   fill
                   className="object-contain"
                   sizes="64px"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white">
                   Dr. Gaurav Saini
                 </h3>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-400 font-bold">
                   Senior Consultant Orthopaedics
                 </p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-gray-400 text-sm mb-4 font-bold">
               Expert Orthopedician & Knee Replacement Specialist dedicated to restoring mobility and relieving pain.
             </p>
             
@@ -106,9 +107,9 @@ const Footer = () => {
                 href="https://wa.me/919876777393"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-green-600 text-white px-3 py-2 rounded w-full justify-center text-sm hover:bg-green-700 transition-colors duration-200"
+                className="inline-flex items-center gap-2 bg-green-600 text-white px-4 py-3 rounded w-full justify-center text-base font-bold hover:bg-green-700 transition-colors duration-200"
               >
-                <MessageCircle size={14} />
+                <MessageCircle size={16} />
                 <span>Chat on WhatsApp</span>
               </a>
             </div>
@@ -116,17 +117,15 @@ const Footer = () => {
 
           {/* Contact Info - Simplified */}
           <div>
-            <h4 className="text-lg font-medium text-white mb-4">Contact Info</h4>
+            <h4 className="text-lg font-bold text-white mb-4">Contact Info</h4>
             <div className="space-y-4">
               
               {/* Address */}
               <div className="flex gap-2">
                 <MapPin size={16} className="text-gray-400 mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-gray-400 text-sm">
-                    Cabin No 9B Ground floor, Max Hospital
-                    Near Civil Hospital, 56A, Phase 6, Sector 56
-                    Sahibzada Ajit Singh Nagar, Punjab 160055
+                  <p className="text-gray-400 text-sm font-bold">
+                    Cabin No 26 Ground floor, MAX SUPER SPECIALTY HOSPITAL, 56A, near Civil Hospital, Phase 6, Sector 56, Sahibzada Ajit Singh Nagar, Punjab 160055
                   </p>
                 </div>
               </div>
@@ -136,7 +135,7 @@ const Footer = () => {
                 <Phone size={16} className="text-gray-400 flex-shrink-0" />
                 <a
                   href="tel:+919876777393"
-                  className="text-gray-400 hover:text-white"
+                  className="text-gray-400 hover:text-white font-bold"
                 >
                   +91 98767 77393
                 </a>
@@ -146,17 +145,24 @@ const Footer = () => {
               <div className="flex gap-2">
                 <Mail size={16} className="text-gray-400 flex-shrink-0" />
                 <a
-                  href="mailto:info@drgauravsaini.com"
-                  className="text-gray-400 hover:text-white"
+                  id="footer-email-link"
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const email = 'info';
+                    const domain = 'drgauravsainiortho.com';
+                    window.location.href = `mailto:${email}@${domain}`;
+                  }}
+                  className="text-gray-400 hover:text-white font-bold"
                 >
-                  info@drgauravsaini.com
+                  info [at] drgauravsainiortho [dot] com
                 </a>
               </div>
 
               {/* Hours */}
               <div className="flex gap-2">
                 <Clock size={16} className="text-gray-400 mt-1 flex-shrink-0" />
-                <div className="text-gray-400 text-sm">
+                <div className="text-gray-400 text-sm font-bold">
                   Monday to Saturday: 9:00 AM - 4:00 PM
                   Sunday: Closed
                 </div>
@@ -166,13 +172,13 @@ const Footer = () => {
 
           {/* Quick Links - Simplified */}
           <div>
-            <h4 className="text-lg font-medium text-white mb-4">Quick Links</h4>
+            <h4 className="text-lg font-bold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white text-sm"
+                    className="text-gray-400 hover:text-white text-sm font-bold"
                   >
                     {link.label}
                   </Link>
@@ -181,49 +187,32 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services - Simplified */}
+          {/* Map Section - Moved from Services position */}
           <div>
-            <h4 className="text-lg font-medium text-white mb-4">Our Services</h4>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.href}>
-                  <Link
-                    href={service.href}
-                    className="text-gray-400 hover:text-white text-sm"
-                  >
-                    {service.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 className="text-lg font-bold text-white mb-3">Find Us</h4>
             
-            {/* Map Section - Simplified */}
-            <div className="mt-4">
-              <h4 className="text-lg font-medium text-white mb-3">Find Us</h4>
-              
-              <div className="relative w-full h-40 rounded overflow-hidden">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.878985413344!2d76.6789063151447!3d30.72445198164194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef111d418825%3A0x4a2a3e0a0d0d0d0d!2sMax%20Super%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Hospital Location"
-                ></iframe>
-              </div>
-              
-              {/* Directions Link */}
-              <a 
-                href="https://www.google.com/maps/dir//Cabin+No+9B+Ground+floor,+Max+Hospital,+near+Civil+Hospital,+56A,+Phase+6,+Sector+56,+Sahibzada+Ajit+Singh+Nagar,+Punjab+160055/@30.740054,76.6318948,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390fef3afc0a4d67:0xa2a365fdad38645f!2m2!1d76.7142961!2d30.74008?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center mt-3 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm"
-              >
-                <MapPin size={16} className="mr-2" />
-                Get Directions
-              </a>
+            <div className="relative w-full h-40 rounded overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.878985413344!2d76.6789063151447!3d30.72445198164194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fef111d418825%3A0x4a2a3e0a0d0d0d0d!2sMax%20Super%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Hospital Location"
+              ></iframe>
             </div>
+            
+            {/* Directions Link */}
+            <a 
+              href="https://www.google.com/maps/dir//Cabin+No+26+Ground+floor,+MAX+SUPER+SPECIALTY+HOSPITAL,+56A,+near+Civil+Hospital,+Phase+6,+Sector+56,+Sahibzada+Ajit+Singh+Nagar,+Punjab+160055/@30.740054,76.6318948,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x390fef3afc0a4d67:0xa2a365fdad38645f!2m2!1d76.7142961!2d30.74008?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mt-3 px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 text-base font-bold"
+            >
+              <MapPin size={16} className="mr-2" />
+              Get Directions
+            </a>
           </div>
         </div>
       </div>
@@ -231,10 +220,10 @@ const Footer = () => {
       {/* Bottom Bar - Simplified */}
       <div className="border-t border-gray-800 bg-gray-900 py-3 px-4">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-          <p className="text-gray-500 text-xs">© {currentYear} Dr. Gaurav Saini. All rights reserved.</p>
+          <p className="text-gray-500 text-xs font-bold">© {currentYear} Dr. Gaurav Saini. All rights reserved.</p>
           <div className="flex gap-4">
             {legalLinks.map(({ href, label }) => (
-              <Link key={href} href={href} className="text-gray-500 hover:text-white text-xs">
+              <Link key={href} href={href} className="text-gray-500 hover:text-white text-xs font-bold">
                 {label}
               </Link>
             ))}
@@ -245,8 +234,8 @@ const Footer = () => {
       {/* Emergency Bar - Simplified */}
       <div className="bg-red-700 text-white py-2 px-4 text-sm text-center">
         <div className="max-w-7xl mx-auto flex justify-center items-center gap-2">
-          <span>Emergency? Call us:</span>
-          <a href="tel:+919876777393" className="font-medium">+91 98767 77393</a>
+          <span className="font-bold">Emergency? Call us:</span>
+          <a href="tel:+919876777393" className="font-bold">+91 98767 77393</a>
         </div>
       </div>
     </footer>

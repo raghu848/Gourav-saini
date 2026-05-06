@@ -1,10 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Metadata } from 'next'
+import { defaultMetadata } from './metadata-improved'
+
+export const metadata: Metadata = defaultMetadata
+
 import { 
   Stethoscope, 
   Heart, 
   Activity, 
-  Shield, 
   CheckCircle, 
   Phone, 
   MessageCircle,
@@ -17,28 +21,6 @@ import {
 import DoctorImagesSection from '../components/DoctorImagesSection'
 
 export default function Home() {
-  const specialties = [
-    {
-      icon: Heart,
-      title: 'Robotic Knee Replacement',
-      description: 'CORI robotic technology for precise Total Knee and Hip Replacement with real-time 3D mapping'
-    },
-    {
-      icon: Activity,
-      title: 'Sports Injury & Arthroscopy',
-      description: 'ACL injuries, meniscus tears treatment with minimally invasive arthroscopy for faster healing'
-    },
-    {
-      icon: Shield,
-      title: 'Fracture & Trauma Care',
-      description: 'Emergency trauma care with precision diagnostics for quick and compassionate treatment'
-    },
-    {
-      icon: Stethoscope,
-      title: 'Advanced Trauma Care',
-      description: 'Complex trauma, revision surgeries, and polytrauma with deformity correction'
-    }
-  ]
 
   const whyChooseUs = [
     {
@@ -88,8 +70,52 @@ export default function Home() {
     { number: 'CORI', label: 'Robotic Technology' }
   ]
 
+  // FAQ data for structured data
+  const faqs = [
+    {
+      question: "What is robotic knee replacement surgery?",
+      answer: "Robotic knee replacement uses advanced CORI technology for precise implant placement. This minimally invasive procedure offers better alignment, less tissue damage, and faster recovery compared to traditional methods."
+    },
+    {
+      question: "How long does it take to recover from knee replacement surgery?",
+      answer: "Most patients can walk with assistance within 24 hours after surgery. Full recovery typically takes 3-6 months, with many patients returning to normal activities within 6-12 weeks."
+    },
+    {
+      question: "What are the signs that I need a hip replacement?",
+      answer: "Common signs include persistent hip pain that interferes with daily activities, stiffness that limits movement, and pain that continues while resting. A consultation with our orthopedic surgeon can determine if hip replacement is right for you."
+    },
+    {
+      question: "How effective is ACL reconstruction surgery?",
+      answer: "ACL reconstruction has a high success rate, with 90-95% of patients returning to their previous activity level. Our advanced arthroscopic techniques ensure minimal scarring and faster healing."
+    },
+    {
+      question: "What should I expect during my first orthopedic consultation?",
+      answer: "During your first visit, we'll review your medical history, perform a physical examination, and may order diagnostic tests like X-rays or MRIs. We'll discuss treatment options and develop a personalized care plan."
+    }
+  ];
+
+  // FAQ structured data
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData)
+        }}
+      />
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
         {/* Subtle blurred circle decoration */}
@@ -100,7 +126,7 @@ export default function Home() {
             
             {/* Hero Content */}
             <div className="relative z-10">
-              <div className="backdrop-blur-sm bg-black/20 p-8 rounded-2xl border border-white/10 shadow-xl">
+              <div className="backdrop-blur-sm bg-black/20 p-8 rounded-2xl border border-white/10 shadow-xl fade-in">
                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 font-serif leading-tight">
                   <span className="block text-white">Where Compassion</span>
                   <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-200 mt-2">Meets Innovation</span>
@@ -150,24 +176,25 @@ export default function Home() {
 
             {/* Hero Image/Stats */}
             <div className="flex flex-col items-center lg:items-end relative z-10">
-              <div className="relative w-full max-w-lg mx-auto">
+              <div className="relative w-full max-w-lg mx-auto fade-in">
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                   <Image
-                    src="/images/opretion.jpg"
+                    src="/images/opretion.webp"
                     alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
                     width={600}
                     height={400}
                     className="w-full h-auto object-cover"
                     priority={true}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
-                    unoptimized
+                    loading="eager"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                 </div>
               </div>
               
               {/* Stats display */}
-              <div className="bg-black/20 backdrop-blur rounded-xl p-6 w-full max-w-md mt-8 border border-white/20">
+              <div className="bg-black/20 backdrop-blur rounded-xl p-6 w-full max-w-md mt-8 border border-white/20 fade-in">
                 <div className="grid grid-cols-2 gap-4">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
@@ -192,37 +219,62 @@ export default function Home() {
       </section>
 
       {/* Specialties Section */}
-      <section className="py-4 bg-white">
+      <section className="py-8 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-serif">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in">
               Our Specialties
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
               Comprehensive orthopedic care with expertise in the latest surgical techniques
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {specialties.map((specialty, index) => {
-              const IconComponent = specialty.icon
-              return (
-                <div
-                  key={index}
-                  className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <IconComponent className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    {specialty.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    {specialty.description}
-                  </p>
-                </div>
-              )
-            })}
+            <Link 
+              href="/about"
+              className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Stethoscope className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                About Us
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Learn about Dr. Gaurav Saini and his expertise in orthopedic care
+              </p>
+            </Link>
+            
+            <Link 
+              href="/services"
+              className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Heart className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Services
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Explore our comprehensive orthopedic services and treatments
+              </p>
+            </Link>
+            
+            <Link 
+              href="/blog"
+              className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Activity className="w-6 h-6 text-blue-600" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                Blogs
+              </h3>
+              <p className="text-gray-600 text-sm">
+                Read expert advice and insights on orthopedic health
+              </p>
+            </Link>
           </div>
         </div>
       </section>
@@ -234,10 +286,10 @@ export default function Home() {
       <section className="py-6 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-serif">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in">
               Why Patients Choose Us
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
               Advanced technology, expert care, and proven results for comprehensive orthopedic treatment
             </p>
           </div>
@@ -248,7 +300,7 @@ export default function Home() {
               return (
                 <div 
                   key={index} 
-                  className="bg-white rounded-xl shadow-sm p-8 hover:shadow-md transition-all duration-300 border border-gray-100"
+                  className="bg-white rounded-xl shadow-sm p-8 hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect"
                 >
                   <div className="flex items-start mb-4">
                     <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-teal-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
@@ -273,7 +325,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1">
-              <div>
+              <div className="fade-in">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
                  Consult with Dr. Gaurav Saini
                 </h2>
@@ -302,14 +354,15 @@ export default function Home() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl fade-in">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-400"></div>
                 <Image
-                  src="/images/dr-saini-logo.jpg"
+                  src="/images/dr-saini-logo.webp"
                   alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
-                  fill
+                  width={1200}
+                  height={800}
                   className="object-contain p-8"
-                  unoptimized
+                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
                 />
               </div>
             </div>
@@ -321,10 +374,10 @@ export default function Home() {
       <section className="py-4 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-serif">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in">
               What Our Patients Say
             </h2>
-            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
               Real experiences from patients who have transformed their lives
             </p>
           </div>
@@ -333,7 +386,7 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect"
               >
                 <div className="flex items-center mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
@@ -350,7 +403,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center mt-8">
+          <div className="text-center mt-8 fade-in">
             <Link
               href="/testimonials"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-300"
@@ -365,7 +418,7 @@ export default function Home() {
       {/* Final CTA Section */}
       <section className="py-6 bg-gradient-to-r from-blue-800 to-teal-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div>
+          <div className="fade-in">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
               Ready to Start Your Recovery?
             </h2>

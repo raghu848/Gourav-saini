@@ -3,10 +3,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react'
 
-export const metadata: Metadata = {
-  title: 'Health Blog - Dr. Gaurav Saini | Orthopedic Tips & Information',
-  description: 'Stay informed with expert orthopedic advice, knee care tips, and the latest insights from Dr. Gaurav Saini. Your guide to better joint health.',
-}
+import { blogMetadata } from '../metadata-improved'
+
+export const metadata: Metadata = blogMetadata
+
+import PageAnimationWrapper from '@/components/PageAnimationWrapper'
 
 export default function BlogPage() {
   const blogPosts = [
@@ -18,7 +19,9 @@ export default function BlogPage() {
       readTime: '5 min read',
       publishDate: '2024-01-15',
       image: '/images/Partial-Knee-Replacement.webp',
-      author: 'Dr. Gaurav Saini'
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 'knee-exercises',
@@ -28,7 +31,9 @@ export default function BlogPage() {
       readTime: '7 min read',
       publishDate: '2024-01-10',
       image: '/images/Knee-presentation-surgeries-HTODFO.webp',
-      author: 'Dr. Gaurav Saini'
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 'surgery-preparation',
@@ -38,17 +43,21 @@ export default function BlogPage() {
       readTime: '10 min read',
       publishDate: '2024-01-05',
       image: '/images/Total-hip-replacement.webp',
-      author: 'Dr. Gaurav Saini'
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 'arthroscopy-vs-open',
       title: 'Arthroscopy vs. Open Surgery: What\'s the Difference?',
-      excerpt: 'Understanding the differences between arthroscopic and open surgery procedures, including benefits, risks, and recovery times.',
+      excerpt: 'Understanding the differences between arthroscopic and open surgery procedures, including benefits, risks and recovery times.',
       category: 'Education',
       readTime: '6 min read',
       publishDate: '2023-12-28',
       image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
-      author: 'Dr. Gaurav Saini'
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 'sports-injury-prevention',
@@ -58,17 +67,21 @@ export default function BlogPage() {
       readTime: '8 min read',
       publishDate: '2023-12-20',
       image: '/images/Minimally-invasive-knee-replacement.webp',
-      author: 'Dr. Gaurav Saini'
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 'arthritis-guide',
-      title: 'Understanding Arthritis: Types, Symptoms, and Treatment Options',
+      title: 'Understanding Arthritis: Types, Symptoms and Treatment Options',
       excerpt: 'A comprehensive guide to different types of arthritis, their symptoms, and the various treatment approaches available.',
       category: 'Arthritis',
       readTime: '12 min read',
       publishDate: '2023-12-15',
       image: '/images/patient-1 (25).jpg',
-      author: 'Dr. Gaurav Saini'
+      author: 'Dr. Gaurav Saini',
+      imageWidth: 1200,
+      imageHeight: 800
     }
   ]
 
@@ -82,16 +95,36 @@ export default function BlogPage() {
     'Arthritis'
   ]
 
+  // Format dates in a hydration-safe way
+  const formatDate = (dateString: string) => {
+    // For server-side rendering, return a static format
+    // For client-side, we could use more advanced formatting if needed
+    return new Date(dateString).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  }
+
+  const formatDateShort = (dateString: string) => {
+    return new Date(dateString).toLocaleDateString('en-US', { 
+      month: 'short', 
+      day: 'numeric', 
+      year: 'numeric' 
+    });
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      <PageAnimationWrapper />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-4">
+        <div className="text-center mb-16 mt-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
             Health & Wellness Blog
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
             Expert insights, tips, and advice on orthopedic health, knee care, and maintaining an active lifestyle
           </p>
         </div>
@@ -119,10 +152,10 @@ export default function BlogPage() {
               <Image
                 src={blogPosts[0].image}
                 alt={blogPosts[0].title}
-                fill
+                width={blogPosts[0].imageWidth}
+                height={blogPosts[0].imageHeight}
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
-                unoptimized
               />
             </div>
             <div className="md:w-1/2 p-8">
@@ -146,16 +179,16 @@ export default function BlogPage() {
                   <User className="w-4 h-4 mr-2" />
                   {blogPosts[0].author}
                   <Calendar className="w-4 h-4 ml-4 mr-2" />
-                  {new Date(blogPosts[0].publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  {formatDate(blogPosts[0].publishDate)}
                   <Clock className="w-4 h-4 ml-4 mr-2" />
                   {blogPosts[0].readTime}
                 </div>
                 <Link
                   href={`/blog/${blogPosts[0].id}`}
-                  className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
+                  className="inline-flex items-center px-4 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base min-w-[100px] justify-center"
                 >
                   Read More
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  <ArrowRight className="w-4 h-4 ml-2 flex-shrink-0" />
                 </Link>
               </div>
             </div>
@@ -170,10 +203,10 @@ export default function BlogPage() {
                 <Image
                   src={post.image}
                   alt={post.title}
-                  fill
+                  width={post.imageWidth}
+                  height={post.imageHeight}
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  unoptimized
                 />
               </div>
               
@@ -203,14 +236,14 @@ export default function BlogPage() {
                 <div className="flex items-center justify-between mt-auto pt-4">
                   <div className="flex items-center text-gray-500 text-sm">
                     <Calendar className="w-4 h-4 mr-2" />
-                    {new Date(post.publishDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                    {formatDateShort(post.publishDate)}
                   </div>
                   <Link
                     href={`/blog/${post.id}`}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base min-w-[100px] justify-center py-1.5"
                   >
                     Read More
-                    <ArrowRight className="w-4 h-4 ml-1" />
+                    <ArrowRight className="w-4 h-4 ml-1 flex-shrink-0" />
                   </Link>
                 </div>
               </div>

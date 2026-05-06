@@ -18,13 +18,20 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'About Dr. Gaurav Saini - MBBS, MS, DNB, MNAMS Orthopedic Surgeon',
-  description: 'Meet Dr. Gaurav Saini, an award-winning orthopedic surgeon with 20 years of experience specializing in robotic joint replacement, sports injuries, and trauma care in Mohali.',
-}
+import { aboutMetadata } from '../metadata-improved'
+import PageAnimationWrapper from '@/components/PageAnimationWrapper'
+
+export const metadata: Metadata = aboutMetadata
 
 export default function AboutPage() {
-  const specialties = [
+  const achievements: { number: string; label: string }[] = [
+    { number: '5000+', label: 'Successful Surgeries' },
+    { number: '20+', label: 'Years Experience' },
+    { number: '99%', label: 'Patient Satisfaction' },
+    { number: '15+', label: 'Awards Received' }
+  ]
+
+  const specialties: { icon: React.ComponentType<{ className?: string }>; title: string; description: string }[] = [
     {
       icon: Heart,
       title: 'Robotic Joint Replacement',
@@ -47,14 +54,7 @@ export default function AboutPage() {
     }
   ]
 
-  const achievements = [
-    { number: '5000+', label: 'Successful Surgeries' },
-    { number: '20+', label: 'Years Experience' },
-    { number: '99%', label: 'Patient Satisfaction' },
-    { number: '15+', label: 'Awards Received' }
-  ]
-
-  const timeline = [
+  const timeline: { year: string; title: string; description: string }[] = [
     {
       year: '2007',
       title: 'MBBS Degree',
@@ -88,17 +88,18 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      <PageAnimationWrapper />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 font-serif mb-4">
+        <div className="text-center mb-16 mt-8">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
             Meet the Doctor -  Dr. Gaurav Saini
           </h1>
-          <p className="text-xl text-blue-600 font-semibold mb-2">
+          <p className="text-2xl text-blue-600 font-semibold mb-4">
             MBBS  , MS, DNB, MNAMS - ORTHOPAEDIC SURGEON IN MOHALI
           </p>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
             Award-winning orthopedic surgeon with nearly 20 years of experience, completely dedicated to Robotic Hip and Knee Surgeries
           </p>
         </div>
@@ -110,12 +111,11 @@ export default function AboutPage() {
               <div className="relative w-56 h-56 lg:w-72 lg:h-72">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-green-400 rounded-full opacity-20 blur-xl"></div>
                 <Image
-                  src="/images/dr-saini-logo.jpg"
+                  src="/images/dr-saini-logo.webp"
                   alt="Dr. Gaurav Saini - MBBS, MS, DNB, MNAMS Orthopaedic Surgeon"
                   fill
                   className="object-contain rounded-full border-4 border-blue-200 shadow-xl"
                   priority
-                  unoptimized
                 />
               </div>
               <div className="text-center mt-6">
@@ -141,7 +141,7 @@ export default function AboutPage() {
                   </div>
                   <div className="flex items-center justify-center text-gray-600">
                     <Mail className="w-4 h-4 mr-2" />
-                    <span>drgauravsaini92@gmail.com</span>
+                    <a href="mailto:drgauravsaini92@gmail.com" className="hover:underline">drgauravsaini92@gmail.com</a>
                   </div>
                 </div>
                 

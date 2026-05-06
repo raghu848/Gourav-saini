@@ -3,10 +3,11 @@ import Image from 'next/image'
 import { Star, Quote, MessageCircle, ThumbsUp } from 'lucide-react'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
-  title: 'Patient Testimonials - Dr. Gaurav Saini | Real Patient Stories',
-  description: 'Read genuine testimonials from patients who have experienced successful treatment with Dr. Gaurav Saini. Real stories of recovery and restored mobility.',
-}
+import { testimonialsMetadata } from '../metadata-improved'
+
+export const metadata: Metadata = testimonialsMetadata
+
+import PageAnimationWrapper from '@/components/PageAnimationWrapper'
 
 export default function TestimonialsPage() {
   const recoveryPhotos = [
@@ -17,8 +18,10 @@ export default function TestimonialsPage() {
       age: 52,
       procedure: 'Total Knee Replacement (CORI Robotic)',
       recoveryTime: '3 months post-op',
-      testimonial: 'I can walk without pain for the first time in 5 years! Dr. Saini&apos;s robotic surgery was a miracle. The precision was incredible and recovery was much faster than expected.',
-      rating: 5
+      testimonial: 'I can walk without pain for the first time in 5 years! Dr. Saini\'s robotic surgery was a miracle. The precision was incredible and recovery was much faster than expected.',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 2,
@@ -28,7 +31,9 @@ export default function TestimonialsPage() {
       procedure: 'Hip Replacement Surgery',
       recoveryTime: '4 months post-op',
       testimonial: 'Back to my daily activities with zero pain! Dr. Saini explained everything clearly and the surgery was performed with utmost care. Highly recommend!',
-      rating: 5
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 3,
@@ -37,8 +42,10 @@ export default function TestimonialsPage() {
       age: 45,
       procedure: 'ACL Reconstruction',
       recoveryTime: '6 months post-op',
-      testimonial: 'From sports injury to full recovery! Dr. Saini&apos;s expertise in sports medicine is outstanding. I&apos;m back to playing cricket with full confidence.',
-      rating: 5
+      testimonial: 'From sports injury to full recovery! Dr. Saini\'s expertise in sports medicine is outstanding. I\'m back to playing cricket with full confidence.',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 4,
@@ -47,8 +54,10 @@ export default function TestimonialsPage() {
       age: 38,
       procedure: 'Shoulder Arthroscopy',
       recoveryTime: '2 months post-op', 
-      testimonial: 'Minimal scarring and quick recovery! The arthroscopic procedure was so advanced. Dr. Saini&apos;s skill and the modern techniques used were impressive.',
-      rating: 5
+      testimonial: 'Minimal scarring and quick recovery! The arthroscopic procedure was so advanced. Dr. Saini\'s skill and the modern techniques used were impressive.',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 5,
@@ -57,8 +66,10 @@ export default function TestimonialsPage() {
       age: 55,
       procedure: 'Complex Fracture Treatment',
       recoveryTime: '5 months post-op',
-      testimonial: 'Perfect bone healing after a complex fracture! Dr. Saini&apos;s trauma expertise saved my leg. The care and follow-up were exceptional throughout.',
-      rating: 5
+      testimonial: 'Perfect bone healing after a complex fracture! Dr. Saini\'s trauma expertise saved my leg. The care and follow-up were exceptional throughout.',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 6,
@@ -68,7 +79,9 @@ export default function TestimonialsPage() {
       procedure: 'Robotic Hip Replacement',
       recoveryTime: '4 months post-op',
       testimonial: 'The robotic precision made all the difference in my hip replacement. Minimal pain and quick recovery allowed me to return to my daily activities.',
-      rating: 5
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 7,
@@ -77,8 +90,10 @@ export default function TestimonialsPage() {
       age: 35,
       procedure: 'Knee Arthroscopy',
       recoveryTime: '2 months post-op',
-      testimonial: 'Dr. Saini&apos;s expertise in arthroscopic procedures helped me recover from my sports injury quickly. I&apos;m back to running marathons!',
-      rating: 5
+      testimonial: 'Dr. Saini\'s expertise in arthroscopic procedures helped me recover from my sports injury quickly. I\'m back to running marathons!',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 8,
@@ -87,8 +102,10 @@ export default function TestimonialsPage() {
       age: 58,
       procedure: 'Shoulder Replacement',
       recoveryTime: '5 months post-op',
-      testimonial: 'After years of shoulder pain, the replacement surgery has given me a new lease on life. Dr. Saini&apos;s care was exceptional throughout.',
-      rating: 5
+      testimonial: 'After years of shoulder pain, the replacement surgery has given me a new lease on life. Dr. Saini\'s care was exceptional throughout.',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     },
     {
       id: 9,
@@ -97,8 +114,10 @@ export default function TestimonialsPage() {
       age: 47,
       procedure: 'Spinal Fusion Surgery',
       recoveryTime: '6 months post-op',
-      testimonial: 'The spinal fusion surgery was complex, but Dr. Saini&apos;s skill and compassionate care made my recovery journey smooth and successful.',
-      rating: 5
+      testimonial: 'The spinal fusion surgery was complex, but Dr. Saini\'s skill and compassionate care made my recovery journey smooth and successful.',
+      rating: 5,
+      imageWidth: 1200,
+      imageHeight: 800
     }
   ]
 
@@ -118,7 +137,7 @@ export default function TestimonialsPage() {
       age: 42,
       condition: 'ACL Reconstruction',
       rating: 5,
-      text: 'As a professional athlete, my ACL injury was devastating. Dr. Saini not only repaired my knee but also helped me understand the rehabilitation process. I&apos;m back to competitive sports now, stronger than ever. His expertise is unmatched.',
+      text: 'As a professional athlete, my ACL injury was devastating. Dr. Saini not only repaired my knee but also helped me understand the rehabilitation process. I\'m back to competitive sports now, stronger than ever. His expertise is unmatched.',
       image: '/testimonials/patient-2.jpg'
     },
     {
@@ -127,7 +146,7 @@ export default function TestimonialsPage() {
       age: 65,
       condition: 'Arthritis Treatment',
       rating: 5,
-      text: 'I had been suffering from severe arthritis pain for over 5 years. Dr. Saini&apos;s treatment plan completely changed my life. The combination of medication, therapy, and lifestyle changes he recommended has given me my freedom back.',
+      text: 'I had been suffering from severe arthritis pain for over 5 years. Dr. Saini\'s treatment plan completely changed my life. The combination of medication, therapy, and lifestyle changes he recommended has given me my freedom back.',
       image: '/testimonials/patient-3.jpg'
     },
     {
@@ -145,7 +164,7 @@ export default function TestimonialsPage() {
       age: 34,
       condition: 'Sports Injury',
       rating: 5,
-      text: 'Dr. Saini treated my complex knee injury from a football accident. His comprehensive approach and clear explanations helped me understand every step of the treatment. I&apos;m now back to playing sports with full confidence.',
+      text: 'Dr. Saini treated my complex knee injury from a football accident. His comprehensive approach and clear explanations helped me understand every step of the treatment. I\'m now back to playing sports with full confidence.',
       image: '/testimonials/patient-5.jpg'
     },
     {
@@ -167,14 +186,15 @@ export default function TestimonialsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      <PageAnimationWrapper />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 font-serif mb-4">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
             Patient Testimonials
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
             Real stories from real patients who have experienced life-changing results with Dr. Gaurav Saini
           </p>
         </div>
@@ -207,17 +227,17 @@ export default function TestimonialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {recoveryPhotos.map((patient) => (
               <div key={patient.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                <div className="relative h-56 border-4 border-blue-200 hover:border-blue-400 transition-colors duration-300 rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-2">
+                <div className="relative h-64 border-4 border-blue-200 hover:border-blue-400 transition-colors duration-300 rounded-lg overflow-hidden bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-4">
                   <div className="relative w-full h-full flex items-center justify-center">
                     <Image
                       src={patient.image}
                       alt={`${patient.patientName} - ${patient.procedure} Recovery`}
-                      fill
+                      width={patient.imageWidth}
+                      height={patient.imageHeight}
                       style={{ objectFit: 'contain' }}
-                      className="rounded-lg transition-transform duration-300"
+                      className="rounded-lg transition-transform duration-300 w-full h-full"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       priority={patient.id <= 3}
-                      unoptimized
                     />
                   </div>
                 </div>
@@ -259,25 +279,17 @@ export default function TestimonialsPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="bg-white rounded-lg shadow-lg p-6 relative">
-              
-              {/* Quote Icon */}
               <div className="absolute top-4 right-4">
                 <Quote className="w-6 h-6 text-blue-200" />
               </div>
-
-              {/* Rating */}
               <div className="flex items-center mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                 ))}
               </div>
-
-              {/* Testimonial Text */}
               <p className="text-gray-700 mb-6 italic">
                 {testimonial.text}
               </p>
-
-              {/* Patient Info */}
               <div className="border-t pt-4">
                 <div className="font-semibold text-gray-900">
                   {testimonial.name}
@@ -362,14 +374,14 @@ export default function TestimonialsPage() {
                   <Image
                     src="/images/testimonials/patient-1 (3).jpg"
                     alt="Patient Review"
-                    fill
-                    style={{ objectFit: 'contain' }}
+                    width={40}
+                    height={40}
+                    style={{ objectFit: 'cover' }}
                     className="rounded-full"
-                    unoptimized
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">Patient Review</h4>
                     <span className="text-sm text-gray-500">2 days ago</span>
                   </div>
@@ -390,14 +402,14 @@ export default function TestimonialsPage() {
                   <Image
                     src="/images/testimonials/patient-1 (13).jpg"
                     alt="Recovery Story"
-                    fill
-                    style={{ objectFit: 'contain' }}
+                    width={40}
+                    height={40}
+                    style={{ objectFit: 'cover' }}
                     className="rounded-full"
-                    unoptimized
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">Recovery Story</h4>
                     <span className="text-sm text-gray-500">1 week ago</span>
                   </div>
@@ -418,14 +430,14 @@ export default function TestimonialsPage() {
                   <Image
                     src="/images/testimonials/patient-1 (17).jpg"
                     alt="Successful Treatment"
-                    fill
-                    style={{ objectFit: 'contain' }}
+                    width={40}
+                    height={40}
+                    style={{ objectFit: 'cover' }}
                     className="rounded-full"
-                    unoptimized
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">Successful Treatment</h4>
                     <span className="text-sm text-gray-500">3 days ago</span>
                   </div>
@@ -446,14 +458,14 @@ export default function TestimonialsPage() {
                   <Image
                     src="/images/testimonials/patient-1 (26).jpg"
                     alt="Patient Experience"
-                    fill
-                    style={{ objectFit: 'contain' }}
+                    width={40}
+                    height={40}
+                    style={{ objectFit: 'cover' }}
                     className="rounded-full"
-                    unoptimized
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center space-x-2 mb-2">
+                  <div className="flex items-center justify-between mb-2">
                     <h4 className="font-medium text-gray-900">Patient Experience</h4>
                     <span className="text-sm text-gray-500">5 days ago</span>
                   </div>

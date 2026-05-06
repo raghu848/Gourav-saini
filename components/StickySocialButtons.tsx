@@ -38,7 +38,7 @@ const StickySocialButtons = () => {
     <>
       {isVisible && (
         <div className="fixed bottom-32 right-8 z-40 flex flex-col items-center gap-3">
-          {socialLinks.map((social, index) => {
+          {socialLinks.map((social) => {
             const IconComponent = social.icon
             return (
               <a
