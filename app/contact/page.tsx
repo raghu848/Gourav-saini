@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { 
   MapPin, 
@@ -10,7 +10,8 @@ import {
   MessageCircle,
   Send,
   CheckCircle
-} from 'lucide-react';
+} from 'lucide-react'
+import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 
 interface ContactFormData {
   name: string
@@ -21,8 +22,13 @@ interface ContactFormData {
 }
 
 export default function ContactPage() {
+  const [isClient, setIsClient] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const {
     register,
@@ -72,8 +78,14 @@ export default function ContactPage() {
     }
   ]
 
+  // Don't render on server
+  if (!isClient) {
+    return null;
+  }
+
   return (
-    <div className="min-h-screen bg-gray-50 py-12">
+    <div className="min-h-screen bg-gray-50 py-12 relative">
+      <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

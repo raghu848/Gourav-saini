@@ -109,8 +109,8 @@ useEffect(() => {
             <div className="flex justify-between items-center h-16 lg:h-20">
               
               {/* Logo Section */}
-              <Link href="/" className="flex items-center space-x-2 lg:space-x-4 group flex-shrink-0 min-w-0">
-                <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-2xl overflow-hidden border-2 border-blue-200 bg-white shadow-lg group-hover:shadow-xl transition-all duration-300 p-1 flex-shrink-0">
+              <Link href="/" className="flex items-center space-x-2 lg:space-x-4 group shrink-0 min-w-0">
+                <div className="relative w-12 h-12 lg:w-16 lg:h-16 rounded-2xl overflow-hidden border-2 border-blue-200 bg-white shadow-lg group-hover:shadow-xl transition-all duration-300 p-1 shrink-0">
                   {!imageError ? (
                     <Image
                       src="/images/dr-saini-logo.jpg"

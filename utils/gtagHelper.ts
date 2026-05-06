@@ -3,7 +3,7 @@ export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || ''
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (GA_MEASUREMENT_ID: string, url: string) => {
   if (typeof window !== 'undefined') {
-    ;(window as any).gtag('config', GA_MEASUREMENT_ID, {
+    (window as Window & typeof globalThis & { gtag: any }).gtag('config', GA_MEASUREMENT_ID, {
       page_path: url,
     })
   }
@@ -22,7 +22,7 @@ export const event = ({
   value: number
 }) => {
   if (typeof window !== 'undefined') {
-    ;(window as any).gtag('event', action, {
+    (window as Window & typeof globalThis & { gtag: any }).gtag('event', action, {
       event_category: category,
       event_label: label,
       value: value,

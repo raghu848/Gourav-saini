@@ -39,7 +39,7 @@ const PageAnimation = () => {
 
   return (
     <Suspense fallback={null}>
-      {getAnimationComponent()}
+      {typeof window !== 'undefined' && getAnimationComponent()}
     </Suspense>
   )
 }

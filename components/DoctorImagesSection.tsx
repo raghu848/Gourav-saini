@@ -127,6 +127,7 @@ const DoctorImagesSection = () => {
                         style={{ objectFit: 'contain' }}
                         className="rounded-2xl"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        unoptimized
                       />
                     </div>
                   </div>
@@ -184,6 +185,7 @@ const DoctorImagesSection = () => {
                     style={{ objectFit: 'contain' }}
                     className="rounded-lg"
                     sizes="(max-width: 768px) 50vw, 25vw"
+                    unoptimized
                   />
                 </div>
               </div>

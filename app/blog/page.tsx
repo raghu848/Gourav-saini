@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, ArrowRight, Clock, User, Tag } from 'lucide-react'
-import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 
 export const metadata: Metadata = {
   title: 'Health Blog - Dr. Gaurav Saini | Orthopedic Tips & Information',
@@ -84,8 +83,7 @@ export default function BlogPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
-      <PageAnimationWrapper />
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -124,6 +122,7 @@ export default function BlogPage() {
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
               />
             </div>
             <div className="md:w-1/2 p-8">
@@ -174,6 +173,7 @@ export default function BlogPage() {
                   fill
                   className="object-contain"
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  unoptimized
                 />
               </div>
               

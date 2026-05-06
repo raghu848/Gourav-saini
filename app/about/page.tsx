@@ -16,7 +16,6 @@ import {
   Target,
   TrendingUp
 } from 'lucide-react'
-import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -89,8 +88,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
-      <PageAnimationWrapper />
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div className="text-center mb-12">
@@ -117,6 +115,7 @@ export default function AboutPage() {
                   fill
                   className="object-contain rounded-full border-4 border-blue-200 shadow-xl"
                   priority
+                  unoptimized
                 />
               </div>
               <div className="text-center mt-6">

@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import {  Heart, Activity, Shield, Settings, Zap, ArrowRight, Play } from 'lucide-react'
-import PageAnimationWrapper from '../../components/PageAnimationWrapper'
 
 export default function ServicesPage() {
   const services = [
@@ -42,8 +41,7 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
-      <PageAnimationWrapper />
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 font-serif mb-4">
@@ -78,6 +76,7 @@ export default function ServicesPage() {
                       onError={(e) => {
                         console.error(`Error loading image: ${service.image}`, e);
                       }}
+                      unoptimized
                     />
                   </div>
                 )}

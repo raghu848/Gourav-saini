@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Calendar, Clock, User, ArrowLeft } from 'lucide-react'
-import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
 // Define the blog post type
 interface BlogPost {
@@ -199,8 +198,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-gray-50 py-12 relative">
-        <PageAnimationWrapper />
+      <div className="min-h-screen bg-gray-50 py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl shadow-lg p-8 text-center">
             <h1 className="text-3xl font-bold text-gray-900 mb-4">Blog Post Not Found</h1>
@@ -219,8 +217,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
-      <PageAnimationWrapper />
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Blog Link */}
         <div className="mb-6">
@@ -243,6 +240,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
               fill
               className="object-contain"
               sizes="100vw"
+              unoptimized
             />
           </div>
 

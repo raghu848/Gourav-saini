@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, CheckCircle, Users, Shield, Heart } from 'lucide-react'
-import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 
 export const metadata: Metadata = {
   title: 'Fracture & Trauma Care - Dr. Gaurav Saini',
@@ -39,8 +38,7 @@ export default function FractureTraumaCarePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
-      <PageAnimationWrapper />
+    <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">
           <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
@@ -193,6 +191,7 @@ export default function FractureTraumaCarePage() {
                     width={500}
                     height={300}
                     className="w-full h-auto object-contain"
+                    unoptimized
                   />
                 </div>
                 <p className="text-black text-center font-bold text-lg mt-1">

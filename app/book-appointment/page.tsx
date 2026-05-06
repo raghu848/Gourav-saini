@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Mail, MessageSquare, CheckCircle, MapPin } from 'lucide-react'
 
 const timeSlots = [
@@ -20,6 +20,7 @@ const services = [
 ]
 
 export default function BookAppointmentPage() {
+  const [isClient, setIsClient] = useState(false);
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedTime, setSelectedTime] = useState('')
   const [selectedService, setSelectedService] = useState('')
@@ -29,6 +30,10 @@ export default function BookAppointmentPage() {
     email: '',
     message: ''
   })
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   // Generate calendar dates for the next 30 days
   const generateDates = () => {
@@ -70,6 +75,11 @@ export default function BookAppointmentPage() {
 
     const whatsappUrl = `https://wa.me/919876777393?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, '_blank')
+  }
+
+  // Don't render on server
+  if (!isClient) {
+    return null;
   }
 
   return (

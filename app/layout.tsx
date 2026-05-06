@@ -8,6 +8,7 @@ import EmergencyContactButton from "../components/EmergencyContactButton";
 import StickySocialButtons from "../components/StickySocialButtons";
 import GoogleAnalytics from "../components/GoogleAnalytics";
 import { defaultMetadata } from "./metadata";
+import { Suspense } from "react";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -35,7 +36,9 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${inter.variable} font-sans antialiased relative overflow-x-hidden`}
       >
-        {GA_MEASUREMENT_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
+        <Suspense fallback={null}>
+          {GA_MEASUREMENT_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_MEASUREMENT_ID} />}
+        </Suspense>
         <AnimatedMedicalBackground />
         <Navbar />
         <main className="min-h-screen relative z-10">
