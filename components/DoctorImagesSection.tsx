@@ -75,11 +75,18 @@ const DoctorImagesSection = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const carouselRef = useRef<HTMLDivElement>(null)
-  const [isClient, setIsClient] = useState(false) // Track if we're on client
+  const [isClient, setIsClient] = useState(false) 
+  const [isMobile, setIsMobile] = useState(false)
 
   // Set isClient to true on mount (client-side only)
   useEffect(() => {
     setIsClient(true)
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   // Auto-rotate images every 4 seconds (client-side only)
@@ -153,89 +160,87 @@ const DoctorImagesSection = () => {
           </p>
         </div>
 
-        {/* 3D Round Scroller */}
-        <div className="relative h-[550px] md:h-[420px] flex items-center justify-center my-2">
-          <div 
-            ref={carouselRef}
-            className="relative w-full max-w-4xl h-full"
-            style={{
-              perspective: '1500px',
-              transformStyle: 'preserve-3d'
-            }}
-          >
-            {images.map((image, index) => {
-              // Calculate position in 3D space
-              const angle = (index / images.length) * 2 * Math.PI
-              const radius = 220 // Distance from center
-              const x = Math.sin(angle) * radius
-              const z = Math.cos(angle) * radius
-              
-              // Calculate rotation based on current index
-              const rotation = (index - currentIndex) * (360 / images.length)
-              
-              return (
-                <motion.div
-                  key={image.id}
-                  className="absolute top-1/2 left-1/2 w-72 h-72 md:w-96 md:h-96 rounded-3xl overflow-hidden shadow-2xl cursor-pointer"
-                  style={{
-                    x: '-50%',
-                    y: '-50%',
-                    transform: `translate3d(${x}px, 0px, ${z}px) rotateY(${rotation}deg)`,
-                    zIndex: index === currentIndex ? 10 : Math.abs(index - currentIndex) < 3 ? 5 : 1
-                  }}
-                  animate={{
-                    opacity: index === currentIndex ? 1 : 0.7,
-                    scale: index === currentIndex ? 1 : 0.8
-                  }}
-                  transition={{ duration: 0.8 }}
-                  onClick={() => setCurrentIndex(index)}
-                >
-                  <div className="relative w-full h-full bg-gradient-to-br from-white to-blue-50 border-4 border-white rounded-3xl shadow-inner flex items-center justify-center p-6">
-                    <div className="relative w-full h-full flex items-center justify-center">
-                      <Image
-                        src={image.url}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        style={{ objectFit: 'contain' }}
-                        className="rounded-2xl"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                  </div>
-                  {index === currentIndex && (
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl flex items-end">
-                      <div className="p-6">
-                        <h3 className="text-white text-xl font-bold font-serif drop-shadow-md">{image.title}</h3>
+        {/* 3D Round Scroller - Only on desktop */}
+        {!isMobile && (
+          <div className="relative h-[420px] flex items-center justify-center my-2">
+            <div 
+              ref={carouselRef}
+              className="relative w-full max-w-4xl h-full"
+              style={{
+                perspective: '1500px',
+                transformStyle: 'preserve-3d'
+              }}
+            >
+              {images.map((image, index) => {
+                const angle = (index / images.length) * 2 * Math.PI
+                const radius = 220 
+                const x = Math.sin(angle) * radius
+                const z = Math.cos(angle) * radius
+                const rotation = (index - currentIndex) * (360 / images.length)
+                
+                return (
+                  <motion.div
+                    key={image.id}
+                    className="absolute top-1/2 left-1/2 w-96 h-96 rounded-3xl overflow-hidden shadow-2xl cursor-pointer"
+                    style={{
+                      x: '-50%',
+                      y: '-50%',
+                      transform: `translate3d(${x}px, 0px, ${z}px) rotateY(${rotation}deg)`,
+                      zIndex: index === currentIndex ? 10 : Math.abs(index - currentIndex) < 3 ? 5 : 1
+                    }}
+                    animate={{
+                      opacity: index === currentIndex ? 1 : 0.7,
+                      scale: index === currentIndex ? 1 : 0.8
+                    }}
+                    transition={{ duration: 0.8 }}
+                    onClick={() => setCurrentIndex(index)}
+                  >
+                    <div className="relative w-full h-full bg-gradient-to-br from-white to-blue-50 border-4 border-white rounded-3xl shadow-inner flex items-center justify-center p-6">
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <Image
+                          src={image.url}
+                          alt={image.alt}
+                          width={image.width}
+                          height={image.height}
+                          style={{ objectFit: 'contain' }}
+                          className="rounded-2xl"
+                          sizes="400px"
+                          loading="lazy"
+                          decoding="async"
+                        />
                       </div>
                     </div>
-                  )}
-                </motion.div>
-              )
-            })}
+                    {index === currentIndex && (
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-3xl flex items-end">
+                        <div className="p-6">
+                          <h3 className="text-white text-xl font-bold font-serif drop-shadow-md">{image.title}</h3>
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                )
+              })}
+            </div>
+            
+            <button 
+              className="absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg hover:bg-white transition-all duration-300 z-20"
+              onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            <button 
+              className="absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg hover:bg-white transition-all duration-300 z-20"
+              onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
-          
-          {/* Navigation controls */}
-          <button 
-            className="absolute left-4 md:left-6 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg hover:bg-white transition-all duration-300 z-20"
-            onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          
-          <button 
-            className="absolute right-4 md:right-6 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm rounded-full p-4 shadow-lg hover:bg-white transition-all duration-300 z-20"
-            onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-        </div>
+        )}
 
         {/* Thumbnail grid with animation */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

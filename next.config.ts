@@ -17,7 +17,7 @@ const nextConfig: NextConfig = {
   
   // Enable experimental optimizations
   experimental: {
-    optimizeCss: true,
+    optimizeCss: false,
     scrollRestoration: true,
     optimizePackageImports: [
       'lucide-react',

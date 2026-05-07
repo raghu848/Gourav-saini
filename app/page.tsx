@@ -126,10 +126,10 @@ export default function Home() {
             
             {/* Hero Content */}
             <div className="relative z-10">
-              <div className="backdrop-blur-sm bg-black/20 p-8 rounded-2xl border border-white/10 shadow-xl fade-in">
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-6 font-serif leading-tight">
+              <div className="bg-black/40 lg:backdrop-blur-sm lg:bg-black/20 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl fade-in">
+                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 font-serif leading-tight">
                   <span className="block text-white">Where Compassion</span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-200 mt-2">Meets Innovation</span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-200 mt-1 lg:mt-2">Meets Innovation</span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl mb-6 text-blue-100 max-w-2xl">
@@ -193,9 +193,9 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Stats display */}
-              <div className="bg-black/20 backdrop-blur rounded-xl p-6 w-full max-w-md mt-8 border border-white/20 fade-in">
-                <div className="grid grid-cols-2 gap-4">
+              {/* Stats display - Simplified for mobile */}
+              <div className="bg-black/30 lg:backdrop-blur lg:bg-black/20 rounded-xl p-5 sm:p-6 w-full max-w-md mt-6 lg:mt-8 border border-white/20 fade-in">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {stats.map((stat, index) => (
                     <div key={index} className="text-center">
                       <div className="text-2xl font-bold text-white">

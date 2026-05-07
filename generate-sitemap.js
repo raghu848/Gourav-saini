@@ -21,7 +21,9 @@ const pages = [
   { path: '/contact/', priority: '0.8', changefreq: 'yearly' },
   { path: '/book-appointment/', priority: '0.9', changefreq: 'yearly' },
   { path: '/faqs/', priority: '0.6', changefreq: 'monthly' },
-  { path: '/search/', priority: '0.5', changefreq: 'yearly' }
+  { path: '/search/', priority: '0.5', changefreq: 'yearly' },
+  { path: '/privacy/', priority: '0.4', changefreq: 'monthly' },
+  { path: '/terms/', priority: '0.4', changefreq: 'monthly' }
 ];
 
 // Generate sitemap XML
