@@ -116,6 +116,30 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://drgauravsainiortho.com/blog/"
+              }
+            ]
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         
@@ -239,7 +263,7 @@ export default function BlogPage() {
                     {formatDateShort(post.publishDate)}
                   </div>
                   <Link
-                    href={`/blog/${post.id}`}
+                    href={`/blog/${post.id}/`}
                     className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base min-w-[100px] justify-center py-1.5"
                   >
                     Read More

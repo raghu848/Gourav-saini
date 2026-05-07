@@ -89,6 +89,86 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://drgauravsainiortho.com/about/"
+              }
+            ]
+          })
+        }}
+      />
+      {/* Person Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Dr. Gaurav Saini",
+            "jobTitle": "Senior Orthopaedic Surgeon",
+            "honorificPrefix": "Dr.",
+            "image": "https://drgauravsainiortho.com/images/dr-saini-logo.webp",
+            "url": "https://drgauravsainiortho.com/about/",
+            "description": "Senior Consultant Orthopaedic Surgeon with nearly 20 years of experience, specializing in Robotic Hip and Knee Surgeries.",
+            "alumniOf": [
+              {
+                "@type": "EducationalOrganization",
+                "name": "MBBS"
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "MS Orthopaedics"
+              },
+              {
+                "@type": "EducationalOrganization",
+                "name": "DNB Orthopaedics"
+              }
+            ],
+            "memberOf": [
+              {
+                "@type": "Organization",
+                "name": "National Academy of Medical Sciences (MNAMS)"
+              },
+              {
+                "@type": "Organization",
+                "name": "Indian Orthopaedic Association"
+              },
+              {
+                "@type": "Organization",
+                "name": "ISKSAA"
+              }
+            ],
+            "knowsAbout": [
+              "Orthopaedic Surgery",
+              "Robotic Knee Replacement",
+              "Hip Replacement",
+              "Sports Medicine",
+              "Arthroscopy",
+              "Trauma Care"
+            ],
+            "worksFor": {
+              "@type": "MedicalOrganization",
+              "name": "Max Super Specialty Hospital, Mohali"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Hero Section */}

@@ -39,6 +39,55 @@ export default function KneeReplacementSurgeryPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Knee Replacement Surgery",
+                "item": "https://drgauravsainiortho.com/services/knee-replacement-surgery/"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* MedicalProcedure Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Knee Replacement Surgery",
+            "description": "Advanced robotic knee replacement surgery using CORI technology for precise implant placement and faster recovery.",
+            "procedureSteps": "Initial consultation, 3D imaging, robotic surgical planning, minimally invasive surgery, rehabilitation.",
+            "preparation": "Medical evaluation, physiotherapy consultation, pre-operative tests.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "OrthopaedicSurgery"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <nav className="mb-8 text-sm">

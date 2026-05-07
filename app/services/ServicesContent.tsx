@@ -100,7 +100,7 @@ export default function ServicesContent() {
                 </div>
                 
                 <Link
-                  href={`/services/${service.id}`}
+                  href={`/services/${service.id}/`}
                   className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
                 >
                   Learn More

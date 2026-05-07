@@ -157,7 +157,7 @@ export default function Home() {
                 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/contact"
+                    href="/contact/"
                     className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-xl hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 border border-red-500/30"
                   >
                     <Calendar className="w-5 h-5 mr-2" />
@@ -247,7 +247,7 @@ export default function Home() {
             </Link>
             
             <Link 
-              href="/services"
+              href="/services/"
               className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -262,7 +262,7 @@ export default function Home() {
             </Link>
             
             <Link 
-              href="/blog"
+              href="/blog/"
               className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -337,7 +337,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
-                    href="/about"
+                    href="/about/"
                     className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-300 shadow-md"
                   >
                     Learn More About Dr. Saini
@@ -405,7 +405,7 @@ export default function Home() {
 
           <div className="text-center mt-8 fade-in">
             <Link
-              href="/testimonials"
+              href="/testimonials/"
               className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-300"
             >
               Read More Reviews

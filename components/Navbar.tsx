@@ -61,20 +61,20 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/services', label: 'Services', hasDropdown: true },
-    { href: '/testimonials', label: 'Testimonials' },
-    { href: '/blog', label: 'Blogs' },
-    { href: '/contact', label: 'Contact' }
+    { href: '/about/', label: 'About Us' },
+    { href: '/services/', label: 'Services', hasDropdown: true },
+    { href: '/testimonials/', label: 'Testimonials' },
+    { href: '/blog/', label: 'Blogs' },
+    { href: '/contact/', label: 'Contact' }
   ];
 
   const servicesItems = [
-    { name: 'Knee Replacement Surgery', link: '/services/knee-replacement-surgery' },
-    { name: 'Hip Replacement Surgery', link: '/services/hip-replacement-surgery' }, 
-    { name: 'Robotic Surgery', link: '/services/robotic-surgery' },
-    { name: 'Sports Injury Treatment', link: '/services/sports-injury-treatment' },
-    { name: 'Arthroscopic Surgery', link: '/services/arthroscopic-surgery' },
-    { name: 'Spine Surgery', link: '/services/spine-surgery' }
+    { name: 'Knee Replacement Surgery', link: '/services/knee-replacement-surgery/' },
+    { name: 'Hip Replacement Surgery', link: '/services/hip-replacement-surgery/' }, 
+    { name: 'Robotic Surgery', link: '/services/robotic-joint-replacement/' },
+    { name: 'Sports Injury Treatment', link: '/services/sports-injury-arthroscopy/' },
+    { name: 'Arthroscopic Surgery', link: '/services/sports-injury-arthroscopy/' },
+    { name: 'Spine Surgery', link: '/services/spine-surgery/' }
   ]
 
   const toggleMenu = () => setIsOpen(!isOpen)
@@ -187,7 +187,7 @@ const Navbar = () => {
                           </div>
                           <div className="bg-gray-50 px-6 py-4 border-t border-gray-100">
                             <Link 
-                              href="/services"
+                              href="/services/"
                               className="text-blue-700 font-semibold text-sm hover:text-blue-800 transition-colors"
                             >
                               View All Services →
@@ -232,7 +232,7 @@ const Navbar = () => {
                   <span className="hidden xl:inline">WhatsApp</span>
                 </a>
                 <Link
-                  href="/book-appointment"
+                  href="/book-appointment/"
                   className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white rounded-lg transition-all duration-300 font-bold shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
                 >
                   <Calendar size={16} />
@@ -259,7 +259,7 @@ const Navbar = () => {
                   <MessageCircle size={20} />
                 </a>
                 <Link
-                  href="/book-appointment"
+                  href="/book-appointment/"
                   className="px-4 py-3 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-800 hover:to-teal-700 text-white rounded-lg font-bold transition-all duration-300 shadow-lg active:scale-95 text-sm"
                 >
                   Book
@@ -353,7 +353,7 @@ const Navbar = () => {
                           </div>
                           <div className="pt-2">
                             <Link 
-                              href="/services"
+                              href="/services/"
                               className="inline-block px-6 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white rounded-xl font-bold text-lg hover:from-blue-800 hover:to-teal-700 transition-all duration-300 w-full text-center active:scale-95 shadow-lg"
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -404,7 +404,7 @@ const Navbar = () => {
                   <span>WhatsApp</span>
                 </a>
                 <Link
-                  href="/book-appointment"
+                  href="/book-appointment/"
                   className="flex items-center justify-center space-x-3 w-full px-6 py-5 bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white rounded-xl transition-all duration-300 font-bold text-lg shadow-lg active:scale-95"
                   onClick={() => setIsOpen(false)}
                 >

@@ -42,6 +42,30 @@ import ServicesContent from './ServicesContent'
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              }
+            ]
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="pb-12">
         <ServicesContent />

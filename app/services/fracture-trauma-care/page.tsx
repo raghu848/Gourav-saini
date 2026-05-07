@@ -38,6 +38,55 @@ export default function FractureTraumaCarePage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Fracture & Trauma Care",
+                "item": "https://drgauravsainiortho.com/services/fracture-trauma-care/"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* MedicalProcedure Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Fracture & Trauma Care",
+            "description": "Emergency and specialized care for complex fractures, polytrauma, and orthopedic emergencies with 24/7 availability.",
+            "procedureSteps": "Emergency stabilization, diagnostic imaging, surgical intervention (if required), multi-disciplinary recovery.",
+            "preparation": "Emergency admission, rapid diagnostics, pre-operative stabilization.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "OrthopaedicSurgery"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">

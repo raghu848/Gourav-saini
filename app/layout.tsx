@@ -73,16 +73,19 @@ export default function RootLayout({
         
         {/* Canonical URL will be handled by Next.js metadata */}
         
-        {/* MedicalOrganization Schema */}
+        {/* Physician / LocalBusiness Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "MedicalOrganization",
+              "@type": "Physician",
               "name": "Dr. Gaurav Saini",
-              "url": "https://drgauravsainiortho.com",
-              "logo": "https://drgauravsainiortho.com/images/dr-saini-logo.jpg",
+              "image": "https://drgauravsainiortho.com/images/dr-saini-logo.webp",
+              "description": "Senior Orthopaedic Surgeon in Mohali & Chandigarh specializing in Robotic Knee and Hip Replacement with 20+ years of experience.",
+              "url": "https://drgauravsainiortho.com/",
+              "telephone": "+91-9876777393",
+              "priceRange": "$$",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Max Super Specialty Hospital, Cabin No 26 Ground floor, 56A, near Civil Hospital, Phase 6, Sector 56",
@@ -91,30 +94,42 @@ export default function RootLayout({
                 "postalCode": "160055",
                 "addressCountry": "IN"
               },
-              "telephone": "+91-9876777393",
-              "medicalSpecialty": [
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": "30.7188",
+                "longitude": "76.7161"
+              },
+              "openingHoursSpecification": [
                 {
-                  "@type": "MedicalSpecialty",
-                  "name": "Orthopaedic Surgery"
-                },
-                {
-                  "@type": "MedicalSpecialty",
-                  "name": "Knee Replacement"
-                },
-                {
-                  "@type": "MedicalSpecialty",
-                  "name": "Hip Replacement"
-                },
-                {
-                  "@type": "MedicalSpecialty",
-                  "name": "Sports Injury Treatment"
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                  "opens": "09:00",
+                  "closes": "18:00"
                 }
-              ]
+              ],
+              "medicalSpecialty": [
+                "Orthopaedic Surgery",
+                "Hip Replacement Surgery",
+                "Knee Replacement Surgery",
+                "Sports Medicine"
+              ],
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "5240"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+91-9876777393",
+                "contactType": "emergency",
+                "areaServed": "IN",
+                "availableLanguage": ["English", "Hindi", "Punjabi"]
+              }
             })
           }}
         />
         
-        {/* WebSite Schema with SearchAction */}
+        {/* WebSite Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -122,7 +137,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Dr. Gaurav Saini",
-              "url": "https://drgauravsainiortho.com",
+              "url": "https://drgauravsainiortho.com/",
               "potentialAction": {
                 "@type": "SearchAction",
                 "target": "https://drgauravsainiortho.com/search?q={search_term_string}",

@@ -393,46 +393,75 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
 
   return (
     <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
-      <Head>
-        {/* BlogPosting Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BlogPosting",
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": `https://drgauravsainiortho.com/blog/${post.id}`
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
               },
-              "headline": post.title,
-              "description": post.excerpt,
-              "image": `https://drgauravsainiortho.com${post.image}`,
-              "author": {
-                "@type": "Person",
-                "name": post.author,
-                "url": "https://drgauravsainiortho.com"
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Blog",
+                "item": "https://drgauravsainiortho.com/blog/"
               },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Dr. Gaurav Saini - Orthopaedic Practice",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://drgauravsainiortho.com/images/dr-saini-logo.jpg"
-                }
-              },
-              "datePublished": post.publishDate,
-              "dateModified": post.publishDate
-            })
-          }}
-        />
-      </Head>
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": post.title,
+                "item": `https://drgauravsainiortho.com/blog/${post.id}/`
+              }
+            ]
+          })
+        }}
+      />
+
+      {/* BlogPosting Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://drgauravsainiortho.com/blog/${post.id}/`
+            },
+            "headline": post.title,
+            "description": post.excerpt,
+            "image": post.image.startsWith('http') ? post.image : `https://drgauravsainiortho.com${post.image}`,
+            "author": {
+              "@type": "Person",
+              "name": post.author,
+              "url": "https://drgauravsainiortho.com/about/"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Dr. Gaurav Saini - Orthopaedic Practice",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://drgauravsainiortho.com/images/dr-saini-logo.webp"
+              }
+            },
+            "datePublished": post.publishDate,
+            "dateModified": post.publishDate // Ideally this would be a separate field if available
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back to Blog Link */}
         <div className="mb-6">
           <Link 
-            href="/blog" 
+            href="/blog/" 
             className="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -496,7 +525,7 @@ export default async function BlogPostPage({ params }: { params: { id: string } 
           <div className="bg-white rounded-xl shadow-lg p-6">
             <p className="text-gray-600">Check out our other blog posts for more orthopedic health information.</p>
             <Link 
-              href="/blog" 
+              href="/blog/" 
               className="inline-block mt-4 px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
             >
               View All Blog Posts

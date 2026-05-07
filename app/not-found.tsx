@@ -26,20 +26,20 @@ export default function NotFound() {
             <div className="p-4 bg-blue-50 rounded-lg">
               <h3 className="font-bold text-lg text-gray-900 mb-2">Popular Services</h3>
               <ul className="space-y-2 text-left">
-                <li><Link href="/services/knee-replacement-surgery" className="text-blue-600 hover:underline">Knee Replacement</Link></li>
-                <li><Link href="/services/hip-replacement-surgery" className="text-blue-600 hover:underline">Hip Replacement</Link></li>
-                <li><Link href="/services/robotic-surgery" className="text-blue-600 hover:underline">Robotic Surgery</Link></li>
-                <li><Link href="/services/sports-injury-treatment" className="text-blue-600 hover:underline">Sports Injury</Link></li>
+                <li><Link href="/services/knee-replacement-surgery/" className="text-blue-600 hover:underline">Knee Replacement</Link></li>
+                <li><Link href="/services/hip-replacement-surgery/" className="text-blue-600 hover:underline">Hip Replacement</Link></li>
+                <li><Link href="/services/robotic-joint-replacement/" className="text-blue-600 hover:underline">Robotic Surgery</Link></li>
+                <li><Link href="/services/sports-injury-arthroscopy/" className="text-blue-600 hover:underline">Sports Injury</Link></li>
               </ul>
             </div>
             
             <div className="p-4 bg-teal-50 rounded-lg">
               <h3 className="font-bold text-lg text-gray-900 mb-2">Quick Links</h3>
               <ul className="space-y-2 text-left">
-                <li><Link href="/about" className="text-blue-600 hover:underline">About Dr. Saini</Link></li>
-                <li><Link href="/blog" className="text-blue-600 hover:underline">Health Articles</Link></li>
-                <li><Link href="/testimonials" className="text-blue-600 hover:underline">Patient Stories</Link></li>
-                <li><Link href="/contact" className="text-blue-600 hover:underline">Contact Us</Link></li>
+                <li><Link href="/about/" className="text-blue-600 hover:underline">About Dr. Saini</Link></li>
+                <li><Link href="/blog/" className="text-blue-600 hover:underline">Health Articles</Link></li>
+                <li><Link href="/testimonials/" className="text-blue-600 hover:underline">Patient Stories</Link></li>
+                <li><Link href="/contact/" className="text-blue-600 hover:underline">Contact Us</Link></li>
               </ul>
             </div>
           </div>
@@ -53,7 +53,7 @@ export default function NotFound() {
             </Link>
             
             <Link
-              href="/book-appointment"
+              href="/book-appointment/"
               className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-medium rounded-lg hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-md"
             >
               Book Appointment

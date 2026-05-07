@@ -37,6 +37,55 @@ export default function JointReplacementCenterPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 relative">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Joint Replacement Center",
+                "item": "https://drgauravsainiortho.com/services/joint-replacement-center/"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* MedicalProcedure Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Joint Replacement & Surgery Center",
+            "description": "Comprehensive joint replacement services including TKR, THR, and revision surgeries using state-of-the-art technology.",
+            "procedureSteps": "Initial consultation, 3D planning, precision surgery, post-operative monitoring, rehabilitation.",
+            "preparation": "Medical evaluation, imaging, personalized surgical planning.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "OrthopaedicSurgery"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">

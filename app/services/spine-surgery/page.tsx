@@ -38,6 +38,55 @@ export default function SpineSurgeryPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Spine Surgery",
+                "item": "https://drgauravsainiortho.com/services/spine-surgery/"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* MedicalProcedure Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Spine Surgery",
+            "description": "Advanced surgical solutions for spinal conditions including herniated discs and spinal stenosis using minimally invasive techniques.",
+            "procedureSteps": "Diagnostic assessment, surgical planning, minimally invasive spinal procedure, rehabilitation.",
+            "preparation": "Neurological evaluation, MRI/CT scans, pre-operative medical clearance.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "OrthopaedicSurgery"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         <nav className="mb-8 text-sm">

@@ -29,10 +29,10 @@ const Footer = () => {
 
   const quickLinks = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About Us' },
-    { href: '/services', label: 'Services' },
-    { href: '/blog', label: 'Blogs' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/about/', label: 'About Us' },
+    { href: '/services/', label: 'Services' },
+    { href: '/blog/', label: 'Blogs' },
+    { href: '/contact/', label: 'Contact' },
   ]
 
   const socialLinks = [
@@ -44,9 +44,9 @@ const Footer = () => {
   ]
 
   const legalLinks = [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/terms', label: 'Terms of Service' },
-    { href: '/sitemap.xml', label: 'Sitemap' },
+    { href: '/privacy/', label: 'Privacy Policy' },
+    { href: '/terms/', label: 'Terms of Service' },
+    { href: '/sitemap/', label: 'Sitemap' },
   ]
 
   return (

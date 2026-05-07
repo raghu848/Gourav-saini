@@ -37,6 +37,55 @@ export default function SportsInjuryArthroscopyPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 relative">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Sports Injury & Arthroscopy",
+                "item": "https://drgauravsainiortho.com/services/sports-injury-arthroscopy/"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* MedicalProcedure Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Sports Injury & Arthroscopy Treatment",
+            "description": "Comprehensive treatment for sports injuries including ACL reconstruction, meniscus repairs, and shoulder stabilization using advanced arthroscopic techniques.",
+            "procedureSteps": "Initial assessment, diagnostic imaging, arthroscopic surgery, personalized rehabilitation, return-to-sport protocol.",
+            "preparation": "Medical evaluation, physiotherapy assessment, pre-operative instructions.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "SportsMedicine"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">

@@ -36,6 +36,55 @@ export default function RoboticJointReplacementPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 relative">
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://drgauravsainiortho.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://drgauravsainiortho.com/services/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Robotic Joint Replacement",
+                "item": "https://drgauravsainiortho.com/services/robotic-joint-replacement/"
+              }
+            ]
+          })
+        }}
+      />
+      
+      {/* MedicalProcedure Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalProcedure",
+            "name": "Robotic Joint Replacement",
+            "description": "State-of-the-art robotic-assisted joint replacement surgery using CORI technology for unmatched precision in knee and hip procedures.",
+            "procedureSteps": "Pre-operative 3D imaging, real-time surgical navigation, precise bone preparation, robotic implant placement, rehabilitation.",
+            "preparation": "Medical evaluation, 3D imaging consultation, pre-operative screening.",
+            "relevantSpecialty": {
+              "@type": "MedicalSpecialty",
+              "name": "OrthopaedicSurgery"
+            }
+          })
+        }}
+      />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">
