@@ -1,9 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Calendar, CheckCircle, Users, Heart, Zap } from 'lucide-react'
+import { Calendar, CheckCircle, Users, Heart, Zap, ArrowRight } from 'lucide-react'
 import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
-
 import { generateServiceMetadata } from '../../metadata-improved'
 
 export const metadata: Metadata = generateServiceMetadata('robotic-surgery')
@@ -38,217 +37,187 @@ export default function RoboticSurgeryPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
+    <main className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
       <PageAnimationWrapper />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="mb-8 text-sm">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
-          <Link href="/services" className="text-blue-600 hover:underline ml-2">Services</Link> &gt; 
-          <span className="ml-2 text-gray-500">Robotic Surgery</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <nav className="mb-8 text-sm font-medium">
+          <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/services" className="text-blue-600 hover:text-blue-800 transition-colors">Services</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-500">Robotic Surgery</span>
         </nav>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 font-serif mb-4">
-              Robotic Surgery
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advanced robotic-assisted surgery for unparalleled precision in orthopedic procedures
-            </p>
-          </div>
+        <article className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+          {/* Hero Section */}
+          <header className="relative h-[450px] flex items-center justify-center text-white text-center overflow-hidden">
+             <div className="absolute inset-0 bg-blue-950/85 z-10"></div>
+             <Image 
+                src="/images/dr images/TRAUMA.jpg" 
+                alt="Robotic Assisted Orthopedic Surgery" 
+                fill
+                className="object-cover"
+             />
+             <div className="relative z-20 px-4 max-w-4xl">
+                <div className="inline-flex items-center px-4 py-2 bg-blue-400/20 rounded-full border border-blue-400/30 text-blue-300 text-xs font-bold uppercase tracking-widest mb-6">
+                  The Future of Orthopedics
+                </div>
+                <h1 className="text-4xl lg:text-7xl font-bold font-serif mb-6 leading-tight">
+                  Next-Gen <br/>
+                  <span className="text-blue-400">Robotic Surgery</span>
+                </h1>
+                <p className="text-xl text-blue-100 font-medium leading-relaxed">
+                  Redefining surgical precision with the CORI™ Robotics System for superior clinical outcomes.
+                </p>
+             </div>
+          </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
-                Precision Surgery with Robotic Assistance
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Our robotic surgery program combines cutting-edge technology with expert surgical skills to provide the highest level of precision in orthopedic procedures.
-              </p>
-              <p className="text-gray-700 mb-6">
-                Using the latest CORI robotic system, we ensure optimal implant placement and alignment for better long-term outcomes.
-              </p>
-              
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Robotic Procedures We Perform:</h3>
-                <div className="space-y-4">
-                  {roboticProcedures.map((procedure, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium text-gray-900">{procedure.title}:</span>
-                        <span className="text-gray-700"> {procedure.description}</span>
+          <div className="p-8 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
+              <section>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8 font-serif leading-tight">
+                  Unmatched Precision with CORI™ Technology
+                </h2>
+                <div className="prose prose-lg text-gray-700 space-y-6">
+                  <p>
+                    Robotic-assisted surgery is not about a robot performing the operation; it is about providing the surgeon with ultra-precise digital tools. Dr. Gaurav Saini utilizes the **CORI™ Surgical System**, which uses advanced computer software to create a 3D digital model of your unique anatomy during the procedure.
+                  </p>
+                  <p>
+                    This real-time mapping eliminates the need for preoperative CT scans (reducing radiation exposure) and allows for a "virtual" surgery to be performed before any bone is actually cut. The result is an implant that is perfectly aligned with your body’s natural mechanics, leading to a joint that feels more natural and lasts significantly longer.
+                  </p>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mt-10 mb-6 font-serif">Robotic-Assisted Specializations</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {roboticProcedures.map((procedure, index) => (
+                      <div key={index} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                        <h4 className="font-bold text-blue-700 mb-2">{procedure.title}</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">{procedure.description}</p>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Robotic Approach</h3>
-              <ul className="space-y-4">
-                {treatmentApproach.map((approach, index) => (
-                  <li key={index} className="flex items-start">
-                    <Zap className="w-5 h-5 text-blue-500 mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{approach}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center font-serif">
-              Advanced Robotic Surgery Services
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Heart className="w-6 h-6 text-blue-600" />
+                    ))}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">CORI Robotic Technology</h3>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  Using the latest CORI robotic system for real-time 3D mapping and navigation.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    Real-time 3D imaging and navigation
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    Personalized surgical planning
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    Enhanced implant positioning
-                  </li>
-                </ul>
-              </div>
+              </section>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                    <Users className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900">Benefits of Robotic Surgery</h3>
+              <aside className="space-y-8">
+                <div className="bg-gradient-to-br from-blue-900 to-slate-900 rounded-3xl p-10 text-white shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <h3 className="text-2xl font-bold mb-8 font-serif border-b border-white/20 pb-4">Our Robotic Approach</h3>
+                  <ul className="space-y-6">
+                    {treatmentApproach.map((approach, index) => (
+                      <li key={index} className="flex items-start group">
+                        <div className="w-8 h-8 bg-blue-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 text-blue-900 group-hover:scale-110 transition-transform shadow-lg shadow-blue-900/30">
+                          <Zap className="w-5 h-5" />
+                        </div>
+                        <span className="text-blue-50 font-medium leading-relaxed">{approach}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  Advantages of robotic-assisted orthopedic procedures.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                    Enhanced precision and accuracy
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                    Reduced tissue damage
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                    Faster recovery times
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
 
-          <div className="bg-gradient-to-r from-blue-900 to-green-900 text-white rounded-2xl p-4 lg:p-6 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <h2 className="text-3xl font-bold font-serif mb-4">Why Choose Our Robotic Surgery?</h2>
-                <p className="text-blue-100 mb-4">
-                  Our robotic surgery program combines advanced technology with expert care for optimal outcomes.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>CORI robotic technology</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Personalized treatment plans</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Enhanced precision and outcomes</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Comprehensive rehabilitation</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white bg-opacity-10 rounded-xl p-2">
-                {/* Added image container */}
-                <div className="rounded-lg overflow-hidden border border-blue-200">
-                  <Image 
-                    src="/images/dr images/TRAUMA.jpg" 
-                    alt="Dr. Gaurav Saini performing robotic surgery" 
-                    width={500}
-                    height={300}
-                    className="w-full h-auto object-contain"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                <div className="bg-white border-2 border-blue-50 rounded-3xl p-8 shadow-sm">
+                   <h3 className="text-xl font-bold text-gray-900 mb-6 font-serif flex items-center">
+                     <Users className="w-6 h-6 mr-3 text-blue-600" />
+                     Patient Benefits
+                   </h3>
+                   <div className="space-y-4">
+                      <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
+                        <span className="text-gray-600 font-medium">Placement Accuracy</span>
+                        <span className="font-bold text-blue-700 text-lg">99.9%</span>
+                      </div>
+                      <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
+                        <span className="text-gray-600 font-medium">Recovery Time</span>
+                        <span className="font-bold text-blue-700 text-lg">50% Reduction</span>
+                      </div>
+                      <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
+                        <span className="text-gray-600 font-medium">Implant Longevity</span>
+                        <span className="font-bold text-blue-700 text-lg">+30% Increase</span>
+                      </div>
+                   </div>
                 </div>
-                <p className="text-black text-center font-bold text-lg mt-1">
-                  Focused on your recovery, powered by expertise and precision.
-                </p>
-                <h3 className="text-xl font-semibold mb-1">Robotic Surgery Statistics</h3>
-                <div className="space-y-1">
-                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
-                    <span className="text-sm">Precision Accuracy</span>
-                    <span className="font-bold text-sm">100%</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
-                    <span className="text-sm">Patient Satisfaction</span>
-                    <span className="font-bold text-sm">99%</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
-                    <span className="text-sm">Recovery Time</span>
-                    <span className="font-bold text-sm">Reduced by 50%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm">Implant Longevity</span>
-                    <span className="font-bold text-sm">Enhanced by 30%</span>
-                  </div>
-                </div>
-              </div>
+              </aside>
             </div>
-          </div>
 
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Considering Robotic Surgery?
-            </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              For robotic surgery consultation, contact our specialists to discuss your treatment options.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+919876777393"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg"
-              >
-                <Heart className="w-5 h-5 mr-2" />
-                Call for Consultation
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Appointment
-              </Link>
-            </div>
+            {/* Why Robotic Section */}
+            <section className="mb-24 py-16 bg-slate-950 -mx-8 lg:-mx-16 px-8 lg:px-16 text-white relative">
+               <div className="max-w-5xl mx-auto">
+                 <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center font-serif">Why Choose Robotic Assistance?</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                   <div className="p-10 bg-white/5 border border-white/10 rounded-3xl">
+                      <h4 className="text-xl font-bold text-blue-400 mb-4">No Pre-op CT Scans</h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">Unlike older robotic systems, the CORI system maps your joint during surgery. This saves you from expensive CT scans and unnecessary radiation exposure while providing more accurate data.</p>
+                   </div>
+                   <div className="p-10 bg-white/5 border border-white/10 rounded-3xl">
+                      <h4 className="text-xl font-bold text-blue-400 mb-4">Soft Tissue Balance</h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">Robotics isn't just about bone cuts; it's about the ligaments. We can balance the tension of your soft tissues digitally to ensure the joint remains stable and fluid throughout its range of motion.</p>
+                   </div>
+                 </div>
+               </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="mb-24">
+               <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">Robotic Surgery FAQ</h2>
+               <div className="max-w-4xl mx-auto space-y-4">
+                  <details className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" open>
+                    <summary className="p-6 cursor-pointer font-bold text-gray-900 flex justify-between items-center list-none">
+                      Does the robot perform the surgery by itself?
+                      <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-50">
+                      No. Dr. Saini remains in full control. The robotic system acts as a high-precision guide that prevents any movement outside the pre-planned surgical path, ensuring millimeter-perfect accuracy.
+                    </div>
+                  </details>
+                  <details className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <summary className="p-6 cursor-pointer font-bold text-gray-900 flex justify-between items-center list-none">
+                      Is robotic surgery more expensive?
+                      <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-50">
+                      While the technology is advanced, the overall cost is often offset by shorter hospital stays, fewer post-operative complications, and a reduced need for revision surgeries in the future.
+                    </div>
+                  </details>
+                  <details className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <summary className="p-6 cursor-pointer font-bold text-gray-900 flex justify-between items-center list-none">
+                      Is everyone a candidate for robotic surgery?
+                      <span className="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-50">
+                      Most patients requiring total or partial joint replacement are excellent candidates for robotic assistance. Dr. Saini will evaluate your specific condition and bone quality to determine if this is the best approach for you.
+                    </div>
+                  </details>
+               </div>
+            </section>
+
+            {/* Final CTA */}
+            <footer className="bg-gradient-to-br from-blue-900 to-slate-900 text-white rounded-3xl p-12 lg:p-20 relative overflow-hidden text-center shadow-2xl">
+              <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.webp')] bg-cover"></div>
+              <div className="relative z-10">
+                <h2 className="text-3xl lg:text-5xl font-bold mb-8 font-serif leading-tight">Step Into the Future of Joint Replacement</h2>
+                <p className="text-blue-100 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+                  Join the elite group of patients benefiting from robotic precision. Contact us to schedule your evaluation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <a
+                    href="tel:+919876777393"
+                    className="inline-flex items-center justify-center px-10 py-5 bg-blue-500 text-white font-bold rounded-2xl hover:bg-blue-400 hover:scale-105 transition-all duration-300 shadow-xl"
+                  >
+                    <Calendar className="w-6 h-6 mr-3" />
+                    Book Robotic Consult
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center px-10 py-5 bg-white text-blue-900 font-bold rounded-2xl hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg"
+                  >
+                    <ArrowRight className="w-6 h-6 mr-3" />
+                    Learn More
+                  </Link>
+                </div>
+                <p className="mt-8 text-blue-300 text-sm font-semibold tracking-widest uppercase">Expert Robotic Surgery • Millimeter Precision • Faster Recovery</p>
+              </div>
+            </footer>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
+    </main>
   )
 }

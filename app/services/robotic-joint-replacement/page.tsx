@@ -35,7 +35,7 @@ export default function RoboticJointReplacementPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 relative">
+    <main className="min-h-screen bg-gray-50 py-12 relative pt-24 lg:pt-32">
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
@@ -87,180 +87,202 @@ export default function RoboticJointReplacementPage() {
       />
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="mb-8 text-sm">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
-          <Link href="/services" className="text-blue-600 hover:underline ml-2">Services</Link> &gt; 
-          <span className="ml-2 text-gray-500">Robotic Joint Replacement</span>
+        <nav className="mb-8 text-sm font-medium">
+          <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/services" className="text-blue-600 hover:text-blue-800 transition-colors">Services</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-500">Robotic Joint Replacement</span>
         </nav>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 font-serif mb-4">
-              Robotic Joint Replacement with CORI Technology
+        <article className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 mb-12">
+          {/* Hero Section */}
+          <header className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white p-8 lg:p-16 text-center">
+            <h1 className="text-4xl lg:text-6xl font-bold font-serif mb-6 leading-tight">
+              Robotic Joint Replacement <br/>
+              <span className="text-teal-400">Precision Powered by CORI</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Advanced robotic-assisted surgery for unparalleled precision in Total Knee and Hip Replacement
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+              Eliminate chronic joint pain and rediscover the joy of movement with India's most advanced robotic-assisted surgical technology.
             </p>
-          </div>
+          </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
-                Revolutionizing Joint Replacement Surgery
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Our CORI robotic technology represents the pinnacle of modern orthopedic surgery. This advanced system provides real-time 3D mapping and navigation, ensuring unprecedented precision in joint replacement procedures.
-              </p>
-              <p className="text-gray-700 mb-6">
-                Unlike traditional methods, CORI adapts to your unique anatomy, creating a personalized surgical plan that maximizes implant longevity and functional outcomes.
-              </p>
-              
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Benefits:</h3>
-                <ul className="space-y-3">
-                  {benefits.map((benefit, index) => (
-                    <li key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium text-gray-900">{benefit.title}:</span>
-                        <span className="text-gray-700"> {benefit.description}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">CORI Technology Features</h3>
-              <div className="space-y-4">
-                <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Heart className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Real-time 3D Mapping</h4>
-                    <p className="text-sm text-gray-600">Continuous feedback during surgery</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                    <Award className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Enhanced Precision</h4>
-                    <p className="text-sm text-gray-600">Sub-millimeter accuracy in implant placement</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center p-4 bg-white rounded-lg shadow-sm">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Users className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Personalized Planning</h4>
-                    <p className="text-sm text-gray-600">Customized to your unique anatomy</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center font-serif">
-              Surgical Procedure Overview
-            </h2>
-            <div className="bg-white border border-gray-200 rounded-lg p-8">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                {procedureSteps.map((step, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 font-bold">
-                      {index + 1}
-                    </div>
-                    <p className="text-sm text-gray-700">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-gradient-to-r from-blue-900 to-green-900 text-white rounded-2xl p-8 lg:p-12 mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="p-8 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-20">
               <div>
-                <h2 className="text-3xl font-bold font-serif mb-4">Why Choose Our Robotic Joint Replacement?</h2>
-                <p className="text-blue-100 mb-6">
-                  With nearly 20 years of experience and over 5000 successful surgeries, Dr. Saini is at the forefront of robotic joint replacement technology.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Pioneer in CORI robotic technology in the region</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Personalized rehabilitation programs</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Comprehensive pre and post-operative care</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>99% patient satisfaction rate</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white bg-opacity-10 rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-4">Patient Outcomes</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">99%</div>
-                    <div className="text-sm text-blue-200">Satisfaction Rate</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">50%</div>
-                    <div className="text-sm text-blue-200">Faster Recovery</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">0.5%</div>
-                    <div className="text-sm text-blue-200">Infection Rate</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold mb-1">15+</div>
-                    <div className="text-sm text-blue-200">Years Experience</div>
-                  </div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8 font-serif leading-tight">
+                  Why Robotic Technology is the Future of Orthopedics
+                </h2>
+                <div className="prose prose-lg text-gray-700 space-y-6">
+                  <p>
+                    Traditional joint replacement surgery relies on the surgeon's visual estimation and manual tools. While effective, there is always a margin for human error. **Robotic-Assisted Surgery with the CORI system** removes that margin, offering a level of precision that was previously impossible.
+                  </p>
+                  <p>
+                    Using advanced sensors and software, the CORI system creates a real-time, digital 3D model of your joint during the surgery. This allows Dr. Gaurav Saini to map your unique anatomy and plan the exact placement of the implant before a single cut is made. The result? An implant that fits perfectly, feels natural, and lasts significantly longer.
+                  </p>
+                  <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">When Should You Consider Surgery?</h3>
+                  <p>
+                    If you are experiencing any of the following symptoms, it may be time to discuss robotic joint replacement with a specialist:
+                  </p>
+                  <ul className="space-y-4">
+                    <li className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" />
+                      <span>**Chronic Pain**: Severe pain that persists even while resting or at night.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" />
+                      <span>**Restricted Mobility**: Inability to perform daily activities like walking, climbing stairs, or getting out of a chair.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" />
+                      <span>**Joint Deformity**: Visible "bowing" of the legs or severe swelling.</span>
+                    </li>
+                    <li className="flex items-start">
+                      <CheckCircle className="w-5 h-5 text-red-500 mt-1 mr-3 flex-shrink-0" />
+                      <span>**Failure of Conservative Treatments**: No relief from medications, physical therapy, or injections.</span>
+                    </li>
+                  </ul>
                 </div>
               </div>
+              
+              <aside className="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-inner">
+                <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center font-serif uppercase tracking-wider">The CORI Advantage</h3>
+                <div className="space-y-6">
+                  {benefits.map((benefit, index) => (
+                    <div key={index} className="flex items-start p-6 bg-white rounded-2xl shadow-sm border border-gray-50 hover:shadow-md transition-shadow">
+                      <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-5 flex-shrink-0 text-white font-bold">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 mb-1">{benefit.title}</h4>
+                        <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-10 p-6 bg-blue-900 text-white rounded-2xl text-center">
+                  <p className="text-sm font-medium opacity-80 mb-2">Technological Standard</p>
+                  <p className="text-lg font-bold">No Pre-Op CT Scans Required</p>
+                  <p className="text-xs mt-2 opacity-70">Saves you time and reduces radiation exposure.</p>
+                </div>
+              </aside>
             </div>
-          </div>
 
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Experience Advanced Joint Care?
-            </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Schedule a consultation with Dr. Saini to discuss how robotic knee replacement can restore your mobility and improve your quality of life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-green-700 transition-all duration-300 shadow-lg"
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Consultation
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
-              >
-                View All Services
-              </Link>
-            </div>
+            {/* Detailed Recovery Timeline */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">Your Path to Recovery</h2>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">1</div>
+                  <h4 className="font-bold text-gray-900 mb-4 text-center">Days 1-2</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed text-center">Begin walking with assistance. Most patients go home within 24-48 hours of robotic surgery.</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">2</div>
+                  <h4 className="font-bold text-gray-900 mb-4 text-center">Weeks 1-2</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed text-center">Physical therapy begins to restore range of motion. Incision healing is monitored closely.</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">3</div>
+                  <h4 className="font-bold text-gray-900 mb-4 text-center">Weeks 3-6</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed text-center">Gradual return to light daily activities. Most patients can drive and walk independently.</p>
+                </div>
+                <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm relative pt-12">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl border-4 border-white">4</div>
+                  <h4 className="font-bold text-gray-900 mb-4 text-center">3 Months+</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed text-center">Full return to active lifestyle. Joyful, pain-free movement is fully restored.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Stats / Proof Section */}
+            <section className="bg-gradient-to-r from-blue-900 to-indigo-800 text-white rounded-3xl p-10 lg:p-16 mb-20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-3xl font-bold font-serif mb-6">World-Class Outcomes</h2>
+                  <p className="text-blue-100 text-lg mb-8">
+                    With nearly 20 years of expertise and over 5,000 successful surgeries, Dr. Gaurav Saini is a recognized leader in robotic-assisted orthopedic procedures.
+                  </p>
+                  <div className="grid grid-cols-2 gap-8">
+                    <div className="border-l-4 border-teal-400 pl-6">
+                      <div className="text-4xl font-bold">99%</div>
+                      <div className="text-blue-200 text-sm uppercase font-bold tracking-widest mt-1">Patient Satisfaction</div>
+                    </div>
+                    <div className="border-l-4 border-teal-400 pl-6">
+                      <div className="text-4xl font-bold">&lt;0.5%</div>
+                      <div className="text-blue-200 text-sm uppercase font-bold tracking-widest mt-1">Infection Rate</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
+                   <h3 className="text-xl font-bold mb-6">Our Patient Promise</h3>
+                   <ul className="space-y-4">
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" />
+                        <span>Advanced minimally invasive techniques</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" />
+                        <span>Customized post-operative rehabilitation</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" />
+                        <span>Comprehensive family counseling sessions</span>
+                      </li>
+                      <li className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-teal-400 mr-3 flex-shrink-0" />
+                        <span>Lifetime support for joint longevity</span>
+                      </li>
+                   </ul>
+                </div>
+              </div>
+            </section>
+
+            {/* FAQs Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">Frequently Asked Questions</h2>
+              <div className="max-w-4xl mx-auto space-y-6">
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4 font-serif">Is robotic surgery safe?</h4>
+                  <p className="text-gray-700 leading-relaxed">Yes, it is extremely safe. The robot does not perform the surgery; it acts as a high-precision tool under the full control of Dr. Saini. It provides additional safety barriers to prevent any accidental damage to surrounding tissues.</p>
+                </div>
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4 font-serif">How long does the implant last?</h4>
+                  <p className="text-gray-700 leading-relaxed">Due to the precise alignment provided by the CORI robotic system, wear and tear on the implant is significantly reduced. Most modern implants last 20-25 years or even longer when perfectly positioned.</p>
+                </div>
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4 font-serif">What is the hospital stay like?</h4>
+                  <p className="text-gray-700 leading-relaxed">Because robotic surgery is minimally invasive, most patients are encouraged to walk on the same day. Average hospital stay is just 1 to 2 days.</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Final CTA */}
+            <footer className="text-center bg-gray-900 text-white rounded-3xl p-12 lg:p-16 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600 opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6 font-serif">Regain Your Active Lifestyle Today</h2>
+              <p className="text-blue-100 mb-10 max-w-2xl mx-auto text-lg">
+                Don't let joint pain limit your possibilities. Schedule a consultation with Dr. Gaurav Saini to see if robotic joint replacement is right for you.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all duration-300 shadow-xl shadow-blue-900/40"
+                >
+                  <Calendar className="w-6 h-6 mr-3" />
+                  Book Appointment
+                </Link>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center px-10 py-5 border-2 border-white/20 text-white font-bold rounded-2xl hover:bg-white/10 transition-all duration-300"
+                >
+                  Explore Other Services
+                </Link>
+              </div>
+            </footer>
           </div>
-        </div>
+        </article>
       </div>
-    </div>
+    </main>
   )
 }

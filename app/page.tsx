@@ -109,7 +109,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -125,7 +125,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             
             {/* Hero Content */}
-            <div className="relative z-10">
+            <header className="relative z-10">
               <div className="bg-black/40 lg:backdrop-blur-sm lg:bg-black/20 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl fade-in">
                 <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 font-serif leading-tight">
                   <span className="block text-white">Where Compassion</span>
@@ -133,25 +133,25 @@ export default function Home() {
                 </h1>
                 
                 <p className="text-lg sm:text-xl mb-6 text-blue-100 max-w-2xl">
-                  Advanced Orthopedic Solutions for a Pain-Free, Active Lifestyle
+                  Advanced Orthopedic Solutions for a Pain-Free, Active Lifestyle. Experience the future of joint care with India's leading robotic surgeon.
                 </p>
                 
                 <div className="mb-8">
                   <p className="text-base sm:text-lg text-blue-50 mb-4">
-                    <span className="font-semibold text-white">Dr. Gaurav Saini</span> - Senior Orthopaedic Surgeon
+                    <span className="font-semibold text-white">Dr. Gaurav Saini</span> - Senior Orthopaedic Surgeon specializing in advanced joint reconstruction and sports medicine.
                   </p>
                   <div className="flex items-center text-blue-200 mb-2">
                     <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
-                    <span>Nearly 20 years of specialized experience</span>
+                    <span>Nearly 20 years of specialized experience in complex surgeries</span>
                   </div>
                   <div className="flex items-center text-blue-200 mb-2">
                     <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
-                    <span>Expert in Robotic Total Knee Replacement</span>
+                    <span>Expert in Robotic Total Knee Replacement (TKR) & Hip Surgeries</span>
                   </div>
 
                   <div className="flex items-center text-blue-200">
                     <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
-                    <span>Expert for Sports Injury & Hip surgeries</span>
+                    <span>Advanced Sports Injury Treatment & Arthroscopic Procedures</span>
                   </div>
                 </div>
                 
@@ -172,7 +172,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-            </div>
+            </header>
 
             {/* Hero Image/Stats */}
             <div className="flex flex-col items-center lg:items-end relative z-10">
@@ -180,7 +180,7 @@ export default function Home() {
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                   <Image
                     src="/images/opretion.webp"
-                    alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
+                    alt="Dr. Gaurav Saini - Advanced Orthopedic Robotic Surgery"
                     width={600}
                     height={400}
                     className="w-full h-auto object-cover"
@@ -193,7 +193,7 @@ export default function Home() {
                 </div>
               </div>
               
-              {/* Stats display - Simplified for mobile */}
+              {/* Stats display */}
               <div className="bg-black/30 lg:backdrop-blur lg:bg-black/20 rounded-xl p-5 sm:p-6 w-full max-w-md mt-6 lg:mt-8 border border-white/20 fade-in">
                 <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {stats.map((stat, index) => (
@@ -218,62 +218,138 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Detailed Introduction Section */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="lg:col-span-2">
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Welcome to the Future of Orthopedic Excellence</h2>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                At our practice, we believe that every patient deserves a life free from joint pain. Led by **Dr. Gaurav Saini**, a pioneer in robotic-assisted orthopedic surgery, we combine nearly two decades of clinical experience with the world's most advanced medical technologies. Our mission is to provide personalized, compassionate care that gets you back to your active lifestyle faster and with better long-term results.
+              </p>
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Whether you are suffering from chronic arthritis, a sports injury, or a complex fracture, we offer a full spectrum of orthopedic solutions. From non-surgical management and physical therapy to state-of-the-art **CORI robotic joint replacement**, our approach is always patient-centric. We don't just treat symptoms; we restore function and confidence.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <div className="flex items-start">
+                  <div className="bg-blue-50 p-3 rounded-lg mr-4">
+                    <Activity className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Precision Diagnostics</h4>
+                    <p className="text-gray-600 text-sm">Advanced 3D mapping and imaging for accurate surgical planning.</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <div className="bg-teal-50 p-3 rounded-lg mr-4">
+                    <Stethoscope className="w-6 h-6 text-teal-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Patient-Centric Care</h4>
+                    <p className="text-gray-600 text-sm">Customized recovery plans tailored to your unique lifestyle goals.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-blue-900 text-white p-8 rounded-2xl shadow-xl">
+              <h3 className="text-2xl font-bold mb-6 font-serif">Quick Appointment</h3>
+              <p className="mb-8 text-blue-100">Don't let joint pain hold you back. Schedule your consultation with Dr. Gaurav Saini today.</p>
+              <ul className="space-y-4 mb-8">
+                <li className="flex items-center">
+                  <Phone className="w-5 h-5 mr-3 text-teal-300" />
+                  <span>+91 98767-77393</span>
+                </li>
+                <li className="flex items-center">
+                  <MessageCircle className="w-5 h-5 mr-3 text-teal-300" />
+                  <span>WhatsApp Available</span>
+                </li>
+              </ul>
+              <Link
+                href="/contact"
+                className="block text-center py-4 bg-teal-400 hover:bg-teal-500 text-blue-900 font-bold rounded-xl transition-all duration-300"
+              >
+                Book Now
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Specialties Section */}
-      <section className="py-8 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in">
-              Our Specialties
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in font-serif">
+              Our Clinical Specialties
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
-              Comprehensive orthopedic care with expertise in the latest surgical techniques
+              We offer world-class orthopedic services using minimally invasive techniques and advanced robotic systems to ensure the best patient outcomes.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Link 
-              href="/about"
-              className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
+              href="/services/robotic-joint-replacement/"
+              className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover-effect block"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Stethoscope className="w-6 h-6 text-blue-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Activity className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                About Us
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif">
+                Robotic TKR
               </h3>
-              <p className="text-gray-600 text-sm">
-                Learn about Dr. Gaurav Saini and his expertise in orthopedic care
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                State-of-the-art Total Knee Replacement using CORI robotic system for unmatched precision and faster recovery.
               </p>
+              <span className="text-blue-600 font-semibold inline-flex items-center">Learn More <ArrowRight className="w-4 h-4 ml-1" /></span>
             </Link>
             
             <Link 
-              href="/services/"
-              className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
+              href="/services/sports-injury-arthroscopy/"
+              className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover-effect block"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-6 h-6 text-blue-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Stethoscope className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Services
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif">
+                Sports Medicine
               </h3>
-              <p className="text-gray-600 text-sm">
-                Explore our comprehensive orthopedic services and treatments
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Advanced arthroscopic treatments for ACL tears, meniscus injuries, and shoulder instability for athletes.
               </p>
+              <span className="text-blue-600 font-semibold inline-flex items-center">Learn More <ArrowRight className="w-4 h-4 ml-1" /></span>
             </Link>
             
             <Link 
-              href="/blog/"
-              className="bg-gray-50 rounded-xl p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect block"
+              href="/services/hip-replacement-surgery/"
+              className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover-effect block"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Activity className="w-6 h-6 text-blue-600" />
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Heart className="w-8 h-8 text-blue-600" />
               </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Blogs
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif">
+                Hip Surgery
               </h3>
-              <p className="text-gray-600 text-sm">
-                Read expert advice and insights on orthopedic health
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Total and partial hip replacement procedures focused on restoring mobility and eliminating chronic hip pain.
               </p>
+              <span className="text-blue-600 font-semibold inline-flex items-center">Learn More <ArrowRight className="w-4 h-4 ml-1" /></span>
+            </Link>
+
+            <Link 
+              href="/services/fracture-trauma-care/"
+              className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover-effect block"
+            >
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Users className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif">
+                Trauma Care
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Expert emergency orthopedic care for complex fractures and musculoskeletal trauma using modern protocols.
+              </p>
+              <span className="text-blue-600 font-semibold inline-flex items-center">Learn More <ArrowRight className="w-4 h-4 ml-1" /></span>
             </Link>
           </div>
         </div>
@@ -283,37 +359,37 @@ export default function Home() {
       <DoctorImagesSection />
 
       {/* Why Choose Us Section */}
-      <section className="py-6 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in">
-              Why Patients Choose Us
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in font-serif">
+              Why Patients Trust Dr. Gaurav Saini
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
-              Advanced technology, expert care, and proven results for comprehensive orthopedic treatment
+              With over 5,000 successful surgeries, Dr. Saini is recognized as a leader in robotic orthopedic procedures and comprehensive patient recovery.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {whyChooseUs.map((item, index) => {
               const IconComponent = item.icon
               return (
-                <div 
+                <article 
                   key={index} 
-                  className="bg-white rounded-xl shadow-sm p-8 hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect"
+                  className="bg-white rounded-2xl shadow-sm p-10 hover:shadow-xl transition-all duration-300 border border-gray-100 hover-effect"
                 >
-                  <div className="flex items-start mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-teal-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
-                      <IconComponent className="w-6 h-6 text-green-600" />
+                  <div className="flex items-start mb-6">
+                    <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 shadow-lg shadow-blue-200">
+                      <IconComponent className="w-7 h-7 text-white" />
                     </div>
-                    <h3 className="text-xl font-semibold text-gray-900">
+                    <h3 className="text-2xl font-bold text-gray-900 font-serif pt-2">
                       {item.title}
                     </h3>
                   </div>
-                  <p className="text-gray-700">
+                  <p className="text-gray-700 leading-relaxed text-lg">
                     {item.description}
                   </p>
-                </div>
+                </article>
               )
             })}
           </div>
@@ -321,48 +397,55 @@ export default function Home() {
       </section>
 
       {/* About Doctor Section */}
-      <section className="py-6 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <article className="order-2 lg:order-1">
               <div className="fade-in">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-                 Consult with Dr. Gaurav Saini
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-8 font-serif leading-tight">
+                 Meet Dr. Gaurav Saini <br/>
+                 <span className="text-blue-600 text-2xl lg:text-3xl">Expert Senior Consultant Orthopaedics</span>
                 </h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  MBBS, MS, DNB, MNAMS - Senior Consultant Orthopaedics specializing in Robotic Hip and Knee Surgeries with nearly 20 years of dedicated experience.
-                </p>
-                <p className="text-gray-600 mb-8">
-                  Award-winning orthopedic surgeon trained at prestigious centers worldwide, committed to providing cutting-edge orthopedic care with compassion and precision.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="prose prose-lg text-gray-700 mb-8">
+                  <p className="mb-4">
+                    **Dr. Gaurav Saini** (MBBS, MS, DNB, MNAMS) is a globally trained orthopedic surgeon with a special interest in adult joint reconstruction and robotic surgeries. With a career spanning nearly 20 years, he has held senior positions at India's most prestigious medical institutions.
+                  </p>
+                  <p className="mb-4">
+                    His expertise in **Robotic Total Knee Replacement** using the CORI system has made him a sought-after specialist for patients seeking precise results and rapid recovery. Dr. Saini is a member of the National Academy of Medical Sciences (NAMS), Indian Orthopaedic Association (IOA), and AO Trauma, ensuring he stays at the forefront of surgical innovation.
+                  </p>
+                  <p>
+                    Known for his empathetic approach, Dr. Saini ensures that every patient understands their condition and treatment journey, fostering a relationship built on trust and clinical excellence.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-6">
                   <Link
                     href="/about/"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-300 shadow-md"
+                    className="inline-flex items-center justify-center px-10 py-4 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-bold rounded-xl hover:from-blue-700 hover:to-teal-700 transition-all duration-300 shadow-xl shadow-blue-100"
                   >
-                    Learn More About Dr. Saini
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    View Full Profile
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-red-600 border border-red-700 text-white font-medium rounded-lg hover:bg-red-700 hover:border-red-800 transition-all duration-300 shadow-md hover:shadow-lg"
+                    className="inline-flex items-center justify-center px-10 py-4 bg-red-600 border border-red-700 text-white font-bold rounded-xl hover:bg-red-700 transition-all duration-300 shadow-xl shadow-red-100"
                   >
-                    <Calendar className="w-4 h-4 mr-2" />
+                    <Calendar className="w-5 h-5 mr-2" />
                     Book Appointment
                   </Link>
                 </div>
               </div>
-            </div>
+            </article>
             <div className="order-1 lg:order-2">
-              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-2xl fade-in">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-400"></div>
+              <div className="relative w-full aspect-square max-w-xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-8 border-gray-50 fade-in">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-400 opacity-20"></div>
                 <Image
                   src="/images/dr-saini-logo.webp"
                   alt="Dr. Gaurav Saini - Senior Consultant Orthopaedics"
                   width={1200}
-                  height={800}
-                  className="object-contain p-8"
-                  sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 400px"
+                  height={1200}
+                  className="w-full h-full object-contain p-12"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  priority={true}
                 />
               </div>
             </div>
@@ -371,82 +454,127 @@ export default function Home() {
       </section>
       
       {/* Testimonials Section */}
-      <section className="py-4 bg-gray-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in">
-              What Our Patients Say
+          <div className="text-center mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in font-serif">
+              Patient Success Stories
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
-              Real experiences from patients who have transformed their lives
+              Hear directly from those who have regained their mobility and joy of life through our expert orthopedic care.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div 
+              <article 
                 key={index} 
-                className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover-effect"
+                className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover-effect relative"
               >
-                <div className="flex items-center mb-3">
+                <div className="absolute -top-4 left-8 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
+                  "
+                </div>
+                <div className="flex items-center mb-4 pt-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-4">
-                  {testimonial.text}
+                <p className="text-gray-700 mb-6 italic leading-relaxed">
+                  "{testimonial.text}"
                 </p>
-                <div className="font-medium text-gray-900">
-                  {testimonial.name}
+                <div className="flex items-center">
+                  <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-700 font-bold mr-3">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div className="font-bold text-gray-900">
+                    {testimonial.name}
+                  </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
 
-          <div className="text-center mt-8 fade-in">
+          <div className="text-center mt-12 fade-in">
             <Link
               href="/testimonials/"
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-teal-700 transition-all duration-300"
+              className="inline-flex items-center px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-all duration-300"
             >
               Read More Reviews
-              <ArrowRight className="w-4 h-4 ml-2" />
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Homepage FAQ Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-serif">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600">Common questions about joint care, robotic surgery, and recovery.</p>
+          </div>
+          <div className="space-y-6">
+            {faqs.map((faq, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl p-6 lg:p-8 shadow-sm border border-gray-100">
+                <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif flex items-start">
+                  <span className="text-blue-600 mr-3">Q:</span>
+                  {faq.question}
+                </h3>
+                <div className="flex items-start">
+                  <span className="text-teal-500 mr-3 font-bold">A:</span>
+                  <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+             <Link href="/faqs/" className="text-blue-600 font-bold hover:underline inline-flex items-center text-lg">
+                View All FAQs <ArrowRight className="w-5 h-5 ml-1" />
+             </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
-      <section className="py-6 bg-gradient-to-r from-blue-800 to-teal-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-teal-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+           <div className="absolute top-0 left-0 w-64 h-64 bg-white rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+           <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-400 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="fade-in">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4">
-              Ready to Start Your Recovery?
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 font-serif">
+              Take the First Step Toward a Pain-Free Life
             </h2>
-            <p className="text-lg mb-8 max-w-2xl mx-auto">
-              Schedule a consultation with Dr. Gaurav Saini today and take the first step towards a pain-free future.
+            <p className="text-xl mb-10 max-w-2xl mx-auto text-blue-100">
+              Expert orthopedic consultation is just a call or click away. Schedule your visit with Dr. Gaurav Saini today and regain your freedom of movement.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-800 font-semibold rounded-lg hover:bg-gray-100 transition-all duration-300 shadow-lg"
+                className="inline-flex items-center justify-center px-10 py-5 bg-white text-blue-900 font-bold rounded-xl hover:bg-gray-100 transition-all duration-300 shadow-2xl"
               >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Consultation
+                <Calendar className="w-6 h-6 mr-3 text-blue-600" />
+                Book Consultation Now
               </Link>
               <a
                 href="https://wa.me/919876777393"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300"
+                className="inline-flex items-center justify-center px-10 py-5 bg-teal-500 text-blue-900 font-bold rounded-xl hover:bg-teal-400 transition-all duration-300 shadow-2xl"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp Chat
+                <MessageCircle className="w-6 h-6 mr-3 text-blue-900" />
+                Chat on WhatsApp
               </a>
+            </div>
+            <div className="mt-10 flex items-center justify-center text-blue-200">
+               <Phone className="w-5 h-5 mr-2" />
+               <span className="font-semibold">Emergency Trauma Line: +91 98767-77393</span>
             </div>
           </div>
         </div>
       </section>
-    </div>
+    </main>
   )
-}
+}

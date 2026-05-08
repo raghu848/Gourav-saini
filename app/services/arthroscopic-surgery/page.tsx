@@ -37,217 +37,176 @@ export default function ArthroscopicSurgeryPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
+    <main className="min-h-screen bg-gray-50 pt-24 lg:pt-32 relative">
       <PageAnimationWrapper />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="mb-8 text-sm">
-          <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 
-          <Link href="/services" className="text-blue-600 hover:underline ml-2">Services</Link> &gt; 
-          <span className="ml-2 text-gray-500">Arthroscopic Surgery</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <nav className="mb-8 text-sm font-medium">
+          <Link href="/" className="text-blue-600 hover:text-blue-800 transition-colors">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/services" className="text-blue-600 hover:text-blue-800 transition-colors">Services</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-500">Arthroscopic Surgery</span>
         </nav>
 
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 font-serif mb-4">
-              Arthroscopic Surgery
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Minimally invasive joint surgery using advanced arthroscopic techniques for faster recovery
-            </p>
-          </div>
+        <article className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
+          {/* Hero Section */}
+          <header className="relative h-[450px] flex items-center justify-center text-white text-center overflow-hidden">
+             <div className="absolute inset-0 bg-cyan-950/80 z-10"></div>
+             <Image 
+                src="/images/dr images/TRAUMA.jpg" 
+                alt="Precision Arthroscopic Surgery" 
+                fill
+                className="object-cover"
+             />
+             <div className="relative z-20 px-4 max-w-4xl">
+                <div className="inline-flex items-center px-4 py-2 bg-cyan-400/20 rounded-full border border-cyan-400/30 text-cyan-300 text-xs font-bold uppercase tracking-widest mb-6">
+                  Minimally Invasive Excellence
+                </div>
+                <h1 className="text-4xl lg:text-7xl font-bold font-serif mb-6 leading-tight">
+                  Precision <br/>
+                  <span className="text-cyan-400">Arthroscopic Surgery</span>
+                </h1>
+                <p className="text-xl text-blue-100 font-medium leading-relaxed">
+                  World-class "keyhole" surgery to diagnose and treat joint conditions with sub-millimeter accuracy.
+                </p>
+             </div>
+          </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">
-                Precision Joint Surgery with Minimal Disruption
-              </h2>
-              <p className="text-gray-700 mb-6">
-                Our arthroscopic surgery program uses advanced minimally invasive techniques to diagnose and treat joint problems with exceptional precision.
-              </p>
-              <p className="text-gray-700 mb-6">
-                Through small incisions and specialized instruments, we can address a wide range of joint conditions with reduced pain and faster recovery.
-              </p>
-              
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Arthroscopic Procedures We Perform:</h3>
-                <div className="space-y-4">
-                  {arthroscopicProcedures.map((procedure, index) => (
-                    <div key={index} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-3 flex-shrink-0" />
-                      <div>
-                        <span className="font-medium text-gray-900">{procedure.title}:</span>
-                        <span className="text-gray-700"> {procedure.description}</span>
+          <div className="p-8 lg:p-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
+              <section>
+                <h2 className="text-3xl font-bold text-gray-900 mb-8 font-serif leading-tight">
+                  Superior Joint Care Through Small Incisions
+                </h2>
+                <div className="prose prose-lg text-gray-700 space-y-6">
+                  <p>
+                    Arthroscopy is a transformative surgical procedure used to visualize, diagnose, and treat problems inside a joint. Dr. Gaurav Saini utilizes an **Arthroscope**—a pencil-thin tube equipped with a high-definition camera and lighting system—to project a magnified view of the joint onto a monitor. This allow us to see structural issues that even an MRI might miss.
+                  </p>
+                  <p>
+                    Because arthroscopy requires only tiny incisions (about the size of a buttonhole), it offers significant advantages over traditional "open" surgery. There is far less damage to the surrounding healthy tissues, which translates to a much more comfortable recovery and a faster return to work and daily life. We perform arthroscopy on nearly every major joint, including the knee, shoulder, hip, and ankle.
+                  </p>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mt-10 mb-6 font-serif">Procedures We Perform</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {arthroscopicProcedures.map((procedure, index) => (
+                      <div key={index} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:border-cyan-200 transition-all duration-300">
+                        <h4 className="font-bold text-cyan-700 mb-2">{procedure.title}</h4>
+                        <p className="text-sm text-gray-600 leading-relaxed">{procedure.description}</p>
                       </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-8 border border-blue-100">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Arthroscopic Approach</h3>
-              <ul className="space-y-4">
-                {treatmentApproach.map((approach, index) => (
-                  <li key={index} className="flex items-start">
-                    <Eye className="w-5 h-5 text-blue-500 mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-gray-700">{approach}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center font-serif">
-              Arthroscopic Surgery Services
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                    <Heart className="w-6 h-6 text-blue-600" />
+                    ))}
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900">Diagnostic Arthroscopy</h3>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  Precise diagnosis of joint conditions through minimally invasive visualization.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    High-definition imaging
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    Accurate diagnosis in real-time
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
-                    Immediate treatment options
-                  </li>
-                </ul>
-              </div>
+              </section>
               
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                    <Users className="w-6 h-6 text-green-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-gray-900">Therapeutic Arthroscopy</h3>
+              <aside className="space-y-8">
+                <div className="bg-gradient-to-br from-cyan-900 to-blue-900 rounded-3xl p-10 text-white shadow-xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                  <h3 className="text-2xl font-bold mb-8 font-serif border-b border-white/20 pb-4">The Arthroscopy Advantage</h3>
+                  <ul className="space-y-6">
+                    {treatmentApproach.map((approach, index) => (
+                      <li key={index} className="flex items-start group">
+                        <div className="w-8 h-8 bg-cyan-400 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 text-blue-900 group-hover:scale-110 transition-transform shadow-lg shadow-cyan-900/30">
+                          <CheckCircle className="w-5 h-5" />
+                        </div>
+                        <span className="text-blue-50 font-medium leading-relaxed">{approach}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className="text-gray-600 mb-4">
-                  Treatment of joint conditions through minimally invasive surgical techniques.
-                </p>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                    Meniscus repair and trimming
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                    Ligament reconstruction
-                  </li>
-                  <li className="flex items-center">
-                    <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                    Cartilage restoration procedures
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
 
-          <div className="bg-gradient-to-r from-blue-900 to-green-900 text-white rounded-2xl p-4 lg:p-6 mb-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
-              <div>
-                <h2 className="text-3xl font-bold font-serif mb-4">Why Choose Our Arthroscopic Surgery?</h2>
-                <p className="text-blue-100 mb-4">
-                  Our arthroscopic surgery program combines advanced technology with expert care for optimal outcomes.
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Minimally invasive techniques</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Faster recovery times</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Reduced post-operative pain</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-green-300 mr-3" />
-                    <span>Enhanced precision and outcomes</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-white bg-opacity-10 rounded-xl p-2">
-                {/* Added image container */}
-                <div className="rounded-lg overflow-hidden border border-blue-200">
-                  <Image 
-                    src="/images/dr images/TRAUMA.jpg" 
-                    alt="Dr. Gaurav Saini performing arthroscopic surgery" 
-                    width={500}
-                    height={300}
-                    className="w-full h-auto object-contain"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-                    loading="lazy"
-                    decoding="async"
-                  />
+                <div className="bg-white border-2 border-cyan-50 rounded-3xl p-8 shadow-sm">
+                   <h3 className="text-xl font-bold text-gray-900 mb-6 font-serif flex items-center">
+                     <Eye className="w-6 h-6 mr-3 text-cyan-600" />
+                     Surgical Excellence
+                   </h3>
+                   <div className="space-y-4">
+                      <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
+                        <span className="text-gray-600 font-medium">Success Rate</span>
+                        <span className="font-bold text-cyan-700 text-lg">97%</span>
+                      </div>
+                      <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
+                        <span className="text-gray-600 font-medium">Patient Satisfaction</span>
+                        <span className="font-bold text-cyan-700 text-lg">98%</span>
+                      </div>
+                      <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
+                        <span className="text-gray-600 font-medium">Recovery Speed</span>
+                        <span className="font-bold text-cyan-700 text-lg">50% Faster</span>
+                      </div>
+                   </div>
                 </div>
-                <p className="text-black text-center font-bold text-lg mt-1">
-                  Focused on your recovery, powered by expertise and precision.
-                </p>
-                <h3 className="text-xl font-semibold mb-1">Arthroscopic Surgery Statistics</h3>
-                <div className="space-y-1">
-                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
-                    <span className="text-sm">Success Rate</span>
-                    <span className="font-bold text-sm">97%</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
-                    <span className="text-sm">Patient Satisfaction</span>
-                    <span className="font-bold text-sm">98%</span>
-                  </div>
-                  <div className="flex justify-between items-center pb-1 border-b border-white/20">
-                    <span className="text-sm">Recovery Time</span>
-                    <span className="font-bold text-sm">Reduced by 50%</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm">Scar Size</span>
-                    <span className="font-bold text-sm">Less than 1cm</span>
-                  </div>
-                </div>
-              </div>
+              </aside>
             </div>
-          </div>
 
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Considering Arthroscopic Surgery?
-            </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              For arthroscopic surgery consultation, contact our specialists to discuss your treatment options.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+919876777393"
-                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg"
-              >
-                <Heart className="w-5 h-5 mr-2" />
-                Call for Consultation
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-50 transition-colors duration-200"
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                Book Appointment
-              </Link>
+            {/* Diagnostic vs Therapeutic */}
+            <section className="mb-24 py-16 bg-blue-950 -mx-8 lg:-mx-16 px-8 lg:px-16 text-white relative">
+               <div className="max-w-5xl mx-auto">
+                 <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center font-serif">Comprehensive Approach</h2>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                   <div className="p-10 bg-white/5 border border-white/10 rounded-3xl">
+                      <h4 className="text-xl font-bold text-cyan-400 mb-4">Diagnostic Arthroscopy</h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">When MRI or physical exams leave questions, direct visualization provides the answer. We use Ultra-HD cameras to inspect cartilage, ligaments, and the joint lining to find the exact source of pain.</p>
+                   </div>
+                   <div className="p-10 bg-white/5 border border-white/10 rounded-3xl">
+                      <h4 className="text-xl font-bold text-cyan-400 mb-4">Therapeutic Arthroscopy</h4>
+                      <p className="text-gray-400 text-sm leading-relaxed">Most conditions can be treated during the same procedure. Using specialized micro-tools, we can trim torn tissue, repair ligaments, or remove loose bodies (debris) from the joint space.</p>
+                   </div>
+                 </div>
+               </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="mb-24">
+               <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">Arthroscopy FAQ</h2>
+               <div className="max-w-4xl mx-auto space-y-4">
+                  <details className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden" open>
+                    <summary className="p-6 cursor-pointer font-bold text-gray-900 flex justify-between items-center list-none">
+                      Is arthroscopy considered major surgery?
+                      <span className="text-cyan-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-50">
+                      While it is "surgery" requiring anesthesia, it is generally considered minimally invasive. Most patients go home the same day and experience significantly less trauma compared to traditional open joint surgery.
+                    </div>
+                  </details>
+                  <details className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <summary className="p-6 cursor-pointer font-bold text-gray-900 flex justify-between items-center list-none">
+                      What is the recovery timeline?
+                      <span className="text-cyan-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-50">
+                      Recovery depends on the joint and the repair made. Most patients can perform light activities within a few days and return to work in 1-2 weeks. Full athletic return usually takes 4-12 weeks depending on the procedure.
+                    </div>
+                  </details>
+                  <details className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    <summary className="p-6 cursor-pointer font-bold text-gray-900 flex justify-between items-center list-none">
+                      Are there any scars?
+                      <span className="text-cyan-600 group-open:rotate-180 transition-transform">▼</span>
+                    </summary>
+                    <div className="p-6 pt-0 text-gray-700 text-sm leading-relaxed border-t border-gray-50">
+                       Since arthroscopy is minimally invasive, the incisions are very small (about the size of a buttonhole). Any resulting scars are minimal and often become barely visible over time.
+                    </div>
+                  </details>
+                </div>
+              </section>
+
+              {/* Final CTA */}
+              <footer className="bg-gray-900 text-white rounded-3xl p-12 lg:p-20 relative overflow-hidden text-center">
+                <div className="absolute top-0 right-0 w-80 h-80 bg-cyan-500 opacity-5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <h2 className="text-3xl lg:text-5xl font-bold mb-8 font-serif">Precision Surgery, Faster Recovery</h2>
+                <p className="text-blue-100 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
+                  Experience the benefits of minimally invasive orthopedic surgery. Contact Dr. Gaurav Saini's clinic today to schedule your consultation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <Link href="/contact/" className="px-10 py-5 bg-cyan-400 text-blue-900 font-bold rounded-2xl hover:bg-cyan-300 transition-all hover:scale-105 shadow-xl shadow-cyan-500/20">
+                    Book Consultation
+                  </Link>
+                  <a href="tel:+919876777393" className="px-10 py-5 border-2 border-white/30 text-white font-bold rounded-2xl hover:bg-white/10 transition-all">
+                    Call: +91 98767-77393
+                  </a>
+                </div>
+              </footer>
             </div>
-          </div>
+          </article>
         </div>
-      </div>
-    </div>
-  )
-}
+      </main>
+    )
+  }

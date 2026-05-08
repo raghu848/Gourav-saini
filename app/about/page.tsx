@@ -88,7 +88,7 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
+    <main className="min-h-screen bg-gray-50 relative pt-24 lg:pt-32">
       {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
@@ -172,291 +172,272 @@ export default function AboutPage() {
       <PageAnimationWrapper />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
         {/* Hero Section */}
-        <div className="text-center mb-16 mt-8">
+        <header className="text-center mb-16 mt-8">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
-            Meet the Doctor -  Dr. Gaurav Saini
+            Meet the Doctor - Dr. Gaurav Saini
           </h1>
           <p className="text-2xl text-blue-600 font-semibold mb-4">
-            MBBS  , MS, DNB, MNAMS - ORTHOPAEDIC SURGEON IN MOHALI
+            MBBS, MS, DNB, MNAMS - Expert Orthopaedic Surgeon in Mohali
           </p>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-            Award-winning orthopedic surgeon with nearly 20 years of experience, completely dedicated to Robotic Hip and Knee Surgeries
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            A pioneer in robotic-assisted joint replacement, Dr. Gaurav Saini brings nearly 20 years of clinical expertise and a commitment to precision-based orthopedic care to patients across Northern India.
           </p>
-        </div>
+        </header>
         
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-12">
+        <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-12 mb-12 border border-gray-100">
           {/* Doctor Profile Section */}
-          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-8 mb-12">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 mb-16">
             <div className="flex-shrink-0">
-              <div className="relative w-56 h-56 lg:w-72 lg:h-72">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-green-400 rounded-full opacity-20 blur-xl"></div>
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-teal-400 rounded-3xl opacity-20 blur-2xl"></div>
                 <Image
                   src="/images/dr-saini-logo.webp"
-                  alt="Dr. Gaurav Saini - MBBS, MS, DNB, MNAMS Orthopaedic Surgeon"
+                  alt="Dr. Gaurav Saini - Expert Robotic Orthopaedic Surgeon"
                   fill
-                  className="object-contain rounded-full border-4 border-blue-200 shadow-xl"
+                  className="object-contain rounded-3xl border-2 border-white shadow-2xl bg-gray-50"
                   priority
                 />
               </div>
-              <div className="text-center mt-6">
+              <div className="text-center mt-8">
                 <h2 className="text-2xl font-bold text-gray-900 font-serif mb-2">
-                Dr. Gaurav Saini
+                  Dr. Gaurav Saini
                 </h2>
-                <p className="text-blue-600 font-semibold">
+                <p className="text-blue-600 font-bold uppercase tracking-wider text-sm mb-4">
                   Senior Consultant Orthopaedics
-                </p>
-                <p className="text-gray-600 text-sm mt-1">
-                  MBBS, MS, DNB, MNAMS
                 </p>
                 
                 {/* Contact Info */}
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center justify-center text-gray-600">
-                    <MapPin className="w-4 h-4 mr-2" />
-                    <span>Mohali, Punjab</span>
+                <div className="space-y-4 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                  <div className="flex items-center text-gray-700">
+                    <MapPin className="w-5 h-5 mr-3 text-blue-600" />
+                    <span className="text-sm font-medium">Mohali, Punjab, India</span>
                   </div>
-                  <div className="flex items-center justify-center text-gray-600">
-                    <Phone className="w-4 h-4 mr-2" />
-                    <span>+91 98767 77393</span>
+                  <div className="flex items-center text-gray-700">
+                    <Phone className="w-5 h-5 mr-3 text-blue-600" />
+                    <span className="text-sm font-medium">+91 98767 77393</span>
                   </div>
-                  <div className="flex items-center justify-center text-gray-600">
-                    <Mail className="w-4 h-4 mr-2" />
-                    <a href="mailto:drgauravsaini92@gmail.com" className="hover:underline">drgauravsaini92@gmail.com</a>
+                  <div className="flex items-center text-gray-700">
+                    <Mail className="w-5 h-5 mr-3 text-blue-600" />
+                    <a href="mailto:drgauravsaini92@gmail.com" className="text-sm font-medium hover:text-blue-700">drgauravsaini92@gmail.com</a>
                   </div>
-                </div>
-                
-                {/* CTA Buttons */}
-                <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                  >
-                    <Calendar className="w-4 h-4 mr-2" />
-                    Book Appointment
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200"
-                  >
-                    <Phone className="w-4 h-4 mr-2" />
-                    Contact
-                  </Link>
                 </div>
               </div>
             </div>
             
             <div className="flex-1">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 font-serif">
-                Orthopedic Excellence with Compassionate Care
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-8 font-serif leading-tight">
+                A Legacy of Orthopedic Excellence & Innovation
               </h2>
-              <p className="text-xl text-gray-700 mb-4">
-                Dr. Gaurav Saini is an award-winning Orthopaedic Surgeon with 20 years of experience, specializing in Robotic Hip and Knee Surgeries.
-              </p>
-              <p className="text-xl text-gray-700 mb-4">
-                Expert in Sports Injuries, Knee Shoulder Arthroscopy, Complex Trauma, and Joint Replacement. Combines advanced techniques with compassionate care.
-              </p>
-              <p className="text-xl text-gray-700 mb-6">
-                Trained at high-volume centers worldwide. Stays current with orthopedic innovations through international conferences and training programs.
-              </p>
+              <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  Dr. Gaurav Saini is not just a surgeon; he is a specialist dedicated to the art and science of joint restoration. With a career spanning two decades, he has witnessed and led the transition from traditional orthopedic methods to the precision of **Robotic-Assisted Surgery**.
+                </p>
+                <p>
+                  His clinical journey has been defined by a relentless pursuit of excellence. Having performed over **5,000 successful procedures**, Dr. Saini specializes in complex primary and revision joint replacements, advanced trauma management, and sports medicine. He is recognized for his skill in using the **CORI robotic system**, which allows for 3D mapping and sub-millimeter accuracy in knee replacements.
+                </p>
+                <p>
+                  Beyond the operating theater, Dr. Saini is known for his holistic approach to patient care. He believes that surgery is only one part of the healing process. By integrating advanced diagnostics with personalized rehabilitation protocols, he ensures that his patients don't just recover—they thrive.
+                </p>
+              </div>
               
               {/* Stats Section */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-10">
                 {achievements.map((achievement, index) => (
-                  <div key={index} className="bg-gradient-to-br from-blue-50 to-green-50 p-4 rounded-lg text-center border border-blue-100">
-                    <div className="text-3xl font-bold text-blue-600">{achievement.number}</div>
-                    <div className="text-lg text-gray-600">{achievement.label}</div>
+                  <div key={index} className="bg-gradient-to-br from-blue-600 to-blue-700 p-6 rounded-2xl text-center shadow-lg shadow-blue-100">
+                    <div className="text-3xl font-bold text-white mb-1">{achievement.number}</div>
+                    <div className="text-xs font-bold text-blue-100 uppercase tracking-widest">{achievement.label}</div>
                   </div>
                 ))}
               </div>
-              
-              {/* Specialties Section */}
-              <div className="bg-blue-50 p-6 rounded-lg mb-6">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4 flex items-center">
-                  <Target className="w-6 h-6 mr-2 text-blue-600" />
-                  Expert Medical Services
-                </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {specialties.map((specialty, index) => {
-                    const IconComponent = specialty.icon
-                    return (
-                      <div key={index} className="flex items-start">
-                        <IconComponent className="w-6 h-6 text-blue-600 mt-0.5 mr-2 flex-shrink-0" />
-                        <div>
-                          <div className="text-lg font-medium text-gray-900">{specialty.title}</div>
-                          <div className="text-base text-gray-600">{specialty.description}</div>
-                        </div>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
             </div>
           </div>
+
+          <hr className="border-gray-100 mb-16" />
+
+          {/* Philosophy Section */}
+          <section className="mb-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Surgical Philosophy: Precision Meets Patience</h2>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  Dr. Saini's approach is rooted in the belief that "less is more." By utilizing minimally invasive techniques and muscle-sparing approaches, he reduces the physiological stress of surgery on the body. This philosophy extends to his use of robotic technology, which acts as a precision tool to enhance the surgeon's natural skill.
+                </p>
+                <ul className="space-y-4">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                    <span className="text-gray-800 font-medium">Evidence-Based Treatment Protocols</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                    <span className="text-gray-800 font-medium">Shared Decision-Making with Patients</span>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
+                    <span className="text-gray-800 font-medium">Continuous Post-Operative Support</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-teal-50 p-8 rounded-3xl border border-teal-100 italic text-teal-900 text-xl leading-relaxed relative">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white text-4xl font-serif">"</div>
+                "My goal is not just to replace a joint, but to restore a life. Every patient has unique goals—whether it's walking pain-free, returning to professional sports, or simply playing with grandchildren. We tailor our surgical precision to meet those specific human aspirations."
+                <p className="mt-4 font-bold not-italic text-sm text-teal-700">— Dr. Gaurav Saini</p>
+              </div>
+            </div>
+          </section>
+          
+          {/* Specialties Section */}
+          <section className="mb-20">
+             <div className="text-center mb-12">
+               <h2 className="text-3xl font-bold text-gray-900 font-serif">Core Areas of Expertise</h2>
+               <p className="text-gray-600 mt-4 max-w-2xl mx-auto">Providing a comprehensive range of orthopedic solutions with a focus on advanced technology and rapid recovery.</p>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+               {specialties.map((specialty, index) => {
+                 const IconComponent = specialty.icon
+                 return (
+                   <article key={index} className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-blue-200 transition-all duration-300">
+                     <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6">
+                        <IconComponent className="w-6 h-6 text-blue-600" />
+                     </div>
+                     <h3 className="text-xl font-bold text-gray-900 mb-3 font-serif">{specialty.title}</h3>
+                     <p className="text-gray-600 text-sm leading-relaxed">{specialty.description}</p>
+                   </article>
+                 )
+               })}
+             </div>
+          </section>
           
           {/* Career Timeline */}
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center font-serif">
-              Career Journey & Achievements
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">
+              Professional Milestones
             </h2>
             <div className="relative">
               {/* Vertical line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-200 transform -translate-x-1/2"></div>
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-blue-100 transform -translate-x-1/2"></div>
               
               {/* Timeline items */}
               <div className="space-y-12">
                 {timeline.map((item, index) => (
-                  <div 
+                  <article 
                     key={index} 
                     className={`relative flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}
                   >
                     {/* Timeline dot */}
-                    <div className="absolute left-4 md:left-1/2 top-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center">
+                    <div className="absolute left-4 md:left-1/2 top-1/2 w-8 h-8 bg-blue-600 rounded-full border-4 border-white shadow-lg transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10">
                       <div className="w-3 h-3 bg-white rounded-full"></div>
                     </div>
                     
                     {/* Content */}
                     <div className={`ml-12 md:ml-0 md:w-5/12 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
-                      <div className="bg-white p-6 rounded-lg shadow-md border border-blue-100">
-                        <div className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mb-2 ${index % 2 === 0 ? 'bg-blue-100 text-blue-800 md:ml-auto' : 'bg-green-100 text-green-800'}`}>
+                      <div className="bg-white p-8 rounded-2xl shadow-md border border-blue-50 hover:shadow-xl transition-shadow duration-300">
+                        <div className={`inline-block px-4 py-1 rounded-full text-xs font-bold mb-4 tracking-widest uppercase ${index % 2 === 0 ? 'bg-blue-100 text-blue-800' : 'bg-teal-100 text-teal-800'}`}>
                           {item.year}
                         </div>
-                        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                        <p className="text-gray-600">{item.description}</p>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2 font-serif">{item.title}</h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
                       </div>
                     </div>
                     
-                    {/* Hidden on mobile, visible on desktop for spacing */}
                     <div className="hidden md:block md:w-5/12"></div>
-                  </div>
+                  </article>
                 ))}
               </div>
             </div>
-          </div>
+          </section>
           
           {/* Credentials Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-lg border border-blue-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <UserCheck className="w-5 h-5 mr-2 text-blue-600" />
-                Qualifications & Expertise
+          <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+            <div className="bg-blue-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 -translate-y-1/2 translate-x-1/2 rounded-full"></div>
+              <h3 className="text-2xl font-bold mb-8 flex items-center font-serif">
+                <UserCheck className="w-6 h-6 mr-3 text-teal-400" />
+                Medical Qualifications
               </h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-4">
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>MBBS</strong> - Bachelor of Medicine, Bachelor of Surgery</span>
+                  <CheckCircle className="w-5 h-5 text-teal-400 mt-1 mr-4 flex-shrink-0" />
+                  <span className="text-blue-50 font-medium leading-tight">**MBBS** - Bachelor of Medicine, Bachelor of Surgery (Government Medical College)</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>MS Orthopedics</strong> - Master of Surgery in Orthopedics</span>
+                  <CheckCircle className="w-5 h-5 text-teal-400 mt-1 mr-4 flex-shrink-0" />
+                  <span className="text-blue-50 font-medium leading-tight">**MS Orthopedics** - Master of Surgery in specialized Orthopedic medicine</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>DNB Orthopedics</strong> - Diplomate of National Board</span>
+                  <CheckCircle className="w-5 h-5 text-teal-400 mt-1 mr-4 flex-shrink-0" />
+                  <span className="text-blue-50 font-medium leading-tight">**DNB Orthopedics** - Diplomate of National Board (Post-Graduate Specialization)</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>MNAMS</strong> - Member of National Academy of Medical Sciences</span>
+                  <CheckCircle className="w-5 h-5 text-teal-400 mt-1 mr-4 flex-shrink-0" />
+                  <span className="text-blue-50 font-medium leading-tight">**MNAMS** - Member of the National Academy of Medical Sciences</span>
                 </li>
                 <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>Fellowship</strong> in Robotic Joint Replacement Surgery</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span>Specialized training in Hip & Knee Arthroscopy worldwide</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>20 years</strong> of clinical experience</span>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>5000+</strong> successful surgeries performed</span>
+                  <CheckCircle className="w-5 h-5 text-teal-400 mt-1 mr-4 flex-shrink-0" />
+                  <span className="text-blue-50 font-medium leading-tight">Advanced International Fellowship in Robotic Arthroplasty</span>
                 </li>
               </ul>
             </div>
             
-            <div className="bg-gradient-to-br from-green-50 to-white p-6 rounded-lg border border-green-100">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
-                <Award className="w-5 h-5 mr-2 text-green-600" />
-                Professional Memberships & Awards
+            <div className="bg-white p-10 rounded-3xl shadow-xl border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center font-serif">
+                <Award className="w-6 h-6 mr-3 text-blue-600" />
+                Memberships & Awards
               </h3>
-              <ul className="space-y-3 text-gray-700 mb-6">
+              <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
-                  <Star className="w-5 h-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>National Academy of Medical Sciences (NAMS)</strong> - Since 2011</span>
+                  <Star className="w-5 h-5 text-yellow-500 mt-1 mr-4 flex-shrink-0" />
+                  <span className="font-medium">Active Member: **Indian Orthopaedic Association (IOA)**</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-5 h-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>Indian Orthopaedic Association (IOA)</strong> - Since 2011</span>
+                  <Star className="w-5 h-5 text-yellow-500 mt-1 mr-4 flex-shrink-0" />
+                  <span className="font-medium">Fellow: **ISKSAA** (International Society for Arthroscopy & Arthroplasty)</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-5 h-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>North Zone Orthopaedic Association (NZOA)</strong> - Since 2011</span>
+                  <Star className="w-5 h-5 text-yellow-500 mt-1 mr-4 flex-shrink-0" />
+                  <span className="font-medium">Member: **AO Trauma** (Global Orthopedic Trauma Foundation)</span>
                 </li>
                 <li className="flex items-start">
-                  <Star className="w-5 h-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>ISKSAA</strong> - International Society for Knowledge for Surgeons in Arthroscopy and Arthroplasty</span>
-                </li>
-                <li className="flex items-start">
-                  <Star className="w-5 h-5 text-yellow-500 mt-0.5 mr-2 flex-shrink-0" />
-                  <span><strong>AO Trauma Member</strong> - Advanced Orthopedic Trauma Care</span>
+                  <Star className="w-5 h-5 text-yellow-500 mt-1 mr-4 flex-shrink-0" />
+                  <span className="font-medium">Life Member: **North Zone Orthopaedic Association**</span>
                 </li>
               </ul>
               
-              <div className="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
-                <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <TrendingUp className="w-4 h-4 mr-2 text-yellow-600" />
-                  Recent Recognition
-                </h4>
-                <p className="text-gray-700 text-sm">
-                  Awarded for excellence in robotic joint replacement surgery and patient care outcomes in 2022.
+              <div className="mt-8 p-6 bg-blue-50 rounded-2xl border border-blue-100 flex items-start">
+                <TrendingUp className="w-8 h-8 text-blue-600 mr-4 flex-shrink-0" />
+                <p className="text-gray-700 text-sm leading-relaxed italic">
+                  Recognized as a leading expert in CORI Robotic Knee Replacement in Punjab, with a specialization in complex revision cases.
                 </p>
               </div>
             </div>
-          </div>
-          
-          {/* Mission Statement */}
-          <div className="bg-gradient-to-r from-blue-600 to-green-600 rounded-lg p-8 text-white mb-8">
-            <h2 className="text-2xl font-bold mb-4 font-serif">My Mission</h2>
-            <p className="text-lg mb-4">
-              &quot;To provide the highest quality orthopedic care with compassion, precision, and innovation, 
-              helping every patient regain their mobility and quality of life.&quot;
-            </p>
-            <p className="opacity-90">
-              - Dr. Gaurav Saini
-            </p>
-          </div>
+          </section>
           
           {/* CTA Section */}
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Ready to Take the Next Step?
+          <section className="text-center bg-gray-900 text-white rounded-3xl p-12 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 font-serif">
+              Begin Your Journey to Pain-Free Movement
             </h2>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              Schedule a consultation with Dr. Saini today and begin your journey to better mobility and pain-free living.
+            <p className="text-blue-100 mb-10 max-w-2xl mx-auto text-lg">
+              Whether you need a second opinion on a joint replacement or expert care for a sports injury, Dr. Gaurav Saini is here to help.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md"
+                className="inline-flex items-center justify-center px-10 py-5 bg-blue-600 text-white font-bold rounded-2xl hover:bg-blue-700 transition-all duration-300 shadow-xl"
               >
-                <Calendar className="w-5 h-5 mr-2" />
+                <Calendar className="w-6 h-6 mr-3" />
                 Book Consultation
-                <ChevronRight className="w-4 h-4 ml-2" />
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors duration-200"
+                className="inline-flex items-center justify-center px-10 py-5 border-2 border-white/20 text-white font-bold rounded-2xl hover:bg-white/10 transition-all duration-300"
               >
-                <Activity className="w-5 h-5 mr-2" />
-                View Services
-                <ChevronRight className="w-4 h-4 ml-2" />
+                Explore Services
               </Link>
             </div>
-          </div>
+          </section>
         </div>
       </div>
-    </div>
+    </main>
   )
 }

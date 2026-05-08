@@ -9,81 +9,9 @@ export const metadata: Metadata = blogMetadata
 
 import PageAnimationWrapper from '@/components/PageAnimationWrapper'
 
+import { blogPosts } from './blog-data'
+
 export default function BlogPage() {
-  const blogPosts = [
-    {
-      id: 'knee-replacement-signs',
-      title: 'Signs You Need a Knee Replacement: When to Consider Surgery',
-      excerpt: 'Learn about the key indicators that suggest it might be time to consider knee replacement surgery and what to expect from the procedure.',
-      category: 'Knee Care',
-      readTime: '5 min read',
-      publishDate: '2024-01-15',
-      image: '/images/Partial-Knee-Replacement.webp',
-      author: 'Dr. Gaurav Saini',
-      imageWidth: 1200,
-      imageHeight: 800
-    },
-    {
-      id: 'knee-exercises',
-      title: '5 Exercises for Knee Pain Relief You Can Do at Home',
-      excerpt: 'Discover simple yet effective exercises that can help alleviate knee pain and improve joint mobility from the comfort of your home.',
-      category: 'Exercise',
-      readTime: '7 min read',
-      publishDate: '2024-01-10',
-      image: '/images/Knee-presentation-surgeries-HTODFO.webp',
-      author: 'Dr. Gaurav Saini',
-      imageWidth: 1200,
-      imageHeight: 800
-    },
-    {
-      id: 'surgery-preparation',
-      title: 'Preparing for Your Orthopedic Surgery: A Complete Guide',
-      excerpt: 'Everything you need to know before your orthopedic surgery, from pre-operative preparation to setting up your recovery space.',
-      category: 'Surgery',
-      readTime: '10 min read',
-      publishDate: '2024-01-05',
-      image: '/images/Total-hip-replacement.webp',
-      author: 'Dr. Gaurav Saini',
-      imageWidth: 1200,
-      imageHeight: 800
-    },
-    {
-      id: 'arthroscopy-vs-open',
-      title: 'Arthroscopy vs. Open Surgery: What\'s the Difference?',
-      excerpt: 'Understanding the differences between arthroscopic and open surgery procedures, including benefits, risks and recovery times.',
-      category: 'Education',
-      readTime: '6 min read',
-      publishDate: '2023-12-28',
-      image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
-      author: 'Dr. Gaurav Saini',
-      imageWidth: 1200,
-      imageHeight: 800
-    },
-    {
-      id: 'sports-injury-prevention',
-      title: 'Sports Injury Prevention: Tips for Athletes',
-      excerpt: 'Essential tips and strategies to prevent common sports injuries and maintain peak athletic performance throughout your career.',
-      category: 'Sports Medicine',
-      readTime: '8 min read',
-      publishDate: '2023-12-20',
-      image: '/images/Minimally-invasive-knee-replacement.webp',
-      author: 'Dr. Gaurav Saini',
-      imageWidth: 1200,
-      imageHeight: 800
-    },
-    {
-      id: 'arthritis-guide',
-      title: 'Understanding Arthritis: Types, Symptoms and Treatment Options',
-      excerpt: 'A comprehensive guide to different types of arthritis, their symptoms, and the various treatment approaches available.',
-      category: 'Arthritis',
-      readTime: '12 min read',
-      publishDate: '2023-12-15',
-      image: '/images/patient-1 (25).jpg',
-      author: 'Dr. Gaurav Saini',
-      imageWidth: 1200,
-      imageHeight: 800
-    }
-  ]
 
   const categories = [
     'All Posts',
@@ -208,7 +136,7 @@ export default function BlogPage() {
                   {blogPosts[0].readTime}
                 </div>
                 <Link
-                  href={`/blog/${blogPosts[0].id}`}
+                  href={`/blog/${blogPosts[0].id}/`}
                   className="inline-flex items-center px-4 py-2.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm sm:text-base min-w-[100px] justify-center"
                 >
                   Read More

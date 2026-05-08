@@ -17,12 +17,14 @@ const nextConfig: NextConfig = {
   
   // Enable experimental optimizations
   experimental: {
-    optimizeCss: false,
+    optimizeCss: true,
     scrollRestoration: true,
     optimizePackageImports: [
       'lucide-react',
       'framer-motion',
-      'react-icons'
+      'react-icons',
+      'recharts',
+      'react-hook-form'
     ],
   },
   

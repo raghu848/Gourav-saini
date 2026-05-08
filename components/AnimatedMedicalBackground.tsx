@@ -20,15 +20,13 @@ const AnimatedMedicalBackground = () => {
   // Return null on server and initial client render to avoid hydration mismatch
   if (!isClient) return null;
 
-  // Predefined positions and sizes - reduced for mobile
+  // Predefined positions and sizes - reduced for mobile performance
   const particlePositions = isMobile 
     ? [
         { left: 10, top: 20, size: 4 },
-        { left: 40, top: 40, size: 5 },
-        { left: 70, top: 15, size: 6 },
+        { left: 70, top: 15, size: 5 },
         { left: 20, top: 60, size: 4 },
-        { left: 80, top: 50, size: 5 },
-        { left: 50, top: 80, size: 6 }
+        { left: 80, top: 50, size: 5 }
       ]
     : [
         { left: 5, top: 10, size: 4 },
@@ -44,7 +42,7 @@ const AnimatedMedicalBackground = () => {
         { left: 15, top: 55, size: 6 },
         { left: 35, top: 75, size: 4 }
       ];
-
+ 
   // Add keys to all motion components to ensure consistent rendering
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -58,7 +56,8 @@ const AnimatedMedicalBackground = () => {
               linear-gradient(rgba(59, 130, 246, 0.15) 1px, transparent 1px),
               linear-gradient(90deg, rgba(59, 130, 246, 0.15) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px'
+            backgroundSize: '50px 50px',
+            willChange: 'background-position'
           }}
           animate={{
             backgroundPosition: ['0px 0px', '50px 50px']
@@ -70,7 +69,7 @@ const AnimatedMedicalBackground = () => {
           }}
         />
       </div>
-
+ 
       {/* Simplified Floating Medical Particles */}
       {particlePositions.map((pos, i) => (
         <motion.div
@@ -88,7 +87,8 @@ const AnimatedMedicalBackground = () => {
               : 'radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%)',
             boxShadow: i % 2 === 0 
               ? '0 0 8px rgba(59, 130, 246, 0.3)' 
-              : '0 0 8px rgba(16, 185, 129, 0.3)'
+              : '0 0 8px rgba(16, 185, 129, 0.3)',
+            willChange: 'transform, opacity'
           }}
           animate={{
             y: [-10, 10, -10],
