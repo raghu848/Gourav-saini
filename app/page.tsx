@@ -138,7 +138,7 @@ export default function Home() {
                 
                 <div className="mb-8">
                   <p className="text-base sm:text-lg text-blue-50 mb-4">
-                    <span className="font-semibold text-white">Dr. Gaurav Saini</span> - Senior Orthopaedic Surgeon specializing in advanced joint reconstruction and sports medicine.
+                    <span className="font-semibold text-white">Dr. Gaurav Saini</span> - A leading orthopaedic surgeon specializing in advanced joint reconstruction and sports medicine.
                   </p>
                   <div className="flex items-center text-blue-200 mb-2">
                     <CheckCircle className="w-5 h-5 mr-2 text-teal-300" />
@@ -225,7 +225,7 @@ export default function Home() {
             <div className="lg:col-span-2">
               <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Welcome to the Future of Orthopedic Excellence</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                At our practice, we believe that every patient deserves a life free from joint pain. Led by **Dr. Gaurav Saini**, a pioneer in robotic-assisted orthopedic surgery, we combine nearly two decades of clinical experience with the world's most advanced medical technologies. Our mission is to provide personalized, compassionate care that gets you back to your active lifestyle faster and with better long-term results.
+                At our practice, we believe that every patient deserves a life free from joint pain. Led by **Dr. Gaurav Saini**, recognized as the **best orthopedic doctor in mohali** and a pioneer in robotic-assisted orthopedic surgery, we combine nearly two decades of clinical experience with the world's most advanced medical technologies. Our mission is to provide personalized, compassionate care that gets you back to your active lifestyle faster and with better long-term results.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 Whether you are suffering from chronic arthritis, a sports injury, or a complex fracture, we offer a full spectrum of orthopedic solutions. From non-surgical management and physical therapy to state-of-the-art **CORI robotic joint replacement**, our approach is always patient-centric. We don't just treat symptoms; we restore function and confidence.
@@ -408,13 +408,13 @@ export default function Home() {
                 </h2>
                 <div className="prose prose-lg text-gray-700 mb-8">
                   <p className="mb-4">
-                    **Dr. Gaurav Saini** (MBBS, MS, DNB, MNAMS) is a globally trained orthopedic surgeon with a special interest in adult joint reconstruction and robotic surgeries. With a career spanning nearly 20 years, he has held senior positions at India's most prestigious medical institutions.
+                    **Dr. Gaurav Saini** (MBBS, MS, DNB, MNAMS) is a globally trained **orthopaedic surgeon** and widely known as the **best orthopedic surgeon in kharar** and Mohali, with a special interest in adult joint reconstruction and robotic surgeries. With a career spanning nearly 20 years, he has held senior positions at India's most prestigious medical institutions.
                   </p>
                   <p className="mb-4">
                     His expertise in **Robotic Total Knee Replacement** using the CORI system has made him a sought-after specialist for patients seeking precise results and rapid recovery. Dr. Saini is a member of the National Academy of Medical Sciences (NAMS), Indian Orthopaedic Association (IOA), and AO Trauma, ensuring he stays at the forefront of surgical innovation.
                   </p>
                   <p>
-                    Known for his empathetic approach, Dr. Saini ensures that every patient understands their condition and treatment journey, fostering a relationship built on trust and clinical excellence.
+                    Known for his empathetic approach, Dr. Saini is highly recommended as the **best knee replacement surgeon in chandigarh** and the surrounding tricity region. He ensures that every patient understands their condition and treatment journey, fostering a relationship built on trust and clinical excellence.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-6">
@@ -461,7 +461,7 @@ export default function Home() {
               Patient Success Stories
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
-              Hear directly from those who have regained their mobility and joy of life through our expert orthopedic care.
+              Read our genuine **orthopaedic surgeon patient reviews** and hear directly from those who have regained their mobility and joy of life through our expert orthopedic care.
             </p>
           </div>
 

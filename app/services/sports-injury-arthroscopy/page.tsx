@@ -129,7 +129,7 @@ export default function SportsInjuryArthroscopyPage() {
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-6">
                   <p>
-                    Athletic injuries require more than just healing; they require a return to function that meets the extreme demands of sports. Dr. Gaurav Saini utilizes **Advanced Arthroscopy**—a minimally invasive technique using a small camera (arthroscope) and specialized instruments—to treat joint issues with unparalleled precision.
+                    If you are searching for an experienced **sports injury doctor near me** in Mohali or Chandigarh, Dr. Gaurav Saini is widely recommended for his expertise in joint care. He utilizes advanced procedures like **arthroscopic knee surgery** and other minimally invasive techniques using a small camera (arthroscope) to treat joint issues with unparalleled precision.
                   </p>
                   <p>
                     Our sports medicine department specializes in complex ligament reconstructions and tendon repairs. By minimizing tissue damage during surgery, we reduce post-operative swelling and pain, allowing for a much more aggressive and effective rehabilitation program. Whether it's a field sport, swimming, or professional athletics, we tailor every procedure to the specific mechanics of your sport.

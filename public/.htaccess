@@ -1,72 +1,129 @@
-# =====================================
-# SAFE PERFORMANCE & SECURITY SETTINGS
-# =====================================
-
-# Enable Rewrite Engine safely
 <IfModule mod_rewrite.c>
-RewriteEngine On
+  RewriteEngine On
+  RewriteBase /
+  
+  # Redirect HTTP to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect www to non-www
-RewriteCond %{HTTP_HOST} ^www\.drgauravsainiortho\.com$ [NC]
-RewriteRule ^(.*)$ https://drgauravsainiortho.com/$1 [L,R=301]
+  # Redirect www to non-www
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+
+  # 301 Redirects for consolidated services (ensure canonical URLs with trailing slashes)
+  Redirect 301 /services/robotic-surgery /services/robotic-joint-replacement/
+  Redirect 301 /services/sports-injury-treatment /services/sports-injury-arthroscopy/
+  Redirect 301 /services/arthroscopic-surgery /services/sports-injury-arthroscopy/
+  Redirect 301 /sitemap /sitemap/
+
+  # Exclude _next static assets, images, icons, and real files/folders from catch-all rewrite
+  RewriteCond %{REQUEST_URI} !^/_next/
+  RewriteCond %{REQUEST_URI} !^/images/
+  RewriteCond %{REQUEST_URI} !^/icons/
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.html [L]
 </IfModule>
 
+# Enable Brotli Compression
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml application/rss+xml image/svg+xml font/opentype font/otf font/ttf image/x-icon application/vnd.ms-fontobject application/x-font-ttf
+</IfModule>
 
-# =====================================
-# GZIP COMPRESSION (SAFE)
-# =====================================
+# Enable GZIP compression
 <IfModule mod_deflate.c>
-
-  AddOutputFilterByType DEFLATE text/plain
-  AddOutputFilterByType DEFLATE text/html
-  AddOutputFilterByType DEFLATE text/xml
-  AddOutputFilterByType DEFLATE text/css
-  AddOutputFilterByType DEFLATE application/xml
-  AddOutputFilterByType DEFLATE application/xhtml+xml
-  AddOutputFilterByType DEFLATE application/rss+xml
+  # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
-  AddOutputFilterByType DEFLATE application/x-javascript
   AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+  AddOutputFilterByType DEFLATE application/x-font
+  AddOutputFilterByType DEFLATE application/x-font-opentype
+  AddOutputFilterByType DEFLATE application/x-font-otf
+  AddOutputFilterByType DEFLATE application/x-font-truetype
+  AddOutputFilterByType DEFLATE application/x-font-ttf
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE font/opentype
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/ttf
   AddOutputFilterByType DEFLATE image/svg+xml
-  AddOutputFilterByType DEFLATE text/csv
+  AddOutputFilterByType DEFLATE image/x-icon
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/javascript
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
 
-  # Exclude already compressed files
-  SetEnvIfNoCase Request_URI \
-  \.(gif|jpe?g|png|zip|gz|bz2|7z|pdf|doc|docx|xls|xlsx|ppt|pptx|swf)$ no-gzip dont-vary
-
+  # Remove browser bugs
+  BrowserMatch ^Mozilla/4 gzip-only-text/html
+  BrowserMatch ^Mozilla/4\.0[678] no-gzip
+  BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+  Header append Vary User-Agent
 </IfModule>
 
-
-# =====================================
-# HEADERS (SAFE)
-# =====================================
-<IfModule mod_headers.c>
-  Header append Vary Accept-Encoding
-</IfModule>
-
-
-# =====================================
-# EXPIRES CACHE
-# =====================================
+# Cache static assets
 <IfModule mod_expires.c>
-    ExpiresActive On
+  ExpiresActive on
+  ExpiresDefault "access plus 1 month"
 
-    ExpiresByType image/jpg "access plus 1 month"
-    ExpiresByType image/jpeg "access plus 1 month"
-    ExpiresByType image/png "access plus 1 month"
-    ExpiresByType image/gif "access plus 1 month"
-    ExpiresByType image/webp "access plus 1 month"
-    ExpiresByType image/svg+xml "access plus 1 month"
+  # HTML & Data - No cache to ensure fresh content
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/cache-manifest "access plus 0 seconds"
+  ExpiresByType text/xml "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
 
-    ExpiresByType text/css "access plus 1 month"
-    ExpiresByType application/javascript "access plus 1 month"
-    ExpiresByType text/javascript "access plus 1 month"
+  # Assets with hashes (CSS, JS) - Cache for 1 year
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+
+  # Images - Cache for 1 year
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+
+  # Fonts - Cache for 1 year
+  ExpiresByType application/x-font-ttf "access plus 1 year"
+  ExpiresByType font/opentype "access plus 1 year"
+  ExpiresByType application/x-font-woff "access plus 1 year"
+  ExpiresByType application/x-font-woff2 "access plus 1 year"
+  ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+
+  <IfModule mod_headers.c>
+    Header append Cache-Control "public"
+  </IfModule>
 </IfModule>
 
+# FileETag None removes ETags entirely
+FileETag None
 
-# =====================================
-# HSTS (ONLY IF SSL IS ACTIVE)
-# =====================================
+# Set security headers
 <IfModule mod_headers.c>
-  Header always set Strict-Transport-Security "max-age=31536000"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "DENY"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# Optimize static file delivery
+<IfModule mod_headers.c>
+  # Set CORS headers for web fonts
+  <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+  
+  # Set proper content types for web fonts
+  AddType application/font-woff2 .woff2
+  AddType application/font-woff .woff
+  AddType application/vnd.ms-fontobject .eot
+  AddType font/truetype .ttf
+  AddType image/svg+xml .svg
 </IfModule>

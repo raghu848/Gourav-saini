@@ -129,7 +129,7 @@ export default function FractureTraumaCarePage() {
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-6">
                   <p>
-                    Orthopedic trauma involves severe injuries to the musculoskeletal system, including bones, joints, ligaments, and tendons. These injuries often occur suddenly and require immediate, highly specialized intervention to prevent long-term disability. Dr. Gaurav Saini is a recognized expert in managing **Complex Fractures** and **Polytrauma**, utilizing state-of-the-art internal and external fixation techniques.
+                    If you are facing an emergency and need a reliable **fracture doctor near me**, Dr. Gaurav Saini is a highly skilled **bone fracture specialist** who treats simple and complex fractures. Orthopedic trauma involves severe injuries to the musculoskeletal system, including bones, joints, ligaments, and tendons, requiring immediate intervention to prevent long-term disability.
                   </p>
                   <p>
                     Our approach to trauma is multi-disciplinary. We focus on not just "fixing the bone," but restoring the patient's entire quality of life. This includes advanced pain management, soft-tissue reconstruction, and a highly coordinated rehabilitation program. We are equipped to handle high-velocity impact injuries, pelvic fractures, and complex articular (joint) breaks that require sub-millimeter precision for successful outcomes.

@@ -115,10 +115,10 @@ export default function RoboticJointReplacementPage() {
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-6">
                   <p>
-                    Traditional joint replacement surgery relies on the surgeon's visual estimation and manual tools. While effective, there is always a margin for human error. **Robotic-Assisted Surgery with the CORI system** removes that margin, offering a level of precision that was previously impossible.
+                    Traditional joint replacement surgery relies on the surgeon's visual estimation and manual tools. While effective, there is always a margin for human error. State-of-the-art **robotic knee replacement** with the CORI system removes that margin, offering a level of precision that was previously impossible.
                   </p>
                   <p>
-                    Using advanced sensors and software, the CORI system creates a real-time, digital 3D model of your joint during the surgery. This allows Dr. Gaurav Saini to map your unique anatomy and plan the exact placement of the implant before a single cut is made. The result? An implant that fits perfectly, feels natural, and lasts significantly longer.
+                    Using advanced sensors and software, the CORI system creates a real-time, digital 3D model of your joint during **robotic knee surgery**. This allows Dr. Gaurav Saini to map your unique anatomy and plan the exact placement of the implant before a single cut is made. The result? An implant that fits perfectly, feels natural, and lasts significantly longer.
                   </p>
                   <h3 className="text-2xl font-bold text-gray-900 mt-8 mb-4">When Should You Consider Surgery?</h3>
                   <p>

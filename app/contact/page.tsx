@@ -38,7 +38,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-            Ready to start your journey to better health? Get in touch with Dr. Gaurav Saini and his team
+            Looking for a top-rated **orthopaedic surgeon near me**? Get in touch with Dr. Gaurav Saini and his team today to start your journey to better joint health.
           </p>
         </div>
 

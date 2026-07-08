@@ -38,7 +38,8 @@ export default function RootLayout({
 }>) {
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || '';
   const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
-  const GOOGLE_SEARCH_CONSOLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION || '';
+  const GOOGLE_SEARCH_CONSOLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION || process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '';
+  const BING_SITE_VERIFICATION = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '';
   
   return (
     <html lang="en">
@@ -49,6 +50,13 @@ export default function RootLayout({
           <meta 
             name="google-site-verification" 
             content={GOOGLE_SEARCH_CONSOLE_VERIFICATION} 
+          />
+        )}
+        
+        {BING_SITE_VERIFICATION && (
+          <meta 
+            name="msvalidate.01" 
+            content={BING_SITE_VERIFICATION} 
           />
         )}
         
@@ -75,6 +83,21 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="192x192" href="/icons/favicon-192.png" />
         
         {/* Canonical URL will be handled by Next.js metadata */}
+        
+        {/* Global Error Handler for Chunk Loading Errors */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('error', function(e) {
+                var message = e.message || '';
+                if (message.indexOf('ChunkLoadError') !== -1 || message.indexOf('Loading chunk') !== -1) {
+                  console.warn('Chunk load error detected. Reloading page...');
+                  window.location.reload();
+                }
+              });
+            `
+          }}
+        />
         
         {/* Physician / LocalBusiness Schema */}
         <script

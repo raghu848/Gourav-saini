@@ -10,13 +10,16 @@
   RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
   RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
 
-  # 301 Redirects for consolidated services
+  # 301 Redirects for consolidated services (ensure canonical URLs with trailing slashes)
   Redirect 301 /services/robotic-surgery /services/robotic-joint-replacement/
   Redirect 301 /services/sports-injury-treatment /services/sports-injury-arthroscopy/
   Redirect 301 /services/arthroscopic-surgery /services/sports-injury-arthroscopy/
   Redirect 301 /sitemap /sitemap/
 
-  # Redirect all requests to index.html except for real files/folders
+  # Exclude _next static assets, images, icons, and real files/folders from catch-all rewrite
+  RewriteCond %{REQUEST_URI} !^/_next/
+  RewriteCond %{REQUEST_URI} !^/images/
+  RewriteCond %{REQUEST_URI} !^/icons/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]

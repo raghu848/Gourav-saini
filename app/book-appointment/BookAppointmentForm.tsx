@@ -95,7 +95,7 @@ export default function BookAppointmentForm() {
         {/* Header */}
         <div className="text-center mb-16 mt-8">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
-            Book Your Appointment
+            Book Orthopedic Appointment
           </h1>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
             Schedule a consultation with Dr. Gaurav Saini - Expert in Orthopedics & Robotic Surgery

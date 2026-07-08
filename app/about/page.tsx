@@ -177,10 +177,10 @@ export default function AboutPage() {
             Meet the Doctor - Dr. Gaurav Saini
           </h1>
           <p className="text-2xl text-blue-600 font-semibold mb-4">
-            MBBS, MS, DNB, MNAMS - Expert Orthopaedic Surgeon in Mohali
+            MBBS, MS, DNB, MNAMS - Expert orthopaedic surgeon in Mohali
           </p>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            A pioneer in robotic-assisted joint replacement, Dr. Gaurav Saini brings nearly 20 years of clinical expertise and a commitment to precision-based orthopedic care to patients across Northern India.
+            Recognized as the **best orthopedic doctor in mohali**, Dr. Gaurav Saini is a pioneer in robotic-assisted joint replacement, bringing nearly 20 years of clinical expertise and a commitment to precision-based orthopedic care to patients across Northern India.
           </p>
         </header>
         
@@ -230,7 +230,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
                 <p>
-                  Dr. Gaurav Saini is not just a surgeon; he is a specialist dedicated to the art and science of joint restoration. With a career spanning two decades, he has witnessed and led the transition from traditional orthopedic methods to the precision of **Robotic-Assisted Surgery**.
+                  Dr. Gaurav Saini is a leading **orthopaedic surgeon** dedicated to the art and science of joint restoration. With a career spanning two decades, he has witnessed and led the transition from traditional orthopedic methods to the precision of **Robotic-Assisted Surgery**.
                 </p>
                 <p>
                   His clinical journey has been defined by a relentless pursuit of excellence. Having performed over **5,000 successful procedures**, Dr. Saini specializes in complex primary and revision joint replacements, advanced trauma management, and sports medicine. He is recognized for his skill in using the **CORI robotic system**, which allows for 3D mapping and sub-millimeter accuracy in knee replacements.

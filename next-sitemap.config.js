@@ -4,46 +4,81 @@ module.exports = {
   generateRobotsTxt: true,
   // Add trailing slashes to all URLs
   trailingSlash: true,
+  // Generate a single sitemap.xml instead of a sitemap index + sitemap-0.xml
+  generateIndexSitemap: false,
   // Exclude specific paths
   exclude: [
     '/admin/*',
     '/api/*',
     '/_next/*',
     '/static/*',
+    '/404/',
+    '/search/', // exclude search from crawl indexing
   ],
-  // Define routes to include in sitemap
-  additionalPaths: async (config) => [
+  // Customize page priorities and frequencies
+  transform: async (config, path) => {
+    // Normalize path by removing trailing slash for easy matching
+    const normPath = path === '/' ? '/' : path.replace(/\/$/, '');
+    
+    let priority = 0.7;
+    let changefreq = 'monthly';
+
     // Homepage
-    { loc: '/', changefreq: 'weekly', priority: 1.0, lastmod: new Date().toISOString() },
-    
-    // Main pages
-    { loc: '/about/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/', changefreq: 'weekly', priority: 0.9, lastmod: new Date().toISOString() },
-    { loc: '/testimonials/', changefreq: 'monthly', priority: 0.7, lastmod: new Date().toISOString() },
-    { loc: '/blog/', changefreq: 'weekly', priority: 0.7, lastmod: new Date().toISOString() },
-    { loc: '/contact/', changefreq: 'yearly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/book-appointment/', changefreq: 'yearly', priority: 0.9, lastmod: new Date().toISOString() },
-    { loc: '/faqs/', changefreq: 'monthly', priority: 0.6, lastmod: new Date().toISOString() },
-    { loc: '/search/', changefreq: 'yearly', priority: 0.5, lastmod: new Date().toISOString() },
-    
-    // Service pages
-    { loc: '/services/knee-replacement-surgery/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/hip-replacement-surgery/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/robotic-surgery/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/sports-injury-treatment/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/fracture-trauma-care/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/spine-surgery/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/arthroscopic-surgery/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/joint-replacement-center/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/robotic-joint-replacement/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-    { loc: '/services/sports-injury-arthroscopy/', changefreq: 'monthly', priority: 0.8, lastmod: new Date().toISOString() },
-  ],
+    if (normPath === '/') {
+      priority = 1.0;
+      changefreq = 'weekly';
+    } 
+    // Contact & Booking (High conversion value)
+    else if (normPath === '/book-appointment' || normPath === '/contact') {
+      priority = 0.9;
+      changefreq = 'monthly';
+    } 
+    // Main landing pages
+    else if (normPath === '/services' || normPath === '/about') {
+      priority = 0.9;
+      changefreq = 'weekly';
+    } 
+    // Blog listing and FAQs
+    else if (normPath === '/blog' || normPath === '/faqs' || normPath === '/testimonials') {
+      priority = 0.8;
+      changefreq = 'weekly';
+    } 
+    // Treatment / Service details
+    else if (normPath.startsWith('/services/')) {
+      priority = 0.8;
+      changefreq = 'monthly';
+    }
+    // Blog articles
+    else if (normPath.startsWith('/blog/')) {
+      priority = 0.7;
+      changefreq = 'monthly';
+    } 
+    // Utility pages
+    else if (normPath === '/privacy' || normPath === '/terms' || normPath === '/sitemap') {
+      priority = 0.4;
+      changefreq = 'yearly';
+    }
+
+    return {
+      loc: path,
+      changefreq: changefreq,
+      priority: priority,
+      lastmod: config.autoLastmod ? new Date().toISOString() : undefined,
+      alternateRefs: config.alternateRefs ?? [],
+    };
+  },
   // robots.txt options
   robotsTxtOptions: {
     policies: [
       {
         userAgent: '*',
         allow: '/',
+        disallow: [
+          '/api/',
+          '/admin/',
+          '/_next/',
+          '/search/',
+        ],
       },
     ],
     additionalSitemaps: [

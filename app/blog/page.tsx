@@ -74,10 +74,10 @@ export default function BlogPage() {
         {/* Header */}
         <div className="text-center mb-16 mt-8">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
-            Health & Wellness Blog
+            Orthopedic Health Blog
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-            Expert insights, tips, and advice on orthopedic health, knee care, and maintaining an active lifestyle
+            Welcome to our official **orthopedic health blog**, offering expert insights, tips, and advice on joint care, knee treatments, and maintaining an active lifestyle.
           </p>
         </div>
 

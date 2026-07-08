@@ -195,7 +195,7 @@ export default function TestimonialsPage() {
             Patient Testimonials
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
-            Real stories from real patients who have experienced life-changing results with Dr. Gaurav Saini
+            Read our verified **orthopaedic surgeon patient reviews** and real recovery stories from patients who have experienced life-changing results with Dr. Gaurav Saini.
           </p>
         </div>
 

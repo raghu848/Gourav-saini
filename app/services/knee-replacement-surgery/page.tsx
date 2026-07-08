@@ -127,10 +127,10 @@ export default function KneeReplacementSurgeryPage() {
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-6">
                   <p>
-                    Knee replacement surgery, also known as knee arthroplasty, is one of the most successful procedures in modern medicine. At our clinic, Dr. Gaurav Saini utilizes the latest **robotic-assisted CORI technology** to perform both Total Knee Replacements (TKR) and Unicompartmental (Partial) Knee Replacements.
+                    If you are searching for a trusted **orthopedic surgeon knee specialist**, Dr. Gaurav Saini is widely recognized as the **best knee replacement surgeon in chandigarh** and the surrounding areas. At our clinic, we perform advanced **robotic knee replacement** utilizing the latest CORI technology.
                   </p>
                   <p>
-                    Unlike conventional surgery, our approach involves a sub-millimeter level of precision. By creating a real-time 3D map of your knee joint, we can ensure that the prosthetic implant is aligned perfectly with your natural bone structure. This reduces wear and tear on the new joint and provides a more "natural" feel during movement.
+                    Unlike conventional surgery, our approach to **robotic knee surgery** involves a sub-millimeter level of precision. By creating a real-time 3D map of your knee joint, we can ensure that the prosthetic implant is aligned perfectly with your natural bone structure. This reduces wear and tear on the new joint and provides a more "natural" feel during movement.
                   </p>
                   
                   <h3 className="text-2xl font-bold text-gray-900 mt-10 mb-6 font-serif">Knee Conditions We Address</h3>
