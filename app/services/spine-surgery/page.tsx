@@ -102,7 +102,7 @@ export default function SpineSurgeryPage() {
           <header className="relative h-[450px] flex items-center justify-center text-white text-center overflow-hidden">
              <div className="absolute inset-0 bg-blue-950/85 z-10"></div>
              <Image 
-                src="/images/dr images/TRAUMA.jpg" 
+                src="/images/dr images/TRAUMA.webp" 
                 alt="Advanced Spine Surgery" 
                 fill
                 className="object-cover"
@@ -182,6 +182,9 @@ export default function SpineSurgeryPage() {
                         <span className="font-bold text-indigo-700 text-lg">40% Faster</span>
                       </div>
                    </div>
+                   <p className="mt-4 text-[10px] text-gray-400 leading-normal text-left">
+                     * Note: Success rates and outcomes reflect general clinical statistics and database averages; individual results may vary depending on patient health conditions.
+                   </p>
                 </div>
               </aside>
             </div>

@@ -184,6 +184,9 @@ export default function KneeReplacementSurgeryPage() {
                         <span className="font-bold text-blue-700">25+ Yrs</span>
                       </div>
                    </div>
+                   <p className="mt-4 text-[10px] text-gray-400 leading-normal text-left">
+                     * Note: Success rates, satisfaction levels, and outcomes reflect general clinical statistics and database averages; individual results may vary depending on patient health conditions.
+                   </p>
                 </div>
               </aside>
             </div>

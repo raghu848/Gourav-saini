@@ -10,7 +10,7 @@ const DoctorImagesSection = () => {
     {
       id: 1,
       url: '/images/dr images/IMG-20250908-WA0010.webp',
-      alt: 'Medical Procedure 1',
+      alt: 'Dr. Gaurav Saini conducting advanced joint replacement surgery consultation in Mohali',
       title: 'Advanced Joint Replacement',
       width: 1200,
       height: 800
@@ -18,7 +18,7 @@ const DoctorImagesSection = () => {
     {
       id: 2,
       url: '/images/dr images/IMG-20250908-WA0022.webp',
-      alt: 'Medical Procedure 2',
+      alt: 'Dr. Gaurav Saini performing robotic-assisted knee replacement surgery using CORI technology',
       title: 'Precision Orthopedic Care',
       width: 1200,
       height: 800
@@ -26,7 +26,7 @@ const DoctorImagesSection = () => {
     {
       id: 3,
       url: '/images/dr images/IMG-20250908-WA0025.webp',
-      alt: 'Medical Procedure 3',
+      alt: 'CORI robotic knee replacement navigation screen showing real-time 3D joint mapping',
       title: 'Robotic Knee Replacement',
       width: 1200,
       height: 800
@@ -34,7 +34,7 @@ const DoctorImagesSection = () => {
     {
       id: 4,
       url: '/images/dr images/IMG-20250908-WA0028.webp',
-      alt: 'Medical Procedure 4',
+      alt: 'Minimally invasive keyhole arthroscopic knee surgery instrument setup',
       title: 'Minimally Invasive Surgery',
       width: 1200,
       height: 800
@@ -42,7 +42,7 @@ const DoctorImagesSection = () => {
     {
       id: 5,
       url: '/images/dr images/IMG-20250908-WA0029.webp',
-      alt: 'Medical Procedure 5',
+      alt: 'Dr. Gaurav Saini presenting clinical research on knee arthroplasty outcomes',
       title: 'Orthopedic Excellence',
       width: 1200,
       height: 800
@@ -50,7 +50,7 @@ const DoctorImagesSection = () => {
     {
       id: 6,
       url: '/images/dr images/patient-1 (3).webp',
-      alt: 'Medical Procedure 6',
+      alt: 'Successful postoperative recovery patient walking after robotic knee replacement',
       title: 'Patient Recovery',
       width: 1200,
       height: 800
@@ -58,7 +58,7 @@ const DoctorImagesSection = () => {
     {
       id: 7,
       url: '/images/dr images/patient-1 (13).webp',
-      alt: 'Medical Procedure 7',
+      alt: 'Physiotherapist assisting patient with exercises after orthopedic hip replacement surgery',
       title: 'Advanced Treatment',
       width: 1200,
       height: 800
@@ -66,7 +66,7 @@ const DoctorImagesSection = () => {
     {
       id: 8,
       url: '/images/dr images/patient-1 (17).webp',
-      alt: 'Medical Procedure 8',
+      alt: 'Dr. Gaurav Saini analyzing patient X-ray during orthopaedic trauma care consultation',
       title: 'Surgical Precision',
       width: 1200,
       height: 800

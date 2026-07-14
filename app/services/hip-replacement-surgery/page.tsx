@@ -187,6 +187,9 @@ export default function HipReplacementSurgeryPage() {
                         <div className="text-[10px] uppercase font-bold text-gray-500 tracking-wider">Avg Discharge</div>
                       </div>
                    </div>
+                   <p className="mt-4 text-[10px] text-gray-400 leading-normal text-left">
+                     * Note: Success rates, satisfaction levels, and outcomes reflect general clinical statistics and database averages; individual results may vary depending on patient health conditions.
+                   </p>
                 </div>
               </aside>
             </div>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { 
   MapPin, 
@@ -18,6 +19,7 @@ interface ContactFormData {
   phone: string
   subject: string
   message: string
+  consent: boolean
 }
 
 export default function ContactForm() {
@@ -198,6 +200,26 @@ export default function ContactForm() {
             {errors.message && (
               <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
             )}
+          </div>
+
+          {/* Privacy Consent Checkbox */}
+          <div className="flex items-start bg-gray-50 p-4 rounded-xl border border-gray-100">
+            <div className="flex items-center h-5 mt-0.5">
+              <input
+                id="consent"
+                type="checkbox"
+                {...register('consent', { required: 'You must agree to the privacy policy to proceed.' })}
+                className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
+              />
+            </div>
+            <div className="ml-3 text-sm">
+              <label htmlFor="consent" className="font-semibold text-gray-700 cursor-pointer select-none">
+                I consent to the collection of my personal contact details for communication purposes in accordance with the <Link href="/privacy/" className="text-blue-600 hover:text-blue-800 underline">Privacy Policy</Link>. *
+              </label>
+              {errors.consent && (
+                <p className="mt-1 text-xs text-red-600 font-medium">{errors.consent.message}</p>
+              )}
+            </div>
           </div>
 
           {/* Submit Button */}

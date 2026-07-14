@@ -461,9 +461,9 @@ export const servicesMetadata = {
   },
   'hip-replacement-surgery': {
     title: 'Hip Replacement Surgery in Mohali & Chandigarh | Dr. Gaurav Saini',
-    description: 'Get trusted care with Dr. Gaurav Saini, the best knee replacement surgeon in Chandigarh. Advanced joint replacement & orthopedic care. Book today.',
+    description: 'Advanced total hip replacement surgery by Dr. Gaurav Saini, leading orthopedic surgeon in Mohali & Chandigarh. Expert in minimally invasive hip reconstruction and pain relief.',
     keywords: [
-      'best knee replacement surgeon in chandigarh',
+      'best hip replacement surgeon in chandigarh',
       'joint replacement hospital near me',
       'hip replacement surgery mohali',
       'best hip replacement surgeon',

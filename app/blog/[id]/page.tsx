@@ -8,6 +8,21 @@ import PageAnimationWrapper from '../../../components/PageAnimationWrapper'
 import { notFound } from 'next/navigation'
 import { blogPosts, BlogPost } from '../blog-data'
 
+const postReferences: Record<string, { title: string, url: string }[]> = {
+  'knee-replacement-signs': [
+    { title: 'Knee Replacement Surgery - American Academy of Orthopaedic Surgeons (AAOS) OrthoInfo', url: 'https://orthoinfo.aaos.org/en/treatment/total-knee-replacement/' },
+    { title: 'Total Knee Arthroplasty Clinical Guidelines - Journal of Bone and Joint Surgery (JBJS)', url: 'https://jbjs.org/' }
+  ],
+  'knee-exercises': [
+    { title: 'Therapeutic Exercise for Knee Osteoarthritis - National Institutes of Health (NIH)', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5074793/' },
+    { title: 'Knee Exercises for Joint Pain Relief - Arthritis Foundation', url: 'https://www.arthritis.org/' }
+  ],
+  'surgery-preparation': [
+    { title: 'Preparing for Joint Replacement Surgery - AAOS OrthoInfo', url: 'https://orthoinfo.aaos.org/en/treatment/preparing-for-joint-replacement-surgery/' },
+    { title: 'Pre-operative Evaluation for Joint Replacement - PubMed Central', url: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7386214/' }
+  ]
+};
+
 // Define the blog post type
 // Function to get blog post data by ID
 function getBlogPost(id: string): BlogPost | undefined {
@@ -176,9 +191,63 @@ export default async function BlogPostPage({ params }: { params: Promise<{ id: s
 
             {/* Content */}
             <div 
-              className="prose max-w-none text-gray-700"
+              className="prose max-w-none text-gray-700 mb-12"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
+
+            {/* References Section */}
+            {(() => {
+              const refs = postReferences[post.id] || [
+                { title: 'Orthopaedic Information & Patient Resources - American Academy of Orthopaedic Surgeons (AAOS)', url: 'https://orthoinfo.aaos.org/' }
+              ];
+              return (
+                <div className="mt-12 pt-8 border-t border-gray-100">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 font-serif">Medical References & Evidence</h3>
+                  <ul className="space-y-2 text-sm text-gray-600 list-disc list-inside">
+                    {refs.map((ref, idx) => (
+                      <li key={idx}>
+                        <a href={ref.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">
+                          {ref.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })()}
+
+            {/* Author Profile Bio Card */}
+            <div className="mt-12 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center sm:items-start gap-6 bg-blue-50/50 p-6 rounded-2xl border border-blue-50">
+              <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-blue-200 bg-white shadow-sm flex-shrink-0">
+                <Image
+                  src="/images/dr-saini-logo.webp"
+                  alt="Dr. Gaurav Saini"
+                  fill
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="flex-1 text-center sm:text-left">
+                <h4 className="text-lg font-bold text-gray-900 mb-1">
+                  Written & Reviewed by: Dr. Gaurav Saini
+                </h4>
+                <p className="text-sm font-semibold text-blue-700 mb-3">
+                  MBBS, MS (Ortho), DNB (Ortho), MNAMS | Fellowship in Joint Replacement
+                </p>
+                <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  Dr. Gaurav Saini is a leading Senior Consultant Orthopaedic & Robotic Joint Replacement Surgeon with nearly 20 years of expertise and over 5,000 successful surgeries. He practices at Max Super Speciality Hospital, Mohali, specializing in advanced CORI robotic-assisted knee and hip replacement surgery, sports arthroscopy, and complex trauma care.
+                </p>
+                <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-xs font-semibold text-gray-500">
+                  <span>Practice: Max Hospital, Mohali</span>
+                  <span>•</span>
+                  <span>Specialty: Orthopaedic & Robotic Surgery</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Medical Disclaimer */}
+            <div className="mt-8 p-4 bg-yellow-50/60 rounded-xl border border-yellow-100 text-xs text-yellow-800 leading-relaxed text-left">
+              <strong>Disclaimer:</strong> The medical information on this website is provided as an information resource only, and is not to be used or relied on for any diagnostic or treatment purposes. This information is not intended to be patient education, does not create any patient-physician relationship, and should not be used as a substitute for professional diagnosis and treatment. Please consult your health care provider before making any healthcare decisions.
+            </div>
           </div>
         </article>
 

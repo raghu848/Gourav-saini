@@ -29,6 +29,7 @@ export default function BookAppointmentForm() {
     email: '',
     message: ''
   })
+  const [consent, setConsent] = useState(false)
   const [dates, setDates] = useState<{date: string, display: string}[]>([]) // Store generated dates
   const [isClient, setIsClient] = useState(false) // Track if we're on client
 
@@ -257,12 +258,30 @@ export default function BookAppointmentForm() {
               />
             </div>
 
+            {/* Privacy Consent Checkbox */}
+            <div className="flex items-start bg-gray-50 p-4 rounded-xl border border-gray-100 mb-6">
+              <div className="flex items-center h-5 mt-0.5">
+                <input
+                  id="consent"
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="h-4 w-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
+                />
+              </div>
+              <div className="ml-3 text-sm text-left">
+                <label htmlFor="consent" className="font-semibold text-gray-700 cursor-pointer select-none">
+                  I consent to the collection of my personal contact details for appointment booking purposes in accordance with the <a href="/privacy/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 underline">Privacy Policy</a>. *
+                </label>
+              </div>
+            </div>
+
             {/* Submit Button */}
             <div className="text-center">
               <button
                 key="appointment-submit"
                 type="submit"
-                disabled={!selectedDate || !selectedTime || !selectedService || !formData.name || !formData.phone}
+                disabled={!selectedDate || !selectedTime || !selectedService || !formData.name || !formData.phone || !consent}
                 className="inline-flex items-center px-8 py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors duration-200"
               >
                 <CheckCircle className="w-5 h-5 mr-2" />

@@ -10,6 +10,9 @@ import {
 export const metadata: Metadata = {
   title: 'Frequently Asked Questions - Dr. Gaurav Saini | Orthopedic Surgeon',
   description: 'Find answers to common questions about robotic knee replacement, hip surgery, sports injuries, and recovery from Dr. Gaurav Saini.',
+  alternates: {
+    canonical: 'https://drgauravsainiortho.com/faqs/'
+  }
 };
 
 export default function FAQPage() {
@@ -44,8 +47,27 @@ export default function FAQPage() {
     }
   ];
 
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 pt-24 lg:pt-32 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqStructuredData)
+        }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="mb-8 text-sm">
           <Link href="/" className="text-blue-600 hover:underline">Home</Link> &gt; 

@@ -102,7 +102,7 @@ export default function FractureTraumaCarePage() {
           <header className="relative h-[450px] flex items-center justify-center text-white text-center overflow-hidden">
              <div className="absolute inset-0 bg-red-950/80 z-10"></div>
              <Image 
-                src="/images/dr images/TRAUMA.jpg" 
+                src="/images/dr images/TRAUMA.webp" 
                 alt="Emergency Fracture and Trauma Care" 
                 fill
                 className="object-cover"
@@ -182,6 +182,9 @@ export default function FractureTraumaCarePage() {
                         <span className="font-bold text-red-700 text-lg">24/7/365</span>
                       </div>
                    </div>
+                   <p className="mt-4 text-[10px] text-gray-400 leading-normal text-left">
+                     * Note: Success rates and emergency response windows represent average clinical benchmarks and general statistics. Individual patient outcomes may vary based on clinical factors.
+                   </p>
                 </div>
               </aside>
             </div>

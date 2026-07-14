@@ -4,6 +4,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Privacy Policy - Dr. Gaurav Saini | Orthopedic Surgeon',
   description: 'Privacy Policy for Dr. Gaurav Saini\'s orthopedic clinic. Learn how we protect your medical records and personal information.',
+  alternates: {
+    canonical: 'https://drgauravsainiortho.com/privacy/'
+  }
 };
 
 export default function PrivacyPolicy() {

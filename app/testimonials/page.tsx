@@ -13,7 +13,7 @@ export default function TestimonialsPage() {
   const recoveryPhotos = [
     {
       id: 1,
-      image: '/images/testimonials/IMG-20250908-WA0010.jpg',
+      image: '/images/testimonials/IMG-20250908-WA0010.webp',
       patientName: 'Simran Kaur',
       age: 52,
       procedure: 'Total Knee Replacement (CORI Robotic)',
@@ -25,7 +25,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 2,
-      image: '/images/testimonials/IMG-20250908-WA0022.jpg', 
+      image: '/images/testimonials/IMG-20250908-WA0022.webp', 
       patientName: 'Manjit Kaur',
       age: 48,
       procedure: 'Hip Replacement Surgery',
@@ -37,7 +37,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 3,
-      image: '/images/testimonials/IMG-20250908-WA0025.jpg',
+      image: '/images/testimonials/IMG-20250908-WA0025.webp',
       patientName: 'Nimrat kaur', 
       age: 45,
       procedure: 'ACL Reconstruction',
@@ -49,7 +49,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 4,
-      image: '/images/testimonials/IMG-20250908-WA0028.jpg',
+      image: '/images/testimonials/IMG-20250908-WA0028.webp',
       patientName: 'Surjeet singh',
       age: 38,
       procedure: 'Shoulder Arthroscopy',
@@ -61,7 +61,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 5,
-      image: '/images/testimonials/IMG-20250908-WA0029.jpg',
+      image: '/images/testimonials/IMG-20250908-WA0029.webp',
       patientName: 'Jasbir Singh',
       age: 55,
       procedure: 'Complex Fracture Treatment',
@@ -73,7 +73,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 6,
-      image: '/images/testimonials/patient-1 (3).jpg',
+      image: '/images/testimonials/patient-1 (3).webp',
       patientName: 'Rahul Verma',
       age: 42,
       procedure: 'Robotic Hip Replacement',
@@ -85,7 +85,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 7,
-      image: '/images/testimonials/patient-1 (13).jpg',
+      image: '/images/testimonials/patient-1 (13).webp',
       patientName: 'Priya Sharma',
       age: 35,
       procedure: 'Knee Arthroscopy',
@@ -97,7 +97,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 8,
-      image: '/images/testimonials/patient-1 (17).jpg',
+      image: '/images/testimonials/patient-1 (17).webp',
       patientName: 'Kiran devi',
       age: 58,
       procedure: 'Shoulder Replacement',
@@ -109,7 +109,7 @@ export default function TestimonialsPage() {
     },
     {
       id: 9,
-      image: '/images/testimonials/patient-1 (26).jpg',
+      image: '/images/testimonials/patient-1 (26).webp',
       patientName: 'Kavita Singh',
       age: 47,
       procedure: 'Spinal Fusion Surgery',
@@ -372,8 +372,8 @@ export default function TestimonialsPage() {
               <div className="flex items-start space-x-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                   <Image
-                    src="/images/testimonials/patient-1 (3).jpg"
-                    alt="Patient Review"
+                    src="/images/testimonials/patient-1 (3).webp"
+                    alt="Successful total knee replacement surgery patient Simran post recovery"
                     width={40}
                     height={40}
                     style={{ objectFit: 'cover' }}
@@ -400,8 +400,8 @@ export default function TestimonialsPage() {
               <div className="flex items-start space-x-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                   <Image
-                    src="/images/testimonials/patient-1 (13).jpg"
-                    alt="Recovery Story"
+                    src="/images/testimonials/patient-1 (13).webp"
+                    alt="Dr. Gaurav Saini patient Priya Sharma after sports injury knee arthroscopy in Mohali"
                     width={40}
                     height={40}
                     style={{ objectFit: 'cover' }}
@@ -423,13 +423,13 @@ export default function TestimonialsPage() {
                 </div>
               </div>
             </div>
-
+ 
             <div className="border-b pb-6">
               <div className="flex items-start space-x-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                   <Image
-                    src="/images/testimonials/patient-1 (17).jpg"
-                    alt="Successful Treatment"
+                    src="/images/testimonials/patient-1 (17).webp"
+                    alt="Dr. Gaurav Saini patient Kiran Devi celebrating recovery from shoulder replacement surgery"
                     width={40}
                     height={40}
                     style={{ objectFit: 'cover' }}
@@ -451,13 +451,13 @@ export default function TestimonialsPage() {
                 </div>
               </div>
             </div>
-
+ 
             <div className="border-b pb-6">
               <div className="flex items-start space-x-3">
                 <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-blue-400">
                   <Image
-                    src="/images/testimonials/patient-1 (26).jpg"
-                    alt="Patient Experience"
+                    src="/images/testimonials/patient-1 (26).webp"
+                    alt="Dr. Gaurav Saini patient Kavita Singh standing after spinal fusion surgery in Chandigarh"
                     width={40}
                     height={40}
                     style={{ objectFit: 'cover' }}

@@ -1,6 +1,11 @@
+import { Metadata } from 'next'
+import { contactMetadata } from '../metadata-improved'
 import ContactForm from '../../components/ContactForm'
 import { MapPin } from 'lucide-react'
 import PageAnimationWrapper from '@/components/PageAnimationWrapper'
+
+export const metadata: Metadata = contactMetadata
+
 
 export default function ContactPage() {
   return (

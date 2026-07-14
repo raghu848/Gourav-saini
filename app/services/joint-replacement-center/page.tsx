@@ -53,7 +53,7 @@ export default function JointReplacementCenterPage() {
           <header className="relative h-[450px] flex items-center justify-center text-white text-center overflow-hidden">
              <div className="absolute inset-0 bg-blue-900/80 z-10"></div>
              <Image 
-                src="/images/dr images/TRAUMA.jpg" 
+                src="/images/dr images/TRAUMA.webp" 
                 alt="Joint Replacement Center Excellence" 
                 fill
                 className="object-cover"
@@ -129,10 +129,13 @@ export default function JointReplacementCenterPage() {
                         <span className="font-bold text-blue-700 text-lg">4-6 Weeks</span>
                       </div>
                       <div className="flex justify-between items-center p-4 bg-gray-50 rounded-2xl">
-                        <span className="text-gray-600 font-medium">Patient Satisfaction</span>
-                        <span className="font-bold text-blue-700 text-lg">99%</span>
+                         <span className="text-gray-600 font-medium">Patient Satisfaction</span>
+                         <span className="font-bold text-blue-700 text-lg">99%</span>
                       </div>
                    </div>
+                   <p className="mt-4 text-[10px] text-gray-400 leading-normal text-left">
+                     * Note: Success rates and outcomes reflect general clinical statistics and database averages; individual results may vary depending on patient health conditions.
+                   </p>
                 </div>
               </aside>
             </div>

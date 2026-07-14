@@ -76,7 +76,6 @@ module.exports = {
         disallow: [
           '/api/',
           '/admin/',
-          '/_next/',
           '/search/',
         ],
       },

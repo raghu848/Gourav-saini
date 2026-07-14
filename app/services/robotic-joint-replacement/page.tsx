@@ -213,6 +213,9 @@ export default function RoboticJointReplacementPage() {
                       <div className="text-blue-200 text-sm uppercase font-bold tracking-widest mt-1">Infection Rate</div>
                     </div>
                   </div>
+                  <p className="mt-8 text-[10px] text-blue-200/70 leading-normal text-left">
+                    * Note: Surgical volume, satisfaction rates, and infection rates reflect cumulative outcomes across global studies and general clinical statistics; individual results may vary.
+                  </p>
                 </div>
                 <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/10">
                    <h3 className="text-xl font-bold mb-6">Our Patient Promise</h3>

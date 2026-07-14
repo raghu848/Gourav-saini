@@ -53,7 +53,7 @@ export default function ServicesContent() {
       description: 'Precision solutions for back pain, herniated discs, and spinal stenosis. We focus on minimally invasive spine surgery (MISS) for faster recovery and less tissue disruption.',
       icon: Settings,
       features: ['Microdiscectomy', 'Spinal Decompression', 'Minimally Invasive Fusion', 'Scoliosis Correction'],
-      image: '/images/dr images/TRAUMA.jpg',
+      image: '/images/dr images/TRAUMA.webp',
     },
   ]
 
@@ -122,19 +122,20 @@ export default function ServicesContent() {
         {/* Other Specialized Centers */}
         <section className="mt-20 py-12 border-t border-gray-100">
            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center font-serif">Specialized Care Centers</h2>
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
               {[
                 { id: 'joint-replacement-center', title: 'Joint Replacement Center' },
-                { id: 'robotic-surgery', title: 'Robotic Surgery Hub' },
-                { id: 'arthroscopic-surgery', title: 'Arthroscopy Unit' },
-                { id: 'sports-injury-treatment', title: 'Sports Medicine Unit' }
+                { id: 'robotic-joint-replacement', title: 'Robotic Surgery Hub' },
+                { id: 'sports-injury-arthroscopy', title: 'Arthroscopy & Sports' },
+                { id: 'fracture-trauma-care', title: 'Trauma & Fractures' },
+                { id: 'spine-surgery', title: 'Spine Care Unit' }
               ].map(center => (
-                <Link key={center.id} href={`/services/${center.id}/`} className="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-all text-center group">
+                <Link key={center.id} href={`/services/${center.id}/`} className="p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-blue-50 hover:border-blue-200 transition-all text-center flex flex-col justify-between group">
                    <h4 className="font-bold text-gray-800 group-hover:text-blue-700">{center.title}</h4>
-                   <span className="text-xs text-blue-600 font-bold mt-2 inline-block">Explore Center <ArrowRight className="w-3 h-3 inline ml-1" /></span>
+                   <span className="text-xs text-blue-600 font-bold mt-3 inline-block">Explore Center <ArrowRight className="w-3 h-3 inline ml-1" /></span>
                 </Link>
               ))}
-           </div>
+            </div>
         </section>
 
         {/* Commitment to Excellence Section */}

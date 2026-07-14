@@ -182,6 +182,9 @@ export default function SportsInjuryArthroscopyPage() {
                         <span className="font-bold text-green-700 text-lg">&lt; 5%</span>
                       </div>
                    </div>
+                   <p className="mt-4 text-[10px] text-gray-400 leading-normal text-left">
+                     * Note: Success rates and recovery windows represent average clinical benchmarks and general statistics. Individual patient outcomes may vary based on clinical factors.
+                   </p>
                 </div>
               </aside>
             </div>
