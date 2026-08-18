@@ -174,7 +174,7 @@ export default function AboutPage() {
         {/* Hero Section */}
         <header className="text-center mb-16 mt-8">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
-            Meet the Doctor - Dr. Gaurav Saini
+            Dr. Gaurav Saini - Best Orthopedic Doctor in Mohali
           </h1>
           <p className="text-2xl text-blue-600 font-semibold mb-4">
             MBBS, MS, DNB, MNAMS - Expert orthopaedic surgeon in Mohali

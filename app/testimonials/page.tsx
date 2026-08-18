@@ -192,7 +192,7 @@ export default function TestimonialsPage() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 font-serif mb-6">
-            Patient Testimonials
+            Orthopaedic Surgeon Patient Reviews & Recovery Stories
           </h1>
           <p className="text-2xl text-gray-600 max-w-4xl mx-auto">
             Read our verified **orthopaedic surgeon patient reviews** and real recovery stories from patients who have experienced life-changing results with Dr. Gaurav Saini.

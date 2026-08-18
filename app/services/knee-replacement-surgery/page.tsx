@@ -110,8 +110,8 @@ export default function KneeReplacementSurgeryPage() {
              />
              <div className="relative z-20 px-4">
                 <h1 className="text-4xl lg:text-6xl font-bold font-serif mb-6 leading-tight">
-                  Knee Replacement Surgery <br/>
-                  <span className="text-teal-400">Restore Your Active Lifestyle</span>
+                  Best Knee Replacement Surgeon in Chandigarh & Mohali <br/>
+                  <span className="text-teal-400">Advanced Robotic Knee Surgery</span>
                 </h1>
                 <p className="text-xl text-blue-100 max-w-3xl mx-auto font-medium">
                   State-of-the-art robotic-assisted solutions to eliminate chronic knee pain and restore full mobility.

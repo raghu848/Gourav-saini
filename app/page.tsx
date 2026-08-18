@@ -127,9 +127,9 @@ export default function Home() {
             {/* Hero Content */}
             <header className="relative z-10">
               <div className="bg-black/40 lg:backdrop-blur-sm lg:bg-black/20 p-6 sm:p-8 rounded-2xl border border-white/10 shadow-xl fade-in">
-                <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 font-serif leading-tight">
-                  <span className="block text-white">Where Compassion</span>
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-200 mt-1 lg:mt-2">Meets Innovation</span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 font-serif leading-tight">
+                  <span className="block text-white">Dr. Gaurav Saini</span>
+                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-teal-300 to-blue-200 mt-1 lg:mt-2">Best Orthopedic Doctor in Mohali & Chandigarh</span>
                 </h1>
                 
                 <p className="text-lg sm:text-xl mb-6 text-blue-100 max-w-2xl">
@@ -223,7 +223,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Welcome to the Future of Orthopedic Excellence</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 font-serif">Best Orthopedic Surgeon in Mohali, Kharar & Chandigarh</h2>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
                 At our practice, we believe that every patient deserves a life free from joint pain. Led by **Dr. Gaurav Saini**, recognized as the **best orthopedic doctor in mohali** and a pioneer in robotic-assisted orthopedic surgery, we combine nearly two decades of clinical experience with the world's most advanced medical technologies. Our mission is to provide personalized, compassionate care that gets you back to your active lifestyle faster and with better long-term results.
               </p>
@@ -280,7 +280,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in font-serif">
-              Our Clinical Specialties
+              Robotic Knee Replacement & Orthopedic Specialties
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
               We offer world-class orthopedic services using minimally invasive techniques and advanced robotic systems to ensure the best patient outcomes.
@@ -458,7 +458,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 fade-in font-serif">
-              Patient Success Stories
+              Orthopaedic Surgeon Patient Reviews & Recovery Stories
             </h2>
             <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto fade-in">
               Read our genuine **orthopaedic surgeon patient reviews** and hear directly from those who have regained their mobility and joy of life through our expert orthopedic care.

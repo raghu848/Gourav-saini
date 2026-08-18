@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 
 // Homepage metadata
 export const homepageMetadata: Metadata = {
-  title: '[Best Orthopedic Surgeon in Mohali & Tricity](https://drgauravsainiortho.com/) - Dr. Gaurav Saini',
-  description: 'Dr. Gaurav Saini is the best orthopedic doctor in Mohali & Tricity, specializing in knee replacement, joint pain, sports injuries, and advanced orthopedic care.',
-  keywords: 'orthopaedic surgeon, best orthopedic doctor in mohali',
+  title: 'Best Orthopedic Doctor in Mohali & Chandigarh | Dr. Gaurav Saini',
+  description: 'Dr. Gaurav Saini is the best orthopedic doctor in Mohali, Kharar & Chandigarh, specializing in robotic knee replacement, joint pain, sports injuries, and advanced orthopedic care.',
+  keywords: 'orthopaedic surgeon, best orthopedic doctor in mohali, best knee replacement surgeon in chandigarh, robotic knee replacement, orthopaedic surgeon near me',
   alternates: {
     canonical: 'https://drgauravsainiortho.com/'
   }

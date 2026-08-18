@@ -99,8 +99,8 @@ export default function RoboticJointReplacementPage() {
           {/* Hero Section */}
           <header className="bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white p-8 lg:p-16 text-center">
             <h1 className="text-4xl lg:text-6xl font-bold font-serif mb-6 leading-tight">
-              Robotic Joint Replacement <br/>
-              <span className="text-teal-400">Precision Powered by CORI</span>
+              Robotic Knee Replacement & Joint Surgery <br/>
+              <span className="text-teal-400">Precision CORI Technology in Mohali</span>
             </h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
               Eliminate chronic joint pain and rediscover the joy of movement with India's most advanced robotic-assisted surgical technology.

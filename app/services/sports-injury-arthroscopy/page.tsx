@@ -112,8 +112,8 @@ export default function SportsInjuryArthroscopyPage() {
                   Elite Sports Medicine
                 </div>
                 <h1 className="text-4xl lg:text-7xl font-bold font-serif mb-6 leading-tight">
-                  Sports Injury & <br/>
-                  <span className="text-green-400">Arthroscopy</span>
+                  Sports Injury Doctor Near Me & <br/>
+                  <span className="text-green-400">Arthroscopic Knee Surgery</span>
                 </h1>
                 <p className="text-xl text-blue-100 font-medium leading-relaxed">
                   Precision keyhole surgery and performance-focused recovery for athletes of all levels.
@@ -125,7 +125,7 @@ export default function SportsInjuryArthroscopyPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
               <section>
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 font-serif leading-tight">
-                  Get Back to Your Peak Performance
+                  Consult Top Sports Injury Doctor Near Me & Arthroscopy Specialist
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-6">
                   <p>

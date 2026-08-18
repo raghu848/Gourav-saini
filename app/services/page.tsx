@@ -2,27 +2,27 @@ import { Metadata } from 'next'
 import PageAnimationWrapper from '@/components/PageAnimationWrapper'
 
 export const metadata: Metadata = {
-  title: 'Services - Best Knee, Hip & Joint Replacement Services in Tricity',
-  description: 'Dr. Gaurav Saini offers hip & knee care, robotic knee replacement, back pain & osteoarthritis treatment at a top orthopedic clinic near me.',
-  keywords: 'hip and knee clinic, orthopedic surgeon knee specialist, orthopedic for back pain, robotic knee replacement, osteoarthritis doctor, orthopedic doctor in chandigarh, orthopedic clinic near me, orthopedic services in mohali',
+  title: 'Orthopaedic Services in Mohali | Dr. Gaurav Saini',
+  description: 'Explore specialized orthopaedic services by Dr. Gaurav Saini in Mohali & Chandigarh. Robotic knee replacement, hip surgery & sports medicine. Book now.',
+  keywords: 'orthopaedic services in mohali, robotic knee replacement, hip surgery chandigarh, sports injury doctor, fracture care mohali',
   openGraph: {
     type: 'website',
     locale: 'en_IN',
     url: 'https://drgauravsainiortho.com/services/',
-    title: 'Services - Best Knee, Hip & Joint Replacement Services in Tricity',
-    description: 'Dr. Gaurav Saini offers hip & knee care, robotic knee replacement, back pain & osteoarthritis treatment at a top orthopedic clinic near me.',
+    title: 'Orthopaedic Services in Mohali | Dr. Gaurav Saini',
+    description: 'Explore specialized orthopaedic services by Dr. Gaurav Saini in Mohali & Chandigarh. Robotic knee replacement, hip surgery & sports medicine. Book now.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
     images: [{
       url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
       width: 1200,
       height: 630,
-      alt: 'Dr. Gaurav Saini - Best Orthopaedic Surgeon in Mohali & Chandigarh'
+      alt: 'Orthopaedic Services - Dr. Gaurav Saini'
     }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Services - Best Knee, Hip & Joint Replacement Services in Tricity',
-    description: 'Dr. Gaurav Saini offers hip & knee care, robotic knee replacement, back pain & osteoarthritis treatment at a top orthopedic clinic near me.',
+    title: 'Orthopaedic Services in Mohali | Dr. Gaurav Saini',
+    description: 'Explore specialized orthopaedic services by Dr. Gaurav Saini in Mohali & Chandigarh.',
     images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
     site: '@DrGauravSaini'
   },

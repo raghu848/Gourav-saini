@@ -2,13 +2,52 @@
   RewriteEngine On
   RewriteBase /
   
-  # Redirect HTTP to HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Redirect www to non-www (HTTPS)
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-  # Redirect www to non-www
-  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-  RewriteRule ^(.*)$ https://%1/$1 [L,R=301]
+  # Redirect HTTP to HTTPS non-www (single hop)
+  RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP_HOST} ^(www\.)?(.+)$ [NC]
+  RewriteRule ^(.*)$ https://%2/$1 [R=301,L]
+
+  # 301 Redirects for WordPress-style Query Parameters (preserving tracking parameters)
+  # Redirect ?p=67 to /
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=67(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/?%1%2 [L,R=301]
+
+  # Redirect ?p=58 to /blog/knee-exercises/
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=58(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/knee-exercises/?%1%2 [L,R=301]
+
+  # Redirect ?p=73 to /blog/sports-injury-prevention/
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=73(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/sports-injury-prevention/?%1%2 [L,R=301]
+
+  # Redirect ?p=53 to /blog/arthroscopy-vs-open/
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=53(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/arthroscopy-vs-open/?%1%2 [L,R=301]
+
+  # Redirect ?p=56 to /blog/surgery-preparation/
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=56(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/surgery-preparation/?%1%2 [L,R=301]
+
+  # Redirect ?p=42 to /blog/arthritis-guide/
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=42(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/arthritis-guide/?%1%2 [L,R=301]
+
+  # Redirect ?tag=orthopedic to /blog/
+  RewriteCond %{QUERY_STRING} ^(.*&)?tag=orthopedic(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/?%1%2 [L,R=301]
+
+  # Redirect ?cpt_services=request-an-appointment to /book-appointment/
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=request-an-appointment(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/book-appointment/?%1%2 [L,R=301]
+
+  # 410 Gone for deleted parameters (?p=1 and ?page_id=119)
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=1(?:&.*)?$ [NC,OR]
+  RewriteCond %{QUERY_STRING} ^(.*&)?page_id=119(?:&.*)?$ [NC]
+  RewriteRule ^(index\.php)?$ - [G,L]
 
   # 301 Redirects for consolidated services (ensure canonical URLs with trailing slashes)
   Redirect 301 /services/robotic-surgery /services/robotic-joint-replacement/

@@ -103,7 +103,7 @@ export const defaultMetadata: Metadata = {
     canonical: 'https://drgauravsainiortho.com'
   },
   verification: {
-    google: 'googlef908ecc32b2da324.html',
+    google: 'googlef908ecc32b2da324',
   },
   other: {
     'twitter:site': '@DrGauravSaini',

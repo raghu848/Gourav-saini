@@ -112,8 +112,8 @@ export default function FractureTraumaCarePage() {
                   24/7 Emergency Support
                 </div>
                 <h1 className="text-4xl lg:text-7xl font-bold font-serif mb-6 leading-tight">
-                  Fracture & <br/>
-                  <span className="text-red-500">Trauma Specialist</span>
+                  Fracture Doctor Near Me & <br/>
+                  <span className="text-red-500">Bone Fracture Specialist</span>
                 </h1>
                 <p className="text-xl text-blue-100 font-medium leading-relaxed">
                   Advanced surgical reconstruction and compassionate care for complex injuries and life-threatening trauma.
@@ -125,7 +125,7 @@ export default function FractureTraumaCarePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
               <section>
                 <h2 className="text-3xl font-bold text-gray-900 mb-8 font-serif leading-tight">
-                  Expert Management of Orthopedic Emergencies
+                  Consult Top Fracture Doctor Near Me & Trauma Specialist
                 </h2>
                 <div className="prose prose-lg text-gray-700 space-y-6">
                   <p>
