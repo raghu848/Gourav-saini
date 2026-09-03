@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Terms & Conditions - Dr. Gaurav Saini | Orthopedic Surgeon',
+  title: 'Terms & Conditions | Dr. Gaurav Saini, Mohali',
   description: 'Terms and Conditions for using Dr. Gaurav Saini\'s website and orthopedic services. Read our medical disclaimer and appointment policies.',
   alternates: {
     canonical: 'https://drgauravsainiortho.com/terms/'

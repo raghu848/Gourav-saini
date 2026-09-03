@@ -14,7 +14,7 @@ import {
 import PageAnimationWrapper from '@/components/PageAnimationWrapper';
 
 export const metadata: Metadata = {
-  title: 'Sitemap - Dr. Gaurav Saini | Orthopedic Surgeon',
+  title: 'Sitemap | Dr. Gaurav Saini, Orthopaedic Surgeon',
   description: 'Explore all pages on Dr. Gaurav Saini\'s website. Comprehensive index of orthopedic services, blog posts, and clinic information.',
   alternates: {
     canonical: 'https://drgauravsainiortho.com/sitemap/'

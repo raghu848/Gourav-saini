@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 
   return {
-    title: `${post.title} | Dr. Gaurav Saini`,
+    title: `${post.seoTitle ?? post.title} | Dr. Gaurav Saini`,
     description: post.excerpt,
     alternates: {
       canonical: `https://drgauravsainiortho.com/blog/${id}/`

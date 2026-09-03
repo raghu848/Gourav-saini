@@ -2,6 +2,10 @@
 module.exports = {
   siteUrl: process.env.SITE_URL || 'https://drgauravsainiortho.com',
   generateRobotsTxt: true,
+  // Static export: `next build` already copied public/ into out/ before this
+  // postbuild step runs, so writing to the default `public` dir would leave
+  // out/sitemap.xml one build stale. Write straight into the deployed folder.
+  outDir: 'out',
   // Add trailing slashes to all URLs
   trailingSlash: true,
   // Generate a single sitemap.xml instead of a sitemap index + sitemap-0.xml
@@ -73,11 +77,13 @@ module.exports = {
       {
         userAgent: '*',
         allow: '/',
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/search/',
-        ],
+        // Do NOT disallow the legacy WordPress query strings (?p=, ?page_id=,
+        // ?cpt_services=, ?cpt_team=, ?tag=). .htaccess now answers every one
+        // of them with a 301 or a 410, and Googlebot can only act on those if
+        // it is allowed to crawl the URL. Blocking them here would freeze the
+        // old URLs in the index as "indexed, though blocked by robots.txt"
+        // and the redirects would never be seen.
+        disallow: ['/api/', '/admin/'],
       },
     ],
     additionalSitemaps: [

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy - Dr. Gaurav Saini | Orthopedic Surgeon',
+  title: 'Privacy Policy | Dr. Gaurav Saini, Mohali',
   description: 'Privacy Policy for Dr. Gaurav Saini\'s orthopedic clinic. Learn how we protect your medical records and personal information.',
   alternates: {
     canonical: 'https://drgauravsainiortho.com/privacy/'

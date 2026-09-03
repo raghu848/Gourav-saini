@@ -1,6 +1,8 @@
 export interface BlogPost {
   id: string
   title: string
+  /** Short <title> for search results; falls back to `title`. */
+  seoTitle?: string
   excerpt: string
   category: string
   readTime: string
@@ -15,6 +17,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: 'knee-replacement-signs',
+    seoTitle: 'Signs You Need a Knee Replacement',
     title: 'Signs You Need a Knee Replacement: When to Consider Surgery',
     excerpt: 'Learn about the key indicators that suggest it might be time to consider knee replacement surgery and what to expect from the procedure.',
     category: 'Knee Care',
@@ -22,8 +25,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: '2024-01-15',
     image: '/images/Partial-Knee-Replacement.webp',
     author: 'Dr. Gaurav Saini',
-    imageWidth: 1200,
-    imageHeight: 800,
+    imageWidth: 640,
+    imageHeight: 419,
     content: `
       <div class="prose max-w-none">
         <p>Knee replacement surgery is a significant decision that shouldn't be taken lightly. However, for many patients suffering from severe knee pain and limited mobility, it can be a life-changing procedure that restores their quality of life.</p>
@@ -70,6 +73,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'knee-exercises',
+    seoTitle: '5 Knee Pain Exercises to Do at Home',
     title: '5 Exercises for Knee Pain Relief You Can Do at Home',
     excerpt: 'Discover simple yet effective exercises that can help alleviate knee pain and improve joint mobility from the comfort of your home.',
     category: 'Exercise',
@@ -77,8 +81,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: '2024-01-10',
     image: '/images/Knee-presentation-surgeries-HTODFO.webp',
     author: 'Dr. Gaurav Saini',
-    imageWidth: 1200,
-    imageHeight: 800,
+    imageWidth: 640,
+    imageHeight: 419,
     content: `
       <div class="prose max-w-none">
         <p>Knee pain can significantly impact your daily life, but the right exercises can help reduce pain and improve mobility. These exercises are gentle on the joints while strengthening the muscles that support your knees.</p>
@@ -128,6 +132,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'surgery-preparation',
+    seoTitle: 'How to Prepare for Orthopedic Surgery',
     title: 'Preparing for Your Orthopedic Surgery: A Complete Guide',
     excerpt: 'Everything you need to know before your orthopedic surgery, from pre-operative preparation to setting up your recovery space.',
     category: 'Surgery',
@@ -135,8 +140,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: '2024-01-05',
     image: '/images/Total-hip-replacement.webp',
     author: 'Dr. Gaurav Saini',
-    imageWidth: 1200,
-    imageHeight: 800,
+    imageWidth: 640,
+    imageHeight: 419,
     content: `
       <div class="prose max-w-none">
         <p>Preparing for orthopedic surgery involves both physical and mental preparation. The better prepared you are, the smoother your recovery will be. This guide outlines everything you need to do from 4 weeks out until the morning of your procedure.</p>
@@ -179,6 +184,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'sports-injury-prevention',
+    seoTitle: 'Sports Injury Prevention for Athletes',
     title: 'Sports Injury Prevention: Essential Tips for Athletes',
     excerpt: 'Learn effective strategies to prevent sports injuries and maintain peak performance as an athlete.',
     category: 'Sports Medicine',
@@ -186,8 +192,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: '2024-02-10',
     image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
     author: 'Dr. Gaurav Saini',
-    imageWidth: 1200,
-    imageHeight: 800,
+    imageWidth: 640,
+    imageHeight: 419,
     content: `
       <div class="prose max-w-none">
         <p>Sports injuries can be devastating for athletes at any level. Prevention is always better than treatment, and implementing proper injury prevention strategies can keep you active and performing at your best.</p>
@@ -228,6 +234,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'arthroscopy-vs-open',
+    seoTitle: 'Arthroscopy vs. Open Surgery Compared',
     title: 'Arthroscopy vs. Open Surgery: What\'s the Difference?',
     excerpt: 'Understanding the differences between arthroscopic and open surgery procedures, including benefits, risks and recovery times.',
     category: 'Education',
@@ -235,8 +242,8 @@ export const blogPosts: BlogPost[] = [
     publishDate: '2023-12-28',
     image: '/images/Knee-Arthroscopy-key-hole-surgery.webp',
     author: 'Dr. Gaurav Saini',
-    imageWidth: 1200,
-    imageHeight: 800,
+    imageWidth: 640,
+    imageHeight: 419,
     content: `
       <div class="prose max-w-none">
         <p>When it comes to orthopedic procedures, surgeons have different approaches available. Two of the most common are arthroscopic surgery and open surgery. Both have their advantages and disadvantages, and the choice depends on the specific condition, patient factors, and surgeon expertise.</p>
@@ -288,12 +295,13 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 'arthritis-guide',
+    seoTitle: 'Arthritis: Types, Symptoms & Treatment',
     title: 'Understanding Arthritis: Types, Symptoms and Treatment Options',
     excerpt: 'A comprehensive guide to different types of arthritis, their symptoms, and the various treatment approaches available.',
     category: 'Arthritis',
     readTime: '12 min read',
     publishDate: '2023-12-15',
-    image: '/images/patient-1 (25).jpg',
+    image: '/images/arthritis-patient-recovery.webp',
     author: 'Dr. Gaurav Saini',
     imageWidth: 1200,
     imageHeight: 800,

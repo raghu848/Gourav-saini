@@ -5,10 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
+    "postbuild": "next-sitemap && node scripts/postbuild-seo.js",
     "start": "next start",
-    "lint": "eslint",
-    "export": "next export"
+    "lint": "eslint"
   },
   "dependencies": {
     "canvas": "^3.2.0",

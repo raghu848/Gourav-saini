@@ -213,7 +213,6 @@ export default function JointReplacementCenterPage() {
 
             {/* Final CTA */}
             <footer className="bg-gradient-to-br from-blue-900 to-indigo-900 text-white rounded-3xl p-12 lg:p-20 relative overflow-hidden text-center shadow-2xl">
-              <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.webp')] bg-cover"></div>
               <div className="relative z-10">
                 <h2 className="text-3xl lg:text-5xl font-bold mb-8 font-serif leading-tight">Expertise You Can Trust</h2>
                 <p className="text-blue-100 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">

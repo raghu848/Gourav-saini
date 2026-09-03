@@ -4,7 +4,6 @@ import PageAnimationWrapper from '@/components/PageAnimationWrapper'
 export const metadata: Metadata = {
   title: 'Orthopaedic Services in Mohali | Dr. Gaurav Saini',
   description: 'Explore specialized orthopaedic services by Dr. Gaurav Saini in Mohali & Chandigarh. Robotic knee replacement, hip surgery & sports medicine. Book now.',
-  keywords: 'orthopaedic services in mohali, robotic knee replacement, hip surgery chandigarh, sports injury doctor, fracture care mohali',
   openGraph: {
     type: 'website',
     locale: 'en_IN',
@@ -24,16 +23,11 @@ export const metadata: Metadata = {
     title: 'Orthopaedic Services in Mohali | Dr. Gaurav Saini',
     description: 'Explore specialized orthopaedic services by Dr. Gaurav Saini in Mohali & Chandigarh.',
     images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
-    site: '@DrGauravSaini'
+    site: '@DrGauravSaini',
+    creator: '@DrGauravSaini'
   },
   alternates: {
     canonical: 'https://drgauravsainiortho.com/services/'
-  },
-  other: {
-    'twitter:site': '@DrGauravSaini',
-    'twitter:creator': '@DrGauravSaini',
-    'twitter:url': 'https://drgauravsainiortho.com/services/',
-    'twitter:card': 'summary_large_image',
   }
 }
 

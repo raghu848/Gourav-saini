@@ -196,7 +196,6 @@ export default function HipReplacementSurgeryPage() {
 
             {/* Tech Highlight Section */}
             <section className="mb-24 py-16 bg-indigo-950 -mx-8 lg:-mx-16 px-8 lg:px-16 text-white overflow-hidden relative">
-              <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/hero-bg.webp')] opacity-5 bg-cover"></div>
               <div className="max-w-5xl mx-auto relative z-10">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center font-serif leading-tight">The Precision Advantage in Hip Surgery</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

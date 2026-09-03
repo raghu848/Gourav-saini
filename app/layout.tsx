@@ -39,7 +39,12 @@ export default function RootLayout({
   const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || '';
   const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
   const GOOGLE_SEARCH_CONSOLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION || process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '';
-  const BING_SITE_VERIFICATION = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '';
+  const RAW_BING = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '';
+  // "your-bing-verification-code-here" shipped to production once already.
+  // Emit the tag only for a value that is not obviously a stand-in.
+  const isPlaceholder = (v: string) =>
+    !v || /your-|-here|placeholder|xxx|1234567890/i.test(v);
+  const BING_SITE_VERIFICATION = isPlaceholder(RAW_BING) ? '' : RAW_BING;
   
   return (
     <html lang="en">
@@ -66,8 +71,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         
-        {/* Preload critical images */}
-        <link rel="preload" as="image" href="/images/dr-saini-logo.webp" />
+        {/* Preload critical hero images for sub-1.8s FCP */}
+        <link rel="preload" as="image" href="/images/opretion.webp" fetchPriority="high" type="image/webp" />
+        <link rel="preload" as="image" href="/images/dr-saini-logo.webp" type="image/webp" />
         
         {/* Resource hints for better performance */}
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -139,10 +145,12 @@ export default function RootLayout({
                 "Knee Replacement Surgery",
                 "Sports Medicine"
               ],
+              // Must match the real, verifiable Google Business Profile count.
+              // Update this when the GBP review count changes materially.
               "aggregateRating": {
                 "@type": "AggregateRating",
                 "ratingValue": "4.9",
-                "reviewCount": "5240"
+                "reviewCount": "204"
               },
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -163,12 +171,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Dr. Gaurav Saini",
-              "url": "https://drgauravsainiortho.com/",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://drgauravsainiortho.com/search?q={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
+              "url": "https://drgauravsainiortho.com/"
             })
           }}
         />

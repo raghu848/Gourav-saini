@@ -1,67 +1,147 @@
+# ============================================================
+# Dr. Gaurav Saini - Next.js static export (output: 'export')
+# This file lives in public/ so `next build` copies it into out/.
+# Do NOT keep a second copy at the project root - it never ships.
+# ============================================================
+
+# Never let Apache content-negotiate /about -> /about.html etc.
+# Directory listings off.
+# NOTE: a few shared hosts refuse `Options` in .htaccess (AllowOverride).
+# If the site returns HTTP 500 right after deploying, these two lines are
+# the first thing to comment out.
+Options -MultiViews
+Options -Indexes
+
+# Serve the real 404 page for anything that does not exist.
+ErrorDocument 404 /404.html
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
-  
-  # Redirect www to non-www (HTTPS)
+
+  # ----------------------------------------------------------
+  # 1. Canonical host: www -> non-www, http -> https (single hop)
+  # ----------------------------------------------------------
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 
-  # Redirect HTTP to HTTPS non-www (single hop)
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP_HOST} ^(www\.)?(.+)$ [NC]
   RewriteRule ^(.*)$ https://%2/$1 [R=301,L]
 
-  # 301 Redirects for WordPress-style Query Parameters (preserving tracking parameters)
-  # Redirect ?p=67 to /
+  # ----------------------------------------------------------
+  # 2. Collapse duplicate slashes  //  ->  /
+  #    Cleans up the /services/xxx// URLs Google already indexed.
+  #    Path only - never touch a "//" that lives inside a query string
+  #    (UTM / tracking values can legitimately contain one).
+  # ----------------------------------------------------------
+  RewriteCond %{QUERY_STRING} ^$
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ ([^?\ ]*)//([^?\ ]*)\ HTTP [NC]
+  RewriteRule ^ %1/%2 [R=301,L,NE]
+
+  # ----------------------------------------------------------
+  # 3. Kill old WordPress / WooCommerce entry points
+  # ----------------------------------------------------------
+  # RSS / product feeds (?feed=rss2&product_cat=..., /feed/, /comments/feed/)
+  RewriteCond %{QUERY_STRING} (^|&)feed= [NC]
+  RewriteRule ^ - [G,L]
+  RewriteRule ^(.*/)?(feed|comments/feed)/?$ - [G,L]
+
+  # WordPress core paths still lingering on the server
+  RewriteRule ^(wp-content|wp-includes|wp-admin|wp-json)(/|$) - [G,L]
+  RewriteRule ^(wp-login\.php|xmlrpc\.php|wp-cron\.php)$ - [G,L]
+
+  # /index.php -> homepage (only when there is no legacy query string)
+  RewriteCond %{QUERY_STRING} ^$
+  RewriteRule ^index\.php$ / [R=301,L]
+
+  # ----------------------------------------------------------
+  # 4. Legacy ?p= / ?cpt_services= query parameters -> real pages
+  #    The trailing "?" drops the old query string from the target.
+  # ----------------------------------------------------------
   RewriteCond %{QUERY_STRING} ^(.*&)?p=67(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/knee-replacement-signs/? [L,R=301]
 
-  # Redirect ?p=58 to /blog/knee-exercises/
   RewriteCond %{QUERY_STRING} ^(.*&)?p=58(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/knee-exercises/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/knee-exercises/? [L,R=301]
 
-  # Redirect ?p=73 to /blog/sports-injury-prevention/
   RewriteCond %{QUERY_STRING} ^(.*&)?p=73(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/sports-injury-prevention/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/sports-injury-prevention/? [L,R=301]
 
-  # Redirect ?p=53 to /blog/arthroscopy-vs-open/
   RewriteCond %{QUERY_STRING} ^(.*&)?p=53(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/arthroscopy-vs-open/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/arthroscopy-vs-open/? [L,R=301]
 
-  # Redirect ?p=56 to /blog/surgery-preparation/
   RewriteCond %{QUERY_STRING} ^(.*&)?p=56(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/surgery-preparation/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/surgery-preparation/? [L,R=301]
 
-  # Redirect ?p=42 to /blog/arthritis-guide/
   RewriteCond %{QUERY_STRING} ^(.*&)?p=42(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/arthritis-guide/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/arthritis-guide/? [L,R=301]
 
-  # Redirect ?tag=orthopedic to /blog/
   RewriteCond %{QUERY_STRING} ^(.*&)?tag=orthopedic(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/blog/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /blog/? [L,R=301]
 
-  # Redirect ?cpt_services=request-an-appointment to /book-appointment/
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=knee(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ /services/knee-replacement-surgery/? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=elbow-pain(?:&(.*))?$ [NC,OR]
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=hand-wrist-pain(?:-2)?(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ /services/sports-injury-arthroscopy/? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=in-office-services(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ /services/? [L,R=301]
+
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=our-values(?:&(.*))?$ [NC]
+  RewriteRule ^(index\.php)?$ /about/? [L,R=301]
+
   RewriteCond %{QUERY_STRING} ^(.*&)?cpt_services=request-an-appointment(?:&(.*))?$ [NC]
-  RewriteRule ^(index\.php)?$ https://drgauravsainiortho.com/book-appointment/?%1%2 [L,R=301]
+  RewriteRule ^(index\.php)?$ /book-appointment/? [L,R=301]
 
-  # 410 Gone for deleted parameters (?p=1 and ?page_id=119)
-  RewriteCond %{QUERY_STRING} ^(.*&)?p=1(?:&.*)?$ [NC,OR]
-  RewriteCond %{QUERY_STRING} ^(.*&)?page_id=119(?:&.*)?$ [NC]
+  # Deleted content -> 410 Gone (Google drops these faster than a 404)
+  RewriteCond %{QUERY_STRING} ^(.*&)?cpt_team= [NC,OR]
+  RewriteCond %{QUERY_STRING} ^(.*&)?page_id=123(?:&.*)?$ [NC,OR]
+  RewriteCond %{QUERY_STRING} ^(.*&)?page_id=119(?:&.*)?$ [NC,OR]
+  RewriteCond %{QUERY_STRING} ^(.*&)?p=1(?:&.*)?$ [NC]
   RewriteRule ^(index\.php)?$ - [G,L]
 
-  # 301 Redirects for consolidated services (ensure canonical URLs with trailing slashes)
-  Redirect 301 /services/robotic-surgery /services/robotic-joint-replacement/
-  Redirect 301 /services/sports-injury-treatment /services/sports-injury-arthroscopy/
-  Redirect 301 /services/arthroscopic-surgery /services/sports-injury-arthroscopy/
-  Redirect 301 /sitemap /sitemap/
+  # Any other unmapped legacy parameter -> 404
+  RewriteCond %{QUERY_STRING} ^(.*&)?(p|page_id|cpt_services|cpt_team|tag|product_cat|product_tag)= [NC]
+  RewriteRule ^(index\.php)?$ - [R=404,L]
 
-  # Exclude _next static assets, images, icons, and real files/folders from catch-all rewrite
-  RewriteCond %{REQUEST_URI} !^/_next/
-  RewriteCond %{REQUEST_URI} !^/images/
-  RewriteCond %{REQUEST_URI} !^/icons/
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^ index.html [L]
+  # ----------------------------------------------------------
+  # 4b. /404/ must not answer 200.
+  #     trailingSlash:true made Next emit the not-found page twice, at
+  #     /404.html AND /404/index.html. Apache served the second one with a
+  #     200, so Google saw a real, indexable page. The build now deletes
+  #     out/404/, but deploys go over FTP and FTP does not remove files that
+  #     vanished from the build - so the old copy is still on the server.
+  #     Answer a real 404 for that path no matter what is on disk.
+  RewriteRule ^404(/|/index.html)?$ - [R=404,L]
+
+  # ----------------------------------------------------------
+  # 5. Renamed service pages -> current slugs
+  #    Anchored RewriteRules, NOT `Redirect 301`. mod_alias Redirect
+  #    is a PREFIX match and appends the leftover path, which is what
+  #    produced /services/robotic-joint-replacement// (double slash).
+  # ----------------------------------------------------------
+  RewriteRule ^services/robotic-surgery/?$         /services/robotic-joint-replacement/ [R=301,L]
+  RewriteRule ^services/sports-injury-treatment/?$ /services/sports-injury-arthroscopy/ [R=301,L]
+  RewriteRule ^services/arthroscopic-surgery/?$    /services/sports-injury-arthroscopy/ [R=301,L]
+  RewriteRule ^services/knee-replacement/?$        /services/knee-replacement-surgery/ [R=301,L]
+  RewriteRule ^services/hip-replacement/?$         /services/hip-replacement-surgery/ [R=301,L]
+
+  # NOTE: /sitemap/ is a REAL page (the human-readable sitemap).
+  # The old `Redirect 301 /sitemap /sitemap/` was a prefix rule, so it
+  # rewrote /sitemap/ to /sitemap// and looped forever. Do not re-add it.
+
+  # ----------------------------------------------------------
+  # 6. NO catch-all rewrite to index.html.
+  #    This is a static export: every route already exists on disk as
+  #    <route>/index.html, so Apache serves it directly and adds the
+  #    trailing slash itself. The old `RewriteRule ^ index.html [L]`
+  #    returned the HOMEPAGE with HTTP 200 for every unknown URL -
+  #    that was the soft-404 problem. Unknown URLs now fall through
+  #    to ErrorDocument 404 /404.html with a real 404 status.
+  # ----------------------------------------------------------
 </IfModule>
 
 # Enable Brotli Compression
@@ -71,7 +151,6 @@
 
 # Enable GZIP compression
 <IfModule mod_deflate.c>
-  # Compress HTML, CSS, JavaScript, Text, XML and fonts
   AddOutputFilterByType DEFLATE application/javascript
   AddOutputFilterByType DEFLATE application/json
   AddOutputFilterByType DEFLATE application/rss+xml
@@ -95,7 +174,6 @@
   AddOutputFilterByType DEFLATE text/plain
   AddOutputFilterByType DEFLATE text/xml
 
-  # Remove browser bugs
   BrowserMatch ^Mozilla/4 gzip-only-text/html
   BrowserMatch ^Mozilla/4\.0[678] no-gzip
   BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
@@ -107,20 +185,20 @@
   ExpiresActive on
   ExpiresDefault "access plus 1 month"
 
-  # HTML & Data - No cache to ensure fresh content
+  # HTML & data - always revalidate
   ExpiresByType text/html "access plus 0 seconds"
   ExpiresByType text/cache-manifest "access plus 0 seconds"
   ExpiresByType text/xml "access plus 0 seconds"
   ExpiresByType application/xml "access plus 0 seconds"
   ExpiresByType application/json "access plus 0 seconds"
 
-  # Assets with hashes (CSS, JS) - Cache for 1 year
+  # Hashed CSS/JS - 1 year
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType application/x-javascript "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
 
-  # Images - Cache for 1 year
+  # Images - 1 year
   ExpiresByType image/x-icon "access plus 1 year"
   ExpiresByType image/gif "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
@@ -129,40 +207,46 @@
   ExpiresByType image/avif "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
 
-  # Fonts - Cache for 1 year
+  # Fonts - 1 year
   ExpiresByType application/x-font-ttf "access plus 1 year"
   ExpiresByType font/opentype "access plus 1 year"
   ExpiresByType application/x-font-woff "access plus 1 year"
   ExpiresByType application/x-font-woff2 "access plus 1 year"
   ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
-
-  <IfModule mod_headers.c>
-    Header append Cache-Control "public"
-  </IfModule>
 </IfModule>
 
-# FileETag None removes ETags entirely
+<IfModule mod_headers.c>
+  # Fingerprinted build assets can be cached hard; HTML must not be.
+  <FilesMatch "\.(js|css|woff2|woff|ttf|otf|eot)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpe?g|webp|avif|gif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.(html|xml|json|txt)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
 FileETag None
 
-# Set security headers
+# Security headers
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
-  Header set X-Frame-Options "DENY"
-  Header set X-XSS-Protection "1; mode=block"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
 
-# Optimize static file delivery
+# Web font delivery
 <IfModule mod_headers.c>
-  # Set CORS headers for web fonts
   <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2)$">
     Header set Access-Control-Allow-Origin "*"
   </FilesMatch>
-  
-  # Set proper content types for web fonts
-  AddType application/font-woff2 .woff2
-  AddType application/font-woff .woff
-  AddType application/vnd.ms-fontobject .eot
-  AddType font/truetype .ttf
-  AddType image/svg+xml .svg
 </IfModule>
+
+AddType application/font-woff2 .woff2
+AddType application/font-woff .woff
+AddType application/vnd.ms-fontobject .eot
+AddType font/truetype .ttf
+AddType image/svg+xml .svg

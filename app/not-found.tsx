@@ -4,9 +4,18 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Page Not Found - Dr. Gaurav Saini | Orthopedic Surgeon',
   description: 'The page you are looking for does not exist. Visit Dr. Gaurav Saini\'s orthopedic clinic in Mohali & Chandigarh for expert care.',
+  // Overrides the site-wide "index, follow" from defaultMetadata, which was
+  // emitting a second, contradictory robots tag on 404.html.
+  robots: {
+    index: false,
+    follow: false,
+  },
+  // defaultMetadata canonicalises to the homepage, so 404.html was declaring
+  // itself a duplicate of "/" while also saying noindex - a conflicting pair
+  // that can push the noindex onto the canonical target. A 404 needs neither.
   alternates: {
-    canonical: 'https://drgauravsainiortho.com/404/'
-  }
+    canonical: null,
+  },
 };
 
 export default function NotFound() {

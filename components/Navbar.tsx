@@ -135,9 +135,9 @@ const Navbar = () => {
                   )}
                 </div>
                 <div className="flex flex-col min-w-0 flex-1">
-                  <h1 className="text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight truncate">
+                  <span className="block text-sm sm:text-base lg:text-xl xl:text-2xl font-bold text-gray-900 leading-tight truncate">
                     Dr. Gaurav Saini
-                  </h1>
+                  </span>
                   <p className="text-xs text-blue-800 font-medium truncate">
                   Orthopaedic & Robotic Surgeon
                   </p>

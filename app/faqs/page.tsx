@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Frequently Asked Questions - Dr. Gaurav Saini | Orthopedic Surgeon',
+  title: 'Knee & Hip Surgery FAQs | Dr. Gaurav Saini, Mohali',
   description: 'Find answers to common questions about robotic knee replacement, hip surgery, sports injuries, and recovery from Dr. Gaurav Saini.',
   alternates: {
     canonical: 'https://drgauravsainiortho.com/faqs/'

@@ -242,7 +242,6 @@ export default function SpineSurgeryPage() {
 
             {/* Final CTA */}
             <footer className="bg-gradient-to-br from-indigo-900 to-blue-900 text-white rounded-3xl p-12 lg:p-20 relative overflow-hidden text-center shadow-2xl">
-              <div className="absolute inset-0 opacity-10 bg-[url('/images/hero-bg.webp')] bg-cover"></div>
               <div className="relative z-10">
                 <h2 className="text-3xl lg:text-5xl font-bold mb-8 font-serif leading-tight">Reclaim Your Life from Chronic Back Pain</h2>
                 <p className="text-blue-100 text-xl mb-12 max-w-3xl mx-auto leading-relaxed">
