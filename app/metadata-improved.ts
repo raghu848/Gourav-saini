@@ -52,7 +52,7 @@ export const defaultMetadata: Metadata = {
     address: true
   },
   verification: {
-    google: 'googlef908ecc32b2da324',
+    google: 'HI_QvWu0cX76WsAx4Sw_xiJ45ei8WHr0ySPDmnjhyE4',
   },
   metadataBase: new URL('https://drgauravsainiortho.com'),
   alternates: {
