@@ -51,6 +51,9 @@ export const defaultMetadata: Metadata = {
     email: true,
     address: true
   },
+  verification: {
+    google: 'googlef908ecc32b2da324',
+  },
   metadataBase: new URL('https://drgauravsainiortho.com'),
   alternates: {
     canonical: 'https://drgauravsainiortho.com/'
