@@ -1,0 +1,286 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "67"
+        }
+      ],
+      "destination": "/blog/knee-replacement-signs/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "58"
+        }
+      ],
+      "destination": "/blog/knee-exercises/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "73"
+        }
+      ],
+      "destination": "/blog/sports-injury-prevention/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "53"
+        }
+      ],
+      "destination": "/blog/arthroscopy-vs-open/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "56"
+        }
+      ],
+      "destination": "/blog/surgery-preparation/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "42"
+        }
+      ],
+      "destination": "/blog/arthritis-guide/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "tag",
+          "value": "orthopedic"
+        }
+      ],
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_services",
+          "value": "knee"
+        }
+      ],
+      "destination": "/services/knee-replacement-surgery/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_services",
+          "value": "(elbow-pain|hand-wrist-pain|hand-wrist-pain-2)"
+        }
+      ],
+      "destination": "/services/sports-injury-arthroscopy/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_services",
+          "value": "in-office-services"
+        }
+      ],
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_services",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_services",
+          "value": "request-an-appointment"
+        }
+      ],
+      "destination": "/book-appointment/",
+      "permanent": true
+    },
+    {
+      "source": "/services/robotic-surgery",
+      "destination": "/services/robotic-joint-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/services/robotic-surgery/",
+      "destination": "/services/robotic-joint-replacement/",
+      "permanent": true
+    },
+    {
+      "source": "/services/sports-injury-treatment",
+      "destination": "/services/sports-injury-arthroscopy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/sports-injury-treatment/",
+      "destination": "/services/sports-injury-arthroscopy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/arthroscopic-surgery",
+      "destination": "/services/sports-injury-arthroscopy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/arthroscopic-surgery/",
+      "destination": "/services/sports-injury-arthroscopy/",
+      "permanent": true
+    },
+    {
+      "source": "/services/knee-replacement",
+      "destination": "/services/knee-replacement-surgery/",
+      "permanent": true
+    },
+    {
+      "source": "/services/knee-replacement/",
+      "destination": "/services/knee-replacement-surgery/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hip-replacement",
+      "destination": "/services/hip-replacement-surgery/",
+      "permanent": true
+    },
+    {
+      "source": "/services/hip-replacement/",
+      "destination": "/services/hip-replacement-surgery/",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "page_id"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_services"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cpt_team"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "tag"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "product_cat"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "product_tag"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "feed"
+        }
+      ],
+      "destination": "/__legacy-wordpress-url-removed"
+    }
+  ]
+}
