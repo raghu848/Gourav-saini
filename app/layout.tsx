@@ -36,7 +36,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || '';
+  const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-EJCC28LE7Z';
   const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID || '';
   const GOOGLE_SEARCH_CONSOLE_VERIFICATION = process.env.NEXT_PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION || process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '';
   const RAW_BING = process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || '';
