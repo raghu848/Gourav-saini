@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 
 // Default metadata for the home page (CTR-optimized)
 export const defaultMetadata: Metadata = {
-  title: 'Best Orthopaedic Surgeon in Mohali | Dr. Gaurav Saini',
-  description: 'Consult Dr. Gaurav Saini, top orthopaedic surgeon in Mohali & Chandigarh with 20+ yrs experience in Robotic Knee & Hip Replacement at Max Hospital. Book now.',
+  title: 'Best Orthopedic Doctor in Mohali | Dr. Gaurav Saini',
+  description: 'Dr. Gaurav Saini, 20+ yrs experience orthopedic doctor at Max Hospital Mohali. Robotic knee & hip replacement, sports injury care. Book an appointment.',
   robots: {
     index: true,
     follow: true,
@@ -24,8 +24,8 @@ export const defaultMetadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://drgauravsainiortho.com/',
-    title: 'Best Orthopaedic Surgeon in Mohali | Dr. Gaurav Saini',
-    description: 'Consult Dr. Gaurav Saini, top orthopaedic surgeon in Mohali & Chandigarh with 20+ yrs experience in Robotic Knee & Hip Replacement at Max Hospital. Book now.',
+    title: 'Best Orthopedic Doctor in Mohali | Dr. Gaurav Saini',
+    description: 'Dr. Gaurav Saini, 20+ yrs experience orthopedic doctor at Max Hospital Mohali. Robotic knee & hip replacement, sports injury care. Book an appointment.',
     siteName: 'Dr. Gaurav Saini - Orthopaedic Surgeon',
     images: [{
       url: 'https://drgauravsainiortho.com/images/dr-saini-logo.jpg',
@@ -36,8 +36,8 @@ export const defaultMetadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Orthopaedic Surgeon in Mohali | Dr. Gaurav Saini',
-    description: 'Consult Dr. Gaurav Saini, top orthopaedic surgeon in Mohali & Chandigarh with 20+ yrs experience in Robotic Knee & Hip Replacement at Max Hospital.',
+    title: 'Best Orthopedic Doctor in Mohali | Dr. Gaurav Saini',
+    description: 'Dr. Gaurav Saini, 20+ yrs experience orthopedic doctor at Max Hospital Mohali. Robotic knee & hip replacement, sports injury care. Book an appointment.',
     images: ['https://drgauravsainiortho.com/images/dr-saini-logo.jpg'],
     site: '@DrGauravSaini',
     creator: '@DrGauravSaini'
