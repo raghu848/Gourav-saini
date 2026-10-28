@@ -287,6 +287,192 @@
       ],
       "destination": "/page-removed/",
       "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "m"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "paged"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "product"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "s"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "cat"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "author"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "attachment_id"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "post_type"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "replytocom"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "post_tag"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "product_brand"
+        }
+      ],
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/search",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/search/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/feed",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/comments/feed",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-json/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-content/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-includes/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:path*",
+      "destination": "/page-removed/",
+      "permanent": true
     }
   ]
 }
