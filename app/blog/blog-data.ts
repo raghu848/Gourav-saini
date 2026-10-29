@@ -338,5 +338,451 @@ export const blogPosts: BlogPost[] = [
         <p>Early diagnosis and treatment are crucial for managing arthritis effectively. If you experience persistent joint symptoms, consult with a healthcare professional for proper evaluation and management.</p>
       </div>
     `
+  },
+  {
+    id: 'knee-replacement-recovery-timeline',
+    seoTitle: 'Knee Replacement Recovery Timeline',
+    title: 'Knee Replacement Recovery Timeline: Week-by-Week Guide',
+    excerpt: 'A realistic week-by-week look at recovery after knee replacement surgery, from the hospital stay to getting back to everyday activities.',
+    category: 'Knee Care',
+    readTime: '6 min read',
+    publishDate: '2026-10-20',
+    image: '/images/Minimally-invasive-knee-replacement.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Knowing what to expect makes recovery far less stressful. Every patient heals at a different pace, but most follow a similar path after total knee replacement.</p>
+
+        <h2>In the Hospital (Days 1-3)</h2>
+        <p>Most patients stand and take their first steps with a walker within 24 hours of surgery. Pain is managed with a combination of medicines, and the physiotherapy team starts gentle bending and straightening exercises right away.</p>
+
+        <h2>Recovery Stages</h2>
+        <ul>
+          <li><strong>Weeks 1-2:</strong> Walking with a walker or crutches, caring for the wound, and doing exercises several times a day. Swelling and bruising are normal.</li>
+          <li><strong>Weeks 3-6:</strong> Moving to a stick or walking unaided indoors. Knee bending usually reaches 90-110 degrees. Many people begin short outings.</li>
+          <li><strong>Weeks 6-12:</strong> Driving, climbing stairs comfortably, and returning to desk work. Strength and balance keep improving.</li>
+          <li><strong>3-6 Months:</strong> Most daily activities feel natural. Swelling settles and walking distance increases.</li>
+          <li><strong>6-12 Months:</strong> Final recovery. Low-impact activities like swimming, cycling and golf are comfortable.</li>
+        </ul>
+
+        <h2>Tips for a Smoother Recovery</h2>
+        <ol>
+          <li>Do your physiotherapy exercises every day, even when the knee feels stiff.</li>
+          <li>Use ice and elevation to control swelling, especially after exercise.</li>
+          <li>Keep your home safe: remove loose rugs and use a raised toilet seat if needed.</li>
+          <li>Follow your surgeon advice on blood-thinning medicine to lower the risk of clots.</li>
+          <li>Eat a protein-rich diet to help the wound and muscles heal.</li>
+        </ol>
+
+        <div class="bg-red-50 p-6 rounded-lg my-8 border-l-4 border-red-600">
+          <h3 class="text-red-900 mt-0">Call Your Surgeon Promptly If You Notice</h3>
+          <p>Increasing redness, warmth or discharge from the wound, fever, or sudden calf pain or swelling. Chest pain or breathlessness needs emergency care.</p>
+        </div>
+        <p>Recovery takes patience, but the vast majority of patients are very happy with the result. Your surgeon and physiotherapist will tailor the timeline to your age, fitness and the type of implant used.</p>
+      </div>
+    `
+  },
+  {
+    id: 'partial-vs-total-knee-replacement',
+    seoTitle: 'Partial vs Total Knee Replacement',
+    title: 'Partial vs Total Knee Replacement: Which Is Right for You?',
+    excerpt: 'Understand the difference between partial and total knee replacement, who qualifies for each, and how to choose with your surgeon.',
+    category: 'Surgery',
+    readTime: '6 min read',
+    publishDate: '2026-10-21',
+    image: '/images/Partial-Knee-Replacement.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Not every arthritic knee needs a full replacement. When damage is limited to one part of the joint, a partial knee replacement may be an option. The right choice depends on where the wear is and how healthy the rest of the knee is.</p>
+
+        <h2>What Is a Partial Knee Replacement?</h2>
+        <p>The knee has three compartments. In a partial (unicompartmental) replacement, only the damaged compartment, usually the inner side, is resurfaced. The healthy bone, cartilage and ligaments are kept.</p>
+
+        <h2>What Is a Total Knee Replacement?</h2>
+        <p>All the worn surfaces of the thigh bone, shin bone and often the kneecap are replaced with a metal and medical-grade plastic implant. It is the standard treatment for widespread arthritis.</p>
+
+        <h2>Comparing the Two</h2>
+        <ul>
+          <li><strong>Candidates:</strong> Partial suits arthritis in one compartment with stable ligaments. Total suits damage in several compartments, significant deformity or stiffness.</li>
+          <li><strong>Recovery:</strong> Partial usually means a shorter hospital stay and faster early recovery.</li>
+          <li><strong>Feel:</strong> Because more natural structures are kept, partial knees often feel closer to a normal knee.</li>
+          <li><strong>Durability:</strong> Total replacement has a long track record. A partial knee may need conversion to a total later if arthritis spreads.</li>
+        </ul>
+
+        <div class="bg-blue-50 p-6 rounded-lg my-8 border-l-4 border-blue-600">
+          <h3 class="text-blue-900 mt-0">Expert Tip</h3>
+          <p class="mb-0 text-blue-800 italic">"A partial knee done in the right patient is excellent. Done in the wrong patient, it fails early. Careful selection using examination and X-rays is what matters most." — Dr. Gaurav Saini</p>
+        </div>
+        <p>Only a thorough assessment can tell you which operation fits your knee. If you have been told you need surgery, ask your surgeon whether a partial replacement is a safe option for you.</p>
+      </div>
+    `
+  },
+  {
+    id: 'robotic-knee-replacement-benefits',
+    seoTitle: 'Robotic Knee Replacement Benefits',
+    title: 'Robotic Knee Replacement: How It Works and Its Benefits',
+    excerpt: 'See how robotic-assisted knee replacement improves implant placement accuracy and what it means for patients.',
+    category: 'Surgery',
+    readTime: '5 min read',
+    publishDate: '2026-10-22',
+    image: '/images/Minimally-invasive-knee-replacement.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Robotic-assisted knee replacement is a refinement of conventional surgery. The surgeon remains in control throughout, while the technology helps plan and carry out the operation with greater precision.</p>
+
+        <h2>How It Works</h2>
+        <ol>
+          <li><strong>Planning:</strong> Scans or in-theatre mapping build a 3D model of your knee.</li>
+          <li><strong>Personalised plan:</strong> The surgeon decides implant size, position and alignment for your anatomy.</li>
+          <li><strong>Guided bone preparation:</strong> The robotic arm helps keep bone cuts within the planned limits.</li>
+          <li><strong>Balancing:</strong> Ligament tension is checked in real time before the final implant is fixed.</li>
+        </ol>
+
+        <h2>Potential Benefits</h2>
+        <ul>
+          <li>More accurate and reproducible implant alignment</li>
+          <li>Better preservation of healthy bone and soft tissue</li>
+          <li>Careful ligament balancing for a stable, natural-feeling knee</li>
+          <li>Less post-operative discomfort for many patients</li>
+        </ul>
+
+        <h2>Is It Right for Everyone?</h2>
+        <p>Robotic assistance can be used for both total and partial knee replacement. Your surgeon will explain whether it suits your knee and what outcomes to realistically expect. Good rehabilitation matters just as much as the technology.</p>
+
+        <div class="bg-blue-50 p-6 rounded-lg my-8 border-l-4 border-blue-600">
+          <h3 class="text-blue-900 mt-0">Expert Tip</h3>
+          <p class="mb-0 text-blue-800 italic">"The robot is a tool. Surgical experience and sound judgement still decide the quality of the result." — Dr. Gaurav Saini</p>
+        </div>
+        <p>To learn more, see our page on robotic joint replacement or book a consultation to discuss your options.</p>
+      </div>
+    `
+  },
+  {
+    id: 'knee-pain-causes-treatment',
+    seoTitle: 'Knee Pain: Causes and Treatment',
+    title: 'Knee Pain: Common Causes and When to See an Orthopedic Doctor',
+    excerpt: 'Why do knees hurt? Learn the most common causes of knee pain, home care measures and the warning signs that need a specialist.',
+    category: 'Education',
+    readTime: '6 min read',
+    publishDate: '2026-10-23',
+    image: '/images/Knee-presentation-surgeries-HTODFO.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Knee pain affects people of all ages. The cause may be wear and tear, an injury, or inflammation, and the right treatment depends on finding out which.</p>
+
+        <h2>Common Causes</h2>
+        <ul>
+          <li><strong>Osteoarthritis:</strong> Gradual wearing of cartilage, common after 45. Causes pain on walking and stairs, stiffness and swelling.</li>
+          <li><strong>Ligament injuries:</strong> Tears of the ACL, MCL or other ligaments, often from sports or a twisting fall.</li>
+          <li><strong>Meniscus tear:</strong> Injury to the knee cushion, causing catching, locking and pain on twisting.</li>
+          <li><strong>Tendinitis:</strong> Overuse inflammation around the kneecap, common in runners and jumpers.</li>
+          <li><strong>Inflammatory arthritis:</strong> Conditions like rheumatoid arthritis or gout causing hot, swollen joints.</li>
+        </ul>
+
+        <h2>Home Care for Mild Pain</h2>
+        <ol>
+          <li>Rest from activities that trigger pain, without stopping all movement.</li>
+          <li>Apply ice for 15-20 minutes to reduce swelling after activity.</li>
+          <li>Maintain a healthy weight; every kilo lost takes several kilos of load off your knees.</li>
+          <li>Strengthen the thigh muscles with gentle exercise.</li>
+        </ol>
+
+        <div class="bg-red-50 p-6 rounded-lg my-8 border-l-4 border-red-600">
+          <h3 class="text-red-900 mt-0">See a Specialist If</h3>
+          <p>Pain lasts more than a few weeks, the knee is swollen, locked or gives way, you cannot bear weight, or there was a significant injury.</p>
+        </div>
+        <p>Early assessment often avoids surgery altogether. Treatment ranges from physiotherapy and medication to injections, arthroscopy and, for advanced arthritis, joint replacement.</p>
+      </div>
+    `
+  },
+  {
+    id: 'hip-replacement-recovery-tips',
+    seoTitle: 'Hip Replacement Recovery Tips',
+    title: 'Hip Replacement Recovery: Tips for the First 12 Weeks',
+    excerpt: 'Practical guidance on movement, exercise and safety precautions to help you recover well after total hip replacement.',
+    category: 'Surgery',
+    readTime: '6 min read',
+    publishDate: '2026-10-24',
+    image: '/images/Total-hip-replacement.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Total hip replacement relieves pain and restores movement in people with advanced hip arthritis. A good recovery depends on what you do in the weeks after surgery.</p>
+
+        <h2>The First Few Days</h2>
+        <p>Most patients are encouraged to stand and walk with support the day after surgery. Your physiotherapist will teach you safe ways to sit, stand and get in and out of bed.</p>
+
+        <h2>Key Recovery Tips</h2>
+        <ul>
+          <li><strong>Follow movement precautions:</strong> Your surgeon will tell you which positions to avoid, such as bending the hip too far or crossing your legs, while the tissues heal.</li>
+          <li><strong>Walk every day:</strong> Short, frequent walks build strength and lower the risk of clots.</li>
+          <li><strong>Use aids properly:</strong> Walker or crutches at first, then a stick, until your surgeon says you are steady.</li>
+          <li><strong>Sleep comfortably:</strong> A pillow between the knees helps keep the hip in a safe position.</li>
+          <li><strong>Prevent falls:</strong> Clear pathways, good lighting and non-slip footwear at home.</li>
+        </ul>
+
+        <h2>Typical Progress</h2>
+        <p>By 6 weeks most people walk with little or no support. By 12 weeks many return to driving and light activity. Full strength and endurance can take 6 months or more.</p>
+
+        <div class="bg-blue-50 p-6 rounded-lg my-8 border-l-4 border-blue-600">
+          <h3 class="text-blue-900 mt-0">Expert Tip</h3>
+          <p class="mb-0 text-blue-800 italic">"Patients who exercise regularly and respect the precautions in the early weeks usually recover fastest." — Dr. Gaurav Saini</p>
+        </div>
+        <p>If you notice wound problems, fever, sudden severe pain or a change in leg length or position, contact your surgeon without delay.</p>
+      </div>
+    `
+  },
+  {
+    id: 'knee-arthritis-treatment-options',
+    seoTitle: 'Knee Arthritis Treatment Options',
+    title: 'Knee Arthritis: Treatment Options From Medicine to Replacement',
+    excerpt: 'An overview of non-surgical and surgical treatments for knee arthritis, and how doctors decide what to recommend.',
+    category: 'Arthritis',
+    readTime: '7 min read',
+    publishDate: '2026-10-25',
+    image: '/images/arthritis-patient-recovery.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Knee osteoarthritis is a progressive condition, but there are many ways to manage it. Treatment is usually stepped, starting with the simplest measures.</p>
+
+        <h2>Non-Surgical Treatments</h2>
+        <ul>
+          <li><strong>Lifestyle changes:</strong> Weight loss, low-impact exercise such as cycling or swimming, and activity pacing.</li>
+          <li><strong>Physiotherapy:</strong> Strengthening the muscles around the knee reduces pain and improves function.</li>
+          <li><strong>Medication:</strong> Pain relievers and anti-inflammatory medicines, used under medical advice.</li>
+          <li><strong>Walking aids and braces:</strong> A stick in the opposite hand can significantly reduce load on the painful knee.</li>
+          <li><strong>Injections:</strong> Steroid or hyaluronic acid injections may give temporary relief in selected patients.</li>
+        </ul>
+
+        <h2>Surgical Options</h2>
+        <ul>
+          <li><strong>Arthroscopy:</strong> Helpful for mechanical problems like a torn meniscus, but not for advanced arthritis on its own.</li>
+          <li><strong>Osteotomy:</strong> Realigning the bone in younger, active patients with limited arthritis.</li>
+          <li><strong>Partial or total knee replacement:</strong> For severe arthritis when other treatments no longer control pain.</li>
+        </ul>
+
+        <h2>Choosing the Right Time</h2>
+        <p>Surgery is considered when pain disturbs sleep and daily life despite proper non-surgical treatment. Waiting too long can lead to weak muscles and deformity, making recovery harder.</p>
+
+        <div class="bg-blue-50 p-6 rounded-lg my-8 border-l-4 border-blue-600">
+          <h3 class="text-blue-900 mt-0">Expert Tip</h3>
+          <p class="mb-0 text-blue-800 italic">"There is no single correct treatment. The best plan matches the stage of arthritis with the goals and general health of the patient." — Dr. Gaurav Saini</p>
+        </div>
+        <p>An orthopedic consultation with an examination and X-rays can show where you are on this path and what to try next.</p>
+      </div>
+    `
+  },
+  {
+    id: 'winter-joint-pain-causes',
+    seoTitle: 'Why Joint Pain Gets Worse in Winter',
+    title: 'Why Joint Pain Gets Worse in Winter and What You Can Do',
+    excerpt: 'Cold weather often makes knees, hips and backs ache more. Learn why it happens and the simple steps that keep joints comfortable all season.',
+    category: 'Education',
+    readTime: '5 min read',
+    publishDate: '2026-10-26',
+    image: '/images/arthritis-patient-recovery.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Many people notice stiffer, sorer joints as the temperature drops. Winter does not damage joints, but it can make existing problems like arthritis, old injuries and back pain feel worse.</p>
+
+        <h2>Why Cold Weather Affects Joints</h2>
+        <ul>
+          <li><strong>Stiffer muscles and tendons:</strong> Cold makes soft tissues tighten, so joints move less freely, especially in the morning.</li>
+          <li><strong>Reduced circulation:</strong> The body keeps blood near the core to stay warm, so hands, feet and knees receive less.</li>
+          <li><strong>Pain sensitivity:</strong> Lower temperatures can make nerves more sensitive to pain signals.</li>
+          <li><strong>Less activity:</strong> Short days and cold mornings mean we move less, which weakens muscles that support joints.</li>
+          <li><strong>Less sunlight:</strong> Lower vitamin D levels can affect bone and muscle health.</li>
+        </ul>
+
+        <h2>Simple Ways to Protect Your Joints</h2>
+        <ol>
+          <li>Dress in layers and keep knees, hands and the lower back covered.</li>
+          <li>Warm up indoors for 5-10 minutes before stepping out.</li>
+          <li>Use a warm bath, heat pad or warm compress to ease stiffness. Do not apply heat to swollen, hot joints.</li>
+          <li>Stay active every day, even with short indoor routines.</li>
+          <li>Drink enough water; people often forget to in cold weather.</li>
+          <li>Get safe morning sunlight, and ask your doctor about vitamin D testing.</li>
+        </ol>
+
+        <div class="bg-red-50 p-6 rounded-lg my-8 border-l-4 border-red-600">
+          <h3 class="text-red-900 mt-0">See a Doctor If</h3>
+          <p>Pain is severe or keeps you awake, a joint becomes red, hot and swollen, you have a fever with joint pain, or pain does not settle within a few days.</p>
+        </div>
+        <p>Seasonal flare-ups are common, but you do not have to simply put up with them. A few habits and, when needed, a proper orthopedic check can keep you moving comfortably through winter.</p>
+      </div>
+    `
+  },
+  {
+    id: 'winter-exercises-for-joints',
+    seoTitle: 'Best Winter Exercises for Joints',
+    title: 'Best Winter Exercises for Healthy Joints and Strong Muscles',
+    excerpt: 'Easy indoor and outdoor exercises to keep your joints flexible and muscles strong during the cold months, with a safe warm-up routine.',
+    category: 'Exercise',
+    readTime: '7 min read',
+    publishDate: '2026-10-27',
+    image: '/images/Knee-presentation-surgeries-HTODFO.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Staying active is the best thing you can do for your joints in winter. Movement keeps the joint fluid circulating, muscles strong and stiffness away. The key is to warm up well and choose gentle, joint-friendly exercises.</p>
+
+        <h2>Always Start With a Warm-Up</h2>
+        <p>Cold muscles are more likely to strain. Spend 5-10 minutes on the following before any exercise:</p>
+        <ul>
+          <li>March on the spot or walk slowly indoors</li>
+          <li>Shoulder rolls and gentle neck turns</li>
+          <li>Ankle circles and gentle knee bends</li>
+          <li>Hip circles and trunk rotations</li>
+        </ul>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="mt-0">1. Indoor Walking</h3>
+            <p>Walk around your home or on a treadmill for 20-30 minutes. Break it into three short sessions if that is easier.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="mt-0">2. Chair Squats</h3>
+            <p>Stand up from a sturdy chair and sit back down slowly, without using your hands if possible. Repeat 10 times, 2 sets.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="mt-0">3. Straight Leg Raises</h3>
+            <p>Lie on your back, tighten the thigh and lift one straight leg about 12 inches. Hold 5 seconds. Repeat 10-15 times each side.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="mt-0">4. Gentle Yoga and Stretching</h3>
+            <p>Cat-cow, hamstring stretch and child pose ease back, hip and knee stiffness. Hold each stretch for 20-30 seconds without bouncing.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="mt-0">5. Stationary Cycling</h3>
+            <p>Low-impact and kind to the knees. Keep resistance light and cycle for 15-20 minutes.</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="mt-0">6. Hand and Wrist Exercises</h3>
+            <p>Open and close your fists, and squeeze a soft ball 10 times. This helps stiff fingers in cold weather.</p>
+          </div>
+        </div>
+
+        <h2>Safety Guidelines</h2>
+        <ol>
+          <li>Exercise in the warmer part of the day if you exercise outdoors, and wear non-slip shoes.</li>
+          <li>Stop if you feel sharp pain. Mild muscle ache is fine; joint pain is a warning.</li>
+          <li>Cool down and stretch for 5 minutes at the end.</li>
+          <li>Increase time and effort slowly, by no more than 10% a week.</li>
+        </ol>
+
+        <div class="bg-blue-50 p-6 rounded-lg my-8 border-l-4 border-blue-600">
+          <h3 class="text-blue-900 mt-0">Expert Tip</h3>
+          <p class="mb-0 text-blue-800 italic">"Ten gentle minutes, three times a day, does more for your joints than one hard session a week. Regular, comfortable movement is what protects them." — Dr. Gaurav Saini</p>
+        </div>
+        <p>If you have arthritis, a recent surgery or heart disease, check with your doctor before starting a new routine.</p>
+      </div>
+    `
+  },
+  {
+    id: 'winter-fall-prevention-precautions',
+    seoTitle: 'Winter Fall and Fracture Prevention',
+    title: 'Winter Safety: How to Prevent Falls and Fractures in Cold Weather',
+    excerpt: 'Fog, wet floors and heavy clothing raise the risk of slips and fractures in winter. Follow these precautions, especially for older adults.',
+    category: 'Education',
+    readTime: '5 min read',
+    publishDate: '2026-10-28',
+    image: '/images/fracture-trauma-care.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>Winter brings more falls, and hip, wrist and ankle fractures rise with them. Slippery surfaces, poor visibility, stiff joints and bulky clothing all play a part. Older adults and people with osteoporosis are at the highest risk.</p>
+
+        <h2>Why Falls Increase in Winter</h2>
+        <ul>
+          <li>Fog, early darkness and wet or frosty ground</li>
+          <li>Stiff, cold muscles that react more slowly</li>
+          <li>Heavy shawls and blankets that restrict movement or trip you up</li>
+          <li>Reduced activity, leading to weaker legs and poorer balance</li>
+        </ul>
+
+        <h2>Practical Precautions</h2>
+        <ul>
+          <li><strong>Footwear:</strong> Wear shoes or slippers with good grip. Avoid walking in socks on smooth floors.</li>
+          <li><strong>Lighting:</strong> Keep night lights in hallways and bathrooms, and a torch near the bed.</li>
+          <li><strong>Floors:</strong> Wipe up water quickly, use anti-slip mats in bathrooms and secure loose rugs.</li>
+          <li><strong>Clothing:</strong> Choose warm layers that fit well and do not drag on the ground.</li>
+          <li><strong>Walking aids:</strong> Use your stick or walker outdoors, and take shorter steps on wet ground.</li>
+          <li><strong>Slow starts:</strong> Sit on the edge of the bed for a minute before standing in the morning.</li>
+        </ul>
+
+        <h2>Build Bone and Balance</h2>
+        <p>Eat calcium and protein-rich foods, get safe sunlight for vitamin D, and practise balance exercises such as standing on one leg while holding a counter. Ask your doctor about a bone density test if you are over 50, or have had a fracture.</p>
+
+        <div class="bg-red-50 p-6 rounded-lg my-8 border-l-4 border-red-600">
+          <h3 class="text-red-900 mt-0">Get Medical Help Immediately After a Fall If</h3>
+          <p>You cannot stand or bear weight, a limb looks deformed or has severe swelling, you hit your head, or the pain is severe. Do not try to walk it off.</p>
+        </div>
+        <p>Most winter fractures are preventable. A few changes at home and some regular exercise go a long way.</p>
+      </div>
+    `
+  },
+  {
+    id: 'winter-arthritis-care-tips',
+    seoTitle: 'Winter Arthritis Care Tips',
+    title: 'Arthritis in Winter: 10 Tips to Stay Comfortable and Mobile',
+    excerpt: 'Ten practical tips on warmth, diet, exercise and medication habits to help people with arthritis get through the cold season.',
+    category: 'Arthritis',
+    readTime: '6 min read',
+    publishDate: '2026-10-29',
+    image: '/images/arthritis-patient-recovery.webp',
+    author: 'Dr. Gaurav Saini',
+    imageWidth: 640,
+    imageHeight: 419,
+    content: `
+      <div class="prose max-w-none">
+        <p>For people with arthritis, winter can bring more stiffness and pain, particularly in the morning. These tips can help you stay comfortable and active.</p>
+
+        <h2>10 Tips for Arthritis in Winter</h2>
+        <ol>
+          <li><strong>Keep warm:</strong> Wear layers, gloves, socks and a knee or back wrap. Keep your bedroom comfortably warm.</li>
+          <li><strong>Start the day gently:</strong> Do a few minutes of stretches in bed before standing.</li>
+          <li><strong>Use heat wisely:</strong> A warm bath or heat pad for 15-20 minutes eases stiff joints. Avoid direct heat on skin that is numb or hot and swollen.</li>
+          <li><strong>Keep moving:</strong> Walk indoors, cycle or do gentle yoga daily. Inactivity makes joints stiffer.</li>
+          <li><strong>Maintain a healthy weight:</strong> Winter food is heavy; extra weight adds load to knees and hips.</li>
+          <li><strong>Eat anti-inflammatory foods:</strong> Fish, nuts, seeds, leafy greens, seasonal fruit and turmeric in cooking support overall health.</li>
+          <li><strong>Check vitamin D and calcium:</strong> Get a blood test and take supplements only if your doctor advises.</li>
+          <li><strong>Stay hydrated:</strong> Warm water, soups and herbal teas count.</li>
+          <li><strong>Take medicines as prescribed:</strong> Do not stop or change doses on your own because of the weather.</li>
+          <li><strong>Protect against falls:</strong> Wear grippy footwear and avoid wet or foggy walks.</li>
+        </ol>
+
+        <h2>Winter and Joint Replacement</h2>
+        <p>Many people who are considering knee or hip replacement choose to have surgery in winter, as cooler weather makes it easier to stay indoors and focus on rehabilitation. Whether the timing suits you depends on your health, your pain and your support at home.</p>
+
+        <div class="bg-red-50 p-6 rounded-lg my-8 border-l-4 border-red-600">
+          <h3 class="text-red-900 mt-0">When to Consult an Orthopedic Doctor</h3>
+          <p>Persistent pain, new swelling, a joint that feels hot, increasing deformity, or pain that disturbs sleep and daily tasks despite medicines and exercise.</p>
+        </div>
+        <p>Arthritis is manageable with the right plan. If winter symptoms are getting worse each year, a specialist review can help you find the right treatment.</p>
+      </div>
+    `
   }
 ]
