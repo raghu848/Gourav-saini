@@ -37,7 +37,7 @@ export function sitemapEntries(): MetadataRoute.Sitemap {
     })),
     ...blogPosts.map((post) => ({
       url: `${SITE}/blog/${post.id}/`,
-      lastModified,
+      lastModified: new Date(post.publishDate),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     })),
